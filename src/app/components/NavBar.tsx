@@ -1,12 +1,14 @@
 "use client";
 
+import { COLORS } from "../constants";
+
 export default function NavBar() {
   const navItems = ["About", "People", "Tickets", "Lines"];
 
   return (
     <nav
       className="fixed left-0 top-0 h-screen flex flex-col justify-evenly items-center"
-      style={{ width: "5%", backgroundColor: "transparent" }}
+      style={{ width: "5%", backgroundColor: COLORS.background }}
     >
       {navItems.map((item) => (
         <button
