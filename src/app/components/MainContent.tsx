@@ -4,7 +4,7 @@ import Lottie from "lottie-react";
 import { useEffect, useState, useCallback } from "react";
 import { COLORS } from "../constants";
 
-export default function LandingGradient() {
+export default function MainContent() {
   const [animationData, setAnimationData] = useState(null);
   const [opacity, setOpacity] = useState(1);
 
@@ -51,6 +51,19 @@ export default function LandingGradient() {
         style={{
           width: "100%",
           height: "100%",
+        }}
+      />
+      <img
+        src="/wordmark.png"
+        alt="Lunar Gala"
+        style={{
+          position: "absolute",
+          top: "50%",
+          left: "50%",
+          transform: "translate(-50%, -50%)",
+          maxWidth: "60%",
+          maxHeight: "80%",
+          objectFit: "contain",
         }}
       />
     </div>
