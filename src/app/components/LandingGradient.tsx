@@ -2,6 +2,7 @@
 
 import Lottie from "lottie-react";
 import { useEffect, useState, useCallback } from "react";
+import { COLORS } from "../constants";
 
 export default function LandingGradient() {
   const [animationData, setAnimationData] = useState(null);
@@ -35,11 +36,11 @@ export default function LandingGradient() {
       style={{
         position: "fixed",
         top: 0,
-        left: 0,
-        width: "100%",
+        left: "5%",
+        width: "95%",
         height: "100%",
         opacity,
-        backgroundColor: "white",
+        backgroundColor: COLORS.background,
         transition: "opacity 0.1s ease-out",
       }}
     >
