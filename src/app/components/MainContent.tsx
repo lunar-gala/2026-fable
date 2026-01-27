@@ -1,22 +1,9 @@
 "use client";
 
-import Lottie from "lottie-react";
-import { useEffect, useState, useCallback } from "react";
 import { COLORS } from "../constants";
+import LandingAnimation from "./LandingAnimation";
 
 export default function MainContent() {
-  const [animationData, setAnimationData] = useState(null);
-
-  useEffect(() => {
-    fetch("/landingdemo-1_22-v1.json")
-      .then((res) => res.json())
-      .then((data) => setAnimationData(data));
-  }, []);
-
-  if (!animationData) {
-    return null;
-  }
-
   return (
     <div
       style={{
@@ -29,15 +16,7 @@ export default function MainContent() {
         transition: "opacity 0.1s ease-out",
       }}
     >
-      <Lottie
-        animationData={animationData}
-        loop={true}
-        autoplay={true}
-        style={{
-          width: "100%",
-          height: "100%",
-        }}
-      />
+      <LandingAnimation />
       <img
         src="/wordmark.png"
         alt="Lunar Gala"
