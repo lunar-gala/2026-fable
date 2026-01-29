@@ -1,11 +1,14 @@
 "use client";
 
+import { Content } from "next/dist/compiled/@next/font/dist/google";
 import { COLORS } from "../constants";
-import LandingAnimation from "./LandingAnimation";
-
+import LandingAnimation from "./Landing/LandingAnimation";
+import { motion, useScroll } from "motion/react"
 export default function MainContent() {
+
   return (
-    <div
+    <>
+      <div
       style={{
         position: "fixed",
         top: 0,
@@ -15,21 +18,11 @@ export default function MainContent() {
         backgroundColor: COLORS.background,
         transition: "opacity 0.1s ease-out",
       }}
-    >
+      >
       <LandingAnimation />
-      <img
-        src="/wordmark.png"
-        alt="Lunar Gala"
-        style={{
-          position: "absolute",
-          top: "50%",
-          left: "50%",
-          transform: "translate(-50%, -50%)",
-          maxWidth: "60%",
-          maxHeight: "80%",
-          objectFit: "contain",
-        }}
-      />
-    </div>
+
+      </div>
+    </>
+
   );
 }

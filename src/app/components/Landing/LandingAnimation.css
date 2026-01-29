@@ -1,0 +1,20 @@
+
+.small-small {
+  width: 12px;
+  flex-shrink: 0;
+}
+
+.small-quarter {
+  width: 12px;
+}
+
+.small-half {
+  width: 12px;
+}
+
+.half-eighth {
+  width: 25%;
+}
+.full-full {
+  width: 50%;
+}

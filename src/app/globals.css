@@ -49,6 +49,7 @@ body {
 .rectangle-small {
   width: 12px;
   flex-shrink: 0;
+
 }
 
 .rectangle-half {
@@ -57,6 +58,7 @@ body {
 
 .rectangle-full {
   width: 100%;
+
 }
 
 .row24px {
