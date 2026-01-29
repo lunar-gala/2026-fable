@@ -135,8 +135,8 @@ const sizeWidthMap = {
     smallhalf: "12px",
     smallquarter: "12px",
     smallsmall: "12px",
-    halfeighth: "25%",
-    fullfull: "50%",
+    halfeighth: "50%",
+    fullfull: "100%",
 };
 
 const nextSizeWidthMap = {
