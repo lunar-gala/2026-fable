@@ -2,7 +2,6 @@ import Lottie from "react-lottie";
 import animationData from "../../../../public/wordmark.json";
 import './LandingAnimation.css';
 
-
 function WordmarkAnimation() {
   const defaultOptions = {
     loop: false,
