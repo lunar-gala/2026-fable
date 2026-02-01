@@ -131,12 +131,13 @@ const sizeClassMap = {
     fullfull: "full-full",
 };
 
+/*
 const sizeWidthMap = {
     smallhalf: "12px",
     smallquarter: "12px",
     smallsmall: "12px",
-    halfeighth: "50%",
-    fullfull: "100%",
+    halfeighth: "25%",
+    fullfull: "50%",
 };
 
 const nextSizeWidthMap = {
@@ -146,6 +147,7 @@ const nextSizeWidthMap = {
     halfeighth: "6.25%",
     fullfull: "50%",
 };
+*/
 
 export default function LandingAnimation() {
     const { scrollYProgress } = useScroll();
@@ -171,7 +173,7 @@ export default function LandingAnimation() {
                         <motion.div
                             key={cellIdx}
                             className={`${sizeClassMap[cell.size]} gradient-vertical gradient-animation-${cell.variant}`}
-                            style={{ width: useTransform(scrollYProgress, [0,1 ], [sizeWidthMap[cell.size], nextSizeWidthMap[cell.size]]) }}
+                            /* style={{ width: useTransform(scrollYProgress, [0,1], [sizeWidthMap[cell.size], nextSizeWidthMap[cell.size]]) }} */
                         />
                     ))}
                 </div>
