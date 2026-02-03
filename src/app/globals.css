@@ -135,15 +135,12 @@ grid-content{
   display: flex;
   flex-direction: row;
   gap: 0px;
-<<<<<<< Updated upstream
-=======
   overflow: hidden;
 }
 
 .landingCell{
   border: 0.25px solid #332b2b;
   overflow: hidden;
->>>>>>> Stashed changes
 }
 
 .gradient-vertical {
@@ -167,8 +164,6 @@ grid-content{
 .gradient-animation-v1 {
   animation: gradientmove1 30s ease infinite;
 }
-<<<<<<< Updated upstream
-=======
 .r-gradient-animation-v1 {
   animation: gradientmove1 8s ease infinite;
   animation-play-state: paused;
@@ -177,7 +172,6 @@ grid-content{
   animation-play-state: running;
 }
 
->>>>>>> Stashed changes
 
 
 @keyframes gradientmove1 {
@@ -192,8 +186,6 @@ grid-content{
 .gradient-animation-v2 {
   animation: gradientmove2 30s ease infinite;
 }
-<<<<<<< Updated upstream
-=======
 .r-gradient-animation-v2 {
   animation: gradientmove2 8s ease infinite;
   animation-play-state: paused;
@@ -201,7 +193,6 @@ grid-content{
 .r-gradient-animation-v2:hover {
   animation-play-state: running;
 }
->>>>>>> Stashed changes
 
 @keyframes gradientmove2 {
   0% { transform: translateY(0%); }
@@ -215,8 +206,6 @@ grid-content{
 .gradient-animation-v3 {
   animation: gradientmove3 30s ease infinite;
 }
-<<<<<<< Updated upstream
-=======
 .r-gradient-animation-v3 {
   animation: gradientmove3 8s ease infinite;
   animation-play-state: paused;
@@ -224,7 +213,6 @@ grid-content{
 .r-gradient-animation-v3:hover {
   animation-play-state: running;
 }
->>>>>>> Stashed changes
 
 @keyframes gradientmove3 {
   0% { transform: translateY(0%); }
@@ -239,18 +227,6 @@ grid-content{
 .gradient-animation-v4 {
   animation: gradientmove4 30s ease infinite;
 }
-<<<<<<< Updated upstream
-
-@keyframes gradientmove4 {
-  0% { background-position: 0% 0%; }
-  10% { background-position: 0% 60%; }
-  20% { background-position: 0% 20%; }
-  40% { background-position: 0% 36%; }
-  60% { background-position: 0% 56%; }
-  80% { background-position: 0% 75%; }
-  100% { background-position: 0% 89%; }
-}
-=======
 .r-gradient-animation-v4 {
   animation: gradientmove4 8s ease infinite;
   animation-play-state: paused;
@@ -271,4 +247,3 @@ grid-content{
 }
 
 
->>>>>>> Stashed changes
