@@ -22,7 +22,7 @@ export default function MainContent() {
         transition: "opacity 0.1s ease-out",
       }}
       >
-      <LandingAnimation />
+      <TeaserGradientAnimation />
 
       </div>
     </>

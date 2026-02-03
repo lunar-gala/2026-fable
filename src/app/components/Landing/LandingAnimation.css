@@ -6,10 +6,13 @@
 
 .small-quarter {
   width: 12px;
+    flex-shrink: 0;
 }
 
 .small-half {
   width: 12px;
+    flex-shrink: 0;
+
 }
 
 .half-eighth {

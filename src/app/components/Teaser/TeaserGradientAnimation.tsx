@@ -173,7 +173,6 @@ export default function LandingAnimation() {
                         <div
                             key={cellIdx}
                             className={`${sizeClassMap[cell.size]} landingCell gradient-vertical r-gradient-animation-${cell.variant}`}
-                            /* style={{ width: useTransform(scrollYProgress, [0,1], [sizeWidthMap[cell.size], nextSizeWidthMap[cell.size]]) }} */
                         >
                             <div className={`gradient-vertical gradient-animation-${cell.variant}`}></div>
                         </div>
