@@ -175,6 +175,7 @@ export default function LandingAnimation() {
 
         v1Elements.forEach((element) => {
             const defaultDuration = 30;
+            (element as HTMLElement).style.animationDuration = defaultDuration + 's';
             const hoverDuration = 8;
             const transitionTime = 5000; // 1 second to transition
 
@@ -188,6 +189,11 @@ export default function LandingAnimation() {
                 if (startTime === null) {
                     startTime = timestamp;
                     startDuration = currentDuration;
+                    if (targetDuration === defaultDuration) {
+                        console.log("++ start");
+                    } else {
+                        console.log("-- start");
+                    }
                 }
 
                 const elapsed = timestamp - startTime;
@@ -198,6 +204,11 @@ export default function LandingAnimation() {
                 const easeProgress = 1 - Math.pow(1 - progress, 3);
 
                 currentDuration = startDuration! + (targetDuration - startDuration!) * easeProgress;
+                if (targetDuration === defaultDuration) {
+                    console.log("++ currentDuration:", currentDuration.toFixed(2));
+                } else {
+                    console.log("-- currentDuration:", currentDuration.toFixed(2));
+                }
                 (element as HTMLElement).style.animationDuration = currentDuration + 's';
 
                 // console.log({elapsed, currentDuration, targetDuration});
@@ -205,6 +216,11 @@ export default function LandingAnimation() {
                 if (progress < 1) {
                     animationFrameId = requestAnimationFrame(animateDuration);
                 } else {
+                    if (targetDuration === defaultDuration) {
+                        console.log("++ end");
+                    } else {
+                        console.log("-- end");
+                    }
                     animationFrameId = null;
                     startTime = null;
                     startDuration = null;
@@ -257,9 +273,9 @@ export default function LandingAnimation() {
                     {row.cells.map((cell, cellIdx) => (                        
                         <div
                             key={cellIdx}
-                            className={`${sizeClassMap[cell.size]} landingCell gradient-vertical r-gradient-animation-${cell.variant}`}
+                            className={`${sizeClassMap[cell.size]} landingCell gradient-vertical gradient-animation-${cell.variant}`}
                         >
-                            <div className={`gradient-vertical gradient-animation-${cell.variant}`}></div>
+                            {/* <div className={`gradient-vertical gradient-animation-${cell.variant}`}></div> */}
                         </div>
                     ))}
                 </div>

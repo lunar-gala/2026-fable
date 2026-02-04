@@ -175,6 +175,7 @@ grid-content{
   /* animation: gradientmove1 30s ease infinite; */
   animation-name: gradientmove1;
   animation-iteration-count: infinite;
+  animation-timing-function: ease;
 }
 
 @keyframes gradientmove1 {
