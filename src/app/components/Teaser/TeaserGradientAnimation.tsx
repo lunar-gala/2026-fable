@@ -151,8 +151,7 @@ const nextSizeWidthMap = {
 
 export default function LandingAnimation() {
     const { scrollYProgress } = useScroll();
-
-
+    
     const gridRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
@@ -163,6 +162,92 @@ export default function LandingAnimation() {
             const randomDelay = Math.random() * maxDelay;
             (cell as HTMLElement).style.animationDelay = `${randomDelay}s`;
         });
+    }, []);
+
+    useEffect(() => {
+        console.log('Setting up hover effects');
+        if (!gridRef.current) return;
+        console.log('gridRef current:', gridRef.current);
+        // Gradual animation speed change on hover for v1 elements
+        const v1Elements = gridRef.current.querySelectorAll('.gradient-animation-v1');
+
+        const cleanupFns: (() => void)[] = [];
+
+        v1Elements.forEach((element) => {
+            const defaultDuration = 30;
+            const hoverDuration = 8;
+            const transitionTime = 5000; // 1 second to transition
+
+            let currentDuration = defaultDuration;
+            let targetDuration = defaultDuration;
+            let animationFrameId: number | null = null;
+            let startTime: number | null = null;
+            let startDuration: number | null = null;
+
+            function animateDuration(timestamp: number) {
+                if (startTime === null) {
+                    startTime = timestamp;
+                    startDuration = currentDuration;
+                }
+
+                const elapsed = timestamp - startTime;
+                const progress = Math.min(elapsed / transitionTime, 1);
+                // const progress = elapsed / transitionTime % 1;
+
+                // Ease out cubic for smooth deceleration
+                const easeProgress = 1 - Math.pow(1 - progress, 3);
+
+                currentDuration = startDuration! + (targetDuration - startDuration!) * easeProgress;
+                (element as HTMLElement).style.animationDuration = currentDuration + 's';
+
+                // console.log({elapsed, currentDuration, targetDuration});
+
+                if (progress < 1) {
+                    animationFrameId = requestAnimationFrame(animateDuration);
+                } else {
+                    animationFrameId = null;
+                    startTime = null;
+                    startDuration = null;
+                }
+            }
+
+            const handleMouseEnter = () => {
+                console.log('Mouse entered animationFrameId:', animationFrameId);
+                targetDuration = hoverDuration;
+                if (animationFrameId) {
+                    cancelAnimationFrame(animationFrameId);
+                }
+                startTime = null;
+                startDuration = null;
+                animationFrameId = requestAnimationFrame(animateDuration);
+            };
+
+            const handleMouseLeave = () => {
+                console.log('Mouse left animationFrameId:', animationFrameId);
+                targetDuration = defaultDuration;
+                if (animationFrameId) {
+                    cancelAnimationFrame(animationFrameId);
+                }
+                startTime = null;
+                startDuration = null;
+                animationFrameId = requestAnimationFrame(animateDuration);
+            };
+
+            element.addEventListener('mouseenter', handleMouseEnter);
+            element.addEventListener('mouseleave', handleMouseLeave);
+
+            cleanupFns.push(() => {
+                element.removeEventListener('mouseenter', handleMouseEnter);
+                element.removeEventListener('mouseleave', handleMouseLeave);
+                if (animationFrameId) {
+                    cancelAnimationFrame(animationFrameId);
+                }
+            });
+        });
+
+        return () => {
+            cleanupFns.forEach(fn => fn());
+        };
     }, []);
 
     return (
