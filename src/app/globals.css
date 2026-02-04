@@ -172,7 +172,6 @@ grid-content{
 }
 
 .gradient-animation-v1 {
-  /* animation: gradientmove1 30s ease infinite; */
   animation-name: gradientmove1;
   animation-iteration-count: infinite;
   animation-timing-function: ease;
@@ -188,15 +187,10 @@ grid-content{
 }
 
 .gradient-animation-v2 {
-  animation: gradientmove2 30s ease infinite;
+  animation-name: gradientmove2;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease;
 }
-/* .r-gradient-animation-v2 {
-  animation: gradientmove2 8s ease infinite;
-  animation-play-state: paused;
-}
-.r-gradient-animation-v2:hover {
-  animation-play-state: running;
-} */
 
 @keyframes gradientmove2 {
   0% { transform: translateY(0%); }
@@ -208,15 +202,10 @@ grid-content{
 }
 
 .gradient-animation-v3 {
-  animation: gradientmove3 30s ease infinite;
+  animation-name: gradientmove3;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease;
 }
-/* .r-gradient-animation-v3 {
-  animation: gradientmove3 8s ease infinite;
-  animation-play-state: paused;
-}
-.r-gradient-animation-v3:hover {
-  animation-play-state: running;
-} */
 
 @keyframes gradientmove3 {
   0% { transform: translateY(0%); }
@@ -228,16 +217,11 @@ grid-content{
   100% { transform: translateY(-89%); }
 }
 
-.gradient-animation-v4 {
-  animation: gradientmove4 30s ease infinite;
+.gradient-animation-4 {
+  animation-name: gradientmove4;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease;
 }
-/* .r-gradient-animation-v4 {
-  animation: gradientmove4 8s ease infinite;
-  animation-play-state: paused;
-}
-.r-gradient-animation-v4:hover {
-  animation-play-state: running;
-} */
 
 
 @keyframes gradientmove4 {

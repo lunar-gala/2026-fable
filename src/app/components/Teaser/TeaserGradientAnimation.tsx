@@ -169,11 +169,11 @@ export default function LandingAnimation() {
         if (!gridRef.current) return;
         console.log('gridRef current:', gridRef.current);
         // Gradual animation speed change on hover for v1 elements
-        const v1Elements = gridRef.current.querySelectorAll('.gradient-animation-v1');
+        const gridElements = gridRef.current.querySelectorAll('[class*="gradient-animation-v"]');
 
         const cleanupFns: (() => void)[] = [];
 
-        v1Elements.forEach((element) => {
+        gridElements.forEach((element) => {
             const defaultDuration = 30;
             (element as HTMLElement).style.animationDuration = defaultDuration + 's';
             const hoverDuration = 8;
