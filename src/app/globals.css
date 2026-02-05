@@ -19,15 +19,9 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-=======
-=======
->>>>>>> Stashed changes
   --off-white:#F2EFE5;
   --dark-brown: #332B2B;
   --gradientAniHoverSpeed: 1s;
->>>>>>> Stashed changes
 }
 
 
@@ -125,14 +119,11 @@ p{
   display: flex;
   flex-direction: column;
   flex-grow:0;
-<<<<<<< Updated upstream
 }
 
 grid-content{
   position: absolute;
   top:0;
-=======
->>>>>>> Stashed changes
 }
 
 .rectangle-small {
@@ -152,11 +143,8 @@ grid-content{
 
 .rectangle-full {
   width: 100%;
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-
-
 }
+
 .landing-col-s{
     border: 0.25px solid #332b2b;
     width: 12px;
@@ -175,20 +163,13 @@ grid-content{
   width: 100%;
   height:100%;
   background-color: blue;
-
-=======
-=======
->>>>>>> Stashed changes
   overflow: hidden;
 }
+
 .rectangle-200 {
   position:relative;
   width: 200%;
   overflow: hidden;
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
 }
 
 .row24px {
@@ -215,7 +196,6 @@ grid-content{
 
 .row-eighth {
   height: 6.25%;
-<<<<<<< Updated upstream
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -225,8 +205,6 @@ grid-content{
 
 .row-quarter {
   height: 12.5%;
-=======
->>>>>>> Stashed changes
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -235,13 +213,8 @@ grid-content{
 
 }
 
-<<<<<<< Updated upstream
 .row-half {
   height: 25%;
-=======
-.row-quarter {
-  height: 12.5%;
->>>>>>> Stashed changes
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -250,24 +223,7 @@ grid-content{
   overflow: hidden;
 }
 
-<<<<<<< Updated upstream
 .row-full {
-  height: 50%;
-=======
-.row-half {
-  height: 25%;
->>>>>>> Stashed changes
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  gap: 0px;
-  overflow: hidden;
-}
-
-<<<<<<< Updated upstream
-=======
-.row-full {
-  height: 50%;
   height: 50%;
   width: 100%;
   display: flex;
@@ -276,7 +232,6 @@ grid-content{
   overflow: hidden;
 }
 
->>>>>>> Stashed changes
 .landingCell{
   position:relative;
   position:relative;
@@ -326,19 +281,9 @@ grid-content{
   0% { transform: translateY(0%); }
   20% { transform: translateY(0%); }
   40% { transform: translateY(-16%); }
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
   60% { transform: translateY(-32%); }
   80% { transform: translateY(-58%); }
   100% { transform: translateY(-88%); }
-=======
-  60% { transform: translateY(-36%); }
-  80% { transform: translateY(-88%); }
->>>>>>> Stashed changes
-=======
-  60% { transform: translateY(-36%); }
-  80% { transform: translateY(-88%); }
->>>>>>> Stashed changes
 }
 
 .gradient-animation-v2 {
@@ -409,15 +354,7 @@ grid-content{
 
 @keyframes gradientmove4 {
   0% { transform: translateY(0%); }
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
   10% { transform: translateY(-6%); }
-=======
-  10% { transform: translateY(-60%); }
->>>>>>> Stashed changes
-=======
-  10% { transform: translateY(-60%); }
->>>>>>> Stashed changes
   20% { transform: translateY(-20%); }
   40% { transform: translateY(-36%); }
   60% { transform: translateY(-56%); }
