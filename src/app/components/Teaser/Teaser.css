@@ -1,9 +1,12 @@
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 .teaser-text{
     width:100%;
     text-align: center;
     background-color: green;
 =======
+=======
+>>>>>>> Stashed changes
 .countdown{
     color:var(--off-white);
     font-size: 180px;
@@ -35,5 +38,8 @@
     height:100%;
     width: 100%;
     background-color:red;
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 }
