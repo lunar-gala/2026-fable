@@ -3,8 +3,17 @@
 import { Content } from "next/dist/compiled/@next/font/dist/google";
 import { COLORS } from "../constants";
 import LandingAnimation from "./Landing/LandingAnimation";
+<<<<<<< Updated upstream
 import TeaserGradientAnimation from "./Teaser/TeaserGradientAnimation";
 import { motion, useScroll } from "motion/react";
+=======
+import LandingAssetAnimation from "./Landing/LandingAssetAnimation";
+import TeaserGradientAnimation2 from "./Teaser/TeaserGradientAnimation2";
+import TeaserContent from "./Teaser/TeaserContent";
+import TeaserGradientAnimation from "./Teaser/TeaserGradientAnimation";
+import Countdown from "./Teaser/Countdown";
+import WordmarkAnimation from "./Landing/WordmarkAnimation";
+>>>>>>> Stashed changes
 
 
 export default function MainContent() {
@@ -22,7 +31,14 @@ export default function MainContent() {
         transition: "opacity 0.1s ease-out",
       }}
       >
+<<<<<<< Updated upstream
       <TeaserGradientAnimation />
+=======
+      <div className="gradient-grid teaser-textcontent">      
+        <TeaserContent/>
+      </div>
+      <TeaserGradientAnimation2/>
+>>>>>>> Stashed changes
 
       </div>
     </>
