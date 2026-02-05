@@ -1,7 +1,7 @@
 
 .countdown{
     color:var(--off-white);
-    font-size: 180px;
+    font-size: 154px;
     font-family: var(--font-feature-display-condensed);
     -webkit-text-stroke: 1px var(--dark-brown);
     letter-spacing: -4px;
