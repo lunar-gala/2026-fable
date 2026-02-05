@@ -5,6 +5,8 @@ import { COLORS } from "../constants";
 import LandingAnimation from "./Landing/LandingAnimation";
 import AssetAnimation, { Stage } from "./Landing/AssetAnimation";
 import TeaserGradientAnimation from "./Teaser/TeaserGradientAnimation";
+import TeaserContent from "./Teaser/TeaserContent";
+
 import WordmarkAnimation from "./Landing/WordmarkAnimation";
 import { useScroll } from "motion/react";
 import { Asset } from "next/font/google";
@@ -47,6 +49,7 @@ export default function MainContent() {
         }}
         >
           <TeaserGradientAnimation />
+          <div className="gradient-grid teaser-textcontent"><TeaserContent/> </div>
           <div className="wordmarkContainer"><WordmarkAnimation/></div>
           <AssetAnimation stage={stage} />
           {/* <LandingAnimation/> */}

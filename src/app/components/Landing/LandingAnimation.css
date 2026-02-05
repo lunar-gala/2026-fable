@@ -7,24 +7,24 @@
 
 .small-quarter {
   width: 12px;
-    flex-shrink: 0;
+  flex-shrink: 0;
 }
 
 .small-half {
   width: 12px;
-    flex-shrink: 0;
+  flex-shrink: 0;
 
 }
 
 .half-eighth {
-  width: 32%;
-  overflow: hidden;
+  position:relative;
+  width: 50%;
 
 }
 
 .full-full {
-  width: 50%;
-  overflow: hidden;
+  position:relative;
+  width: 100%;
 
 }
 

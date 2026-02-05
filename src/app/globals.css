@@ -5,6 +5,18 @@
   --foreground: #171717;
   --gradientAniHoverSpeed: 1s;
 }
+@font-face {
+  font-family: 'FeatureDisplayCondensed';
+  src: local('FeatureDisplayCondensed'), url(./fonts/FeatureDisplayCondensed-Regular-Trial.otf) format('opentype');
+  font-weight:400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'FeatureDisplayCondensed';
+  src: local('FeatureDisplayCondensed'), url(./fonts/FeatureDisplayCondensed-RegularItalic-Trial.otf) format('opentype');
+  font-weight:400;
+  font-style: italic;
+}
 
 @theme inline {
   --color-background: var(--background);
@@ -14,17 +26,22 @@
   --font-aileron: "aileron", sans-serif; 
 }
 
+
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
+    --off-white:#F2EFE5;
+    --dark-brown: #332B2B;
   }
 }
 
 body {
   background: var(--background);
-  color: var(--foreground);
+  color: var(--dark-brown);
   font-family: "aileron", sans-serif;  
+  --font-feature-display-condensed: 'FeatureDisplayCondensed', serif;
+  --font-feature-display-condensed: 'FeatureDisplayCondensed', serif;
 }
 
 .aileron {
@@ -37,6 +54,37 @@ body {
 
 .aileron.bold {
   font-weight: 700;
+}
+
+.FeatureDisplayCondensed {
+  font-family: var(--font-feature-display-condensed);
+}
+.FeatureDisplayCondensed.italic {
+  font-style: italic;
+}
+
+.FeatureDisplayCondensed {
+  font-family: var(--font-feature-display-condensed);
+}
+.FeatureDisplayCondensed.italic {
+  font-style: italic;
+}
+
+h2{
+  font-family: var(--font-feature-display-condensed);
+  font-size: 48px;
+  line-height: 96%;
+  letter-spacing: -2%;
+}
+
+p{
+  font-size: 16px;
+  line-height: 14px;
+}
+
+.off-white-bg{
+  background-color: var(--off-white);
+  color: var(--dark-brown);
 }
 
 /* Landing gradient animation */
@@ -89,6 +137,12 @@ grid-content{
   height:100%;
   background-color: blue;
 
+}
+
+.rectangle-200 {
+  position:relative;
+  width: 200%;
+  overflow: hidden;
 }
 
 .row24px {

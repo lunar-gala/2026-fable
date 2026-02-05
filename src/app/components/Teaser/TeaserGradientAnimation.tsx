@@ -34,14 +34,6 @@ const rows: RowConfig[] = [
         ]
     },
     {
-        rowClass: "row48px", cells: [
-            { size: "smallsmall", variant: "v1" }, { size: "smallsmall", variant: "v1" }, { size: "halfeighth", variant: "v1" },
-            { size: "smallquarter", variant: "v2" }, { size: "smallhalf", variant: "v4" }, { size: "fullfull", variant: "v2" },
-            { size: "fullfull", variant: "v1" }, { size: "smallhalf", variant: "v1" }, { size: "smallquarter", variant: "v1" },
-            { size: "halfeighth", variant: "v1" }, { size: "smallsmall", variant: "v1" }, { size: "smallsmall", variant: "v1" },
-        ]
-    },
-    {
         rowClass: "row-eighth", cells: [
             { size: "smallsmall", variant: "v1" }, { size: "smallsmall", variant: "v1" }, { size: "halfeighth", variant: "v1" },
             { size: "smallquarter", variant: "v2" }, { size: "smallhalf", variant: "v4" }, { size: "fullfull", variant: "v2" },
@@ -91,14 +83,6 @@ const rows: RowConfig[] = [
     },
     {
         rowClass: "row-eighth", cells: [
-            { size: "smallsmall", variant: "v1" }, { size: "smallsmall", variant: "v1" }, { size: "halfeighth", variant: "v1" },
-            { size: "smallquarter", variant: "v2" }, { size: "smallhalf", variant: "v4" }, { size: "fullfull", variant: "v2" },
-            { size: "fullfull", variant: "v1" }, { size: "smallhalf", variant: "v1" }, { size: "smallquarter", variant: "v1" },
-            { size: "halfeighth", variant: "v1" }, { size: "smallsmall", variant: "v1" }, { size: "smallsmall", variant: "v1" },
-        ]
-    },
-    {
-        rowClass: "row48px", cells: [
             { size: "smallsmall", variant: "v1" }, { size: "smallsmall", variant: "v1" }, { size: "halfeighth", variant: "v1" },
             { size: "smallquarter", variant: "v2" }, { size: "smallhalf", variant: "v4" }, { size: "fullfull", variant: "v2" },
             { size: "fullfull", variant: "v1" }, { size: "smallhalf", variant: "v1" }, { size: "smallquarter", variant: "v1" },
