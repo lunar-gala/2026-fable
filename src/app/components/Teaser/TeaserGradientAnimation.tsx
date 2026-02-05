@@ -29,80 +29,80 @@ const rows: RowConfig[] = [
         rowClass: "row24px", cells: [
             { size: "smallsmall", variant: "v1" }, { size: "smallsmall", variant: "v1" }, { size: "halfeighth", variant: "v1" },
             { size: "smallquarter", variant: "v1" }, { size: "smallhalf", variant: "v1" }, { size: "fullfull", variant: "v1" },
-            { size: "fullfull", variant: "v1" }, { size: "smallhalf", variant: "v1" }, { size: "smallquarter", variant: "v2" },
+            { size: "fullfull", variant: "v1" }, { size: "smallhalf", variant: "v1" }, { size: "smallquarter", variant: "v1" },
             { size: "halfeighth", variant: "v1" }, { size: "smallsmall", variant: "v1" }, { size: "smallsmall", variant: "v1" },
         ]
     },
     {
         rowClass: "row-eighth", cells: [
             { size: "smallsmall", variant: "v1" }, { size: "smallsmall", variant: "v1" }, { size: "halfeighth", variant: "v1" },
-            { size: "smallquarter", variant: "v2" }, { size: "smallhalf", variant: "v4" }, { size: "fullfull", variant: "v2" },
-            { size: "fullfull", variant: "v1" }, { size: "smallhalf", variant: "v1" }, { size: "smallquarter", variant: "v1" },
-            { size: "halfeighth", variant: "v1" }, { size: "smallsmall", variant: "v1" }, { size: "smallsmall", variant: "v1" },
+            { size: "smallquarter", variant: "v2" }, { size: "smallhalf", variant: "v1" }, { size: "fullfull", variant: "v2" },
+            { size: "fullfull", variant: "v2" }, { size: "smallhalf", variant: "v1" }, { size: "smallquarter", variant: "v1" },
+            { size: "halfeighth", variant: "v2" }, { size: "smallsmall", variant: "v2" }, { size: "smallsmall", variant: "v1" },
         ]
     },
     {
         rowClass: "row-quarter", cells: [
             { size: "smallsmall", variant: "v1" }, { size: "smallsmall", variant: "v1" }, { size: "halfeighth", variant: "v1" },
-            { size: "smallquarter", variant: "v2" }, { size: "smallhalf", variant: "v4" }, { size: "fullfull", variant: "v2" },
-            { size: "fullfull", variant: "v1" }, { size: "smallhalf", variant: "v1" }, { size: "smallquarter", variant: "v1" },
-            { size: "halfeighth", variant: "v1" }, { size: "smallsmall", variant: "v1" }, { size: "smallsmall", variant: "v1" },
+            { size: "smallquarter", variant: "v2" }, { size: "smallhalf", variant: "v1" }, { size: "fullfull", variant: "v2" },
+            { size: "fullfull", variant: "v1" }, { size: "smallhalf", variant: "v2" }, { size: "smallquarter", variant: "v1" },
+            { size: "halfeighth", variant: "v2" }, { size: "smallsmall", variant: "v2" }, { size: "smallsmall", variant: "v3" },
         ]
     },
     {
         rowClass: "row-half", cells: [
-            { size: "smallsmall", variant: "v1" }, { size: "smallsmall", variant: "v1" }, { size: "halfeighth", variant: "v1" },
-            { size: "smallquarter", variant: "v2" }, { size: "smallhalf", variant: "v4" }, { size: "fullfull", variant: "v2" },
-            { size: "fullfull", variant: "v1" }, { size: "smallhalf", variant: "v1" }, { size: "smallquarter", variant: "v1" },
-            { size: "halfeighth", variant: "v1" }, { size: "smallsmall", variant: "v1" }, { size: "smallsmall", variant: "v1" },
+            { size: "smallsmall", variant: "v1" }, { size: "smallsmall", variant: "v1" }, { size: "halfeighth", variant: "v2" },
+            { size: "smallquarter", variant: "v1" }, { size: "smallhalf", variant: "v3" }, { size: "fullfull", variant: "v1" },
+            { size: "fullfull", variant: "v2" }, { size: "smallhalf", variant: "v1" }, { size: "smallquarter", variant: "v2" },
+            { size: "halfeighth", variant: "v3" }, { size: "smallsmall", variant: "v3" }, { size: "smallsmall", variant: "v1" },
         ]
     },
     {
         rowClass: "row-full", cells: [
-            { size: "smallsmall", variant: "v1" }, { size: "smallsmall", variant: "v1" }, { size: "halfeighth", variant: "v1" },
-            { size: "smallquarter", variant: "v2" }, { size: "smallhalf", variant: "v4" }, { size: "fullfull", variant: "v4" },
-            { size: "fullfull", variant: "v1" }, { size: "smallhalf", variant: "v1" }, { size: "smallquarter", variant: "v1" },
-            { size: "halfeighth", variant: "v1" }, { size: "smallsmall", variant: "v1" }, { size: "smallsmall", variant: "v1" },
+            { size: "smallsmall", variant: "v1" }, { size: "smallsmall", variant: "v2" }, { size: "halfeighth", variant: "v1" },
+            { size: "smallquarter", variant: "v2" }, { size: "smallhalf", variant: "v1" }, { size: "fullfull", variant: "v3" },
+            { size: "fullfull", variant: "v2" }, { size: "smallhalf", variant: "v1" }, { size: "smallquarter", variant: "v2" },
+            { size: "halfeighth", variant: "v3" }, { size: "smallsmall", variant: "v3" }, { size: "smallsmall", variant: "v1" },
         ]
     },
     {
         rowClass: "row-half", cells: [
-            { size: "smallsmall", variant: "v1" }, { size: "smallsmall", variant: "v1" }, { size: "halfeighth", variant: "v1" },
-            { size: "smallquarter", variant: "v2" }, { size: "smallhalf", variant: "v4" }, { size: "fullfull", variant: "v2" },
-            { size: "fullfull", variant: "v1" }, { size: "smallhalf", variant: "v1" }, { size: "smallquarter", variant: "v1" },
-            { size: "halfeighth", variant: "v1" }, { size: "smallsmall", variant: "v1" }, { size: "smallsmall", variant: "v1" },
+            { size: "smallsmall", variant: "v2" }, { size: "smallsmall", variant: "v1" }, { size: "halfeighth", variant: "v2" },
+            { size: "smallquarter", variant: "v2" }, { size: "smallhalf", variant: "v1" }, { size: "fullfull", variant: "v2" },
+            { size: "fullfull", variant: "v3" }, { size: "smallhalf", variant: "v4" }, { size: "smallquarter", variant: "v1" },
+            { size: "halfeighth", variant: "v3" }, { size: "smallsmall", variant: "v4" }, { size: "smallsmall", variant: "v4" },
         ]
     },
     {
         rowClass: "row-quarter", cells: [
-            { size: "smallsmall", variant: "v1" }, { size: "smallsmall", variant: "v1" }, { size: "halfeighth", variant: "v1" },
-            { size: "smallquarter", variant: "v2" }, { size: "smallhalf", variant: "v4" }, { size: "fullfull", variant: "v2" },
-            { size: "fullfull", variant: "v1" }, { size: "smallhalf", variant: "v1" }, { size: "smallquarter", variant: "v1" },
-            { size: "halfeighth", variant: "v1" }, { size: "smallsmall", variant: "v1" }, { size: "smallsmall", variant: "v1" },
+            { size: "smallsmall", variant: "v1" }, { size: "smallsmall", variant: "v2" }, { size: "halfeighth", variant: "v1" },
+            { size: "smallquarter", variant: "v1" }, { size: "smallhalf", variant: "v1" }, { size: "fullfull", variant: "v3" },
+            { size: "fullfull", variant: "v4" }, { size: "smallhalf", variant: "v4" }, { size: "smallquarter", variant: "v1" },
+            { size: "halfeighth", variant: "v4" }, { size: "smallsmall", variant: "v4" }, { size: "smallsmall", variant: "v4" },
         ]
     },
     {
         rowClass: "row-eighth", cells: [
-            { size: "smallsmall", variant: "v1" }, { size: "smallsmall", variant: "v1" }, { size: "halfeighth", variant: "v1" },
-            { size: "smallquarter", variant: "v2" }, { size: "smallhalf", variant: "v4" }, { size: "fullfull", variant: "v2" },
-            { size: "fullfull", variant: "v1" }, { size: "smallhalf", variant: "v1" }, { size: "smallquarter", variant: "v1" },
-            { size: "halfeighth", variant: "v1" }, { size: "smallsmall", variant: "v1" }, { size: "smallsmall", variant: "v1" },
+            { size: "smallsmall", variant: "v1" }, { size: "smallsmall", variant: "v2" }, { size: "halfeighth", variant: "v1" },
+            { size: "smallquarter", variant: "v1" }, { size: "smallhalf", variant: "v1" }, { size: "fullfull", variant: "v4" },
+            { size: "fullfull", variant: "v2" }, { size: "smallhalf", variant: "v3" }, { size: "smallquarter", variant: "v4" },
+            { size: "halfeighth", variant: "v4" }, { size: "smallsmall", variant: "v3" }, { size: "smallsmall", variant: "v2" },
         ]
     },
     {
         rowClass: "row24px", cells: [
             { size: "smallsmall", variant: "v1" }, { size: "smallsmall", variant: "v1" }, { size: "halfeighth", variant: "v1" },
-            { size: "smallquarter", variant: "v2" }, { size: "smallhalf", variant: "v4" }, { size: "fullfull", variant: "v2" },
-            { size: "fullfull", variant: "v1" }, { size: "smallhalf", variant: "v1" }, { size: "smallquarter", variant: "v1" },
-            { size: "halfeighth", variant: "v1" }, { size: "smallsmall", variant: "v1" }, { size: "smallsmall", variant: "v1" },
+            { size: "smallquarter", variant: "v4" }, { size: "smallhalf", variant: "v2" }, { size: "fullfull", variant: "v3" },
+            { size: "fullfull", variant: "v4" }, { size: "smallhalf", variant: "v4" }, { size: "smallquarter", variant: "v3" },
+            { size: "halfeighth", variant: "v2" }, { size: "smallsmall", variant: "v1" }, { size: "smallsmall", variant: "v1" },
         ]
     },
     {
         rowClass: "row24px", cells: [
-            { size: "smallsmall", variant: "v1" }, { size: "smallsmall", variant: "v1" }, { size: "halfeighth", variant: "v1" },
-            { size: "smallquarter", variant: "v2" }, { size: "smallhalf", variant: "v4" }, { size: "fullfull", variant: "v2" },
-            { size: "fullfull", variant: "v1" }, { size: "smallhalf", variant: "v1" }, { size: "smallquarter", variant: "v1" },
-            { size: "halfeighth", variant: "v1" }, { size: "smallsmall", variant: "v1" }, { size: "smallsmall", variant: "v4" },
+            { size: "smallsmall", variant: "v1" }, { size: "smallsmall", variant: "v1" }, { size: "halfeighth", variant: "v3" },
+            { size: "smallquarter", variant: "v2" }, { size: "smallhalf", variant: "v4" }, { size: "fullfull", variant: "v4" },
+            { size: "fullfull", variant: "v3" }, { size: "smallhalf", variant: "v1" }, { size: "smallquarter", variant: "v4" },
+            { size: "halfeighth", variant: "v3" }, { size: "smallsmall", variant: "v3" }, { size: "smallsmall", variant: "v4" },
         ]
     },
 ];
