@@ -28,10 +28,26 @@
 
 }
 
-.assetAnimation{
-  position: absolute; 
+.assetAnimation {
+  position: absolute;
   top: 0;
   left: 0;
+  width: 100%;
+  height: 100vh;
+}
+
+.assetAnimation-left {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100vh;
+}
+
+.assetAnimation-right {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100vh;
 }
 
 .wordmarkAnimation{

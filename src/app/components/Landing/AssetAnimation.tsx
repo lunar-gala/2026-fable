@@ -10,49 +10,73 @@ interface AssetAnimationProps {
   stage: Stage;
 }
 
-const stageToFile: Record<Stage, string[]> = {
-  landing: ["/shapes/landingasset.json"],
-  act1: ["/shapes/act1start.json"],
-  act2: ["/shapes/act1to2-0131.json"],
-  act3: ["/shapes/act2end.json", "/shapes/act3asset.json", "/shapes/act3to4.json"],
-  act4: ["/shapes/act4end.json"],
+const stageToFile: Record<Stage, string[][]> = {
+  landing: [["/shapes/landingL.json", "/shapes/landingR.json"]],
+  act1: [[]],
+  act2: [[]],
+  act3: [[]],
+  act4: [[]],
+  // act1: ["/shapes/act1start.json"],
+  // act2: ["/shapes/act1to2-0131.json"],
+  // act3: ["/shapes/act2end.json", "/shapes/act3asset.json", "/shapes/act3to4.json"],
+  // act4: ["/shapes/act4end.json"],
 };
   
+interface AnimationPair {
+  left: object | null;
+  right: object | null;
+}
+
 function AssetAnimation({ stage }: AssetAnimationProps) {
-  const [animationDataList, setAnimationDataList] = useState<object[]>([]);
+  const [animationPairs, setAnimationPairs] = useState<AnimationPair[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
     const loadAnimations = async () => {
-      const files = stageToFile[stage];
-      const dataList = await Promise.all(
-        files.map(async (file) => {
-          const response = await fetch(file);
-          return response.json();
+      const filePairs = stageToFile[stage];
+      const pairs = await Promise.all(
+        filePairs.map(async (pair) => {
+          const [leftFile, rightFile] = pair;
+          const [leftData, rightData] = await Promise.all([
+            leftFile ? fetch(leftFile).then((r) => r.json()) : null,
+            rightFile ? fetch(rightFile).then((r) => r.json()) : null,
+          ]);
+          return { left: leftData, right: rightData };
         })
       );
-      setAnimationDataList(dataList);
+      setAnimationPairs(pairs);
       setCurrentIndex(0);
     };
     loadAnimations();
   }, [stage]);
 
   const handleComplete = () => {
-    if (currentIndex < animationDataList.length - 1) {
+    if (currentIndex < animationPairs.length - 1) {
       setCurrentIndex(currentIndex + 1);
     }
   };
 
-  if (animationDataList.length === 0) {
+  if (animationPairs.length === 0 || !animationPairs[currentIndex]) {
     return <div className="assetAnimation" />;
   }
 
-  const defaultOptions = {
+  const currentPair = animationPairs[currentIndex];
+
+  const leftOptions = {
     loop: false,
     autoplay: true,
-    animationData: animationDataList[currentIndex],
+    animationData: currentPair.left,
     rendererSettings: {
-      preserveAspectRatio: "xMidYMid slice",
+      preserveAspectRatio: "xMinYMid slice",
+    },
+  };
+
+  const rightOptions = {
+    loop: false,
+    autoplay: true,
+    animationData: currentPair.right,
+    rendererSettings: {
+      preserveAspectRatio: "xMaxYMid slice",
     },
   };
 
@@ -62,7 +86,16 @@ function AssetAnimation({ stage }: AssetAnimationProps) {
 
   return (
     <div className="assetAnimation">
-      <Lottie options={defaultOptions} eventListeners={eventListeners} />
+      {currentPair.left && (
+        <div className="assetAnimation-left">
+          <Lottie options={leftOptions} eventListeners={eventListeners} />
+        </div>
+      )}
+      {currentPair.right && (
+        <div className="assetAnimation-right">
+          <Lottie options={rightOptions} eventListeners={eventListeners} />
+        </div>
+      )}
     </div>
   );
 }
