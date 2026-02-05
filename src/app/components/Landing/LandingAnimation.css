@@ -7,17 +7,12 @@
 
 .small-quarter {
   width: 12px;
-  flex-shrink:0;
-  flex-grow:0;
-  overflow: hidden;
-
+    flex-shrink: 0;
 }
 
 .small-half {
   width: 12px;
-  flex-shrink:0;
-  flex-grow:0;
-  overflow: hidden;
+    flex-shrink: 0;
 
 }
 

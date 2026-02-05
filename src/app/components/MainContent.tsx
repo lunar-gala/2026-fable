@@ -8,6 +8,8 @@ import TeaserGradientAnimation from "./Teaser/TeaserGradientAnimation";
 import WordmarkAnimation from "./Landing/WordmarkAnimation";
 import { motion, useScroll } from "motion/react";
 
+;
+
 export default function MainContent() {
   return (
     <>
@@ -24,7 +26,7 @@ export default function MainContent() {
       >
       <div className="wordmarkContainer"><WordmarkAnimation/></div>
       <TeaserGradientAnimation />
-      <LandingAnimation/>
+      {/* <LandingAnimation/> */}
       </div>
     </>
 
