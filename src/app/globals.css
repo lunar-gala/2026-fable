@@ -217,12 +217,11 @@ grid-content{
   100% { transform: translateY(-89%); }
 }
 
-.gradient-animation-4 {
+.gradient-animation-v4 {
   animation-name: gradientmove4;
   animation-iteration-count: infinite;
   animation-timing-function: ease;
 }
-
 
 @keyframes gradientmove4 {
   0% { transform: translateY(0%); }

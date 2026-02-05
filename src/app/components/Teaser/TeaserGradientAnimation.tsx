@@ -172,55 +172,50 @@ export default function LandingAnimation() {
         const gridElements = gridRef.current.querySelectorAll('[class*="gradient-animation-v"]');
 
         const cleanupFns: (() => void)[] = [];
+        const pageLoadTime = performance.now();
 
         gridElements.forEach((element) => {
             const defaultDuration = 30;
             (element as HTMLElement).style.animationDuration = defaultDuration + 's';
             const hoverDuration = 8;
-            const transitionTime = 5000; // 1 second to transition
+            const baseTransitionTime = 5000; // takes 5 seconds to transition
+
+            // Dynamic transition time that scales with page open time
+            // We need this because how CSS calculates animation position causes transition speed will accelerate as time passed.
+            const getTransitionTime = () => {
+                const elapsedSeconds = (performance.now() - pageLoadTime) / 1000;
+                // Scale factor: starts at 1x, increases over time
+                // Every 60 seconds, add 1 second to transition time
+                const scaleFactor = 1 + (elapsedSeconds / 60);
+                return baseTransitionTime * scaleFactor;
+            };
 
             let currentDuration = defaultDuration;
             let targetDuration = defaultDuration;
             let animationFrameId: number | null = null;
             let startTime: number | null = null;
             let startDuration: number | null = null;
+            let activeTransitionTime: number = baseTransitionTime;
 
             function animateDuration(timestamp: number) {
                 if (startTime === null) {
                     startTime = timestamp;
                     startDuration = currentDuration;
-                    if (targetDuration === defaultDuration) {
-                        console.log("++ start");
-                    } else {
-                        console.log("-- start");
-                    }
+                    activeTransitionTime = getTransitionTime();
                 }
 
                 const elapsed = timestamp - startTime;
-                const progress = Math.min(elapsed / transitionTime, 1);
-                // const progress = elapsed / transitionTime % 1;
+                const progress = Math.min(elapsed / activeTransitionTime, 1);
 
                 // Ease out cubic for smooth deceleration
                 const easeProgress = 1 - Math.pow(1 - progress, 3);
-
                 currentDuration = startDuration! + (targetDuration - startDuration!) * easeProgress;
-                if (targetDuration === defaultDuration) {
-                    console.log("++ currentDuration:", currentDuration.toFixed(2));
-                } else {
-                    console.log("-- currentDuration:", currentDuration.toFixed(2));
-                }
                 (element as HTMLElement).style.animationDuration = currentDuration + 's';
-
-                // console.log({elapsed, currentDuration, targetDuration});
 
                 if (progress < 1) {
                     animationFrameId = requestAnimationFrame(animateDuration);
                 } else {
-                    if (targetDuration === defaultDuration) {
-                        console.log("++ end");
-                    } else {
-                        console.log("-- end");
-                    }
+   
                     animationFrameId = null;
                     startTime = null;
                     startDuration = null;
@@ -275,7 +270,6 @@ export default function LandingAnimation() {
                             key={cellIdx}
                             className={`${sizeClassMap[cell.size]} landingCell gradient-vertical gradient-animation-${cell.variant}`}
                         >
-                            {/* <div className={`gradient-vertical gradient-animation-${cell.variant}`}></div> */}
                         </div>
                     ))}
                 </div>
