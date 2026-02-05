@@ -1,71 +1,61 @@
 "use client";
 
-import Lottie from "lottie-react";
-import { useEffect, useState, useCallback } from "react";
+import { useState, useEffect } from "react";
 import { COLORS } from "../constants";
+import LandingAnimation from "./Landing/LandingAnimation";
+import AssetAnimation, { Stage } from "./Landing/AssetAnimation";
+import TeaserGradientAnimation from "./Teaser/TeaserGradientAnimation";
+import TeaserContent from "./Teaser/TeaserContent";
+
+import WordmarkAnimation from "./Landing/WordmarkAnimation";
+import { useScroll } from "motion/react";
+import { Asset } from "next/font/google";
+
+function getStageFromProgress(progress: number): Stage { // TODO: looks like a terrible implementation
+  if (progress < 0.2) return "landing";
+  if (progress < 0.4) return "act1";
+  if (progress < 0.6) return "act2";
+  if (progress < 0.8) return "act3";
+  return "act4";
+}
 
 export default function MainContent() {
-  const [animationData, setAnimationData] = useState(null);
-  const [opacity, setOpacity] = useState(1);
+  const { scrollYProgress } = useScroll();
+  const [stage, setStage] = useState<Stage>("landing");
 
   useEffect(() => {
-    fetch("/landingdemo-1_22-v1.json")
-      .then((res) => res.json())
-      .then((data) => setAnimationData(data));
-  }, []);
+    // subscribes to a Framer Motion MotionValue; The callback fires continuously as the user scrolls, receiving the current progress (0 to 1) as value:
+    // the on() function returns a function that removes THIS specific callback
+    const unsubscribe = scrollYProgress.on("change", (value) => {
+      const newStage = getStageFromProgress(value);
+      setStage((prev) => (prev !== newStage ? newStage : prev));
+    });
 
-  const handleScroll = useCallback(() => {
-    const scrollY = window.scrollY;
-    const windowHeight = window.innerHeight;
-    // Fade out over the first viewport height of scrolling
-    const newOpacity = Math.max(0, 1 - scrollY / windowHeight);
-    setOpacity(newOpacity);
-  }, []);
-
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [handleScroll]);
-
-  if (!animationData) {
-    return null;
-  }
+    return () => unsubscribe();
+  }, [scrollYProgress]);
 
   return (
-    <div
-      style={{
-        position: "fixed",
-        top: 0,
-        left: "5%",
-        width: "95%",
-        height: "100%",
-        opacity,
-        backgroundColor: COLORS.background,
-        transition: "opacity 0.1s ease-out",
-      }}
-    >
-      <Lottie
-        animationData={animationData}
-        loop={true}
-        autoplay={true}
+    <>
+      <div style={{ position: "relative", width: "100%", height: "500vh" }}>
+        <div id="animationWindow"
         style={{
-          width: "100%",
-          height: "100%",
+          position: "fixed",
+          top: 0,
+          left: "5%",
+          width: "95%",
+          height: "100vh",
+          backgroundColor: COLORS.background,
+          transition: "opacity 0.1s ease-out",
         }}
-      />
-      <img
-        src="/wordmark.png"
-        alt="Lunar Gala"
-        style={{
-          position: "absolute",
-          top: "50%",
-          left: "50%",
-          transform: "translate(-50%, -50%)",
-          maxWidth: "60%",
-          maxHeight: "80%",
-          objectFit: "contain",
-        }}
-      />
-    </div>
+        >
+          <TeaserGradientAnimation />
+          <div className="gradient-grid teaser-textcontent"><TeaserContent/> </div>
+          <div className="wordmarkContainer"><WordmarkAnimation/></div>
+          <AssetAnimation stage={stage} />
+          {/* <LandingAnimation/> */}
+        </div>
+      </div>
+    </>
+
   );
 }

@@ -24,8 +24,8 @@ export default function NavBar() {
 
       <nav className="sidebar-nav" aria-label="Primary">
         {NAV_ITEMS.map((item) => (
-          <button
-            key={item}
+        <button
+          key={item}
             type="button"
             className={`nav-item${activeItem === item ? " active" : ""}`}
             onClick={() => setActiveItem(item)}
@@ -33,9 +33,9 @@ export default function NavBar() {
           >
             <span className="nav-bracket" aria-hidden="true" />
             <span>{item}</span>
-          </button>
-        ))}
-      </nav>
+        </button>
+      ))}
+    </nav>
 
       <div className="sidebar-footer">
         <span className="sidebar-footer-logo">LCS</span>
