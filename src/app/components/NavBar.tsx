@@ -24,17 +24,20 @@ export default function NavBar() {
 
       <nav className="sidebar-nav" aria-label="Primary">
         {NAV_ITEMS.map((item) => (
-        <button
-          key={item}
+          <button
+            key={item}
             type="button"
             className={`nav-item${activeItem === item ? " active" : ""}`}
             onClick={() => setActiveItem(item)}
             aria-current={activeItem === item ? "page" : undefined}
           >
             <span className="nav-bracket" aria-hidden="true" />
-            <span>{item}</span>
-        </button>
-      ))}
+            <span className="nav-label">{item}</span>
+            <span className="nav-coming-soon" aria-hidden="true">
+              Coming Soon
+            </span>
+          </button>
+        ))}
     </nav>
 
       <div className="sidebar-footer">
