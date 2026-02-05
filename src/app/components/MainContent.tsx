@@ -28,7 +28,7 @@ export default function MainContent() {
       const newStage = getStageFromProgress(value);
       setStage((prev) => (prev !== newStage ? newStage : prev));
     });
-    
+
     return () => unsubscribe();
   }, [scrollYProgress]);
 
