@@ -1,0 +1,25 @@
+.small-small {
+  width: 12px;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.small-quarter {
+  width: 12px;
+  flex-shrink: 0;
+}
+
+.small-half {
+  width: 12px;
+  flex-shrink: 0;
+}
+
+.half-eighth {
+  position: relative;
+  width: 50%;
+}
+
+.full-full {
+  position: relative;
+  width: 100%;
+}
