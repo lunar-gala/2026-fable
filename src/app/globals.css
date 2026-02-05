@@ -14,6 +14,8 @@
 }
 
 
+
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -29,12 +31,14 @@
 }
 
 
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
   --font-aileron: "aileron", sans-serif; 
+  --font-feature-display-condensed: 'FeatureDisplayCondensed', serif;
   --font-feature-display-condensed: 'FeatureDisplayCondensed', serif;
 }
 
@@ -48,8 +52,27 @@
 body {
   background: var(--background);
   color: var(--dark-brown);
+  color: var(--dark-brown);
   font-family: "aileron", sans-serif;  
 }
+
+h2{
+  font-family: var(--font-feature-display-condensed);
+  font-size: 48px;
+  line-height: 96%;
+  letter-spacing: -2%;
+}
+
+p{
+  font-size: 16px;
+  line-height: 14px;
+}
+
+.off-white-bg{
+  background-color: var(--off-white);
+  color: var(--dark-brown);
+}
+
 
 h2{
   font-family: var(--font-feature-display-condensed);
@@ -88,6 +111,13 @@ p{
   font-style: italic;
 }
 
+.FeatureDisplayCondensed {
+  font-family: var(--font-feature-display-condensed);
+}
+.FeatureDisplayCondensed.italic {
+  font-style: italic;
+}
+
 /* Landing gradient animation */
 .gradient-grid {
   width: 100%;
@@ -109,10 +139,13 @@ grid-content{
   width: 12px;
   flex-shrink: 0;
   overflow: hidden;
+  overflow: hidden;
 }
 
 .rectangle-half {
   width: 25%;
+  flex-grow: 0;
+  overflow: hidden;
   flex-grow: 0;
   overflow: hidden;
 }
@@ -235,6 +268,7 @@ grid-content{
 =======
 .row-full {
   height: 50%;
+  height: 50%;
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -244,6 +278,7 @@ grid-content{
 
 >>>>>>> Stashed changes
 .landingCell{
+  position:relative;
   position:relative;
   border: 0.25px solid #332b2b;
   flex-grow: 0;
@@ -269,6 +304,9 @@ grid-content{
 }
 
 .gradient-animation-v1 {
+  animation: gradientmove1 30s ease infinite;
+}
+#gradient-animation-v1 {
   animation: gradientmove1 30s ease infinite;
 }
 #gradient-animation-v1 {
@@ -321,6 +359,12 @@ grid-content{
   60% { transform: translateY(-48%); }
   80% { transform: translateY(-58%); }
   100% { transform: translateY(-89%); }
+  0% { transform: translateY(0%); }
+  20% { transform: translateY(-6%); }
+  40% { transform: translateY(-28%); }
+  60% { transform: translateY(-48%); }
+  80% { transform: translateY(-58%); }
+  100% { transform: translateY(-89%); }
 }
 
 .gradient-animation-v3 {
@@ -335,6 +379,13 @@ grid-content{
 }
 
 @keyframes gradientmove3 {
+  0% { transform: translateY(0%); }
+  10% { transform: translateY(-36%); }
+  20% { transform: translateY(-16%); }
+  40% { transform: translateY(-32%); }
+  60% { transform: translateY(-62%); }
+  80% { transform: translateY(-70%); }
+  100% { transform: translateY(-89%); }
   0% { transform: translateY(0%); }
   10% { transform: translateY(-36%); }
   20% { transform: translateY(-16%); }
