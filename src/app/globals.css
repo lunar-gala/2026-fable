@@ -3,18 +3,33 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --sidebar-width: 72px;
+  --color-cream: #f5f2eb;
+  --color-cream-light: #faf8f4;
+  --color-blue-muted: #8fa4b8;
+  --color-text: #2a2424;
+  --color-text-light: #5a5454;
+  --font-display: "Cormorant Garamond", Georgia, serif;
+  --font-body: "DM Sans", -apple-system, sans-serif;
   --gradientAniHoverSpeed: 1s;
+  --off-white: #f2efe5;
+  --dark-brown: #332b2b;
 }
+
 @font-face {
   font-family: 'FeatureDisplayCondensed';
-  src: local('FeatureDisplayCondensed'), url(./fonts/FeatureDisplayCondensed-Regular-Trial.otf) format('opentype');
-  font-weight:400;
+  src: local('FeatureDisplayCondensed'),
+    url(./fonts/FeatureDisplayCondensed-Regular-Trial.otf) format('opentype');
+  font-weight: 400;
   font-style: normal;
 }
+
 @font-face {
   font-family: 'FeatureDisplayCondensed';
-  src: local('FeatureDisplayCondensed'), url(./fonts/FeatureDisplayCondensed-RegularItalic-Trial.otf) format('opentype');
-  font-weight:400;
+  src: local('FeatureDisplayCondensed'),
+    url(./fonts/FeatureDisplayCondensed-RegularItalic-Trial.otf)
+      format('opentype');
+  font-weight: 400;
   font-style: italic;
 }
 
@@ -41,9 +56,155 @@ body {
   color: var(--dark-brown);
   font-family: "aileron", sans-serif;  
   --font-feature-display-condensed: 'FeatureDisplayCondensed', serif;
-  --font-feature-display-condensed: 'FeatureDisplayCondensed', serif;
 }
 
+.sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: var(--sidebar-width);
+  background: var(--color-cream-light);
+  border-right: 1px solid rgba(42, 36, 36, 0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 24px 0;
+  z-index: 100;
+}
+
+.sidebar-logo {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  font-family: var(--font-display);
+  font-size: 28px;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  color: var(--color-text);
+  margin-bottom: 40px;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+  background: transparent;
+  border: none;
+}
+
+.sidebar-logo:hover {
+  opacity: 0.7;
+}
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+}
+
+.nav-item {
+  position: relative;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  font-family: var(--font-body);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-text-light);
+  padding: 16px 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: transparent;
+  border: none;
+}
+
+.nav-item:hover {
+  color: var(--color-text);
+}
+
+.nav-item.active {
+  color: var(--color-text);
+}
+
+.nav-bracket {
+  width: 12px;
+  height: 12px;
+  border: 1px solid currentColor;
+  border-radius: 0 0 0 4px;
+  border-top: none;
+  border-right: none;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+
+.nav-label {
+  transition: opacity 0.3s ease;
+}
+
+.nav-coming-soon {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  font-family: var(--font-body);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-text);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.nav-item:hover .nav-label {
+  opacity: 0;
+}
+
+.nav-item:hover .nav-bracket,
+.nav-item.active:hover .nav-bracket {
+  opacity: 0;
+}
+
+.nav-item:hover .nav-coming-soon {
+  opacity: 1;
+}
+
+.nav-item.active .nav-bracket {
+  opacity: 1;
+}
+
+.sidebar-footer {
+  margin-top: auto;
+}
+
+.sidebar-footer-logo {
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-style: italic;
+  color: var(--color-text-light);
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+}
+
+@media (max-width: 768px) {
+  :root {
+    --sidebar-width: 56px;
+  }
+
+  .sidebar-logo {
+    font-size: 20px;
+  }
+
+  .nav-item {
+    font-size: 9px;
+    padding: 12px 6px;
+  }
+}
 .aileron {
   font-family: var(--font-aileron);
 }
@@ -72,14 +233,14 @@ body {
 
 h2{
   font-family: var(--font-feature-display-condensed);
-  font-size: 48px;
+  font-size: clamp(18px, 3.5vw, 36px);
   line-height: 96%;
-  letter-spacing: -2%;
+  letter-spacing: -0.02em;
 }
 
 p{
-  font-size: 16px;
-  line-height: 14px;
+  font-size: clamp(10px, 1.2vw, 14px);
+  line-height: 1.4;
 }
 
 .off-white-bg{
