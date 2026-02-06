@@ -1,10 +1,7 @@
 "use client";
 import './Act1.css';
 import { useEffect, useRef } from "react";
-import { motion, useScroll, useTransform } from "motion/react";
-
-
-
+import { motion, useTransform } from "motion/react";
 
 interface CellConfig {
     size: "smallsmall" | "smallquarter" | "smallhalf" | "halfeighth" | "fullfull";
@@ -147,9 +144,14 @@ export default function LandingAnimation() {
 
     return (
         <div className="gradient-grid" 
-             ref={gridRef} 
-             style={{ 
-            background: 'linear-gradient(180deg, #B0D2DE 39%, #F2EFE5 100%)' }}>
+            ref={gridRef} 
+            style={{ 
+            background: 'linear-gradient(180deg, #B0D2DE 39%, #F2EFE5 100%)', 
+            width: '95%',
+            position: "fixed",
+            top: 0,
+            left: "5%"
+        }}>
             {rows.map((row, rowIdx) => (
                 <div className={row.rowClass} key={rowIdx}>
                     {row.cells.map((cell, cellIdx) => (                        
