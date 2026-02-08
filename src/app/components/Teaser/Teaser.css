@@ -60,4 +60,8 @@
         font-size:8em;
         line-height: 110px;
     }
+    .fulltext-gridcell{
+        padding-left:8px;
+        padding-right:8px;  
+    }
 }
