@@ -52,13 +52,11 @@
     padding: 12px 6px;
   }
   /*grid displaying/hiding*/
-  .c3{
-    display: none;
-  }
+
   /* type size */
     .countdown{
-        font-size:8em;
-        line-height: 110px;
+        font-size:6em;
+        line-height: 80px;
     }
     .fulltext-gridcell{
         padding-left:8px;
