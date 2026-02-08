@@ -360,8 +360,8 @@ grid-content{
 }
 
 .landingCell{
-  border-left-style: 0.25px solid #332b2b;
-  border-right-style: 0.25px solid #332b2b;
+  border: 0.25px solid #332b2b;
+
   flex-grow: 0;
 }
 
