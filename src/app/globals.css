@@ -191,20 +191,7 @@ body {
   text-orientation: mixed;
 }
 
-@media (max-width: 768px) {
-  :root {
-    --sidebar-width: 56px;
-  }
 
-  .sidebar-logo {
-    font-size: 20px;
-  }
-
-  .nav-item {
-    font-size: 9px;
-    padding: 12px 6px;
-  }
-}
 .aileron {
   font-family: var(--font-aileron);
 }
@@ -233,14 +220,14 @@ body {
 
 h2{
   font-family: var(--font-feature-display-condensed);
-  font-size: clamp(18px, 3.5vw, 36px);
+  font-size:40px;
   line-height: 96%;
   letter-spacing: -0.02em;
 }
 
 p{
-  font-size: clamp(10px, 1.2vw, 14px);
-  line-height: 1.4;
+  font-size: 1em;
+  line-height: 1em;
 }
 
 .center-container{
@@ -457,29 +444,45 @@ grid-content{
 }
 
 
-/* hiding cells on mobile */
-@media only screen and (max-width: 600px) {
+@media (max-width: 576px) {
+  /*grid displaying/hiding*/
+
+}
+
+@media (max-width: 768px) {
+  :root {
+    --sidebar-width: 56px;
+  }
+  /*nav*/
+  .sidebar-logo {
+    font-size: 20px;
+  }
+
+  .nav-item {
+    font-size: 9px;
+    padding: 12px 6px;
+  }
+  /*grid displaying/hiding*/
+  .c3{
+    display: none;
+  }
+  /* type size */
+  h2{
+    font-size:24px;
+  }
+}
+
+@media (max-width: 992px) { 
+  /*grid displaying/hiding*/
   .c1{
     display: none;
   }
   .c2{
     display: none;
   }
-  .c3{
-    display: none;
+  /* type size */
+  h2{
+    font-size:32px;
   }
-  .c4{
-    display: none;
-  }
-}
 
-
-
-.c4{
-}
-
-.c5{
-} 
-
-.c6{
-}
+ }

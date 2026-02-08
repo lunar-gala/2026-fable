@@ -130,7 +130,7 @@ export default function TeaserContent() {
             <div className='landingCell rectangle-small c4'> </div>
             <div className='landingCell half-eighth c3'> </div>
             <div className='landingCell rectangle-small c2'></div>          
-            <div className='landingCell rectangle-small'></div>    
+            <div className='landingCell rectangle-small c1'></div>    
         </div>   
 
         <div className='row-quarter'>

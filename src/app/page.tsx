@@ -8,7 +8,7 @@ export default function Home() {
       className="relative w-full"
       style={{ backgroundColor: COLORS.background }}
     >
-      <NavBar />
+      {/*  <NavBar />  */}
       <MainContent />
       {/* First section - animation visible */}
       <section className="h-screen" />
