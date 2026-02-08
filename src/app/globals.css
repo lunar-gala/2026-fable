@@ -360,14 +360,14 @@ grid-content{
 }
 
 .landingCell{
-  border: 0.25px solid #332b2b;
+  border-left-style: 0.25px solid #332b2b;
+  border-right-style: 0.25px solid #332b2b;
   flex-grow: 0;
 }
 
 .gradient-vertical {
   width:100%;
   height:2300px;
-  border:0px;
   background: linear-gradient(
     180deg,
     #b0d2de 0%,
