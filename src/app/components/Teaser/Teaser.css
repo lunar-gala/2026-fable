@@ -6,6 +6,7 @@
     -webkit-text-stroke: 1px var(--dark-brown);
     letter-spacing: -0.03em;
     text-align: center;
+    line-height:140px;
     z-index: 1000;
     white-space: nowrap;
     overflow: visible;

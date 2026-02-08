@@ -243,6 +243,12 @@ p{
   line-height: 1.4;
 }
 
+.center-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .off-white-bg{
   background-color: var(--off-white);
   color: var(--dark-brown);
@@ -276,9 +282,9 @@ grid-content{
 .rectangle-full {
   position:relative;
   width: 100%;
-
-
 }
+
+
 .landing-col-s{
     border: 0.25px solid #332b2b;
     width: 12px;
@@ -448,4 +454,32 @@ grid-content{
   60% { transform: translateY(-56%); }
   80% { transform: translateY(-75%); }
   100% { transform: translateY(-89%); }
+}
+
+
+/* hiding cells on mobile */
+@media only screen and (max-width: 600px) {
+  .c1{
+    display: none;
+  }
+  .c2{
+    display: none;
+  }
+  .c3{
+    display: none;
+  }
+  .c4{
+    display: none;
+  }
+}
+
+
+
+.c4{
+}
+
+.c5{
+} 
+
+.c6{
 }
