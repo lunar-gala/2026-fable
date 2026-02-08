@@ -3,7 +3,7 @@
     height: 100%;
     width: 100%;
     color:var(--off-white);
-    font-size:10.1em;
+    font-size:10em;
     font-family: var(--font-feature-display-condensed);
     -webkit-text-stroke: 1px var(--dark-brown);
     letter-spacing: -0.03em;
