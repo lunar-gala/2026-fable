@@ -447,8 +447,14 @@ grid-content{
 
 
 @media (max-width: 576px) {
-  /*grid displaying/hiding*/
-
+  /* type size */
+  h2{
+    font-size:14px;
+  }
+  p{
+    font-size: 12px;
+    line-height: 12px;
+  }
 }
 
 @media (max-width: 768px) {

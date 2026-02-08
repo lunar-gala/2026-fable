@@ -37,3 +37,27 @@
     background-color:red;
 
 }
+
+@media (max-width: 768px) {
+  :root {
+    --sidebar-width: 56px;
+  }
+  /*nav*/
+  .sidebar-logo {
+    font-size: 20px;
+  }
+
+  .nav-item {
+    font-size: 9px;
+    padding: 12px 6px;
+  }
+  /*grid displaying/hiding*/
+  .c3{
+    display: none;
+  }
+  /* type size */
+    .countdown{
+        font-size:8em;
+        line-height: 110px;
+    }
+}
