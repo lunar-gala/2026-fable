@@ -1,11 +1,12 @@
 
 .countdown{
     color:var(--off-white);
-    font-size: 154px;
+    font-size: 160px;
     font-family: var(--font-feature-display-condensed);
     -webkit-text-stroke: 1px var(--dark-brown);
     letter-spacing: -4px;
     text-align: center;
+    line-height:140px;
     z-index: 1000;
 }
 .teaser-textcontent{
