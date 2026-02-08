@@ -49,7 +49,7 @@ export default function Countdown() {
   return (
     <div className="countdown center-container">
       <span>
-        {timeLeft.days} d {String(timeLeft.hours).padStart(2, '0')}h {String(timeLeft.minutes).padStart(2, '0')}m {String(timeLeft.seconds).padStart(2, '0')}s
+        {timeLeft.days}d {String(timeLeft.hours).padStart(2, '0')}h {String(timeLeft.minutes).padStart(2, '0')}m {String(timeLeft.seconds).padStart(2, '0')}s
       </span>
     </div>
   );
