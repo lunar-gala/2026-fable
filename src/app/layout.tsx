@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "FABLE",
+  title: "LG 2026",
   description: "Lunar Gala 2026",
 };
 
