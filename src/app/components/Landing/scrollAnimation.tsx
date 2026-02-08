@@ -1,3 +1,4 @@
+/*
 import { gsap } from "gsap";
 import  { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -11,7 +12,7 @@ LottieScrollTrigger({
  // you can pass a startFrameOffset and/or endFrameOffset to cause the playhead to start/end at a different frame. 
 });
 
-/*
+
 function LottieScrollTrigger(vars) {
   let playhead = { frame: vars.startFrameOffset || 0 },
     target = gsap.utils.toArray(vars.target)[0],
