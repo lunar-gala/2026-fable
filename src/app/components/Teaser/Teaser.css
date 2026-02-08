@@ -1,13 +1,20 @@
 
 .countdown{
     color:var(--off-white);
-    font-size: 160px;
+    font-size: clamp(32px, 10vw, 154px);
     font-family: var(--font-feature-display-condensed);
     -webkit-text-stroke: 1px var(--dark-brown);
-    letter-spacing: -4px;
+    letter-spacing: -0.03em;
     text-align: center;
     line-height:140px;
     z-index: 1000;
+    white-space: nowrap;
+    overflow: visible;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
 }
 .teaser-textcontent{
     position: absolute;
