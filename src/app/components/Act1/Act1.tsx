@@ -4,8 +4,9 @@ import { useEffect, useRef } from "react";
 import { motion, useTransform } from "motion/react";
 
 interface CellConfig {
-    size: "smallsmall" | "smallquarter" | "smallhalf" | "halfeighth" | "fullfull";
-    variant: "v1" | "v2" | "v3" | "v4";
+    size: "size24px" | "size625" | "size125" | "size25" | "size50";
+    variant?: "v1" | "v2";
+    hasMovingGradient?: boolean;
 }
 
 interface RowConfig {
@@ -16,153 +17,236 @@ interface RowConfig {
 const rows: RowConfig[] = [
     {
         rowClass: "row24px", cells: [
-            { size: "smallsmall", variant: "v1" }, { size: "smallsmall", variant: "v1" }, { size: "halfeighth", variant: "v1" },
-            { size: "smallquarter", variant: "v1" }, { size: "smallhalf", variant: "v2" }, { size: "fullfull", variant: "v2" },
-            { size: "fullfull", variant: "v1" }, { size: "smallhalf", variant: "v1" }, { size: "smallquarter", variant: "v1" },
-            { size: "halfeighth", variant: "v1" }, { size: "smallsmall", variant: "v1" }, { size: "smallsmall", variant: "v1" },
+            { size: "size24px" },
+            { size: "size24px" },
+            { size: "size625" },
+            { size: "size125" },
+            { size: "size25" },
+            { size: "size50" },
+            { size: "size50" },
+            { size: "size25" },
+            { size: "size125" },
+            { size: "size625" },
+            { size: "size24px" },
+            { size: "size24px" },
         ]
     },
     {
         rowClass: "row24px", cells: [
-            { size: "smallsmall", variant: "v1" }, { size: "smallsmall", variant: "v1" }, { size: "halfeighth", variant: "v1" },
-            { size: "smallquarter", variant: "v1" }, { size: "smallhalf", variant: "v1" }, { size: "fullfull", variant: "v1" },
-            { size: "fullfull", variant: "v1" }, { size: "smallhalf", variant: "v1" }, { size: "smallquarter", variant: "v2" },
-            { size: "halfeighth", variant: "v1" }, { size: "smallsmall", variant: "v1" }, { size: "smallsmall", variant: "v1" },
+            { size: "size24px" },
+            { size: "size24px" },
+            { size: "size625" },
+            { size: "size125" },
+            { size: "size25" },
+            { size: "size50" },
+            { size: "size50" },
+            { size: "size25" },
+            { size: "size125" },
+            { size: "size625" },
+            { size: "size24px" },
+            { size: "size24px" },
         ]
     },
     {
         rowClass: "row48px", cells: [
-            { size: "smallsmall", variant: "v1" }, { size: "smallsmall", variant: "v1" }, { size: "halfeighth", variant: "v1" },
-            { size: "smallquarter", variant: "v2" }, { size: "smallhalf", variant: "v4" }, { size: "fullfull", variant: "v2" },
-            { size: "fullfull", variant: "v1" }, { size: "smallhalf", variant: "v1" }, { size: "smallquarter", variant: "v1" },
-            { size: "halfeighth", variant: "v1" }, { size: "smallsmall", variant: "v1" }, { size: "smallsmall", variant: "v1" },
+            { size: "size24px" },
+            { size: "size24px" },
+            { size: "size625" },
+            { size: "size125" },
+            { size: "size25", variant: "v1", hasMovingGradient: true },
+            { size: "size50" },
+            { size: "size50" },
+            { size: "size25" },
+            { size: "size125" },
+            { size: "size625" },
+            { size: "size24px" },
+            { size: "size24px" },
         ]
     },
     {
         rowClass: "row-eighth", cells: [
-            { size: "smallsmall", variant: "v1" }, { size: "smallsmall", variant: "v1" }, { size: "halfeighth", variant: "v1" },
-            { size: "smallquarter", variant: "v2" }, { size: "smallhalf", variant: "v4" }, { size: "fullfull", variant: "v2" },
-            { size: "fullfull", variant: "v1" }, { size: "smallhalf", variant: "v1" }, { size: "smallquarter", variant: "v1" },
-            { size: "halfeighth", variant: "v1" }, { size: "smallsmall", variant: "v1" }, { size: "smallsmall", variant: "v1" },
+           { size: "size24px" },
+            { size: "size24px" },
+            { size: "size625" },
+            { size: "size125" },
+            { size: "size25", variant: "v1", hasMovingGradient: true },
+            { size: "size50" },
+            { size: "size50" },
+            { size: "size25" },
+            { size: "size125" },
+            { size: "size625" },
+            { size: "size24px" },
+            { size: "size24px" },
         ]
     },
     {
         rowClass: "row-quarter", cells: [
-            { size: "smallsmall", variant: "v1" }, { size: "smallsmall", variant: "v1" }, { size: "halfeighth", variant: "v1" },
-            { size: "smallquarter", variant: "v2" }, { size: "smallhalf", variant: "v4" }, { size: "fullfull", variant: "v2" },
-            { size: "fullfull", variant: "v1" }, { size: "smallhalf", variant: "v1" }, { size: "smallquarter", variant: "v1" },
-            { size: "halfeighth", variant: "v1" }, { size: "smallsmall", variant: "v1" }, { size: "smallsmall", variant: "v1" },
+            { size: "size24px" },
+            { size: "size24px" },
+            { size: "size625", variant: "v1", hasMovingGradient: true },
+            { size: "size125" },
+            { size: "size25" },
+            { size: "size50" },
+            { size: "size50" },
+            { size: "size25" },
+            { size: "size125" },
+            { size: "size625", variant: "v2", hasMovingGradient: true },
+            { size: "size24px" },
+            { size: "size24px" },
         ]
     },
     {
         rowClass: "row-half", cells: [
-            { size: "smallsmall", variant: "v1" }, { size: "smallsmall", variant: "v1" }, { size: "halfeighth", variant: "v1" },
-            { size: "smallquarter", variant: "v2" }, { size: "smallhalf", variant: "v4" }, { size: "fullfull", variant: "v2" },
-            { size: "fullfull", variant: "v1" }, { size: "smallhalf", variant: "v1" }, { size: "smallquarter", variant: "v1" },
-            { size: "halfeighth", variant: "v1" }, { size: "smallsmall", variant: "v1" }, { size: "smallsmall", variant: "v1" },
-        ]
-    },
-    {
-        rowClass: "row-full", cells: [
-            { size: "smallsmall", variant: "v1" }, { size: "smallsmall", variant: "v1" }, { size: "halfeighth", variant: "v1" },
-            { size: "smallquarter", variant: "v2" }, { size: "smallhalf", variant: "v4" }, { size: "fullfull", variant: "v2" },
-            { size: "fullfull", variant: "v1" }, { size: "smallhalf", variant: "v1" }, { size: "smallquarter", variant: "v1" },
-            { size: "halfeighth", variant: "v1" }, { size: "smallsmall", variant: "v1" }, { size: "smallsmall", variant: "v1" },
+           { size: "size24px" },
+            { size: "size24px" },
+            { size: "size625" },
+            { size: "size125" },
+            { size: "size25" },
+            { size: "size50" },
+            { size: "size50", variant: "v2", hasMovingGradient: true },
+            { size: "size25" },
+            { size: "size125" },
+            { size: "size625" },
+            { size: "size24px" },
+            { size: "size24px" },
         ]
     },
     {
         rowClass: "row-half", cells: [
-            { size: "smallsmall", variant: "v1" }, { size: "smallsmall", variant: "v1" }, { size: "halfeighth", variant: "v1" },
-            { size: "smallquarter", variant: "v2" }, { size: "smallhalf", variant: "v4" }, { size: "fullfull", variant: "v2" },
-            { size: "fullfull", variant: "v1" }, { size: "smallhalf", variant: "v1" }, { size: "smallquarter", variant: "v1" },
-            { size: "halfeighth", variant: "v1" }, { size: "smallsmall", variant: "v1" }, { size: "smallsmall", variant: "v1" },
+            { size: "size24px" },
+            { size: "size24px" },
+            { size: "size625" },
+            { size: "size125" },
+            { size: "size25", variant: "v1", hasMovingGradient: true },
+            { size: "size50" },
+            { size: "size50", variant: "v2", hasMovingGradient: true },
+            { size: "size25", variant: "v2", hasMovingGradient: true },
+            { size: "size125" },
+            { size: "size625" },
+            { size: "size24px" },
+            { size: "size24px" },
         ]
     },
     {
         rowClass: "row-quarter", cells: [
-            { size: "smallsmall", variant: "v1" }, { size: "smallsmall", variant: "v1" }, { size: "halfeighth", variant: "v1" },
-            { size: "smallquarter", variant: "v2" }, { size: "smallhalf", variant: "v4" }, { size: "fullfull", variant: "v2" },
-            { size: "fullfull", variant: "v1" }, { size: "smallhalf", variant: "v1" }, { size: "smallquarter", variant: "v1" },
-            { size: "halfeighth", variant: "v1" }, { size: "smallsmall", variant: "v1" }, { size: "smallsmall", variant: "v1" },
+            { size: "size24px" },
+            { size: "size24px" },
+            { size: "size625" },
+            { size: "size125" },
+            { size: "size25" },
+            { size: "size50" },
+            { size: "size50" },
+            { size: "size25", variant: "v2", hasMovingGradient: true },
+            { size: "size125" },
+            { size: "size625" },
+            { size: "size24px" },
+            { size: "size24px" },
         ]
     },
     {
         rowClass: "row-eighth", cells: [
-            { size: "smallsmall", variant: "v1" }, { size: "smallsmall", variant: "v1" }, { size: "halfeighth", variant: "v1" },
-            { size: "smallquarter", variant: "v2" }, { size: "smallhalf", variant: "v4" }, { size: "fullfull", variant: "v2" },
-            { size: "fullfull", variant: "v1" }, { size: "smallhalf", variant: "v1" }, { size: "smallquarter", variant: "v1" },
-            { size: "halfeighth", variant: "v1" }, { size: "smallsmall", variant: "v1" }, { size: "smallsmall", variant: "v1" },
+            { size: "size24px" },
+            { size: "size24px" },
+            { size: "size625" },
+            { size: "size125" },
+            { size: "size25" },
+            { size: "size50" },
+            { size: "size50" },
+            { size: "size25" },
+            { size: "size125" },
+            { size: "size625" },
+            { size: "size24px" },
+            { size: "size24px" },
         ]
     },
     {
         rowClass: "row48px", cells: [
-            { size: "smallsmall", variant: "v1" }, { size: "smallsmall", variant: "v1" }, { size: "halfeighth", variant: "v1" },
-            { size: "smallquarter", variant: "v2" }, { size: "smallhalf", variant: "v4" }, { size: "fullfull", variant: "v2" },
-            { size: "fullfull", variant: "v1" }, { size: "smallhalf", variant: "v1" }, { size: "smallquarter", variant: "v1" },
-            { size: "halfeighth", variant: "v1" }, { size: "smallsmall", variant: "v1" }, { size: "smallsmall", variant: "v1" },
+            { size: "size24px" },
+            { size: "size24px" },
+            { size: "size625" },
+            { size: "size125" },
+            { size: "size25" },
+            { size: "size50" },
+            { size: "size50" },
+            { size: "size25" },
+            { size: "size125" },
+            { size: "size625" },
+            { size: "size24px" },
+            { size: "size24px" },
         ]
     },
     {
         rowClass: "row24px", cells: [
-            { size: "smallsmall", variant: "v1" }, { size: "smallsmall", variant: "v1" }, { size: "halfeighth", variant: "v1" },
-            { size: "smallquarter", variant: "v2" }, { size: "smallhalf", variant: "v4" }, { size: "fullfull", variant: "v2" },
-            { size: "fullfull", variant: "v1" }, { size: "smallhalf", variant: "v1" }, { size: "smallquarter", variant: "v1" },
-            { size: "halfeighth", variant: "v1" }, { size: "smallsmall", variant: "v1" }, { size: "smallsmall", variant: "v1" },
+            { size: "size24px" },
+            { size: "size24px" },
+            { size: "size625" },
+            { size: "size125" },
+            { size: "size25" },
+            { size: "size50" },
+            { size: "size50" },
+            { size: "size25" },
+            { size: "size125" },
+            { size: "size625" },
+            { size: "size24px" },
+            { size: "size24px" },
         ]
     },
     {
         rowClass: "row24px", cells: [
-            { size: "smallsmall", variant: "v1" }, { size: "smallsmall", variant: "v1" }, { size: "halfeighth", variant: "v1" },
-            { size: "smallquarter", variant: "v2" }, { size: "smallhalf", variant: "v4" }, { size: "fullfull", variant: "v2" },
-            { size: "fullfull", variant: "v1" }, { size: "smallhalf", variant: "v1" }, { size: "smallquarter", variant: "v1" },
-            { size: "halfeighth", variant: "v1" }, { size: "smallsmall", variant: "v1" }, { size: "smallsmall", variant: "v1" },
+            { size: "size24px" },
+            { size: "size24px" },
+            { size: "size625" },
+            { size: "size125" },
+            { size: "size25" },
+            { size: "size50" },
+            { size: "size50" },
+            { size: "size25" },
+            { size: "size125" },
+            { size: "size625" },
+            { size: "size24px" },
+            { size: "size24px" },
         ]
     },
 ];
 
 const sizeClassMap = {
-    smallhalf: "small-half",
-    smallquarter: "small-quarter",
-    smallsmall: "small-small",
-    halfeighth: "half-eighth",
-    fullfull: "full-full",
+    size24px: "cell-twenty-fourth",
+    size625: "cell-sixteenth",
+    size125: "cell-eighth",
+    size25: "cell-quarter",
+    size50: "cell-half",
 };
 
 export default function LandingAnimation() {
 
     const gridRef = useRef<HTMLDivElement>(null);
 
-    // useEffect(() => {
-    //     if (!gridRef.current) return;
-    //     const cells = gridRef.current.querySelectorAll(".gradient-vertical");
-    //     const maxDelay = 2;
-    //     cells.forEach((cell) => {
-    //         const randomDelay = Math.random() * maxDelay;
-    //         (cell as HTMLElement).style.animationDelay = `${randomDelay}s`;
-    //     });
-    // }, []);
-
     return (
         <div className="gradient-grid" 
             ref={gridRef} 
             style={{ 
-            background: 'linear-gradient(180deg, #B0D2DE 39%, #F2EFE5 100%)', 
-            width: '95%',
-            position: "fixed",
-            top: 0,
-            left: "5%"
-        }}>
+                background: 'linear-gradient(180deg, #B0D2DE 39%, #F2EFE5 100%)', 
+                width: '95%',
+                position: "fixed",
+                top: 0,
+                left: "5%"
+            }}>
             {rows.map((row, rowIdx) => (
                 <div className={row.rowClass} key={rowIdx}>
                     {row.cells.map((cell, cellIdx) => (                        
-                        <motion.div
+                        <div
                             key={cellIdx}
                             className={`${sizeClassMap[cell.size]} landingCell`}
-                        />
+                        >
+                            {cell.hasMovingGradient && cell.variant ? (
+                                <div
+                                    className={`variant-${cell.variant}`}
+                                />
+                            ) : null}
+                        </div>
                     ))}
                 </div>
             ))}
         </div>
     );
-
 }

@@ -207,6 +207,7 @@ grid-content{
 .landingCell{
   border: 0.25px solid #332b2b;
   flex-grow: 0;
+  background: transparent;
 }
 
 .gradient-vertical {

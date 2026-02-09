@@ -1,25 +1,59 @@
-.small-small {
-  width: 12px;
-  flex-shrink: 0;
-  overflow: hidden;
+.cell-twenty-fourth {
+    width: 1.5625%;
+    flex-shrink: 0;
 }
 
-.small-quarter {
-  width: 12px;
-  flex-shrink: 0;
+.cell-sixteenth {
+    width: 3.125%;
+    flex-shrink: 0;
 }
 
-.small-half {
-  width: 12px;
-  flex-shrink: 0;
+.cell-eighth {
+    width: 6.25%;
+    flex-shrink: 0;
 }
 
-.half-eighth {
-  position: relative;
-  width: 50%;
+.cell-quarter {
+    width: 12.5%;
+    flex-shrink: 0;
 }
 
-.full-full {
-  position: relative;
-  width: 100%;
+.cell-half {
+    width: 25%;
+    flex-shrink: 0;
+}
+
+.variant-v1 {
+    height: 200px;
+    background: linear-gradient(
+        180deg,
+        #B0D2DE 39%,
+        #F2EFE5 100%
+    );
+    animation-name: gradientmove1;
+    animation-duration: 20s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease;
+    animation-direction: alternate;
+    overflow: hidden;
+    position: relative;
+}
+
+.variant-v2 {
+    height: 1320px;
+    background: linear-gradient(
+        180deg,
+        #B0D2DE 0%,
+        #F2EFE5 30%,
+        #B0D2DE 40%,
+        #F2EFE5 70%,
+        #B0D2DE 100%
+    );
+    animation-name: gradientmove2;
+    animation-duration: 20s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease;
+    animation-direction: alternate;
+    overflow: hidden;
+    position: relative;
 }
