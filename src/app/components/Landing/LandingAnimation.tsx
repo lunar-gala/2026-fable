@@ -3,9 +3,6 @@ import './LandingAnimation.css';
 import { useEffect, useRef } from "react";
 import { motion, useScroll, useTransform } from "motion/react";
 
-
-
-
 interface CellConfig {
     size: "smallsmall" | "smallquarter" | "smallhalf" | "halfeighth" | "fullfull";
     variant: "v1" | "v2" | "v3" | "v4";
