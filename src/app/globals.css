@@ -257,16 +257,13 @@ grid-content{
 .rectangle-small {
   position:relative;
   width:1.5%;
-
 }
 
 .rectangle-half {
-  position:relative;
   width:25%;
 }
 
 .rectangle-full {
-  position:relative;
   width:50%;
 }
 
@@ -294,9 +291,9 @@ grid-content{
 
 .rectangle-200 {
   position:relative;
-  width:200%;
-  flex-grow: 4;
+  width:100%;
   overflow: hidden;
+
 }
 
 .row24px {
@@ -365,7 +362,7 @@ grid-content{
   flex-direction: row;
   gap: 0px;
   overflow: hidden;
-  border-top: 0.125px solid #332b2b;
+  border-top: 0.25px solid #332b2b;
   border-bottom: 0.125px solid #332b2b;
 }
 
@@ -375,6 +372,14 @@ grid-content{
 }
 .homeCell-content{
   border:0px;
+  flex-grow: 0;
+}
+
+.gridTextContent{
+    position: absolute;
+    top:0;
+    z-index: 100;
+    pointer-events: none;
 }
 .gradient-vertical {
   width:calc(200% - 1px);
