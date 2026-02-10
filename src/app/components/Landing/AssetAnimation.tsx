@@ -12,7 +12,7 @@ interface AssetAnimationProps {
 
 const stageToFile: Record<Stage, string[][]> = {
   landing: [["/shapes/landingL.json", "/shapes/landingR.json"]],
-  act1: [[]],
+  act1: [["/shapes/Act1-LSide.json", "/shapes/Act1-RSide.json"]],
   act2: [[]],
   act3: [[]],
   act4: [[]],

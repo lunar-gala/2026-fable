@@ -150,9 +150,9 @@ export default function LandingAnimation() {
     }, []);
 
     useEffect(() => {
-        console.log('Setting up hover effects');
+        // console.log('Setting up hover effects');
         if (!gridRef.current) return;
-        console.log('gridRef current:', gridRef.current);
+        // console.log('gridRef current:', gridRef.current);
         // Gradual animation speed change on hover for v1 elements
         const gridElements = gridRef.current.querySelectorAll('[class*="gradient-animation-v"]');
 
@@ -208,7 +208,7 @@ export default function LandingAnimation() {
             }
 
             const handleMouseEnter = () => {
-                console.log('Mouse entered animationFrameId:', animationFrameId);
+                // console.log('Mouse entered animationFrameId:', animationFrameId);
                 targetDuration = hoverDuration;
                 if (animationFrameId) {
                     cancelAnimationFrame(animationFrameId);
@@ -219,7 +219,7 @@ export default function LandingAnimation() {
             };
 
             const handleMouseLeave = () => {
-                console.log('Mouse left animationFrameId:', animationFrameId);
+                // console.log('Mouse left animationFrameId:', animationFrameId);
                 targetDuration = defaultDuration;
                 if (animationFrameId) {
                     cancelAnimationFrame(animationFrameId);
