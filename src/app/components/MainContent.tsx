@@ -48,9 +48,11 @@ export default function MainContent() {
           transition: "opacity 0.1s ease-out",
         }}
         >
-          <TeaserGradientAnimation />
+          <LandingAnimation />
+          {/* 
           <div className="gradient-grid teaser-textcontent"><TeaserContent/> </div>
           <div className="wordmarkContainer"><WordmarkAnimation/></div>
+          */}
           {/* <AssetAnimation stage={stage} /> */}          
           {/* <LandingAnimation/> */}
 

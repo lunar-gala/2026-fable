@@ -116,11 +116,11 @@ const sizeClassMap = {
     fullfull: "full-full",
 };
 
-/*
+
 const sizeWidthMap = {
-    smallhalf: "12px",
-    smallquarter: "12px",
-    smallsmall: "12px",
+    smallhalf: "1%",
+    smallquarter: "1%",
+    smallsmall: "1%",
     halfeighth: "25%",
     fullfull: "50%",
 };
@@ -128,11 +128,11 @@ const sizeWidthMap = {
 const nextSizeWidthMap = {
     smallhalf: "25%",
     smallquarter: "12.5%",
-    smallsmall: "12px",
+    smallsmall: "1%",
     halfeighth: "6.25%",
     fullfull: "50%",
 };
-*/
+
 
 export default function LandingAnimation() {
     const { scrollYProgress } = useScroll();
@@ -251,11 +251,12 @@ export default function LandingAnimation() {
             {rows.map((row, rowIdx) => (
                 <div className={row.rowClass} key={rowIdx}>
                     {row.cells.map((cell, cellIdx) => (                        
-                        <div
+                        <motion.div
                             key={cellIdx}
                             className={`${sizeClassMap[cell.size]} landingCell gradient-vertical gradient-animation-${cell.variant} ${cell.position}`}
+                            style={{ maxWidth: useTransform(scrollYProgress, [0,1], [sizeWidthMap[cell.size], nextSizeWidthMap[cell.size]]) }}
                         >
-                        </div>
+                        </motion.div>
                     ))}
                 </div>
             ))}
