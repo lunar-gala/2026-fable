@@ -1,0 +1,18 @@
+.a1-gradient-v1 {
+  width:calc(200% - 1px);
+  height:1320px;
+    background: linear-gradient(
+        180deg,
+        #B0D2DE 0%,
+        #F2EFE5 30%,
+        #B0D2DE 40%, 
+        #F2EFE5 70%,
+        #B0D2DE 100%
+    );
+}
+.a1-gradient-v2 {
+  width:calc(200% - 1px);
+  height:200px;
+background: linear-gradient(180deg, #B0D2DE 39%, #F2EFE5 100%);
+}
+
