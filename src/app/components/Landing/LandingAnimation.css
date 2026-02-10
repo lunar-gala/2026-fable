@@ -1,29 +1,20 @@
 
 .small-small {
-  width: 12px;
-  flex-shrink:0;
-  overflow: hidden;
 }
 
 .small-quarter {
-  width: 12px;
 }
 
 .small-half {
-  width: 12px;
 
 }
 
 .half-eighth {
-  position:relative;
-  width: 50%;
-
+  width: 6.25%;
 }
 
 .full-full {
-  position:relative;
-  width: 100%;
-
+  width: 50%;
 }
 
 .assetAnimation {

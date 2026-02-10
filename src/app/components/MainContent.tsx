@@ -3,11 +3,12 @@
 import { useState, useEffect } from "react";
 import { COLORS } from "../constants";
 import LandingAnimation from "./Landing/LandingAnimation";
+import LandingContent from "./Landing/LandingContent";
 import AssetAnimation, { Stage } from "./Landing/AssetAnimation";
 import TeaserGradientAnimation from "./Teaser/TeaserGradientAnimation";
 import TeaserContent from "./Teaser/TeaserContent";
-
 import WordmarkAnimation from "./Landing/WordmarkAnimation";
+
 import { useScroll } from "motion/react";
 import { Asset } from "next/font/google";
 
@@ -48,9 +49,8 @@ export default function MainContent() {
           transition: "opacity 0.1s ease-out",
         }}
         >
-          <TeaserGradientAnimation />
-          <div className="gradient-grid teaser-textcontent"><TeaserContent/> </div>
-          <div className="wordmarkContainer"><WordmarkAnimation/></div>
+          <LandingAnimation />
+          {/*<div className="wordmarkContainer"><WordmarkAnimation/></div>*/}
           {/* <AssetAnimation stage={stage} /> */}          
           {/* <LandingAnimation/> */}
 
