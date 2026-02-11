@@ -9,7 +9,7 @@ import './act2Animation.css';
 
 interface CellConfig {
     size: "xs2xl" | "xs2l" | "s2m" | "m2s" | "l2xs" | "xl2xs";
-    variant: "v0" | "v1" | "v2" | "v3" | "v4" | "v5" | "v6";
+    variant: "v0" | "v1" | "v2" | "v3" ;
     position: "c1" | "c2" | "c3" | "c4" | "c5" | "c6";
 }
 /*
@@ -29,7 +29,7 @@ interface RowConfig {
 
 const rows: RowConfig[] = [
     {
-        rowClass: "row24px", size:"xs2xl", cells: [
+        rowClass: "xs-row", size:"xs2xl", cells: [
             { size: "xs2xl", variant: "v0", position: "c1"}, { size: "xs2l", variant: "v0", position: "c2" }, { size: "s2m", variant: "v0", position:"c3" },
             { size: "m2s", variant: "v0", position: "c4" }, { size: "l2xs", variant: "v0", position: "c5" }, { size: "xl2xs", variant: "v0", position:"c6" },
             { size: "xl2xs", variant: "v0", position: "c6" }, { size: "l2xs", variant: "v0", position: "c5" }, { size: "m2s", variant: "v0", position:"c4" },
@@ -37,7 +37,7 @@ const rows: RowConfig[] = [
         ]
     },
     {
-        rowClass: "row24px", size:"xs2l", cells: [
+        rowClass: "xs-row", size:"xs2l", cells: [
             { size: "xs2xl", variant: "v0", position: "c1"}, { size: "xs2l", variant: "v0", position: "c2" }, { size: "s2m", variant: "v0", position:"c3" },
             { size: "m2s", variant: "v0", position: "c4" }, { size: "l2xs", variant: "v0", position: "c5" }, { size: "xl2xs", variant: "v0", position:"c6" },
             { size: "xl2xs", variant: "v0", position: "c6" }, { size: "l2xs", variant: "v0", position: "c5" }, { size: "m2s", variant: "v0", position:"c4" },
@@ -45,7 +45,7 @@ const rows: RowConfig[] = [
         ]
     },
     {
-        rowClass: "row-eighth",size:"s2m", cells: [
+        rowClass: "s-row",size:"s2m", cells: [
             { size: "xs2xl", variant: "v0", position: "c1"}, { size: "xs2l", variant: "v0", position: "c2" }, { size: "s2m", variant: "v0", position:"c3" },
             { size: "m2s", variant: "v0", position: "c4" }, { size: "l2xs", variant: "v0", position: "c5" }, { size: "xl2xs", variant: "v0", position:"c6" },
             { size: "xl2xs", variant: "v0", position: "c6" }, { size: "l2xs", variant: "v0", position: "c5" }, { size: "m2s", variant: "v0", position:"c4" },
@@ -53,7 +53,7 @@ const rows: RowConfig[] = [
         ]
     },
     {
-        rowClass: "row-quarter", size:"m2s", cells: [
+        rowClass: "m-row", size:"m2s", cells: [
             { size: "xs2xl", variant: "v0", position: "c1"}, { size: "xs2l", variant: "v0", position: "c2" }, { size: "s2m", variant: "v0", position:"c3" },
             { size: "m2s", variant: "v0", position: "c4" }, { size: "l2xs", variant: "v0", position: "c5" }, { size: "xl2xs", variant: "v0", position:"c6" },
             { size: "xl2xs", variant: "v0", position: "c6" }, { size: "l2xs", variant: "v0", position: "c5" }, { size: "m2s", variant: "v0", position:"c4" },
@@ -61,7 +61,7 @@ const rows: RowConfig[] = [
         ]
     },
     {
-        rowClass: "row-half", size:"l2xs", cells: [
+        rowClass: "l-row", size:"l2xs", cells: [
             { size: "xs2xl", variant: "v0", position: "c1"}, { size: "xs2l", variant: "v0", position: "c2" }, { size: "s2m", variant: "v0", position:"c3" },
             { size: "m2s", variant: "v0", position: "c4" }, { size: "l2xs", variant: "v0", position: "c5" }, { size: "xl2xs", variant: "v0", position:"c6" },
             { size: "xl2xs", variant: "v0", position: "c6" }, { size: "l2xs", variant: "v0", position: "c5" }, { size: "m2s", variant: "v0", position:"c4" },
@@ -69,7 +69,7 @@ const rows: RowConfig[] = [
         ]
     },
     {
-        rowClass: "row-full", size:"xl2xs", cells: [
+        rowClass: "xl-row", size:"xl2xs", cells: [
             { size: "xs2xl", variant: "v0", position: "c1"}, { size: "xs2l", variant: "v0", position: "c2" }, { size: "s2m", variant: "v0", position:"c3" },
             { size: "m2s", variant: "v0", position: "c4" }, { size: "l2xs", variant: "v0", position: "c5" }, { size: "xl2xs", variant: "v0", position:"c6" },
             { size: "xl2xs", variant: "v0", position: "c6" }, { size: "l2xs", variant: "v0", position: "c5" }, { size: "m2s", variant: "v0", position:"c4" },
@@ -77,7 +77,7 @@ const rows: RowConfig[] = [
         ]
     },
     {
-        rowClass: "row-full", size:"xl2xs", cells: [
+        rowClass: "xl-row", size:"xl2xs", cells: [
             { size: "xs2xl", variant: "v0", position: "c1"}, { size: "xs2l", variant: "v0", position: "c2" }, { size: "s2m", variant: "v0", position:"c3" },
             { size: "m2s", variant: "v0", position: "c4" }, { size: "l2xs", variant: "v0", position: "c5" }, { size: "xl2xs", variant: "v0", position:"c6" },
             { size: "xl2xs", variant: "v0", position: "c6" }, { size: "l2xs", variant: "v0", position: "c5" }, { size: "m2s", variant: "v0", position:"c4" },
@@ -85,7 +85,7 @@ const rows: RowConfig[] = [
         ]
     },
     {
-        rowClass: "row-half", size:"l2xs", cells: [
+        rowClass: "l-row", size:"l2xs", cells: [
             { size: "xs2xl", variant: "v0", position: "c1"}, { size: "xs2l", variant: "v0", position: "c2" }, { size: "s2m", variant: "v0", position:"c3" },
             { size: "m2s", variant: "v0", position: "c4" }, { size: "l2xs", variant: "v0", position: "c5" }, { size: "xl2xs", variant: "v0", position:"c6" },
             { size: "xl2xs", variant: "v0", position: "c6" }, { size: "l2xs", variant: "v0", position: "c5" }, { size: "m2s", variant: "v0", position:"c4" },
@@ -93,7 +93,7 @@ const rows: RowConfig[] = [
         ]
     },
     {
-        rowClass: "row-quarter", size:"m2s", cells: [
+        rowClass: "m-row", size:"m2s", cells: [
             { size: "xs2xl", variant: "v0", position: "c1"}, { size: "xs2l", variant: "v0", position: "c2" }, { size: "s2m", variant: "v0", position:"c3" },
             { size: "m2s", variant: "v0", position: "c4" }, { size: "l2xs", variant: "v0", position: "c5" }, { size: "xl2xs", variant: "v0", position:"c6" },
             { size: "xl2xs", variant: "v0", position: "c6" }, { size: "l2xs", variant: "v0", position: "c5" }, { size: "m2s", variant: "v0", position:"c4" },
@@ -101,7 +101,7 @@ const rows: RowConfig[] = [
         ]
     },
     {
-        rowClass: "row-eighth", size:"s2m", cells: [
+        rowClass: "s-row", size:"s2m", cells: [
             { size: "xs2xl", variant: "v0", position: "c1"}, { size: "xs2l", variant: "v0", position: "c2" }, { size: "s2m", variant: "v0", position:"c3" },
             { size: "m2s", variant: "v0", position: "c4" }, { size: "l2xs", variant: "v0", position: "c5" }, { size: "xl2xs", variant: "v0", position:"c6" },
             { size: "xl2xs", variant: "v0", position: "c6" }, { size: "l2xs", variant: "v0", position: "c5" }, { size: "m2s", variant: "v0", position:"c4" },
@@ -109,7 +109,7 @@ const rows: RowConfig[] = [
         ]
     },
     {
-        rowClass: "row24px", size:"xs2l", cells: [
+        rowClass: "xs-row", size:"xs2l", cells: [
             { size: "xs2xl", variant: "v0", position: "c1"}, { size: "xs2l", variant: "v0", position: "c2" }, { size: "s2m", variant: "v0", position:"c3" },
             { size: "m2s", variant: "v0", position: "c4" }, { size: "l2xs", variant: "v0", position: "c5" }, { size: "xl2xs", variant: "v0", position:"c6" },
             { size: "xl2xs", variant: "v0", position: "c6" }, { size: "l2xs", variant: "v0", position: "c5" }, { size: "m2s", variant: "v0", position:"c4" },
@@ -117,7 +117,7 @@ const rows: RowConfig[] = [
         ]
     },
     {
-        rowClass: "row24px", size:"xs2xl", cells: [
+        rowClass: "xs-row", size:"xs2xl", cells: [
             { size: "xs2xl", variant: "v0", position: "c1"}, { size: "xs2l", variant: "v0", position: "c2" }, { size: "s2m", variant: "v0", position:"c3" },
             { size: "m2s", variant: "v0", position: "c4" }, { size: "l2xs", variant: "v0", position: "c5" }, { size: "xl2xs", variant: "v0", position:"c6" },
             { size: "xl2xs", variant: "v0", position: "c6" }, { size: "l2xs", variant: "v0", position: "c5" }, { size: "m2s", variant: "v0", position:"c4" },
@@ -180,7 +180,7 @@ export default function Act3GradientAnimation() {
 
     useEffect(() => {
         if (!gridRef.current) return;
-        const cells = gridRef.current.querySelectorAll(".gradient-vertical");
+        const cells = gridRef.current.querySelectorAll('[class*="a2-gradient-"]');
         const maxDelay = 2;
         cells.forEach((cell) => {
             const randomDelay = Math.random() * maxDelay;

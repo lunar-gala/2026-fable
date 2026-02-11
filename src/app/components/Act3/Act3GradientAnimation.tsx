@@ -2,13 +2,13 @@
 import { useEffect, useRef } from "react";
 import { motion, useScroll, useTransform } from "motion/react";
 import '../Landing/LandingAnimation.css';
-import './act2Animation.css';
+import './act3Animation.css';
 
 
 
 
 interface CellConfig {
-    size: "xs2xl" | "xs2l" | "s2m" | "m2s" | "l2xs" | "xl2xs";
+    size: "xs" | "s" | "m" | "l" | "xl";
     variant: "v0" | "v1" | "v2" | "v3" | "v4" | "v5" | "v6";
     position: "c1" | "c2" | "c3" | "c4" | "c5" | "c6";
 }
@@ -28,131 +28,110 @@ interface RowConfig {
 
 const rows: RowConfig[] = [
     {
-        rowClass: "row24px",  cells: [
-            { size: "xs2xl", variant: "v0", position: "c1"}, { size: "xs2l", variant: "v0", position: "c2" }, { size: "s2m", variant: "v0", position:"c3" },
-            { size: "m2s", variant: "v0", position: "c4" }, { size: "l2xs", variant: "v0", position: "c5" }, { size: "xl2xs", variant: "v0", position:"c6" },
-            { size: "xl2xs", variant: "v0", position: "c6" }, { size: "l2xs", variant: "v0", position: "c5" }, { size: "m2s", variant: "v0", position:"c4" },
-            { size: "s2m", variant: "v0", position: "c3"}, { size: "xs2l", variant: "v0" , position: "c2" }, { size: "xs2xl", variant: "v0", position:"c1" },
+        rowClass: "xl-row",  cells: [
+            { size: "xl", variant: "v6", position: "c1"}, { size: "l", variant: "v0", position: "c2" }, { size: "m", variant: "v0", position:"c3" },
+            { size: "s", variant: "v0", position: "c4" }, { size: "xs", variant: "v0", position: "c5" }, { size: "xs", variant: "v0", position:"c6" },
+            { size: "xs", variant: "v0", position: "c6" }, { size: "xs", variant: "v0", position: "c5" }, { size: "s", variant: "v0", position:"c4" },
+            { size: "m", variant: "v0", position: "c3"}, { size: "l", variant: "v0" , position: "c2" }, { size: "xl", variant: "v0", position:"c1" },
         ]
     },
     {
-        rowClass: "row24px", cells: [
-            { size: "xs2xl", variant: "v0", position: "c1"}, { size: "xs2l", variant: "v0", position: "c2" }, { size: "s2m", variant: "v0", position:"c3" },
-            { size: "m2s", variant: "v0", position: "c4" }, { size: "l2xs", variant: "v0", position: "c5" }, { size: "xl2xs", variant: "v0", position:"c6" },
-            { size: "xl2xs", variant: "v0", position: "c6" }, { size: "l2xs", variant: "v0", position: "c5" }, { size: "m2s", variant: "v0", position:"c4" },
-            { size: "s2m", variant: "v0", position: "c3"}, { size: "xs2l", variant: "v0" , position: "c2" }, { size: "xs2xl", variant: "v0", position:"c1" },
+        rowClass: "l-row", cells: [
+            { size: "xl", variant: "v0", position: "c1"}, { size: "l", variant: "v0", position: "c2" }, { size: "m", variant: "v0", position:"c3" },
+            { size: "s", variant: "v0", position: "c4" }, { size: "xs", variant: "v0", position: "c5" }, { size: "xs", variant: "v0", position:"c6" },
+            { size: "xs", variant: "v0", position: "c6" }, { size: "xs", variant: "v0", position: "c5" }, { size: "s", variant: "v0", position:"c4" },
+            { size: "m", variant: "v0", position: "c3"}, { size: "l", variant: "v0" , position: "c2" }, { size: "xl", variant: "v0", position:"c1" },
         ]
     },
     {
-        rowClass: "row-eighth", cells: [
-            { size: "xs2xl", variant: "v0", position: "c1"}, { size: "xs2l", variant: "v0", position: "c2" }, { size: "s2m", variant: "v0", position:"c3" },
-            { size: "m2s", variant: "v0", position: "c4" }, { size: "l2xs", variant: "v0", position: "c5" }, { size: "xl2xs", variant: "v0", position:"c6" },
-            { size: "xl2xs", variant: "v0", position: "c6" }, { size: "l2xs", variant: "v0", position: "c5" }, { size: "m2s", variant: "v0", position:"c4" },
-            { size: "s2m", variant: "v0", position: "c3"}, { size: "xs2l", variant: "v0" , position: "c2" }, { size: "xs2xl", variant: "v0", position:"c1" },
+        rowClass: "m-row", cells: [
+            { size: "xl", variant: "v0", position: "c1"}, { size: "l", variant: "v0", position: "c2" }, { size: "m", variant: "v0", position:"c3" },
+            { size: "s", variant: "v0", position: "c4" }, { size: "xs", variant: "v0", position: "c5" }, { size: "xs", variant: "v0", position:"c6" },
+            { size: "xs", variant: "v0", position: "c6" }, { size: "xs", variant: "v0", position: "c5" }, { size: "s", variant: "v0", position:"c4" },
+            { size: "m", variant: "v0", position: "c3"}, { size: "l", variant: "v0" , position: "c2" }, { size: "xl", variant: "v0", position:"c1" },
         ]
     },
     {
-        rowClass: "row-quarter", cells: [
-            { size: "xs2xl", variant: "v0", position: "c1"}, { size: "xs2l", variant: "v0", position: "c2" }, { size: "s2m", variant: "v0", position:"c3" },
-            { size: "m2s", variant: "v0", position: "c4" }, { size: "l2xs", variant: "v0", position: "c5" }, { size: "xl2xs", variant: "v0", position:"c6" },
-            { size: "xl2xs", variant: "v0", position: "c6" }, { size: "l2xs", variant: "v0", position: "c5" }, { size: "m2s", variant: "v0", position:"c4" },
-            { size: "s2m", variant: "v0", position: "c3"}, { size: "xs2l", variant: "v0" , position: "c2" }, { size: "xs2xl", variant: "v0", position:"c1" },
+        rowClass: "s-row", cells: [
+            { size: "xl", variant: "v0", position: "c1"}, { size: "l", variant: "v0", position: "c2" }, { size: "m", variant: "v0", position:"c3" },
+            { size: "s", variant: "v0", position: "c4" }, { size: "xs", variant: "v0", position: "c5" }, { size: "xs", variant: "v0", position:"c6" },
+            { size: "xs", variant: "v0", position: "c6" }, { size: "xs", variant: "v0", position: "c5" }, { size: "s", variant: "v0", position:"c4" },
+            { size: "m", variant: "v0", position: "c3"}, { size: "l", variant: "v0" , position: "c2" }, { size: "xl", variant: "v0", position:"c1" },
         ]
     },
     {
-        rowClass: "row-half",  cells: [
-            { size: "xs2xl", variant: "v0", position: "c1"}, { size: "xs2l", variant: "v0", position: "c2" }, { size: "s2m", variant: "v0", position:"c3" },
-            { size: "m2s", variant: "v0", position: "c4" }, { size: "l2xs", variant: "v0", position: "c5" }, { size: "xl2xs", variant: "v0", position:"c6" },
-            { size: "xl2xs", variant: "v0", position: "c6" }, { size: "l2xs", variant: "v0", position: "c5" }, { size: "m2s", variant: "v0", position:"c4" },
-            { size: "s2m", variant: "v0", position: "c3"}, { size: "xs2l", variant: "v0" , position: "c2" }, { size: "xs2xl", variant: "v0", position:"c1" },
+        rowClass: "xs-row",  cells: [
+            { size: "xl", variant: "v0", position: "c1"}, { size: "l", variant: "v0", position: "c2" }, { size: "m", variant: "v0", position:"c3" },
+            { size: "s", variant: "v0", position: "c4" }, { size: "xs", variant: "v0", position: "c5" }, { size: "xs", variant: "v0", position:"c6" },
+            { size: "xs", variant: "v0", position: "c6" }, { size: "xs", variant: "v0", position: "c5" }, { size: "s", variant: "v0", position:"c4" },
+            { size: "m", variant: "v0", position: "c3"}, { size: "l", variant: "v0" , position: "c2" }, { size: "xl", variant: "v0", position:"c1" },
         ]
     },
     {
-        rowClass: "row-full", cells: [
-            { size: "xs2xl", variant: "v0", position: "c1"}, { size: "xs2l", variant: "v0", position: "c2" }, { size: "s2m", variant: "v0", position:"c3" },
-            { size: "m2s", variant: "v0", position: "c4" }, { size: "l2xs", variant: "v0", position: "c5" }, { size: "xl2xs", variant: "v0", position:"c6" },
-            { size: "xl2xs", variant: "v0", position: "c6" }, { size: "l2xs", variant: "v0", position: "c5" }, { size: "m2s", variant: "v0", position:"c4" },
-            { size: "s2m", variant: "v0", position: "c3"}, { size: "xs2l", variant: "v0" , position: "c2" }, { size: "xs2xl", variant: "v0", position:"c1" },
+        rowClass: "xs-row", cells: [
+            { size: "xl", variant: "v0", position: "c1"}, { size: "l", variant: "v0", position: "c2" }, { size: "m", variant: "v0", position:"c3" },
+            { size: "s", variant: "v0", position: "c4" }, { size: "xs", variant: "v0", position: "c5" }, { size: "xs", variant: "v0", position:"c6" },
+            { size: "xs", variant: "v0", position: "c6" }, { size: "xs", variant: "v0", position: "c5" }, { size: "s", variant: "v0", position:"c4" },
+            { size: "m", variant: "v0", position: "c3"}, { size: "l", variant: "v0" , position: "c2" }, { size: "xl", variant: "v0", position:"c1" },
         ]
     },
     {
-        rowClass: "row-full", cells: [
-            { size: "xs2xl", variant: "v0", position: "c1"}, { size: "xs2l", variant: "v0", position: "c2" }, { size: "s2m", variant: "v0", position:"c3" },
-            { size: "m2s", variant: "v0", position: "c4" }, { size: "l2xs", variant: "v0", position: "c5" }, { size: "xl2xs", variant: "v0", position:"c6" },
-            { size: "xl2xs", variant: "v0", position: "c6" }, { size: "l2xs", variant: "v0", position: "c5" }, { size: "m2s", variant: "v0", position:"c4" },
-            { size: "s2m", variant: "v0", position: "c3"}, { size: "xs2l", variant: "v0" , position: "c2" }, { size: "xs2xl", variant: "v0", position:"c1" },
+        rowClass: "xs-row", cells: [
+            { size: "xl", variant: "v0", position: "c1"}, { size: "l", variant: "v0", position: "c2" }, { size: "m", variant: "v0", position:"c3" },
+            { size: "s", variant: "v0", position: "c4" }, { size: "xs", variant: "v0", position: "c5" }, { size: "xs", variant: "v0", position:"c6" },
+            { size: "xs", variant: "v0", position: "c6" }, { size: "xs", variant: "v0", position: "c5" }, { size: "s", variant: "v0", position:"c4" },
+            { size: "m", variant: "v0", position: "c3"}, { size: "l", variant: "v0" , position: "c2" }, { size: "xl", variant: "v0", position:"c1" },
         ]
     },
     {
-        rowClass: "row-half",  cells: [
-            { size: "xs2xl", variant: "v0", position: "c1"}, { size: "xs2l", variant: "v0", position: "c2" }, { size: "s2m", variant: "v0", position:"c3" },
-            { size: "m2s", variant: "v0", position: "c4" }, { size: "l2xs", variant: "v0", position: "c5" }, { size: "xl2xs", variant: "v0", position:"c6" },
-            { size: "xl2xs", variant: "v0", position: "c6" }, { size: "l2xs", variant: "v0", position: "c5" }, { size: "m2s", variant: "v0", position:"c4" },
-            { size: "s2m", variant: "v0", position: "c3"}, { size: "xs2l", variant: "v0" , position: "c2" }, { size: "xs2xl", variant: "v0", position:"c1" },
+        rowClass: "xs-row",  cells: [
+            { size: "xl", variant: "v0", position: "c1"}, { size: "l", variant: "v0", position: "c2" }, { size: "m", variant: "v0", position:"c3" },
+            { size: "s", variant: "v0", position: "c4" }, { size: "xs", variant: "v0", position: "c5" }, { size: "xs", variant: "v0", position:"c6" },
+            { size: "xs", variant: "v0", position: "c6" }, { size: "xs", variant: "v0", position: "c5" }, { size: "s", variant: "v0", position:"c4" },
+            { size: "m", variant: "v0", position: "c3"}, { size: "l", variant: "v0" , position: "c2" }, { size: "xl", variant: "v0", position:"c1" },
         ]
     },
     {
-        rowClass: "row-quarter", cells: [
-            { size: "xs2xl", variant: "v0", position: "c1"}, { size: "xs2l", variant: "v0", position: "c2" }, { size: "s2m", variant: "v0", position:"c3" },
-            { size: "m2s", variant: "v0", position: "c4" }, { size: "l2xs", variant: "v0", position: "c5" }, { size: "xl2xs", variant: "v0", position:"c6" },
-            { size: "xl2xs", variant: "v0", position: "c6" }, { size: "l2xs", variant: "v0", position: "c5" }, { size: "m2s", variant: "v0", position:"c4" },
-            { size: "s2m", variant: "v0", position: "c3"}, { size: "xs2l", variant: "v0" , position: "c2" }, { size: "xs2xl", variant: "v0", position:"c1" },
+        rowClass: "s-row", cells: [
+            { size: "xl", variant: "v0", position: "c1"}, { size: "l", variant: "v0", position: "c2" }, { size: "m", variant: "v0", position:"c3" },
+            { size: "s", variant: "v0", position: "c4" }, { size: "xs", variant: "v0", position: "c5" }, { size: "xs", variant: "v0", position:"c6" },
+            { size: "xs", variant: "v0", position: "c6" }, { size: "xs", variant: "v0", position: "c5" }, { size: "s", variant: "v0", position:"c4" },
+            { size: "m", variant: "v0", position: "c3"}, { size: "l", variant: "v0" , position: "c2" }, { size: "xl", variant: "v0", position:"c1" },
         ]
     },
     {
-        rowClass: "row-eighth", cells: [
-            { size: "xs2xl", variant: "v0", position: "c1"}, { size: "xs2l", variant: "v0", position: "c2" }, { size: "s2m", variant: "v0", position:"c3" },
-            { size: "m2s", variant: "v0", position: "c4" }, { size: "l2xs", variant: "v0", position: "c5" }, { size: "xl2xs", variant: "v0", position:"c6" },
-            { size: "xl2xs", variant: "v0", position: "c6" }, { size: "l2xs", variant: "v0", position: "c5" }, { size: "m2s", variant: "v0", position:"c4" },
-            { size: "s2m", variant: "v0", position: "c3"}, { size: "xs2l", variant: "v0" , position: "c2" }, { size: "xs2xl", variant: "v0", position:"c1" },
+        rowClass: "m-row", cells: [
+            { size: "xl", variant: "v0", position: "c1"}, { size: "l", variant: "v0", position: "c2" }, { size: "m", variant: "v0", position:"c3" },
+            { size: "s", variant: "v0", position: "c4" }, { size: "xs", variant: "v0", position: "c5" }, { size: "xs", variant: "v0", position:"c6" },
+            { size: "xs", variant: "v0", position: "c6" }, { size: "xs", variant: "v0", position: "c5" }, { size: "s", variant: "v0", position:"c4" },
+            { size: "m", variant: "v0", position: "c3"}, { size: "l", variant: "v0" , position: "c2" }, { size: "xl", variant: "v0", position:"c1" },
         ]
     },
     {
-        rowClass: "row24px", cells: [
-            { size: "xs2xl", variant: "v0", position: "c1"}, { size: "xs2l", variant: "v0", position: "c2" }, { size: "s2m", variant: "v0", position:"c3" },
-            { size: "m2s", variant: "v0", position: "c4" }, { size: "l2xs", variant: "v0", position: "c5" }, { size: "xl2xs", variant: "v0", position:"c6" },
-            { size: "xl2xs", variant: "v0", position: "c6" }, { size: "l2xs", variant: "v0", position: "c5" }, { size: "m2s", variant: "v0", position:"c4" },
-            { size: "s2m", variant: "v0", position: "c3"}, { size: "xs2l", variant: "v0" , position: "c2" }, { size: "xs2xl", variant: "v0", position:"c1" },
+        rowClass: "l-row", cells: [
+            { size: "xl", variant: "v0", position: "c1"}, { size: "l", variant: "v0", position: "c2" }, { size: "m", variant: "v0", position:"c3" },
+            { size: "s", variant: "v0", position: "c4" }, { size: "xs", variant: "v0", position: "c5" }, { size: "xs", variant: "v0", position:"c6" },
+            { size: "xs", variant: "v0", position: "c6" }, { size: "xs", variant: "v0", position: "c5" }, { size: "s", variant: "v0", position:"c4" },
+            { size: "m", variant: "v0", position: "c3"}, { size: "l", variant: "v0" , position: "c2" }, { size: "xl", variant: "v0", position:"c1" },
         ]
     },
     {
-        rowClass: "row24px", cells: [
-            { size: "xs2xl", variant: "v0", position: "c1"}, { size: "xs2l", variant: "v0", position: "c2" }, { size: "s2m", variant: "v0", position:"c3" },
-            { size: "m2s", variant: "v0", position: "c4" }, { size: "l2xs", variant: "v0", position: "c5" }, { size: "xl2xs", variant: "v0", position:"c6" },
-            { size: "xl2xs", variant: "v0", position: "c6" }, { size: "l2xs", variant: "v0", position: "c5" }, { size: "m2s", variant: "v0", position:"c4" },
-            { size: "s2m", variant: "v0", position: "c3"}, { size: "xs2l", variant: "v0" , position: "c2" }, { size: "xs2xl", variant: "v0", position:"c1" },
+        rowClass: "xl-row", cells: [
+            { size: "xl", variant: "v0", position: "c1"}, { size: "l", variant: "v0", position: "c2" }, { size: "m", variant: "v0", position:"c3" },
+            { size: "s", variant: "v0", position: "c4" }, { size: "xs", variant: "v0", position: "c5" }, { size: "xs", variant: "v0", position:"c6" },
+            { size: "xs", variant: "v0", position: "c6" }, { size: "xs", variant: "v0", position: "c5" }, { size: "s", variant: "v0", position:"c4" },
+            { size: "m", variant: "v0", position: "c3"}, { size: "l", variant: "v0" , position: "c2" }, { size: "xl", variant: "v0", position:"c1" },
         ]
     },
 ];
 
 const sizeClassMap = {
-    xs2xl:"xs2xl",
-    xs2l:"xs2l",
-    s2m:"s2m",
-    m2s:"m2s",
-    l2xs:"l2xs",
-    xl2xs:"xl2xs",
+    xs:"xs-cell",
+    s:"s-cell",
+    m:"m-cell",
+    l:"l-cell",
+    xl:"xl-cell",
 };
-
-
-const sizeWidthMap = {
-    xs2xl:"1.5%",
-    xs2l:"1.5%",
-    s2m:"6.25%",
-    m2s:"12.5%",
-    l2xs:"25%",
-    xl2xs:"50%",
-};
-
-const nextSizeWidthMap = {
-    xs2xl:"50%",
-    xs2l:"25%",
-    s2m:"12.5%",
-    m2s:"6.25%",
-    l2xs:"1.5%",
-    xl2xs:"1.5%",
-};
-
 
 
 export default function Act3GradientAnimation() {
@@ -162,7 +141,7 @@ export default function Act3GradientAnimation() {
 
     useEffect(() => {
         if (!gridRef.current) return;
-        const cells = gridRef.current.querySelectorAll(".gradient-vertical");
+        const cells = gridRef.current.querySelectorAll('[class*="a3-gradient-"]');
         const maxDelay = 2;
         cells.forEach((cell) => {
             const randomDelay = Math.random() * maxDelay;
@@ -280,8 +259,7 @@ export default function Act3GradientAnimation() {
                     {row.cells.map((cell, cellIdx) => (                        
                         <motion.div
                             key={cellIdx}
-                            className={`${sizeClassMap[cell.size]} landingCell a2-gradient-${cell.variant} ${cell.position}`}
-                            style={{ width: useTransform(scrollYProgress, [0,1], [sizeWidthMap[cell.size], nextSizeWidthMap[cell.size]])}}   
+                            className={`${sizeClassMap[cell.size]} landingCell a3-gradient-${cell.variant} ${cell.position}`}
                         > {/*  The color of the gradient needs to fade out as the scroll happens too  */}
                         </motion.div>
                     ))}

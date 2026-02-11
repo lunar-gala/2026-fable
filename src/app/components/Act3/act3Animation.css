@@ -1,0 +1,73 @@
+.a3-gradient-v0 {
+  height:100%;
+}
+
+.a3-gradient-v1 {
+    background: linear-gradient(180deg, #DFCDFE 25%, #E7303A 55.29%, #613B38 73.56%, #000 100%);
+    background-size: 100% 1480px;
+    animation: a3-gradientmove 8s ease infinite;
+}
+
+.a3-gradient-v2 {
+    background: linear-gradient(180deg, #DFCDFE 14.9%, #E7303A 62.5%, #613B38 86.54%, #613B38 100%);
+    background-size: 100% 1480px;
+    animation: a3-gradientmove 4s ease infinite;
+}
+
+.a3-gradient-v3 {
+    background: linear-gradient(180deg, #E7303A 16.83%, #000 100%);
+    background-size: 100% 660px;
+    animation: a3-gradientmove 4s ease infinite;
+}
+
+.a3-gradient-v4 {
+    background: linear-gradient(180deg, #DFCDFE 14.9%, #E7303A 62.5%, #613B38 86.54%, #613B38 100%);
+    background-size: 100% 660px;
+    animation: a3-gradientmove 4s ease infinite;
+}
+
+.a3-gradient-v5 {
+    background: linear-gradient(90deg, #613B38 26.92%, #E7303A 75%, #DFCDFE 90%);
+    background-size: 1200px 100%;
+    animation: a3-gradientmove-h 4s ease infinite;
+}
+
+.a3-gradient-v6 {
+    background: linear-gradient(90deg, #000 9.13%, #613B38 27%, #E7303A 75%, #DFCDFE 90%);
+    background-size: 1000px 100%;
+    animation: a3-gradientmove-h 4s ease infinite;
+}
+
+.a3bg{
+  position: absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  z-index:-1;
+  background: black
+}
+
+@keyframes a3-gradientmove {
+    0% {
+        background-position: 0% 0%; 
+    }
+    50% {
+        background-position: 0% 100%; 
+    }
+    100% {
+        background-position: 0% 0%; 
+    }
+}
+
+@keyframes a3-gradientmove-h {
+    0% {
+        background-position: 0% 0%; 
+    }
+    50% {
+        background-position: 100% 0%; 
+    }
+    100% {
+        background-position: 0% 0%; 
+    }
+}
