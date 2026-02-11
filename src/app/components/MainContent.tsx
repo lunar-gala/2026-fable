@@ -47,11 +47,7 @@ export default function MainContent() {
         }}
         >
           <LandingAnimation />
-          {/* 
-          <div className="gradient-grid teaser-textcontent"><TeaserContent/> </div>
-          <div className="wordmarkContainer"><WordmarkAnimation/></div>
-          */}
-          {/* <AssetAnimation stage={stage} /> */}          
+          <AssetAnimation stage={stage} />          
           {/* <LandingAnimation/> */}
 
         </div>
