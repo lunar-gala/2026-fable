@@ -1,10 +1,10 @@
 "use client";
-import './act1Animation.css';
+import './act2Animation.css';
 
 // for the actual content on the pg (countdown, info, etc), 
 // just made a second grid on top of the og grid, lol 
 // if you add a button make sure to set pointer-event to auto on button since the whole div is set as none rn
-export default function Act1Content() {
+export default function Act2Content() {
 
   return (
     <>

@@ -256,7 +256,7 @@ export default function LandingAnimation() {
                         <motion.div
                             key={cellIdx}
                             className={`${sizeClassMap[cell.size]} landingCell gradient-vertical gradient-animation-${cell.variant} ${cell.position}`}
-                            style={{ width: useTransform(scrollYProgress, [0,1], [sizeWidthMap[cell.size], nextSizeWidthMap[cell.size]])}}   
+                            style={{ width: useTransform(scrollYProgress, [0,0.14], [sizeWidthMap[cell.size], nextSizeWidthMap[cell.size]])}}   
                         > {/*  The color of the gradient needs to fade out as the scroll happens too  */}
                         </motion.div>
                     ))}
