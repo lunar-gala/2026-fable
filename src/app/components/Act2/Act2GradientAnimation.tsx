@@ -173,13 +173,14 @@ const nextSizeHeightMap = {
 };
 
 
-export default function Act2GradientAnimation() {
+export default function Act3GradientAnimation() {
     const { scrollYProgress } = useScroll();
+    
     const gridRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
         if (!gridRef.current) return;
-        const cells = gridRef.current.querySelectorAll('[class*="a2-gradient-"]');
+        const cells = gridRef.current.querySelectorAll(".gradient-vertical");
         const maxDelay = 2;
         cells.forEach((cell) => {
             const randomDelay = Math.random() * maxDelay;
@@ -187,7 +188,6 @@ export default function Act2GradientAnimation() {
         });
     }, []);
 
-    /*
     useEffect(() => {
         console.log('Setting up hover effects');
         if (!gridRef.current) return;
@@ -285,7 +285,7 @@ export default function Act2GradientAnimation() {
         };
     }, []);
 
-    */
+
 
     return (
         <div className="gradient-grid" ref={gridRef}>

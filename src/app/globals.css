@@ -360,7 +360,13 @@ grid-content{
 }
 
 .rowGrid{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 0px;
   flex-grow:0;
+  overflow: hidden;
+  border-top: 0.25px solid #332b2b;
 }
 .xs-cell{
   width:1.5%;
@@ -379,27 +385,30 @@ grid-content{
 }
 
 .xs-row{
-  height:3%;
+  height:1.5%;
 }
 .s-row{
   height:6.25%;
 }
 .m-row{
   height:12.5%;
+
 }
 .l-row{
   height:25%;
+
 }
 .xl-row{
   height:50%;
 }
+
 .landingCell{
   border: 0.25px solid #332b2b;
   overflow: hidden;
   flex-grow: 0;
 }
 .homeCell-content{
-  border:0px;
+  /*border: 1px solid red;*/
   flex-grow: 0;
 }
 
@@ -407,6 +416,8 @@ grid-content{
     position: absolute;
     top:0;
     z-index: 100;
+    width:100%;
+    height:100%;
     pointer-events: none;
 }
 

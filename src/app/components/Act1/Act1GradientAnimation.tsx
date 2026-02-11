@@ -16,7 +16,7 @@ interface RowConfig {
 
 const rows: RowConfig[] = [
     {
-        rowClass: "row24px", cells: [
+        rowClass: "xs-row", cells: [
             { size: "xs", variant: "v0", position:"c1"}, { size: "xs", variant: "v0", position:"c2" }, { size: "s", variant: "v0", position:"c3" },
             { size: "m", variant: "v0", position:"c4" }, { size: "l", variant: "v0", position:"c5" }, { size: "xl", variant: "v0", position:"c6" },
             { size: "xl", variant: "v0", position:"c6" }, { size: "l", variant: "v0", position:"c5" }, { size: "m", variant: "v0", position:"c4" },
@@ -24,7 +24,7 @@ const rows: RowConfig[] = [
         ]
     },
     {
-        rowClass: "row24px", cells: [
+        rowClass: "xs-row", cells: [
             { size: "xs", variant: "v0", position:"c1"}, { size: "xs", variant: "v0", position:"c2" }, { size: "s", variant: "v0", position:"c3" },
             { size: "m", variant: "v0", position:"c4" }, { size: "l", variant: "v0", position:"c5" }, { size: "xl", variant: "v0", position:"c6" },
             { size: "xl", variant: "v0", position:"c6" }, { size: "l", variant: "v0", position:"c5" }, { size: "m", variant: "v0", position:"c4" },
@@ -32,7 +32,7 @@ const rows: RowConfig[] = [
         ]
     },
     {
-        rowClass: "row-eighth", cells: [
+        rowClass: "s-row", cells: [
             { size: "xs", variant: "v0", position:"c1"}, { size: "xs", variant: "v0", position:"c2" }, { size: "s", variant: "v0", position:"c3" },
             { size: "m", variant: "v0", position:"c4" }, { size: "l", variant: "v2", position:"c5" }, { size: "xl", variant: "v0", position:"c6" },
             { size: "xl", variant: "v0", position:"c6" }, { size: "l", variant: "v0", position:"c5" }, { size: "m", variant: "v0", position:"c4" },
@@ -40,7 +40,7 @@ const rows: RowConfig[] = [
         ]
     },
     {
-        rowClass: "row-quarter", cells: [
+        rowClass: "m-row", cells: [
             { size: "xs", variant: "v0", position:"c1"}, { size: "xs", variant: "v0", position:"c2" }, { size: "s", variant: "v0", position:"c3" },
             { size: "m", variant: "v0", position:"c4" }, { size: "l", variant: "v2", position:"c5" }, { size: "xl", variant: "v0", position:"c6" },
             { size: "xl", variant: "v0", position:"c6" }, { size: "l", variant: "v0", position:"c5" }, { size: "m", variant: "v0", position:"c4" },
@@ -48,7 +48,7 @@ const rows: RowConfig[] = [
         ]
     },
     {
-        rowClass: "row-half", cells: [
+        rowClass: "l-row", cells: [
             { size: "xs", variant: "v0", position:"c1"}, { size: "xs", variant: "v0", position:"c2" }, { size: "s", variant: "v2", position:"c3" },
             { size: "m", variant: "v0", position:"c4" }, { size: "l", variant: "v0", position:"c5" }, { size: "xl", variant: "v0", position:"c6" },
             { size: "xl", variant: "v0", position:"c6" }, { size: "l", variant: "v0", position:"c5" }, { size: "m", variant: "v1", position:"c4" },
@@ -56,7 +56,7 @@ const rows: RowConfig[] = [
         ]
     },
     {
-        rowClass: "row-full", cells: [
+        rowClass: "xl-row", cells: [
             { size: "xs", variant: "v0", position:"c1"}, { size: "xs", variant: "v0", position:"c2" }, { size: "s", variant: "v0", position:"c3" },
             { size: "m", variant: "v0", position:"c4" }, { size: "l", variant: "v0", position:"c5" }, { size: "xl", variant: "v0", position:"c6" },
             { size: "xl", variant: "v1", position:"c6" }, { size: "l", variant: "v0", position:"c5" }, { size: "m", variant: "v0", position:"c4" },
@@ -64,7 +64,15 @@ const rows: RowConfig[] = [
         ]
     },
     {
-        rowClass: "row-half", cells: [
+        rowClass: "xl-row", cells: [
+            { size: "xs", variant: "v0", position:"c1"}, { size: "xs", variant: "v0", position:"c2" }, { size: "s", variant: "v0", position:"c3" },
+            { size: "m", variant: "v0", position:"c4" }, { size: "l", variant: "v0", position:"c5" }, { size: "xl", variant: "v0", position:"c6" },
+            { size: "xl", variant: "v1", position:"c6" }, { size: "l", variant: "v0", position:"c5" }, { size: "m", variant: "v0", position:"c4" },
+            { size: "s", variant: "v0", position:"c3"}, { size: "xs", variant: "v0" , position:"c2" }, { size: "xs", variant: "v0", position:"c1" },
+        ]
+    },
+    {
+        rowClass: "l-row", cells: [
             { size: "xs", variant: "v0", position:"c1"}, { size: "xs", variant: "v0", position:"c2" }, { size: "s", variant: "v0", position:"c3" },
             { size: "m", variant: "v0", position:"c4" }, { size: "l", variant: "v2", position:"c5" }, { size: "xl", variant: "v0", position:"c6" },
             { size: "xl", variant: "v1", position:"c6" }, { size: "l", variant: "v1", position:"c5" }, { size: "m", variant: "v0", position:"c4" },
@@ -72,7 +80,7 @@ const rows: RowConfig[] = [
         ]
     },
     {
-        rowClass: "row-quarter", cells: [
+        rowClass: "m-row", cells: [
             { size: "xs", variant: "v0", position:"c1"}, { size: "xs", variant: "v0", position:"c2" }, { size: "s", variant: "v0", position:"c3" },
             { size: "m", variant: "v0", position:"c4" }, { size: "l", variant: "v0", position:"c5" }, { size: "xl", variant: "v0", position:"c6" },
             { size: "xl", variant: "v0", position:"c6" }, { size: "l", variant: "v1", position:"c5" }, { size: "m", variant: "v0", position:"c4" },
@@ -80,7 +88,7 @@ const rows: RowConfig[] = [
         ]
     },
     {
-        rowClass: "row-eighth", cells: [
+        rowClass: "s-row", cells: [
             { size: "xs", variant: "v0", position:"c1"}, { size: "xs", variant: "v0", position:"c2" }, { size: "s", variant: "v0", position:"c3" },
             { size: "m", variant: "v0", position:"c4" }, { size: "l", variant: "v0", position:"c5" }, { size: "xl", variant: "v0", position:"c6" },
             { size: "xl", variant: "v0", position:"c6" }, { size: "l", variant: "v0", position:"c5" }, { size: "m", variant: "v0", position:"c4" },
@@ -88,7 +96,7 @@ const rows: RowConfig[] = [
         ]
     },
     {
-        rowClass: "row24px", cells: [
+        rowClass: "xs-row", cells: [
             { size: "xs", variant: "v0", position:"c1"}, { size: "xs", variant: "v0", position:"c2" }, { size: "s", variant: "v0", position:"c3" },
             { size: "m", variant: "v0", position:"c4" }, { size: "l", variant: "v0", position:"c5" }, { size: "xl", variant: "v0", position:"c6" },
             { size: "xl", variant: "v0", position:"c6" }, { size: "l", variant: "v0", position:"c5" }, { size: "m", variant: "v0", position:"c4" },
@@ -96,7 +104,7 @@ const rows: RowConfig[] = [
         ]
     },
     {
-        rowClass: "row24px", cells: [
+        rowClass: "xs-row", cells: [
             { size: "xs", variant: "v0", position:"c1"}, { size: "xs", variant: "v0", position:"c2" }, { size: "s", variant: "v0", position:"c3" },
             { size: "m", variant: "v0", position:"c4" }, { size: "l", variant: "v0", position:"c5" }, { size: "xl", variant: "v0", position:"c6" },
             { size: "xl", variant: "v0", position:"c6" }, { size: "l", variant: "v0", position:"c5" }, { size: "m", variant: "v0", position:"c4" },
@@ -233,7 +241,7 @@ export default function LandingAnimation() {
     return (
         <div className="gradient-grid" ref={gridRef}>
             {rows.map((row, rowIdx) => (
-                <div className={row.rowClass} key={rowIdx}>
+                <div className={`rowGrid ${row.rowClass}`} key={rowIdx}>
                     {row.cells.map((cell, cellIdx) => (                        
                         <motion.div
                             key={cellIdx}
