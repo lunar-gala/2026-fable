@@ -259,7 +259,7 @@ export default function Act3GradientAnimation() {
                     {row.cells.map((cell, cellIdx) => (                        
                         <motion.div
                             key={cellIdx}
-                            className={`${sizeClassMap[cell.size]} landingCell a3-gradient-${cell.variant} ${cell.position}`}
+                            className={`${sizeClassMap[cell.size]} landingCellWhite a3-gradient-${cell.variant} ${cell.position}`}
                         > {/*  The color of the gradient needs to fade out as the scroll happens too  */}
                         </motion.div>
                     ))}
