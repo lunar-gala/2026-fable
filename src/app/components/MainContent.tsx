@@ -2,6 +2,8 @@
 
 import { useState, useEffect } from "react";
 import { COLORS } from "../constants";
+import Act2GradientAnimation from "./Act2/Act2GradientAnimation";
+import Act1Full from "./Act1/Act1Full";
 import LandingAnimation from "./Landing/LandingAnimation";
 import LandingContent from "./Landing/LandingContent";
 import AssetAnimation, { Stage } from "./Landing/AssetAnimation";
@@ -46,7 +48,7 @@ export default function MainContent() {
           transition: "opacity 0.1s ease-out",
         }}
         >
-          <LandingAnimation />
+          <Act1Full />
           <AssetAnimation stage={stage} />          
           {/* <LandingAnimation/> */}
 

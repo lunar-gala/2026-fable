@@ -302,10 +302,9 @@ grid-content{
   display: flex;
   flex-direction: row;
   gap: 0px;
-  flex-shrink: 0;
+  flex-grow:0;
   overflow: hidden;
   border-top: 0.25px solid #332b2b;
-  border-bottom: 0.25px solid #332b2b;
 
 }
 
@@ -315,10 +314,8 @@ grid-content{
   display: flex;
   flex-direction: row;
   gap: 0px;
-  flex-shrink: 0;
   overflow: hidden;
   border-top: 0.25px solid #332b2b;
-  border-bottom: 0.25px solid #332b2b;
 }
 
 .row-eighth {
@@ -329,7 +326,6 @@ grid-content{
   gap: 0px;
   overflow: hidden;
   border-top: 0.25px solid #332b2b;
-  border-bottom: 0.25px solid #332b2b;
 }
 
 .row-quarter {
@@ -340,7 +336,6 @@ grid-content{
   gap: 0px;
   overflow: hidden;
   border-top: 0.25px solid #332b2b;
-  border-bottom: 0.25px solid #332b2b; 
 }
 
 .row-half {
@@ -352,7 +347,6 @@ grid-content{
   flex-grow: 0;
   overflow: hidden;
   border-top: 0.25px solid #332b2b;
-  border-bottom: 0.25px solid #332b2b;
 }
 
 .row-full {
@@ -363,9 +357,42 @@ grid-content{
   gap: 0px;
   overflow: hidden;
   border-top: 0.25px solid #332b2b;
-  border-bottom: 0.125px solid #332b2b;
 }
 
+.rowGrid{
+  flex-grow:0;
+}
+.xs-cell{
+  width:1.5%;
+}
+.s-cell{
+  width:6.25%;
+}
+.m-cell{
+  width:12.5%;
+}
+.l-cell{
+  width:25%;
+}
+.xl-cell{
+  width:50%;
+}
+
+.xs-row{
+  height:3%;
+}
+.s-row{
+  height:6.25%;
+}
+.m-row{
+  height:12.5%;
+}
+.l-row{
+  height:25%;
+}
+.xl-row{
+  height:50%;
+}
 .landingCell{
   border: 0.25px solid #332b2b;
   overflow: hidden;
@@ -382,6 +409,7 @@ grid-content{
     z-index: 100;
     pointer-events: none;
 }
+
 .gradient-vertical {
   width:calc(200% - 1px);
   height:2300px;

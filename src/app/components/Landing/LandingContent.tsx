@@ -7,16 +7,6 @@ import WordmarkAnimation from './WordmarkAnimation';
 // just made a second grid on top of the og grid,,, not sure if there's moreefficient way to do it
 export default function LandingContent() {
 
-
-    useEffect(() => {
-        const cells = document.querySelectorAll(".gradient-vertical");
-        const maxDelay = 2;
-        cells.forEach((cell) => {
-            const randomDelay = Math.random() * maxDelay;
-            (cell as HTMLElement).style.animationDelay = `${randomDelay}s`;
-        });
-    }, []);
-
   return (
     <>
         <div className='row24px'>

@@ -1,14 +1,11 @@
 "use client";
-import './LandingAnimation.css';
+import './act1Animation.css';
 import { useEffect, useRef } from "react";
 import { motion, useScroll, useTransform } from "motion/react";
 
-
-
-
 interface CellConfig {
-    size: "smallsmall" | "smallquarter" | "smallhalf" | "halfeighth" | "fullfull";
-    variant: "v1" | "v2" | "v3" | "v4";
+    size: "xs" | "s" | "m" | "l" | "xl";
+    variant: "v0" | "v1" | "v2" | "v3" | "v4";
     position: "c1" | "c2" | "c3" | "c4" | "c5" | "c6";
 }
 
@@ -20,118 +17,103 @@ interface RowConfig {
 const rows: RowConfig[] = [
     {
         rowClass: "row24px", cells: [
-            { size: "smallsmall", variant: "v1", position:"c1"}, { size: "smallsmall", variant: "v1", position:"c2" }, { size: "halfeighth", variant: "v1", position:"c3" },
-            { size: "smallquarter", variant: "v1", position:"c4" }, { size: "smallhalf", variant: "v1", position:"c5" }, { size: "fullfull", variant: "v2", position:"c6" },
-            { size: "fullfull", variant: "v1", position:"c6" }, { size: "smallhalf", variant: "v1", position:"c5" }, { size: "smallquarter", variant: "v1", position:"c4" },
-            { size: "halfeighth", variant: "v1", position:"c3"}, { size: "smallsmall", variant: "v1" , position:"c2" }, { size: "smallsmall", variant: "v1", position:"c1" },
+            { size: "xs", variant: "v0", position:"c1"}, { size: "xs", variant: "v0", position:"c2" }, { size: "s", variant: "v0", position:"c3" },
+            { size: "m", variant: "v0", position:"c4" }, { size: "l", variant: "v0", position:"c5" }, { size: "xl", variant: "v0", position:"c6" },
+            { size: "xl", variant: "v0", position:"c6" }, { size: "l", variant: "v0", position:"c5" }, { size: "m", variant: "v0", position:"c4" },
+            { size: "s", variant: "v0", position:"c3"}, { size: "xs", variant: "v0" , position:"c2" }, { size: "xs", variant: "v0", position:"c1" },
         ]
     },
     {
         rowClass: "row24px", cells: [
-            { size: "smallsmall", variant: "v1", position:"c1"}, { size: "smallsmall", variant: "v1", position:"c2" }, { size: "halfeighth", variant: "v1", position:"c3" },
-            { size: "smallquarter", variant: "v1", position:"c4" }, { size: "smallhalf", variant: "v1", position:"c5" }, { size: "fullfull", variant: "v1", position:"c6" },
-            { size: "fullfull", variant: "v1", position:"c6" }, { size: "smallhalf", variant: "v1", position:"c5" }, { size: "smallquarter", variant: "v1", position:"c4" },
-            { size: "halfeighth", variant: "v1", position:"c3"}, { size: "smallsmall", variant: "v1" , position:"c2" }, { size: "smallsmall", variant: "v1", position:"c1" },
+            { size: "xs", variant: "v0", position:"c1"}, { size: "xs", variant: "v0", position:"c2" }, { size: "s", variant: "v0", position:"c3" },
+            { size: "m", variant: "v0", position:"c4" }, { size: "l", variant: "v0", position:"c5" }, { size: "xl", variant: "v0", position:"c6" },
+            { size: "xl", variant: "v0", position:"c6" }, { size: "l", variant: "v0", position:"c5" }, { size: "m", variant: "v0", position:"c4" },
+            { size: "s", variant: "v0", position:"c3"}, { size: "xs", variant: "v0" , position:"c2" }, { size: "xs", variant: "v0", position:"c1" },
         ]
     },
     {
         rowClass: "row-eighth", cells: [
-            { size: "smallsmall", variant: "v1", position:"c1"}, { size: "smallsmall", variant: "v1", position:"c2" }, { size: "halfeighth", variant: "v1", position:"c3" },
-            { size: "smallquarter", variant: "v2", position:"c4" }, { size: "smallhalf", variant: "v1", position:"c5" }, { size: "fullfull", variant: "v2", position:"c6" },
-            { size: "fullfull", variant: "v1", position:"c6" }, { size: "smallhalf", variant: "v2", position:"c5" }, { size: "smallquarter", variant: "v1", position:"c4" },
-            { size: "halfeighth", variant: "v1", position:"c3"}, { size: "smallsmall", variant: "v1" , position:"c2" }, { size: "smallsmall", variant: "v1", position:"c1" },
+            { size: "xs", variant: "v0", position:"c1"}, { size: "xs", variant: "v0", position:"c2" }, { size: "s", variant: "v0", position:"c3" },
+            { size: "m", variant: "v0", position:"c4" }, { size: "l", variant: "v2", position:"c5" }, { size: "xl", variant: "v0", position:"c6" },
+            { size: "xl", variant: "v0", position:"c6" }, { size: "l", variant: "v0", position:"c5" }, { size: "m", variant: "v0", position:"c4" },
+            { size: "s", variant: "v0", position:"c3"}, { size: "xs", variant: "v0" , position:"c2" }, { size: "xs", variant: "v0", position:"c1" },
         ]
     },
     {
         rowClass: "row-quarter", cells: [
-            { size: "smallsmall", variant: "v1", position:"c1"}, { size: "smallsmall", variant: "v1", position:"c2" }, { size: "halfeighth", variant: "v2", position:"c3" },
-            { size: "smallquarter", variant: "v1", position:"c4" }, { size: "smallhalf", variant: "v3", position:"c5" }, { size: "fullfull", variant: "v1", position:"c6" },
-            { size: "fullfull", variant: "v2", position:"c6" }, { size: "smallhalf", variant: "v1", position:"c5" }, { size: "smallquarter", variant: "v2", position:"c4" },
-            { size: "halfeighth", variant: "v2", position:"c3"}, { size: "smallsmall", variant: "v2" , position:"c2" }, { size: "smallsmall", variant: "v3", position:"c1" },
+            { size: "xs", variant: "v0", position:"c1"}, { size: "xs", variant: "v0", position:"c2" }, { size: "s", variant: "v0", position:"c3" },
+            { size: "m", variant: "v0", position:"c4" }, { size: "l", variant: "v2", position:"c5" }, { size: "xl", variant: "v0", position:"c6" },
+            { size: "xl", variant: "v0", position:"c6" }, { size: "l", variant: "v0", position:"c5" }, { size: "m", variant: "v0", position:"c4" },
+            { size: "s", variant: "v0", position:"c3"}, { size: "xs", variant: "v0" , position:"c2" }, { size: "xs", variant: "v0", position:"c1" },
         ]
     },
     {
         rowClass: "row-half", cells: [
-            { size: "smallsmall", variant: "v1", position:"c1"}, { size: "smallsmall", variant: "v2", position:"c2" }, { size: "halfeighth", variant: "v1", position:"c3" },
-            { size: "smallquarter", variant: "v2", position:"c4" }, { size: "smallhalf", variant: "v1", position:"c5" }, { size: "fullfull", variant: "v3", position:"c6" },
-            { size: "fullfull", variant: "v2", position:"c6" }, { size: "smallhalf", variant: "v1", position:"c5" }, { size: "smallquarter", variant: "v2", position:"c4" },
-            { size: "halfeighth", variant: "v3", position:"c3"}, { size: "smallsmall", variant: "v3" , position:"c2" }, { size: "smallsmall", variant: "v1", position:"c1" },
+            { size: "xs", variant: "v0", position:"c1"}, { size: "xs", variant: "v0", position:"c2" }, { size: "s", variant: "v2", position:"c3" },
+            { size: "m", variant: "v0", position:"c4" }, { size: "l", variant: "v0", position:"c5" }, { size: "xl", variant: "v0", position:"c6" },
+            { size: "xl", variant: "v0", position:"c6" }, { size: "l", variant: "v0", position:"c5" }, { size: "m", variant: "v1", position:"c4" },
+            { size: "s", variant: "v0", position:"c3"}, { size: "xs", variant: "v0" , position:"c2" }, { size: "xs", variant: "v0", position:"c1" },
         ]
     },
     {
         rowClass: "row-full", cells: [
-            { size: "smallsmall", variant: "v1", position:"c1"}, { size: "smallsmall", variant: "v2", position:"c2" }, { size: "halfeighth", variant: "v1", position:"c3" },
-            { size: "smallquarter", variant: "v2", position:"c4" }, { size: "smallhalf", variant: "v1", position:"c5" }, { size: "fullfull", variant: "v3", position:"c6" },
-            { size: "fullfull", variant: "v2", position:"c6" }, { size: "smallhalf", variant: "v1", position:"c5" }, { size: "smallquarter", variant: "v3", position:"c4" },
-            { size: "halfeighth", variant: "v3", position:"c3"}, { size: "smallsmall", variant: "v3" , position:"c2" }, { size: "smallsmall", variant: "v4", position:"c1" },
+            { size: "xs", variant: "v0", position:"c1"}, { size: "xs", variant: "v0", position:"c2" }, { size: "s", variant: "v0", position:"c3" },
+            { size: "m", variant: "v0", position:"c4" }, { size: "l", variant: "v0", position:"c5" }, { size: "xl", variant: "v0", position:"c6" },
+            { size: "xl", variant: "v1", position:"c6" }, { size: "l", variant: "v0", position:"c5" }, { size: "m", variant: "v0", position:"c4" },
+            { size: "s", variant: "v0", position:"c3"}, { size: "xs", variant: "v0" , position:"c2" }, { size: "xs", variant: "v0", position:"c1" },
         ]
     },
     {
         rowClass: "row-half", cells: [
-            { size: "smallsmall", variant: "v2", position:"c1"}, { size: "smallsmall", variant: "v1", position:"c2" }, { size: "halfeighth", variant: "v2", position:"c3" },
-            { size: "smallquarter", variant: "v2", position:"c4" }, { size: "smallhalf", variant: "v1", position:"c5" }, { size: "fullfull", variant: "v2", position:"c6" },
-            { size: "fullfull", variant: "v3", position:"c6" }, { size: "smallhalf", variant: "v4", position:"c5" }, { size: "smallquarter", variant: "v1", position:"c4" },
-            { size: "halfeighth", variant: "v3", position:"c3"}, { size: "smallsmall", variant: "v4" , position:"c2" }, { size: "smallsmall", variant: "v4", position:"c1" },
+            { size: "xs", variant: "v0", position:"c1"}, { size: "xs", variant: "v0", position:"c2" }, { size: "s", variant: "v0", position:"c3" },
+            { size: "m", variant: "v0", position:"c4" }, { size: "l", variant: "v2", position:"c5" }, { size: "xl", variant: "v0", position:"c6" },
+            { size: "xl", variant: "v1", position:"c6" }, { size: "l", variant: "v1", position:"c5" }, { size: "m", variant: "v0", position:"c4" },
+            { size: "s", variant: "v0", position:"c3"}, { size: "xs", variant: "v0" , position:"c2" }, { size: "xs", variant: "v0", position:"c1" },
         ]
     },
     {
         rowClass: "row-quarter", cells: [
-            { size: "smallsmall", variant: "v1", position:"c1"}, { size: "smallsmall", variant: "v1", position:"c2" }, { size: "halfeighth", variant: "v2", position:"c3" },
-            { size: "smallquarter", variant: "v1", position:"c4" }, { size: "smallhalf", variant: "v1", position:"c5" }, { size: "fullfull", variant: "v2", position:"c6" },
-            { size: "fullfull", variant: "v3", position:"c6" }, { size: "smallhalf", variant: "v4", position:"c5" }, { size: "smallquarter", variant: "v4", position:"c4" },
-            { size: "halfeighth", variant: "v1", position:"c3"}, { size: "smallsmall", variant: "v4" , position:"c2" }, { size: "smallsmall", variant: "v4", position:"c1" },
+            { size: "xs", variant: "v0", position:"c1"}, { size: "xs", variant: "v0", position:"c2" }, { size: "s", variant: "v0", position:"c3" },
+            { size: "m", variant: "v0", position:"c4" }, { size: "l", variant: "v0", position:"c5" }, { size: "xl", variant: "v0", position:"c6" },
+            { size: "xl", variant: "v0", position:"c6" }, { size: "l", variant: "v1", position:"c5" }, { size: "m", variant: "v0", position:"c4" },
+            { size: "s", variant: "v0", position:"c3"}, { size: "xs", variant: "v0" , position:"c2" }, { size: "xs", variant: "v0", position:"c1" },
         ]
     },
     {
         rowClass: "row-eighth", cells: [
-            { size: "smallsmall", variant: "v1", position:"c1"}, { size: "smallsmall", variant: "v2", position:"c2" }, { size: "halfeighth", variant: "v1", position:"c3" },
-            { size: "smallquarter", variant: "v1", position:"c4" }, { size: "smallhalf", variant: "v1", position:"c5" }, { size: "fullfull", variant: "v3", position:"c6" },
-            { size: "fullfull", variant: "v4", position:"c6" }, { size: "smallhalf", variant: "v1", position:"c5" }, { size: "smallquarter", variant: "v4", position:"c4" },
-            { size: "halfeighth", variant: "v4", position:"c3"}, { size: "smallsmall", variant: "v4" , position:"c2" }, { size: "smallsmall", variant: "v1", position:"c1" },
+            { size: "xs", variant: "v0", position:"c1"}, { size: "xs", variant: "v0", position:"c2" }, { size: "s", variant: "v0", position:"c3" },
+            { size: "m", variant: "v0", position:"c4" }, { size: "l", variant: "v0", position:"c5" }, { size: "xl", variant: "v0", position:"c6" },
+            { size: "xl", variant: "v0", position:"c6" }, { size: "l", variant: "v0", position:"c5" }, { size: "m", variant: "v0", position:"c4" },
+            { size: "s", variant: "v0", position:"c3"}, { size: "xs", variant: "v0" , position:"c2" }, { size: "xs", variant: "v0", position:"c1" },
         ]
     },
     {
         rowClass: "row24px", cells: [
-            { size: "smallsmall", variant: "v1", position:"c1"}, { size: "smallsmall", variant: "v1", position:"c2" }, { size: "halfeighth", variant: "v1", position:"c3" },
-            { size: "smallquarter", variant: "v4", position:"c4" }, { size: "smallhalf", variant: "v2", position:"c5" }, { size: "fullfull", variant: "v3", position:"c6" },
-            { size: "fullfull", variant: "v4", position:"c6" }, { size: "smallhalf", variant: "v4", position:"c5" }, { size: "smallquarter", variant: "v3", position:"c4" },
-            { size: "halfeighth", variant: "v2", position:"c3"}, { size: "smallsmall", variant: "v1" , position:"c2" }, { size: "smallsmall", variant: "v1", position:"c1" },
+            { size: "xs", variant: "v0", position:"c1"}, { size: "xs", variant: "v0", position:"c2" }, { size: "s", variant: "v0", position:"c3" },
+            { size: "m", variant: "v0", position:"c4" }, { size: "l", variant: "v0", position:"c5" }, { size: "xl", variant: "v0", position:"c6" },
+            { size: "xl", variant: "v0", position:"c6" }, { size: "l", variant: "v0", position:"c5" }, { size: "m", variant: "v0", position:"c4" },
+            { size: "s", variant: "v0", position:"c3"}, { size: "xs", variant: "v0" , position:"c2" }, { size: "xs", variant: "v0", position:"c1" },
         ]
     },
     {
         rowClass: "row24px", cells: [
-            { size: "smallsmall", variant: "v1", position:"c1"}, { size: "smallsmall", variant: "v1", position:"c2" }, { size: "halfeighth", variant: "v1", position:"c3" },
-            { size: "smallquarter", variant: "v1", position:"c4" }, { size: "smallhalf", variant: "v1", position:"c5" }, { size: "fullfull", variant: "v4", position:"c6" },
-            { size: "fullfull", variant: "v3", position:"c6" }, { size: "smallhalf", variant: "v1", position:"c5" }, { size: "smallquarter", variant: "v4", position:"c4" },
-            { size: "halfeighth", variant: "v3", position:"c3"}, { size: "smallsmall", variant: "v3" , position:"c2" }, { size: "smallsmall", variant: "v2", position:"c1" },
+            { size: "xs", variant: "v0", position:"c1"}, { size: "xs", variant: "v0", position:"c2" }, { size: "s", variant: "v0", position:"c3" },
+            { size: "m", variant: "v0", position:"c4" }, { size: "l", variant: "v0", position:"c5" }, { size: "xl", variant: "v0", position:"c6" },
+            { size: "xl", variant: "v0", position:"c6" }, { size: "l", variant: "v0", position:"c5" }, { size: "m", variant: "v0", position:"c4" },
+            { size: "s", variant: "v0", position:"c3"}, { size: "xs", variant: "v0" , position:"c2" }, { size: "xs", variant: "v0", position:"c1" },
         ]
     },
 ];
 
 const sizeClassMap = {
-    smallhalf: "small-half",
-    smallquarter: "small-quarter",
-    smallsmall: "small-small",
-    halfeighth: "half-eighth",
-    fullfull: "full-full",
+    xs: "xs-cell",
+    s: "s-cell",
+    m: "m-cell",
+    l: "l-cell",
+    xl: "xl-cell",
 };
 
 
-const sizeWidthMap = {
-    smallhalf: "1.5%",
-    smallquarter: "1.5%",
-    smallsmall: "1.5%",
-    halfeighth: "25%",
-    fullfull: "50%",
-};
-
-const nextSizeWidthMap = {
-    smallhalf: "25%",
-    smallquarter: "12.5%",
-    smallsmall: "1.5%",
-    halfeighth: "6.25%",
-    fullfull: "50%",
-};
 
 
 export default function LandingAnimation() {
@@ -141,14 +123,14 @@ export default function LandingAnimation() {
 
     useEffect(() => {
         if (!gridRef.current) return;
-        const cells = gridRef.current.querySelectorAll(".gradient-vertical");
+        const cells = gridRef.current.querySelectorAll('[class*="a1-gradient-"]');
         const maxDelay = 2;
         cells.forEach((cell) => {
             const randomDelay = Math.random() * maxDelay;
             (cell as HTMLElement).style.animationDelay = `${randomDelay}s`;
         });
     }, []);
-
+/*
     useEffect(() => {
         console.log('Setting up hover effects');
         if (!gridRef.current) return;
@@ -246,7 +228,7 @@ export default function LandingAnimation() {
         };
     }, []);
 
-
+*/
 
     return (
         <div className="gradient-grid" ref={gridRef}>
@@ -255,9 +237,8 @@ export default function LandingAnimation() {
                     {row.cells.map((cell, cellIdx) => (                        
                         <motion.div
                             key={cellIdx}
-                            className={`${sizeClassMap[cell.size]} landingCell gradient-vertical gradient-animation-${cell.variant} ${cell.position}`}
-                            style={{ width: useTransform(scrollYProgress, [0,1], [sizeWidthMap[cell.size], nextSizeWidthMap[cell.size]])}}   
-                        > {/*  The color of the gradient needs to fade out as the scroll happens too  */}
+                            className={`${sizeClassMap[cell.size]} landingCell a1-gradient-${cell.variant} ${cell.position}`}
+                        > {/*  The color of the gradient needs to fade out as the scroll happens   */}
                         </motion.div>
                     ))}
                 </div>
