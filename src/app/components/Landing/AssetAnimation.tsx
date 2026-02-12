@@ -78,8 +78,19 @@ function AssetAnimation({ stage }: AssetAnimationProps) {
       setAnimationPairs(transitionPairs);
       setCurrentIndex(0);
       setPrevStageIndex(targetStageIndex);
-    } else if (targetStageIndex < currentIndex) {
-      setCurrentIndex(targetStageIndex);
+    } else if (targetStageIndex < prevStageIndex) {
+      const transitionPairs: AnimationPair[] = [];
+      for (let i = prevStageIndex - 1; i >= targetStageIndex; i--) {
+        const [leftFile, rightFile] = animationFiles[i];
+        const leftData = leftFile ? await fetch(leftFile).then((r) => r.json()) : null;
+        const rightData = rightFile ? await fetch(rightFile).then((r) => r.json()) : null;
+
+        transitionPairs.push({ left: leftData, right: rightData });
+      }
+      console.log({ transitionPairs });
+      // await Promise.all(transitionPairs.map(pair => Promise.all([pair.left, pair.right])));
+      setAnimationPairs(transitionPairs);
+      setCurrentIndex(0);
       setPrevStageIndex(targetStageIndex);
     }
   }
