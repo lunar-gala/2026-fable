@@ -369,6 +369,15 @@ grid-content{
   border-top: 0.25px solid #332b2b;
 }
 
+.rowGridContent{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 0px;
+  flex-grow:0;
+  overflow: hidden;
+}
+
 .bottomgradient{
     position: absolute;
     bottom:0;
@@ -432,7 +441,6 @@ grid-content{
   flex-grow: 0;
 }
 .homeCell-content{
-  /*border: 1px solid red;*/
   flex-grow: 0;
 }
 
