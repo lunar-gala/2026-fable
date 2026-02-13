@@ -396,11 +396,27 @@ body {
   font-style: italic;
 }
 
+h1{
+  font-family: var(--font-feature-display-condensed);
+  font-size:142px;
+  line-height: 96%;
+  letter-spacing: -0.02em;
+}
+
 h2{
   font-family: var(--font-feature-display-condensed);
   font-size:40px;
   line-height: 96%;
   letter-spacing: -0.02em;
+}
+
+h3{
+  font-size:32px;
+  line-height: 34px;
+}
+
+h4{
+  font-size:24px;
 }
 
 p{
