@@ -454,8 +454,6 @@ grid-content{
 }
 
 .gradient-vertical {
-  width:calc(200% - 1px);
-  height:2300px;
   background: linear-gradient(
     180deg,
     #b0d2de 0%,
@@ -469,6 +467,7 @@ grid-content{
     #b0d2de 88.15%,
     #f2efe5 100%
   );
+  background-size: 100% 2300px; /* needs to be after background declaration so that it doesn't get reset */
 }
 
 .gradient-animation-v1 {
@@ -478,12 +477,12 @@ grid-content{
 }
 
 @keyframes gradientmove1 {
-  0% { transform: translateY(0%); }
-  20% { transform: translateY(0%); }
-  40% { transform: translateY(-16%); }
-  60% { transform: translateY(-32%); }
-  80% { transform: translateY(-58%); }
-  100% { transform: translateY(-88%); }
+  0% { background-position: 0% 0%; }
+  20% { background-position: 0% 0%; }
+  40% { background-position: 0% 16%; }
+  60% { background-position: 0% 36%; }
+  80% { background-position: 0% 58%; }
+  100% { background-position: 0% 88%; }
 }
 
 .gradient-animation-v2 {
@@ -493,12 +492,12 @@ grid-content{
 }
 
 @keyframes gradientmove2 {
-  0% { transform: translateY(0%); }
-  20% { transform: translateY(-6%); }
-  40% { transform: translateY(-28%); }
-  60% { transform: translateY(-48%); }
-  80% { transform: translateY(-58%); }
-  100% { transform: translateY(-89%); }
+  0% { background-position: 0% 0%; }
+  20% { background-position: 0% 6%; }
+  40% { background-position: 0% 28%; }
+  60% { background-position: 0% 48%; }
+  80% { background-position: 0% 58%; }
+  100% { background-position: 0% 89%; }
 }
 
 .gradient-animation-v3 {
@@ -508,14 +507,15 @@ grid-content{
 }
 
 @keyframes gradientmove3 {
-  0% { transform: translateY(0%); }
-  10% { transform: translateY(-36%); }
-  20% { transform: translateY(-16%); }
-  40% { transform: translateY(-32%); }
-  60% { transform: translateY(-62%); }
-  80% { transform: translateY(-70%); }
-  100% { transform: translateY(-89%); }
+  0% { background-position: 0% 0%; }
+  10% { background-position: 0% 36%; }
+  20% { background-position: 0% 16%; }
+  40% { background-position: 0% 32%; }
+  60% { background-position: 0% 62%; }
+  80% { background-position: 0% 70%; }
+  100% { background-position: 0% 89%; }
 }
+
 
 .gradient-animation-v4 {
   animation-name: gradientmove4;
@@ -524,13 +524,13 @@ grid-content{
 }
 
 @keyframes gradientmove4 {
-  0% { transform: translateY(0%); }
-  10% { transform: translateY(-6%); }
-  20% { transform: translateY(-20%); }
-  40% { transform: translateY(-36%); }
-  60% { transform: translateY(-56%); }
-  80% { transform: translateY(-75%); }
-  100% { transform: translateY(-89%); }
+  0% { background-position: 0% 0%; }
+  10% { background-position: 0% 60%; }
+  20% { background-position: 0% 20%; }
+  40% { background-position: 0% 36%; }
+  60% { background-position: 0% 56%; }
+  80% { background-position: 0% 75%; }
+  100% { background-position: 0% 89%; }
 }
 
 
