@@ -3,19 +3,31 @@
 import { useEffect, useState } from "react";
 import Lottie from "react-lottie";
 import './LandingAnimation.css';
+import { Stage } from "../Stage";
 
-export type Stage = "landing" | "act1" | "act2" | "act3" | "act4";
+// export type Stage = "landing" | "act1" | "act2" | "act3" | "act4";
 
 interface AssetAnimationProps {
   stage: Stage;
 }
 
-const stageIndices: Record<Stage, number[]> = {
-  landing: [0, 0],
-  act1: [1, 2], // stop at index 1 when scrolling down from landing to act1; stop at index 2 when scrolling up from act2 to act1
-  act2: [2, 3],
-  act3: [3, 5],
-  act4: [5, 6]
+// Stage is a numeric enum, you need to use [Stage.Landing] syntax for the keys.
+// Animation file indices when scrolling forward (down)
+const stageForwardIndices: Record<Stage, number> = {
+  [Stage.Landing]: 0,
+  [Stage.Act1]: 1,
+  [Stage.Act2]: 2,
+  [Stage.Act3]: 3,
+  [Stage.Act4]: 4
+};
+
+// Animation file indices when scrolling backward (up)
+const stageBackwardIndices: Record<Stage, number> = {
+  [Stage.Landing]: 0,
+  [Stage.Act1]: 1,
+  [Stage.Act2]: 2,
+  [Stage.Act3]: 3,
+  [Stage.Act4]: 4
 };
 
 const animationFiles = [
@@ -41,12 +53,12 @@ interface AnimationPair {
 function AssetAnimation({ stage }: AssetAnimationProps) {
   const [animationPairs, setAnimationPairs] = useState<AnimationPair[]>([]); // an array of animation pairs to play sequentially
   const [currentIndex, setCurrentIndex] = useState(0); // index of the current animation in animationPairs being played
-  const [prevStageIndex, setPrevStageIndex] = useState(0); // TODO: probably need to store & update instead of referencing it
+  const [prevStage, setPrevStage] = useState<Stage>(stage); // track previous stage for comparison
   const [isReverse, setIsReverse] = useState(false); // whether to play animations in reverse
 
   useEffect(() => {
     const loadAnimations = async () => {
-      const stageIndex = stageIndices[stage][0];
+      const stageIndex = stageForwardIndices[stage];
       const [leftFile, rightFile] = animationFiles[stageIndex];
 
       const [leftData, rightData] = await Promise.all([
@@ -65,10 +77,11 @@ function AssetAnimation({ stage }: AssetAnimationProps) {
   }, [stage]);
 
   const startTransition = async (newStage: Stage) => {
-    const targetStageIndex = stageIndices[newStage];
-    console.log({prevStageIndex, targetStageIndex});
+    console.log({prevStage, newStage});
 
-    if (targetStageIndex > prevStageIndex) {
+    if (newStage > prevStage) {
+      const prevStageIndex = stageForwardIndices[prevStage];
+      const targetStageIndex = stageForwardIndices[newStage];
       const transitionPairs: AnimationPair[] = [];
       for (let i = prevStageIndex + 1; i <= targetStageIndex; i++) {
         // for each index between current and target, play the corresponding animation in order. wait until the prev animmation completes before moving to the next one..
@@ -83,9 +96,10 @@ function AssetAnimation({ stage }: AssetAnimationProps) {
       setAnimationPairs(transitionPairs);
       setCurrentIndex(0);
       setIsReverse(false);
-      setPrevStageIndex(targetStageIndex);
-      set
-    } else if (targetStageIndex < prevStageIndex) {
+      setPrevStage(newStage);
+    } else if (newStage < prevStage) {
+      const prevStageIndex = stageBackwardIndices[prevStage];
+      const targetStageIndex = stageBackwardIndices[newStage];
       const transitionPairs: AnimationPair[] = [];
       for (let i = prevStageIndex; i >= targetStageIndex; i--) {
         const [leftFile, rightFile] = animationFiles[i];
@@ -98,7 +112,7 @@ function AssetAnimation({ stage }: AssetAnimationProps) {
       setAnimationPairs(transitionPairs);
       setCurrentIndex(0);
       setIsReverse(true);
-      setPrevStageIndex(targetStageIndex);
+      setPrevStage(newStage);
     }
   }
 
