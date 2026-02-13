@@ -11,7 +11,7 @@ interface AssetAnimationProps {
   stage: Stage;
 }
 
-// Stage is a numeric enum, you need to use [Stage.Landing] syntax for the keys.
+// Stage is a numeric enum, so need to use [Stage.Landing] syntax for the keys.
 // Animation file indices when scrolling forward (down)
 const stageForwardIndices: Record<Stage, number> = {
   [Stage.Landing]: 0,
