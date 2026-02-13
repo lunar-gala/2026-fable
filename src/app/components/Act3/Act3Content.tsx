@@ -9,7 +9,7 @@ export default function Act3Content() {
   return (
     <>
     <div className='gradient-grid a3grid'>
-        <div className='xl-row rowGrid'>
+        <div className='xl-row rowGridContent'>
             <div className='homeCell-content xl-cell c1'></div>          
             <div className='homeCell-content l-cell c2'></div>          
             <div className='homeCell-content m-cell c3'></div>
@@ -24,7 +24,7 @@ export default function Act3Content() {
             <div className='homeCell-content xl-cell c1'></div>           
         </div>
 
-        <div className='l-row rowGrid'>
+        <div className='l-row rowGridContent'>
            <div className='homeCell-content xl-cell c1'></div>          
             <div className='homeCell-content l-cell c2'></div>          
             <div className='homeCell-content m-cell c3'></div>
@@ -39,7 +39,7 @@ export default function Act3Content() {
             <div className='homeCell-content xl-cell c1'></div>      
         </div> 
 
-        <div className='m-row rowGrid'>
+        <div className='m-row rowGridContent'>
            <div className='homeCell-content xl-cell c1'></div>          
             <div className='homeCell-content l-cell c2'></div>          
             <div className='homeCell-content m-cell c3'></div>
@@ -54,7 +54,7 @@ export default function Act3Content() {
             <div className='homeCell-content xl-cell c1'></div>                 
         </div> 
 
-        <div className='s-row rowGrid'>
+        <div className='s-row rowGridContent'>
            <div className='homeCell-content xl-cell c1'></div>          
             <div className='homeCell-content l-cell c2'></div>          
             <div className='homeCell-content m-cell c3'></div>
@@ -69,7 +69,7 @@ export default function Act3Content() {
             <div className='homeCell-content xl-cell c1'></div>                        
         </div> 
 
-        <div className='xs-row rowGrid'>
+        <div className='xs-row rowGridContent'>
            <div className='homeCell-content xl-cell c1'></div>          
             <div className='homeCell-content l-cell c2'></div>          
             <div className='homeCell-content m-cell c3'></div>
@@ -84,7 +84,7 @@ export default function Act3Content() {
             <div className='homeCell-content xl-cell c1'></div>          
         </div>  
 
-        <div className='xs-row rowGrid'>
+        <div className='xs-row rowGridContent'>
            <div className='homeCell-content xl-cell c1'></div>          
             <div className='homeCell-content l-cell c2'></div>          
             <div className='homeCell-content m-cell c3'></div>
@@ -99,7 +99,7 @@ export default function Act3Content() {
             <div className='homeCell-content xl-cell c1'></div>      
         </div>  
 
-        <div className='xs-row rowGrid'>
+        <div className='xs-row rowGridContent'>
            <div className='homeCell-content xl-cell c1'></div>          
             <div className='homeCell-content l-cell c2'></div>          
             <div className='homeCell-content m-cell c3'></div>
@@ -114,7 +114,7 @@ export default function Act3Content() {
             <div className='homeCell-content xl-cell c1'></div>       
         </div>  
 
-        <div className='xs-row rowGrid'>
+        <div className='xs-row rowGridContent'>
            <div className='homeCell-content xl-cell c1'></div>          
             <div className='homeCell-content l-cell c2'></div>          
             <div className='homeCell-content m-cell c3'></div>
@@ -129,7 +129,7 @@ export default function Act3Content() {
             <div className='homeCell-content xl-cell c1'></div>    
         </div>   
 
-        <div className='s-row rowGrid'>
+        <div className='s-row rowGridContent'>
            <div className='homeCell-content xl-cell c1'></div>          
             <div className='homeCell-content l-cell c2'></div>          
             <div className='homeCell-content m-cell c3'></div>
@@ -144,7 +144,7 @@ export default function Act3Content() {
             <div className='homeCell-content xl-cell c1'></div>              
         </div>  
 
-        <div className='m-row rowGrid'>
+        <div className='m-row rowGridContent'>
            <div className='homeCell-content xl-cell c1'></div>          
             <div className='homeCell-content l-cell c2'></div>          
             <div className='homeCell-content m-cell c3'></div>
@@ -159,7 +159,7 @@ export default function Act3Content() {
             <div className='homeCell-content xl-cell c1'></div>            
         </div> 
 
-        <div className='l-row rowGrid'>
+        <div className='l-row rowGridContent'>
            <div className='homeCell-content xl-cell c1'></div>          
             <div className='homeCell-content l-cell c2'></div>          
             <div className='homeCell-content m-cell c3'></div>
@@ -174,7 +174,7 @@ export default function Act3Content() {
             <div className='homeCell-content xl-cell c1'></div>           
         </div>    
         
-        <div className='xl-row rowGrid'>
+        <div className='xl-row rowGridContent'>
            <div className='homeCell-content xl-cell c1'></div>          
             <div className='homeCell-content l-cell c2'></div>          
             <div className='homeCell-content m-cell c3'></div>
