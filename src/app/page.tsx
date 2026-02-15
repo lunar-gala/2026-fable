@@ -1,3 +1,4 @@
+import AboutFull from "./components/About/AboutFull";
 import MainContent from "./components/MainContent";
 import NavBar from "./components/NavBar";
 import { COLORS } from "./constants";

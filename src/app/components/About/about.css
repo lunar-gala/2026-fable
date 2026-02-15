@@ -1,0 +1,43 @@
+.a1gradient1{
+    background: linear-gradient(180deg, #B0D2DE 5%, #FFF 78%);
+    background-size: 100% 800px;
+    animation: gradientmove 8s ease infinite;
+}
+
+.a2gradient1{
+  background-clip: padding-box;
+  background: linear-gradient(180deg, #FFF 25%, #FF76A2 64.9%, #613B38 89.42%);  
+  background-size: 100% 1200px; 
+  animation: gradientmove 16s ease infinite;
+}
+
+.a3gradient1{
+    background: linear-gradient(180deg, #613B38 0%, #E7303A 39.9%, #DFCDFF 100%);
+    background-size: 100% 1000px;
+    animation: gradientmove 10s ease infinite;
+}
+
+.a3gradient2{
+    background: linear-gradient(180deg, #DFCDFE 14.9%, #E7303A 62.5%, #613B38 86.54%, #613B38 100%);
+    background-size: 100% 1480px;
+    animation: gradientmove 10s ease infinite;
+}
+
+.a4gradient1{
+    background: linear-gradient(180deg, #DFCDFF 0%, #FFF 89.9%, #B0D2DE 100%);
+    background-size: 100% 600px;
+        animation: gradientmove 10s ease infinite;
+
+}
+
+@keyframes gradientmove {
+    0% {
+        background-position: 0% 0%; 
+    }
+    50% {
+        background-position: 0% 100%; 
+    }
+    100% {
+        background-position: 0% 0%; 
+    }
+}
