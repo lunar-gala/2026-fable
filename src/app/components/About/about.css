@@ -30,6 +30,25 @@
 
 }
 
+.allactgradient {
+  background: linear-gradient(
+    180deg,
+    #b0d2de 0%,
+    #FFF 10.58%,
+    #ff76a2 22.6%,
+    #613b38 30.29%,
+    #613b38 36.06%,
+    #e7303a 42.79%,
+    #dfcdff 57.69%,
+    #FFF 67.79%,
+    #b0d2de 88.15%,
+    #FFF 100%
+  );
+  background-size: 100% 2300px; /* needs to be after background declaration so that it doesn't get reset */
+    animation: gradientmove 30s ease infinite;
+
+}
+
 @keyframes gradientmove {
     0% {
         background-position: 0% 0%; 

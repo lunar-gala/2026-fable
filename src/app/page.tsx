@@ -1,3 +1,4 @@
+import AboutContent from "./components/About/AboutContent";
 import AboutFull from "./components/About/AboutFull";
 import MainContent from "./components/MainContent";
 import NavBar from "./components/NavBar";
@@ -10,7 +11,7 @@ export default function Home() {
       style={{ backgroundColor: COLORS.background }}
     >
       <NavBar />
-      <MainContent />
+      <AboutFull />
     </main>
   );
 }
