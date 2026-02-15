@@ -11,7 +11,7 @@ export default function Home() {
       style={{ backgroundColor: COLORS.background }}
     >
       <NavBar />
-      <AboutFull />
+      <MainContent />
     </main>
   );
 }

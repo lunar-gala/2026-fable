@@ -49,7 +49,7 @@ export default function NavBar() {
 
         <nav className="navbar-nav" aria-label="Primary navigation">
           {NAV_ITEMS.map((item) => (
-            <button key={item} type="button" className="navbar-row navbar-link-row">
+            <button key={item} type="button" className="navbar-row navbar-link-row" onClick={() => handleNavigation(item)}>
               <img
                 src={isDark ? "/asset cutout dark.svg" : "/asset cutout light.svg"}
                 alt=""
