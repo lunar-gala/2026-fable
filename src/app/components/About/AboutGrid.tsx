@@ -44,7 +44,7 @@ export default function AboutGrid() {
             <div className='landingCell l-cell c3'></div>
             <div className='landingCell xs-cell c4'></div>
             <div className='landingCell xs-cell c5'></div>
-            <div className='landingCell xl-cell c6'></div>            
+            <div className='allactgradient landingCell xl-cell c6'></div>            
             <div className='landingCell xl-cell c6'> </div>             
             <div className='landingCell xs-cell c5'></div>
             <div className='a3gradient1 landingCell xs-cell c4'> </div>
@@ -58,7 +58,7 @@ export default function AboutGrid() {
             <div className='landingCell xs-cell c2'></div>          
             <div className='landingCell l-cell c3'></div>
             <div className='landingCell xs-cell c4'></div>
-            <div className='landingCell xs-cell c5'></div>
+            <div className='a2gradient1 landingCell xs-cell c5'></div>
             <div className='landingCell xl-cell c6'></div>            
             <div className='landingCell xl-cell c6'> </div>             
             <div className='landingCell xs-cell c5'></div>
@@ -79,7 +79,7 @@ export default function AboutGrid() {
             <div className='landingCell xs-cell c5'></div>
             <div className='landingCell xs-cell c4'> </div>
             <div className='landingCell l-cell c3'> </div>
-            <div className='landingCell xs-cell c2'></div>          
+            <div className='allactgradient landingCell xs-cell c2'></div>          
             <div className='landingCell xs-cell c1'></div>           
         </div>
 
