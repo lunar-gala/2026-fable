@@ -41,8 +41,8 @@ export default function MainContent() {
         style={{
           position: "fixed",
           top: 0,
-          left: 0,
-          width: "100%",
+          left: "5%",
+          width: "95%",
           height: "100vh",
           backgroundColor: COLORS.background,
           transition: "opacity 0.1s ease-out",

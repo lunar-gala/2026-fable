@@ -3,7 +3,7 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
-  --sidebar-width: 48px;
+  --sidebar-width: 5%;
   --color-cream: #f5f2eb;
   --color-cream-light: #faf8f4;
   --color-blue-muted: #8fa4b8;
@@ -200,8 +200,9 @@ body {
 }
 
 .navbar-inner {
-  width: 100%;
+  width: 48px;
   height: 100%;
+  margin: 0px auto 0px auto;
   display: flex;
   flex-direction: column;
   border-left: 1px solid currentColor;
