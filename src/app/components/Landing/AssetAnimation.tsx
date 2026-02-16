@@ -31,7 +31,7 @@ const stageBackwardIndices: Record<Stage, number> = {
 };
 
 const animationFiles = [
-  ["/shapes/landingL.json", "/shapes/landingR.json"], // 0, landing
+  ["/shapes/landing-L.json", "/shapes/landing-R.json"], // 0, landing
   ["/shapes/Act1-LSide.json", "/shapes/Act1-RSide.json"], // 1, transition to act1 & act1, the original file names from the folder are in the wrong order...
   ["/shapes/act1to2 - L.json", "/shapes/act1to2 - R.json"], // 2, transition to act2 & act 2, the original file names from the folder are in the wrong order too...
   ["/shapes/act2to3L.json", "/shapes/act2to3R.json"], // 3, transition to act 3
