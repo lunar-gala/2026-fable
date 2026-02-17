@@ -3,6 +3,7 @@ import { useState } from "react";
 import "./people.css";
 
 const NAV_ITEMS = [
+  "",
   "Exec",
   "Creative",
   "Design",
@@ -10,7 +11,6 @@ const NAV_ITEMS = [
   "Model",
   "Hair & Makeup",
   "PR",
-  "Tech",
 ];
 
 export default function PeopleContent() {
@@ -42,12 +42,17 @@ export default function PeopleContent() {
           <div className="people-nav-spacer" />
           {NAV_ITEMS.map((item, index) => (
             <div key={`mid-${item}`} style={{ display: "contents" }}>
-              <button
-                className={`people-nav-button ${activeTab === item ? "active" : ""}`}
-                onClick={() => setActiveTab(item)}
-              >
-                <span className="people-nav-button-label">{item}</span>
-              </button>
+                {(item == "") && (
+                    <div className={`people-nav-empty-button`}></div>
+                )}
+                {(item != "") && (
+                    <button
+                        className={`people-nav-button ${activeTab === item ? "active" : ""}`}
+                        onClick={() => setActiveTab(item)}
+                    >
+                        <span className="people-nav-button-label">{item}</span>
+                    </button>
+                )}
               {index < NAV_ITEMS.length - 1 && (
                 <div className="people-nav-separator" />
               )}

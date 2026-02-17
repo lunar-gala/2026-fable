@@ -41,12 +41,11 @@
 }
 
 /* Nav button container */
-.people-nav-button {
+.people-nav-button, .people-nav-empty-button {
   flex: 1;
   min-width: 0;
   border-right: 0.125px solid var(--dark-brown);
   background: transparent;
-  cursor: pointer;
   transition: background-color 0.2s ease;
   display: flex;
   align-items: center;
@@ -56,6 +55,10 @@
   border-top: none;
   border-bottom: none;
   border-left: none;
+}
+
+.people-nav-button {
+  cursor: pointer;
 }
 
 .people-nav-button:hover {
