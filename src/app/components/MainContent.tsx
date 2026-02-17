@@ -39,15 +39,17 @@ export default function MainContent() {
     <>
       <div style={{ position: "relative", width: "100%", height: "500vh" }}>
         <div id="animationWindow"
-        style={{
+        style={{ 
           position: "fixed",
           top: 0,
+<<<<<<< Updated upstream
           left: "5%",
           width: "95%",
+=======
+>>>>>>> Stashed changes
           height: "100vh",
-          backgroundColor: COLORS.background,
-          transition: "opacity 0.1s ease-out",
         }}
+
         >
           {stage === Stage.Landing && <LandingAnimation />}
           {stage === Stage.Act1 && <Act1Full />}
