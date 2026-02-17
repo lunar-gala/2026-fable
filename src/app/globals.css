@@ -389,6 +389,58 @@ body {
   display: none;
 }
 
+/* top navbar for lines pages */
+.navbar-top {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 48px;  /* match your mockup height */
+  background: var(--navbar-bg, #fff); /* use your theme vars */
+  border-bottom: 1px solid var(--border-color, #eee);
+  display: flex;
+  align-items: center;
+  z-index: 1000;
+  padding-inline: 1rem;
+}
+
+.navbar-top-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;  /* constrain width */
+  margin: 0 auto;
+}
+
+.navbartop-logo {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.navbar-top-nav {
+  display: flex;
+  gap: 2rem;  /* space between Viewer/Tracks/Debut */
+}
+
+.navbar-top-link {
+  background: none;
+  border: none;
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all 0.2s;
+}
+
+.navbar-top-link:hover {
+  background: var(--hover-bg, rgba(0,0,0,0.05));
+  color: var(--text-primary);
+}
+
 /* Animation window positioning to account for navbar */
 .animation-window {
   position: fixed;

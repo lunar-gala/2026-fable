@@ -10,216 +10,116 @@ export default function LinesGrid() {
     <>
     <div className='grid100vh'>
         <div className='xs-row rowGridContent'>
-             <div className='homeCell-content xs-cell c1'></div>          
-            <div className='homeCell-content l-cell c2'></div>
+            <div className='homeCell-content xs-cell c1'></div>          
             <div className='homeCell-content xs-cell c3'></div>
-            <div className='homeCell-content m-cell c4'></div> 
+            <div className='homeCell-content l-cell c4'></div> 
             <div className='homeCell-content xs-cell c5'></div>
-            <div className='homeCell-content m-cell c6'></div>   
+            <div className='homeCell-content l-cell c6'></div>   
             <div className='homeCell-content xs-cell c6'></div>  
-            <div className='homeCell-content m-cell c6'></div> 
+            <div className='homeCell-content l-cell c6'></div> 
             <div className='homeCell-content xs-cell c6'></div>
-            <div className='homeCell-content m-cell c6'></div>  
-            <div className='homeCell-content xs-cell c5'></div>
-            <div className='homeCell-content m-cell c4'></div>   
+            <div className='homeCell-content l-cell c6'></div>  
             <div className='homeCell-content xs-cell c3'></div>  
-            <div className='homeCell-content m-cell c2'></div>     
             <div className='homeCell-content xs-cell c1'></div>  
         </div>   
 
         <div className='xs-row rowGridContent'>
             <div className='homeCell-content xs-cell c1'></div>          
-            <div className='homeCell-content l-cell c2'></div>
             <div className='homeCell-content xs-cell c3'></div>
-            <div className='homeCell-content m-cell c4'></div> 
+            <div className='homeCell-content l-cell c4'></div> 
             <div className='homeCell-content xs-cell c5'></div>
-            <div className='homeCell-content m-cell c6'></div>   
+            <div className='homeCell-content l-cell c6'></div>   
             <div className='homeCell-content xs-cell c6'></div>  
-            <div className='homeCell-content m-cell c6'></div> 
+            <div className='homeCell-content l-cell c6'></div> 
             <div className='homeCell-content xs-cell c6'></div>
-            <div className='homeCell-content m-cell c6'></div>  
-            <div className='homeCell-content xs-cell c5'></div>
-            <div className='homeCell-content m-cell c4'></div>   
+            <div className='homeCell-content l-cell c6'></div>  
             <div className='homeCell-content xs-cell c3'></div>  
-            <div className='homeCell-content m-cell c2'></div>     
-            <div className='homeCell-content xs-cell c1'></div>  
-        </div>   
-
-        <div className='l-row rowGridContent'>
-            <div className=' homeCell-content xs-cell c1'></div>          
-            <div className='stretchFlex homeCell-content xl-cell c2'>
-                <h4 className="allcaps shifth4flushtop">Act I</h4>
-                <h1 className="shifth1flush">Follow</h1>
-            </div>
-            <div className='homeCell-content xs-cell c3'></div>
-            <div className='homeCell-content m-cell c4'></div> 
-            <div className='homeCell-content xs-cell c5'></div>
-            <div className='homeCell-content m-cell c6'></div>   
-            <div className='homeCell-content xs-cell c6'></div>  
-            <div className='homeCell-content m-cell c6'></div> 
-            <div className='homeCell-content xs-cell c6'></div>
-            <div className='homeCell-content m-cell c6'></div>  
-            <div className='homeCell-content xs-cell c5'></div>
-            <div className='homeCell-content m-cell c4'></div>   
-            <div className='homeCell-content xs-cell c3'></div>  
-            <div className='homeCell-content m-cell c2'></div>     
-            <div className='homeCell-content xs-cell c1'></div>  
-        </div>     
-    
-
-        <div className='xs-row rowGridContent'>
-            <div className=' homeCell-content xs-cell c1'></div>          
-            <div className='homeCell-content xl-cell c2'></div>
-            <div className='homeCell-content xs-cell c3'></div>
-            <div className='homeCell-content m-cell c4'></div> 
-            <div className='homeCell-content xs-cell c5'></div>
-            <div className='homeCell-content m-cell c6'></div>   
-            <div className='homeCell-content xs-cell c6'></div>  
-            <div className='homeCell-content m-cell c6'></div> 
-            <div className='homeCell-content xs-cell c6'></div>
-            <div className='homeCell-content m-cell c6'></div>  
-            <div className='homeCell-content xs-cell c5'></div>
-            <div className='homeCell-content m-cell c4'></div>   
-            <div className='homeCell-content xs-cell c3'></div>  
-            <div className='homeCell-content m-cell c2'></div>     
             <div className='homeCell-content xs-cell c1'></div>  
         </div> 
 
         <div className='l-row rowGridContent'>
-            <div className=' homeCell-content xs-cell c1'></div>          
-            <div className='stretchFlex homeCell-content xl-cell c2'>
-                <h4 className="allcaps shifth4flushtop">Act II</h4>
-                <h1 className="shifth1flush">Wander</h1>
-            </div>            
+            <div className='homeCell-content xs-cell c1'></div>   
             <div className='homeCell-content xs-cell c3'></div>
-            <div className='homeCell-content m-cell c4'></div> 
-            <div className='homeCell-content xs-cell c5'></div>
-            <div className='homeCell-content m-cell c6'></div>   
+            <div className='homeCell-content xl-cell c4'>
+                <h1> Line name </h1>  
+            </div> 
             <div className='homeCell-content xs-cell c6'></div>  
-            <div className='homeCell-content m-cell c6'></div> 
+            <div className='homeCell-content l-cell c6'></div> 
             <div className='homeCell-content xs-cell c6'></div>
-            <div className='homeCell-content m-cell c6'></div>  
-            <div className='homeCell-content xs-cell c5'></div>
-            <div className='homeCell-content m-cell c4'></div>   
+            <div className='homeCell-content l-cell c6'></div>  
             <div className='homeCell-content xs-cell c3'></div>  
-            <div className='homeCell-content m-cell c2'></div>     
             <div className='homeCell-content xs-cell c1'></div>  
-        </div>   
-
-        <div className='xs-row rowGridContent'>
-            <div className=' homeCell-content xs-cell c1'></div>          
-            <div className='homeCell-content xl-cell c2'></div>
-            <div className='homeCell-content xs-cell c3'></div>
-            <div className='homeCell-content m-cell c4'></div> 
-            <div className='homeCell-content xs-cell c5'></div>
-            <div className='homeCell-content m-cell c6'></div>   
-            <div className='homeCell-content xs-cell c6'></div>  
-            <div className='homeCell-content m-cell c6'></div> 
-            <div className='homeCell-content xs-cell c6'></div>
-            <div className='homeCell-content m-cell c6'></div>  
-            <div className='homeCell-content xs-cell c5'></div>
-            <div className='homeCell-content m-cell c4'></div>   
-            <div className='homeCell-content xs-cell c3'></div>  
-            <div className='homeCell-content m-cell c2'></div>     
-            <div className='homeCell-content xs-cell c1'></div>  
-        </div>   
+        </div> 
 
         <div className='l-row rowGridContent'>
-            <div className=' homeCell-content xs-cell c1'></div>          
-            <div className='stretchFlex homeCell-content xl-cell c2'>
-                <h4 className="allcaps shifth4flushtop">Act III</h4>
-                <h1 className="shifth1flush">Trace</h1>
-            </div>            
+            <div className='homeCell-content xs-cell c1'></div>          
             <div className='homeCell-content xs-cell c3'></div>
-            <div className='homeCell-content m-cell c4'></div> 
+            <div className='homeCell-content l-cell c4'></div> 
             <div className='homeCell-content xs-cell c5'></div>
-            <div className='homeCell-content m-cell c6'></div>   
+            <div className='homeCell-content l-cell c6'></div>   
             <div className='homeCell-content xs-cell c6'></div>  
-            <div className='homeCell-content m-cell c6'></div> 
+            <div className='homeCell-content l-cell c6'></div> 
             <div className='homeCell-content xs-cell c6'></div>
-            <div className='homeCell-content m-cell c6'></div>  
-            <div className='homeCell-content xs-cell c5'></div>
-            <div className='homeCell-content m-cell c4'></div>   
+            <div className='homeCell-content l-cell c6'></div>  
             <div className='homeCell-content xs-cell c3'></div>  
-            <div className='homeCell-content m-cell c2'></div>     
             <div className='homeCell-content xs-cell c1'></div>  
-        </div>   
+        </div> 
 
-        <div className='xs-row rowGridContent'>
-            <div className=' homeCell-content xs-cell c1'></div>          
-            <div className='homeCell-content xl-cell c2'></div>
+        <div className='l-row rowGridContent'>
+            <div className='homeCell-content xs-cell c1'></div>          
             <div className='homeCell-content xs-cell c3'></div>
-            <div className='homeCell-content m-cell c4'></div> 
+            <div className='homeCell-content l-cell c4'></div> 
             <div className='homeCell-content xs-cell c5'></div>
-            <div className='homeCell-content m-cell c6'></div>   
+            <div className='homeCell-content l-cell c6'></div>   
             <div className='homeCell-content xs-cell c6'></div>  
-            <div className='homeCell-content m-cell c6'></div> 
+            <div className='homeCell-content l-cell c6'></div> 
             <div className='homeCell-content xs-cell c6'></div>
-            <div className='homeCell-content m-cell c6'></div>  
-            <div className='homeCell-content xs-cell c5'></div>
-            <div className='homeCell-content m-cell c4'></div>   
+            <div className='homeCell-content l-cell c6'></div>  
             <div className='homeCell-content xs-cell c3'></div>  
-            <div className='homeCell-content m-cell c2'></div>     
+            <div className='homeCell-content xs-cell c1'></div>  
+        </div> 
+
+        <div className='l-row rowGridContent'>
+            <div className='homeCell-content xs-cell c1'></div>          
+            <div className='homeCell-content xs-cell c3'></div>
+            <div className='homeCell-content l-cell c4'></div> 
+            <div className='homeCell-content xs-cell c5'></div>
+            <div className='homeCell-content l-cell c6'></div>   
+            <div className='homeCell-content xs-cell c6'></div>  
+            <div className='homeCell-content l-cell c6'></div> 
+            <div className='homeCell-content xs-cell c6'></div>
+            <div className='homeCell-content l-cell c6'></div>  
+            <div className='homeCell-content xs-cell c3'></div>  
             <div className='homeCell-content xs-cell c1'></div>  
         </div>  
 
-
-        <div className='l-row rowGridContent'>
-            <div className=' homeCell-content xs-cell c1'></div>          
-            <div className='stretchFlex homeCell-content xl-cell c2'>
-                <h4 className="allcaps shifth4flushtop">Act IV</h4>
-                <h1 className="shifth1flush">Discern</h1>
-            </div>            
+        <div className='xs-row rowGridContent'>
+            <div className='homeCell-content xs-cell c1'></div>          
             <div className='homeCell-content xs-cell c3'></div>
-            <div className='homeCell-content m-cell c4'></div> 
+            <div className='homeCell-content l-cell c4'></div> 
             <div className='homeCell-content xs-cell c5'></div>
-            <div className='homeCell-content m-cell c6'></div>   
+            <div className='homeCell-content l-cell c6'></div>   
             <div className='homeCell-content xs-cell c6'></div>  
-            <div className='homeCell-content m-cell c6'></div> 
+            <div className='homeCell-content l-cell c6'></div> 
             <div className='homeCell-content xs-cell c6'></div>
-            <div className='homeCell-content m-cell c6'></div>  
-            <div className='homeCell-content xs-cell c5'></div>
-            <div className='homeCell-content m-cell c4'></div>   
+            <div className='homeCell-content l-cell c6'></div>  
             <div className='homeCell-content xs-cell c3'></div>  
-            <div className='homeCell-content m-cell c2'></div>     
             <div className='homeCell-content xs-cell c1'></div>  
-        </div>   
+        </div> 
 
         <div className='xs-row rowGridContent'>
-            <div className=' homeCell-content xs-cell c1'></div>          
-            <div className='homeCell-content xl-cell c2'></div>
+            <div className='homeCell-content xs-cell c1'></div>          
             <div className='homeCell-content xs-cell c3'></div>
-            <div className='homeCell-content m-cell c4'></div> 
+            <div className='homeCell-content l-cell c4'></div> 
             <div className='homeCell-content xs-cell c5'></div>
-            <div className='homeCell-content m-cell c6'></div>   
+            <div className='homeCell-content l-cell c6'></div>   
             <div className='homeCell-content xs-cell c6'></div>  
-            <div className='homeCell-content m-cell c6'></div> 
+            <div className='homeCell-content l-cell c6'></div> 
             <div className='homeCell-content xs-cell c6'></div>
-            <div className='homeCell-content m-cell c6'></div>  
-            <div className='homeCell-content xs-cell c5'></div>
-            <div className='homeCell-content m-cell c4'></div>   
+            <div className='homeCell-content l-cell c6'></div>  
             <div className='homeCell-content xs-cell c3'></div>  
-            <div className='homeCell-content m-cell c2'></div>     
             <div className='homeCell-content xs-cell c1'></div>  
-        </div>    
-
-        <div className='xs-row rowGridContent'>
-            <div className=' homeCell-content xs-cell c1'></div>          
-            <div className='homeCell-content xl-cell c2'></div>
-            <div className='homeCell-content xs-cell c3'></div>
-            <div className='homeCell-content m-cell c4'></div> 
-            <div className='homeCell-content xs-cell c5'></div>
-            <div className='homeCell-content m-cell c6'></div>   
-            <div className='homeCell-content xs-cell c6'></div>  
-            <div className='homeCell-content m-cell c6'></div> 
-            <div className='homeCell-content xs-cell c6'></div>
-            <div className='homeCell-content m-cell c6'></div>  
-            <div className='homeCell-content xs-cell c5'></div>
-            <div className='homeCell-content m-cell c4'></div>   
-            <div className='homeCell-content xs-cell c3'></div>  
-            <div className='homeCell-content m-cell c2'></div>     
-            <div className='homeCell-content xs-cell c1'></div>  
-        </div>    
+        </div> 
 
     </div> 
     </>
