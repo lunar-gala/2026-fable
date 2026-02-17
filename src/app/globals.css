@@ -709,7 +709,7 @@ grid-content{
   pointer-events: none;
   border: none;
   position: relative;
-  overflow: visible;
+  overflow: hidden;
   flex-grow: 0;
 }
 
@@ -717,7 +717,7 @@ grid-content{
     position: absolute;
     top:0;
     z-index: 100;
-    width:100%;
+    width:calc(100% - var(--sidebar-width));
     pointer-events: none;
 }
 

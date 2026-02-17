@@ -12,7 +12,7 @@ export default function AboutContent() {
         <div className='vh25-row rowGridContent'>
             <div className='homeCell-content xs-cell c1'></div>          
             <div className='homeCell-content xs-cell c2'></div>          
-            <div className='homeCell-content l-cell c3'></div>
+            <div className='homeCell-content l-cell c3'> </div>
             <div className='homeCell-content xs-cell c4'></div>
             <div className='homeCell-content xs-cell c5'></div>
             <div className='homeCell-content xl-cell c6'></div>            
