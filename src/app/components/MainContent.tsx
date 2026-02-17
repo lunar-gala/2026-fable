@@ -42,14 +42,9 @@ export default function MainContent() {
         style={{ 
           position: "fixed",
           top: 0,
-<<<<<<< Updated upstream
           left: "5%",
           width: "95%",
-=======
->>>>>>> Stashed changes
-          height: "100vh",
         }}
-
         >
           {stage === Stage.Landing && <LandingAnimation />}
           {stage === Stage.Act1 && <Act1Full />}
