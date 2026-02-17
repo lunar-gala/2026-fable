@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import React, { useState } from "react";
 import "./people.css";
 
 const NAV_ITEMS = [
@@ -28,7 +28,7 @@ export default function PeopleContent() {
             <div key={`top-${item}`} style={{ display: "contents" }}>
               <div className="people-nav-cell" />
               {index < NAV_ITEMS.length - 1 && (
-                <div className="people-nav-separator" />
+                <div className="people-separator" />
               )}
             </div>
           ))}
@@ -54,7 +54,7 @@ export default function PeopleContent() {
                     </button>
                 )}
               {index < NAV_ITEMS.length - 1 && (
-                <div className="people-nav-separator" />
+                <div className="people-separator" />
               )}
             </div>
           ))}
@@ -70,7 +70,7 @@ export default function PeopleContent() {
             <div key={`bottom-${item}`} style={{ display: "contents" }}>
               <div className="people-nav-cell" />
               {index < NAV_ITEMS.length - 1 && (
-                <div className="people-nav-separator" />
+                <div className="people-separator" />
               )}
             </div>
           ))}
@@ -81,8 +81,19 @@ export default function PeopleContent() {
 
       {/* Photo sections - 7 sections corresponding to 7 nav buttons */}
       <div className="people-photo-sections">
-        {NAV_ITEMS.filter((item) => item !== "").map((section) => (
-          <div key={section} className="people-photo-section">
+        {NAV_ITEMS.filter((item) => item !== "").map((section, sectionIndex, arr) => (
+          <React.Fragment key={section}>
+          {/* Divider */}
+          {sectionIndex > 0 && (
+            <div className="people-photo-row people-row-24">
+              <div className="people-spacer" />
+              <div className="people-spacer" />
+              <div className="people-gradient" />
+              <div className="people-spacer" />
+              <div className="people-spacer" />
+            </div>
+          )}
+          <div className="people-photo-section">
             {/* Top 24px row */}
             <div className="people-photo-row people-row-24">
               <div className="people-spacer" />
@@ -91,7 +102,7 @@ export default function PeopleContent() {
                 <div key={`bottom-${item}`} style={{ display: "contents" }}>
                   <div className="people-nav-cell" />
                   {index < NAV_ITEMS.length - 1 && (
-                    <div className="people-nav-separator" />
+                    <div className="people-separator" />
                   )}
                 </div>
               ))}
@@ -101,20 +112,20 @@ export default function PeopleContent() {
 
             {/* Photo row */}
             <div className="people-photo-row">
-              <div className="people-photo-spacer" />
-              <div className="people-photo-spacer" />
+              <div className="people-spacer" />
+              <div className="people-spacer" />
               {NAV_ITEMS.map((_, index) => (
                 <div key={index} style={{ display: "contents" }}>
                   <div className="people-photo-cell">
                     <div className="people-photo-placeholder" />
                   </div>
                   {index < NAV_ITEMS.length - 1 && (
-                    <div className="people-photo-separator" />
+                    <div className="people-separator" />
                   )}
                 </div>
               ))}
-              <div className="people-photo-spacer" />
-              <div className="people-photo-spacer" />
+              <div className="people-spacer" />
+              <div className="people-spacer" />
             </div>
 
             {/* Bottom 24px row */}
@@ -125,7 +136,7 @@ export default function PeopleContent() {
                 <div key={`bottom-${item}`} style={{ display: "contents" }}>
                   <div className="people-nav-cell" />
                   {index < NAV_ITEMS.length - 1 && (
-                    <div className="people-nav-separator" />
+                    <div className="people-separator" />
                   )}
                 </div>
               ))}
@@ -133,6 +144,7 @@ export default function PeopleContent() {
               <div className="people-spacer" />
             </div>
           </div>
+          </React.Fragment>
         ))}
       </div>
     </div>
