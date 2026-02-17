@@ -67,13 +67,20 @@ export default function NavBar() {
 
         <nav className="navbar-nav" aria-label="Primary navigation">
           {NAV_ITEMS.map((item) => (
-            <button key={item} type="button" className="navbar-row navbar-link-row" onClick={() => handleNavigation(item)}>
-              <img
-                src={isDark ? "/asset cutout dark.svg" : "/asset cutout light.svg"}
-                alt=""
-                aria-hidden="true"
-                className="navbar-cutout-sm"
-              />
+            <button
+              key={item}
+              type="button"
+              className={`navbar-row ${item === "Lines" ? "navbar-link-row navbar-link-row--plain" : "navbar-link-row"}`}
+              onClick={() => handleNavigation(item)}
+            >
+              {item !== "Lines" && (
+                <img
+                  src={isDark ? "/asset cutout dark.svg" : "/asset cutout light.svg"}
+                  alt=""
+                  aria-hidden="true"
+                  className="navbar-cutout-sm"
+                />
+              )}
               <span className="navbar-nav-label">{item}</span>
             </button>
           ))}
