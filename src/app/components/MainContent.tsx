@@ -42,12 +42,7 @@ export default function MainContent() {
         style={{ 
           position: "fixed",
           top: 0,
-<<<<<<< Updated upstream
-          left: "5%",
-          width: "95%",
-=======
           height: "100vh",
->>>>>>> Stashed changes
         }}
 
         >

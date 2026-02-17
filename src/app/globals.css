@@ -182,6 +182,7 @@ body {
 
 #animationWindow{
     left: var(--sidebar-width);
+    width:95%;
 }
 
 .fullPage{
