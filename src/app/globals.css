@@ -169,6 +169,25 @@ body {
   text-orientation: mixed;
 }
 
+.pageContent{
+  display:block;
+  width:calc(100% - var(--sidebar-width));
+  margin-left: var(--sidebar-width);
+  height:100%;
+}
+
+.pageContentFixed{
+  left: var(--sidebar-width);
+}
+
+#animationWindow{
+    left: var(--sidebar-width);
+}
+
+.fullPage{
+  width:100vw;
+  height:100%;
+}
 
 /* New NavBar styles following nav_button.png design */
 .navbar {
@@ -412,6 +431,15 @@ h1{
   letter-spacing: -0.02em;
 }
 
+.shifth1flush{
+    margin-bottom:-0.1em;
+}
+
+.shifth4flushtop{
+    margin-top:-0.3em;
+    margin-left:0.2em;
+}
+
 h2{
   font-family: var(--font-feature-display-condensed);
   font-size:40px;
@@ -468,8 +496,15 @@ p{
 
 /* Landing gradient animation */
 .gradient-grid {
-  width: 100vw;
+  width: 100%;
   height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.grid100vh{
+  width:100%;
+  height:100vh;
   display: flex;
   flex-direction: column;
 }
@@ -494,20 +529,20 @@ grid-content{
 
 
 .landing-col-s{
-    border: 0.25px solid #332b2b;
+    border: 0.125px solid #332b2b;
     width: 12px;
     height:100%;    
     background-color: white;
 }
 .landing-col-half{
-    border: 0.25px solid #332b2b;
+    border: 0.125px solid #332b2b;
     width: 25%;
     height:100%;
     background-color: red;
 
 }
 .landing-col-full {
-  border: 0.25px solid #332b2b;
+  border: 0.125px solid #332b2b;
   width: 100%;
   height:100%;
   background-color: blue;
@@ -529,7 +564,7 @@ grid-content{
   gap: 0px;
   flex-grow:0;
   overflow: hidden;
-  border-top: 0.25px solid #332b2b;
+  border-top: 0.125px solid #332b2b;
 
 }
 
@@ -540,7 +575,7 @@ grid-content{
   flex-direction: row;
   gap: 0px;
   overflow: hidden;
-  border-top: 0.25px solid #332b2b;
+  border-top: 0.125px solid #332b2b;
 }
 
 .row-eighth {
@@ -550,7 +585,7 @@ grid-content{
   flex-direction: row;
   gap: 0px;
   overflow: hidden;
-  border-top: 0.25px solid #332b2b;
+  border-top: 0.125px solid #332b2b;
 }
 
 .row-quarter {
@@ -560,7 +595,7 @@ grid-content{
   flex-direction: row;
   gap: 0px;
   overflow: hidden;
-  border-top: 0.25px solid #332b2b;
+  border-top: 0.125px solid #332b2b;
 }
 
 .row-half {
@@ -571,7 +606,7 @@ grid-content{
   gap: 0px;
   flex-grow: 0;
   overflow: hidden;
-  border-top: 0.25px solid #332b2b;
+  border-top: 0.125px solid #332b2b;
 }
 
 .row-full {
@@ -581,7 +616,7 @@ grid-content{
   flex-direction: row;
   gap: 0px;
   overflow: hidden;
-  border-top: 0.25px solid #332b2b;
+  border-top: 0.125px solid #332b2b;
 }
 
 .rowGrid{
@@ -591,7 +626,7 @@ grid-content{
   gap: 0px;
   flex-grow:0;
   overflow: hidden;
-  border-top: 0.25px solid #332b2b;
+  border-top: 0.125px solid #332b2b;
 }
 
 .rowGridContent{
@@ -633,7 +668,7 @@ grid-content{
 }
 
 .xs-row{
-  height:24px;
+  height:3%;
 }
 .s-row{
   height:6.25%;
@@ -660,7 +695,7 @@ grid-content{
   height:50vh;
 }
 .landingCell{
-  border: 0.25px solid #332b2b;
+  border: 0.125px solid #332b2b;
   overflow: hidden;
   flex-grow: 0;
 }
@@ -682,7 +717,6 @@ grid-content{
     top:0;
     z-index: 100;
     width:100%;
-    height:100%;
     pointer-events: none;
 }
 
@@ -692,6 +726,15 @@ grid-content{
   align-items: flex-end;
   justify-content: left;
 }
+
+.stretchFlex{
+  height:100%;
+  display: flex;
+  flex-direction:column;
+  align-items: stretch;
+  justify-content: space-between;
+}
+
 
 /* Content overlay rows must not clip text/buttons, and must NOT add borders (gradient grid provides those) */
 .gridTextContent .rowGrid {

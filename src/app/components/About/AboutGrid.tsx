@@ -1,5 +1,5 @@
 "use client";
-import './about.css';
+import '@/app/components/About/about.css';
 
 // for the actual content on the pg (countdown, info, etc), 
 // just made a second grid on top of the og grid, lol 

@@ -7,11 +7,12 @@ import { COLORS } from "./constants";
 export default function Home() {
   return (
     <main
-      className="relative w-full"
+      className=""
       style={{ backgroundColor: COLORS.background }}
     >
       <NavBar />
-      <MainContent />
+      <div className="pageContent"><MainContent /></div>
+    
     </main>
   );
 }

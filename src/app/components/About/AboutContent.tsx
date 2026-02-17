@@ -1,5 +1,5 @@
 "use client";
-import './about.css';
+import '@/app/components/About/about.css';
 
 // for the actual content on the pg (countdown, info, etc), 
 // just made a second grid on top of the og grid, lol 
@@ -8,7 +8,7 @@ export default function AboutContent() {
 
   return (
     <>
-    <div className='gradient-grid'>
+    <div>
         <div className='vh25-row rowGridContent'>
             <div className='homeCell-content xs-cell c1'></div>          
             <div className='homeCell-content xs-cell c2'></div>          
