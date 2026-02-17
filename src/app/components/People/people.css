@@ -19,22 +19,22 @@
   border-top: 0.125px solid var(--dark-brown);
 }
 
-.people-nav-row-24 {
+.people-row-24 {
   height: calc(24 / 1080 * 100vh);
 }
 
-.people-nav-row-48 {
+.people-row-48 {
   height: calc(48 / 1080 * 100vh);
 }
 
 /* Grid cells - 24px out of 1920px width = 1.25vw */
-.people-nav-spacer {
+.people-spacer {
   width: calc(24 / 1920 * 100vw);
   flex-shrink: 0;
   border-right: 0.125px solid var(--dark-brown);
 }
 
-.people-nav-spacer:first-child {
+.people-spacer:first-child {
   border-left: 0.125px solid var(--dark-brown);
 }
 
@@ -158,8 +158,8 @@
   }
 
   /* Hide edge spacers when too squeezed */
-  .people-nav-spacer:first-child,
-  .people-nav-spacer:last-child,
+  .people-spacer:first-child,
+  .people-spacer:last-child,
   .people-photo-spacer:first-child,
   .people-photo-spacer:last-child {
     display: none;
@@ -168,7 +168,7 @@
 
 /* Hide separators and top/bottom rows when very squeezed */
 @media (max-width: 480px) {
-  .people-nav-row-24 {
+  .people-row-24 {
     display: none;
   }
 
@@ -177,7 +177,7 @@
     display: none;
   }
 
-  .people-nav-spacer,
+  .people-spacer,
   .people-photo-spacer {
     display: none;
   }
@@ -197,7 +197,7 @@
 
 /* Hide height rows when viewport is too short */
 @media (max-height: 500px) {
-  .people-nav-row-24 {
+  .people-row-24 {
     display: none;
   }
 }

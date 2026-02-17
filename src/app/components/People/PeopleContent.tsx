@@ -21,9 +21,9 @@ export default function PeopleContent() {
       {/* Horizontal Nav Bar */}
       <nav className="people-nav">
         {/* Top 24px row */}
-        <div className="people-nav-row people-nav-row-24">
-          <div className="people-nav-spacer" />
-          <div className="people-nav-spacer" />
+        <div className="people-nav-row people-row-24">
+          <div className="people-spacer" />
+          <div className="people-spacer" />
           {NAV_ITEMS.map((item, index) => (
             <div key={`top-${item}`} style={{ display: "contents" }}>
               <div className="people-nav-cell" />
@@ -32,14 +32,14 @@ export default function PeopleContent() {
               )}
             </div>
           ))}
-          <div className="people-nav-spacer" />
-          <div className="people-nav-spacer" />
+          <div className="people-spacer" />
+          <div className="people-spacer" />
         </div>
 
         {/* Middle 48px row with nav buttons */}
-        <div className="people-nav-row people-nav-row-48">
-          <div className="people-nav-spacer" />
-          <div className="people-nav-spacer" />
+        <div className="people-nav-row people-row-48">
+          <div className="people-spacer" />
+          <div className="people-spacer" />
           {NAV_ITEMS.map((item, index) => (
             <div key={`mid-${item}`} style={{ display: "contents" }}>
                 {(item == "") && (
@@ -58,14 +58,14 @@ export default function PeopleContent() {
               )}
             </div>
           ))}
-          <div className="people-nav-spacer" />
-          <div className="people-nav-spacer" />
+          <div className="people-spacer" />
+          <div className="people-spacer" />
         </div>
 
         {/* Bottom 24px row */}
-        <div className="people-nav-row people-nav-row-24">
-          <div className="people-nav-spacer" />
-          <div className="people-nav-spacer" />
+        <div className="people-nav-row people-row-24">
+          <div className="people-spacer" />
+          <div className="people-spacer" />
           {NAV_ITEMS.map((item, index) => (
             <div key={`bottom-${item}`} style={{ display: "contents" }}>
               <div className="people-nav-cell" />
@@ -74,8 +74,8 @@ export default function PeopleContent() {
               )}
             </div>
           ))}
-          <div className="people-nav-spacer" />
-          <div className="people-nav-spacer" />
+          <div className="people-spacer" />
+          <div className="people-spacer" />
         </div>
       </nav>
 
@@ -83,6 +83,22 @@ export default function PeopleContent() {
       <div className="people-photo-sections">
         {NAV_ITEMS.filter((item) => item !== "").map((section) => (
           <div key={section} className="people-photo-section">
+            {/* Top 24px row */}
+            <div className="people-photo-row people-row-24">
+              <div className="people-spacer" />
+              <div className="people-spacer" />
+              {NAV_ITEMS.map((item, index) => (
+                <div key={`bottom-${item}`} style={{ display: "contents" }}>
+                  <div className="people-nav-cell" />
+                  {index < NAV_ITEMS.length - 1 && (
+                    <div className="people-nav-separator" />
+                  )}
+                </div>
+              ))}
+              <div className="people-spacer" />
+              <div className="people-spacer" />
+            </div>
+
             {/* Photo row */}
             <div className="people-photo-row">
               <div className="people-photo-spacer" />
@@ -99,6 +115,22 @@ export default function PeopleContent() {
               ))}
               <div className="people-photo-spacer" />
               <div className="people-photo-spacer" />
+            </div>
+
+            {/* Bottom 24px row */}
+            <div className="people-photo-row people-row-24">
+              <div className="people-spacer" />
+              <div className="people-spacer" />
+              {NAV_ITEMS.map((item, index) => (
+                <div key={`bottom-${item}`} style={{ display: "contents" }}>
+                  <div className="people-nav-cell" />
+                  {index < NAV_ITEMS.length - 1 && (
+                    <div className="people-nav-separator" />
+                  )}
+                </div>
+              ))}
+              <div className="people-spacer" />
+              <div className="people-spacer" />
             </div>
           </div>
         ))}
