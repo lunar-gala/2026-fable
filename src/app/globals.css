@@ -322,6 +322,10 @@ body {
 }
 
 .navbar-link-row {
+  cursor: pointer;
+}
+
+.navbar-link-row {
   height: 110px;
   background: transparent;
   border-right: none;
