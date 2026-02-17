@@ -10,275 +10,116 @@ export default function LinesGrid() {
     <>
     <div className='grid100vh whitebg'>
         <div className='xs-row rowGridContent'>
-            <div className='landingCell xs-cell c1'></div>          
+            <div className='landingCell xs-cell c1'></div> 
+            <div className='landingCell xs-cell c1'></div>         
             <div className='landingCell l-cell c2'></div>
-            <div className='landingCell xs-cell c3'></div>
-            <div className='landingCell m-cell c4'></div> 
             <div className='landingCell xs-cell c5'></div>
-            <div className='landingCell m-cell c6'></div>   
+            <div className='landingCell l-cell c6'></div>   
             <div className='landingCell xs-cell c6'></div>  
-            <div className='landingCell m-cell c6'></div> 
+            <div className='landingCell l-cell c6'></div> 
             <div className='landingCell xs-cell c6'></div>
-            <div className='landingCell m-cell c6'></div>  
-            <div className='landingCell xs-cell c5'></div>
-            <div className='landingCell m-cell c4'></div>   
+            <div className='landingCell l-cell c6'></div>  
             <div className='landingCell xs-cell c3'></div>  
-            <div className='landingCell m-cell c2'></div>     
-            <div className='landingCell xs-cell c1'></div>  
+            <div className='landingCell xs-cell c1'></div>
         </div>   
 
         <div className='xs-row rowGridContent'>
-            <div className='landingCell xs-cell c1'></div>          
+            <div className='landingCell xs-cell c1'></div> 
+            <div className='landingCell xs-cell c1'></div>         
             <div className='landingCell l-cell c2'></div>
-            <div className='landingCell xs-cell c3'></div>
-            <div className='landingCell m-cell c4'></div> 
             <div className='landingCell xs-cell c5'></div>
-            <div className='landingCell m-cell c6'></div>   
+            <div className='landingCell l-cell c6'></div>   
             <div className='landingCell xs-cell c6'></div>  
-            <div className='landingCell m-cell c6'></div> 
+            <div className='landingCell l-cell c6'></div> 
             <div className='landingCell xs-cell c6'></div>
-            <div className='landingCell m-cell c6'></div>  
-            <div className='landingCell xs-cell c5'></div>
-            <div className='landingCell m-cell c4'></div>   
+            <div className='landingCell l-cell c6'></div>  
             <div className='landingCell xs-cell c3'></div>  
-            <div className='landingCell m-cell c2'></div>     
             <div className='landingCell xs-cell c1'></div>  
         </div>   
 
-        <div className='m-row rowGridContent'>
-            <div className=' landingCell xs-cell c1'></div>          
+        <div className='l-row rowGridContent'>
+            <div className='landingCell xs-cell c1'></div> 
+            <div className='landingCell xs-cell c1'></div>         
             <div className='landingCell l-cell c2'></div>
-            <div className='landingCell xs-cell c3'></div>
-            <div className='landingCell m-cell c4'></div> 
             <div className='landingCell xs-cell c5'></div>
-            <div className='landingCell m-cell c6'></div>   
+            <div className='landingCell l-cell c6'></div>   
             <div className='landingCell xs-cell c6'></div>  
-            <div className='landingCell m-cell c6'></div> 
+            <div className='landingCell l-cell c6'></div> 
             <div className='landingCell xs-cell c6'></div>
-            <div className='landingCell m-cell c6'></div>  
-            <div className='landingCell xs-cell c5'></div>
-            <div className='landingCell m-cell c4'></div>   
+            <div className='landingCell l-cell c6'></div>  
             <div className='landingCell xs-cell c3'></div>  
-            <div className='landingCell m-cell c2'></div>     
-            <div className='landingCell xs-cell c1'></div>  
-        </div>     
-
-        <div className='m-row rowGridContent'>
-            <div className=' landingCell xs-cell c1'></div>          
-            <div className='landingCell l-cell c2'></div>
-            <div className='landingCell xs-cell c3'></div>
-            <div className='landingCell m-cell c4'></div> 
-            <div className='landingCell xs-cell c5'></div>
-            <div className='landingCell m-cell c6'></div>   
-            <div className='landingCell xs-cell c6'></div>  
-            <div className='landingCell m-cell c6'></div> 
-            <div className='landingCell xs-cell c6'></div>
-            <div className='landingCell m-cell c6'></div>  
-            <div className='landingCell xs-cell c5'></div>
-            <div className='landingCell m-cell c4'></div>   
-            <div className='landingCell xs-cell c3'></div>  
-            <div className='landingCell m-cell c2'></div>     
-            <div className='landingCell xs-cell c1'></div>  
-        </div>        
-
-        <div className='xs-row rowGridContent'>
-            <div className=' landingCell xs-cell c1'></div>          
-            <div className='landingCell l-cell c2'></div>
-            <div className='landingCell xs-cell c3'></div>
-            <div className='landingCell m-cell c4'></div> 
-            <div className='landingCell xs-cell c5'></div>
-            <div className='landingCell m-cell c6'></div>   
-            <div className='landingCell xs-cell c6'></div>  
-            <div className='landingCell m-cell c6'></div> 
-            <div className='landingCell xs-cell c6'></div>
-            <div className='landingCell m-cell c6'></div>  
-            <div className='landingCell xs-cell c5'></div>
-            <div className='landingCell m-cell c4'></div>   
-            <div className='landingCell xs-cell c3'></div>  
-            <div className='landingCell m-cell c2'></div>     
-            <div className='landingCell xs-cell c1'></div>  
-        </div> 
-
-        <div className='m-row rowGridContent'>
-            <div className=' landingCell xs-cell c1'></div>          
-            <div className='landingCell l-cell c2'></div>
-            <div className='landingCell xs-cell c3'></div>
-            <div className='landingCell m-cell c4'></div> 
-            <div className='landingCell xs-cell c5'></div>
-            <div className='landingCell m-cell c6'></div>   
-            <div className='landingCell xs-cell c6'></div>  
-            <div className='landingCell m-cell c6'></div> 
-            <div className='landingCell xs-cell c6'></div>
-            <div className='landingCell m-cell c6'></div>  
-            <div className='landingCell xs-cell c5'></div>
-            <div className='landingCell m-cell c4'></div>   
-            <div className='landingCell xs-cell c3'></div>  
-            <div className='landingCell m-cell c2'></div>     
-            <div className='landingCell xs-cell c1'></div>  
-        </div> 
-
-        <div className='m-row rowGridContent'>
-            <div className=' landingCell xs-cell c1'></div>          
-            <div className='landingCell l-cell c2'></div>
-            <div className='landingCell xs-cell c3'></div>
-            <div className='landingCell m-cell c4'></div> 
-            <div className='landingCell xs-cell c5'></div>
-            <div className='landingCell m-cell c6'></div>   
-            <div className='landingCell xs-cell c6'></div>  
-            <div className='landingCell m-cell c6'></div> 
-            <div className='landingCell xs-cell c6'></div>
-            <div className='landingCell m-cell c6'></div>  
-            <div className='landingCell xs-cell c5'></div>
-            <div className='landingCell m-cell c4'></div>   
-            <div className='landingCell xs-cell c3'></div>  
-            <div className='landingCell m-cell c2'></div>     
-            <div className='landingCell xs-cell c1'></div>  
-        </div> 
-
-        <div className='xs-row rowGridContent'>
-            <div className=' landingCell xs-cell c1'></div>          
-            <div className='landingCell l-cell c2'></div>
-            <div className='landingCell xs-cell c3'></div>
-            <div className='landingCell m-cell c4'></div> 
-            <div className='landingCell xs-cell c5'></div>
-            <div className='landingCell m-cell c6'></div>   
-            <div className='landingCell xs-cell c6'></div>  
-            <div className='landingCell m-cell c6'></div> 
-            <div className='landingCell xs-cell c6'></div>
-            <div className='landingCell m-cell c6'></div>  
-            <div className='landingCell xs-cell c5'></div>
-            <div className='landingCell m-cell c4'></div>   
-            <div className='landingCell xs-cell c3'></div>  
-            <div className='landingCell m-cell c2'></div>     
-            <div className='landingCell xs-cell c1'></div>  
+            <div className='landingCell xs-cell c1'></div>
         </div>   
 
-        <div className='m-row rowGridContent'>
-            <div className=' landingCell xs-cell c1'></div>          
+        <div className='l-row rowGridContent'>
+            <div className='landingCell xs-cell c1'></div> 
+            <div className='landingCell xs-cell c1'></div>         
             <div className='landingCell l-cell c2'></div>
-            <div className='landingCell xs-cell c3'></div>
-            <div className='landingCell m-cell c4'></div> 
             <div className='landingCell xs-cell c5'></div>
-            <div className='landingCell m-cell c6'></div>   
+            <div className='landingCell l-cell c6'></div>   
             <div className='landingCell xs-cell c6'></div>  
-            <div className='landingCell m-cell c6'></div> 
+            <div className='landingCell l-cell c6'></div> 
             <div className='landingCell xs-cell c6'></div>
-            <div className='landingCell m-cell c6'></div>  
-            <div className='landingCell xs-cell c5'></div>
-            <div className='landingCell m-cell c4'></div>   
+            <div className='landingCell l-cell c6'></div>  
             <div className='landingCell xs-cell c3'></div>  
-            <div className='landingCell m-cell c2'></div>     
             <div className='landingCell xs-cell c1'></div>  
-        </div> 
+        </div>
 
-        <div className='m-row rowGridContent'>
-            <div className=' landingCell xs-cell c1'></div>          
+        <div className='l-row rowGridContent'>
+            <div className='landingCell xs-cell c1'></div> 
+            <div className='landingCell xs-cell c1'></div>         
             <div className='landingCell l-cell c2'></div>
-            <div className='landingCell xs-cell c3'></div>
-            <div className='landingCell m-cell c4'></div> 
             <div className='landingCell xs-cell c5'></div>
-            <div className='landingCell m-cell c6'></div>   
+            <div className='landingCell l-cell c6'></div>   
             <div className='landingCell xs-cell c6'></div>  
-            <div className='landingCell m-cell c6'></div> 
+            <div className='landingCell l-cell c6'></div> 
             <div className='landingCell xs-cell c6'></div>
-            <div className='landingCell m-cell c6'></div>  
-            <div className='landingCell xs-cell c5'></div>
-            <div className='landingCell m-cell c4'></div>   
+            <div className='landingCell l-cell c6'></div>  
             <div className='landingCell xs-cell c3'></div>  
-            <div className='landingCell m-cell c2'></div>     
-            <div className='landingCell xs-cell c1'></div>  
-        </div> 
+            <div className='landingCell xs-cell c1'></div>
+        </div>   
 
-        <div className='xs-row rowGridContent'>
-            <div className=' landingCell xs-cell c1'></div>          
+        <div className='l-row rowGridContent'>
+            <div className='landingCell xs-cell c1'></div> 
+            <div className='landingCell xs-cell c1'></div>         
             <div className='landingCell l-cell c2'></div>
-            <div className='landingCell xs-cell c3'></div>
-            <div className='landingCell m-cell c4'></div> 
             <div className='landingCell xs-cell c5'></div>
-            <div className='landingCell m-cell c6'></div>   
+            <div className='landingCell l-cell c6'></div>   
             <div className='landingCell xs-cell c6'></div>  
-            <div className='landingCell m-cell c6'></div> 
+            <div className='landingCell l-cell c6'></div> 
             <div className='landingCell xs-cell c6'></div>
-            <div className='landingCell m-cell c6'></div>  
-            <div className='landingCell xs-cell c5'></div>
-            <div className='landingCell m-cell c4'></div>   
+            <div className='landingCell l-cell c6'></div>  
             <div className='landingCell xs-cell c3'></div>  
-            <div className='landingCell m-cell c2'></div>     
             <div className='landingCell xs-cell c1'></div>  
-        </div>  
-
-
-        <div className='m-row rowGridContent'>
-            <div className=' landingCell xs-cell c1'></div>          
-            <div className='landingCell l-cell c2'></div>
-            <div className='landingCell xs-cell c3'></div>
-            <div className='landingCell m-cell c4'></div> 
-            <div className='landingCell xs-cell c5'></div>
-            <div className='landingCell m-cell c6'></div>   
-            <div className='landingCell xs-cell c6'></div>  
-            <div className='landingCell m-cell c6'></div> 
-            <div className='landingCell xs-cell c6'></div>
-            <div className='landingCell m-cell c6'></div>  
-            <div className='landingCell xs-cell c5'></div>
-            <div className='landingCell m-cell c4'></div>   
-            <div className='landingCell xs-cell c3'></div>  
-            <div className='landingCell m-cell c2'></div>     
-            <div className='landingCell xs-cell c1'></div>  
-        </div> 
-
-        <div className='m-row rowGridContent'>
-            <div className=' landingCell xs-cell c1'></div>          
-            <div className='landingCell l-cell c2'></div>
-            <div className='landingCell xs-cell c3'></div>
-            <div className='landingCell m-cell c4'></div> 
-            <div className='landingCell xs-cell c5'></div>
-            <div className='landingCell m-cell c6'></div>   
-            <div className='landingCell xs-cell c6'></div>  
-            <div className='landingCell m-cell c6'></div> 
-            <div className='landingCell xs-cell c6'></div>
-            <div className='landingCell m-cell c6'></div>  
-            <div className='landingCell xs-cell c5'></div>
-            <div className='landingCell m-cell c4'></div>   
-            <div className='landingCell xs-cell c3'></div>  
-            <div className='landingCell m-cell c2'></div>     
-            <div className='landingCell xs-cell c1'></div>  
-        </div> 
+        </div>
 
         <div className='xs-row rowGridContent'>
-            <div className=' landingCell xs-cell c1'></div>          
+            <div className='landingCell xs-cell c1'></div> 
+            <div className='landingCell xs-cell c1'></div>         
             <div className='landingCell l-cell c2'></div>
-            <div className='landingCell xs-cell c3'></div>
-            <div className='landingCell m-cell c4'></div> 
             <div className='landingCell xs-cell c5'></div>
-            <div className='landingCell m-cell c6'></div>   
+            <div className='landingCell l-cell c6'></div>   
             <div className='landingCell xs-cell c6'></div>  
-            <div className='landingCell m-cell c6'></div> 
+            <div className='landingCell l-cell c6'></div> 
             <div className='landingCell xs-cell c6'></div>
-            <div className='landingCell m-cell c6'></div>  
-            <div className='landingCell xs-cell c5'></div>
-            <div className='landingCell m-cell c4'></div>   
+            <div className='landingCell l-cell c6'></div>  
             <div className='landingCell xs-cell c3'></div>  
-            <div className='landingCell m-cell c2'></div>     
-            <div className='landingCell xs-cell c1'></div>  
-        </div> 
+            <div className='landingCell xs-cell c1'></div>
+        </div>   
 
         <div className='xs-row rowGridContent'>
-            <div className=' landingCell xs-cell c1'></div>          
+            <div className='landingCell xs-cell c1'></div> 
+            <div className='landingCell xs-cell c1'></div>         
             <div className='landingCell l-cell c2'></div>
-            <div className='landingCell xs-cell c3'></div>
-            <div className='landingCell m-cell c4'></div> 
             <div className='landingCell xs-cell c5'></div>
-            <div className='landingCell m-cell c6'></div>   
+            <div className='landingCell l-cell c6'></div>   
             <div className='landingCell xs-cell c6'></div>  
-            <div className='landingCell m-cell c6'></div> 
+            <div className='landingCell l-cell c6'></div> 
             <div className='landingCell xs-cell c6'></div>
-            <div className='landingCell m-cell c6'></div>  
-            <div className='landingCell xs-cell c5'></div>
-            <div className='landingCell m-cell c4'></div>   
+            <div className='landingCell l-cell c6'></div>  
             <div className='landingCell xs-cell c3'></div>  
-            <div className='landingCell m-cell c2'></div>     
             <div className='landingCell xs-cell c1'></div>  
-        </div> 
+        </div>
 
     </div> 
     </>
