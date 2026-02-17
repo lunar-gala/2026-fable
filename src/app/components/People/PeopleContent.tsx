@@ -79,9 +79,29 @@ export default function PeopleContent() {
         </div>
       </nav>
 
-      {/* Content area */}
-      <div className="people-content-area">
-        {/* Content for each tab can be added here */}
+      {/* Photo sections - 7 sections corresponding to 7 nav buttons */}
+      <div className="people-photo-sections">
+        {NAV_ITEMS.filter((item) => item !== "").map((section) => (
+          <div key={section} className="people-photo-section">
+            {/* Photo row */}
+            <div className="people-photo-row">
+              <div className="people-photo-spacer" />
+              <div className="people-photo-spacer" />
+              {NAV_ITEMS.map((_, index) => (
+                <div key={index} style={{ display: "contents" }}>
+                  <div className="people-photo-cell">
+                    <div className="people-photo-placeholder" />
+                  </div>
+                  {index < NAV_ITEMS.length - 1 && (
+                    <div className="people-photo-separator" />
+                  )}
+                </div>
+              ))}
+              <div className="people-photo-spacer" />
+              <div className="people-photo-spacer" />
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   );

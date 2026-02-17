@@ -5,6 +5,10 @@
   display: flex;
   flex-direction: column;
   border-bottom: 0.125px solid var(--dark-brown);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background-color: var(--off-white);
 }
 
 /* Nav rows */
@@ -90,10 +94,49 @@
   border-right: 0.125px solid var(--dark-brown);
 }
 
-/* People content area */
-.people-content-area {
+/* Photo sections */
+.people-photo-sections {
   width: 100%;
-  min-height: calc(100vh - 96px);
+  background-color: #ffffff;
+}
+
+.people-photo-section {
+  width: 100%;
+}
+
+.people-photo-row {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  border-bottom: 0.125px solid var(--dark-brown);
+}
+
+.people-photo-spacer {
+  width: calc(24 / 1920 * 100vw);
+  flex-shrink: 0;
+  border-right: 0.125px solid var(--dark-brown);
+}
+
+.people-photo-spacer:first-child {
+  border-left: 0.125px solid var(--dark-brown);
+}
+
+.people-photo-separator {
+  width: calc(24 / 1920 * 100vw);
+  flex-shrink: 0;
+  border-right: 0.125px solid var(--dark-brown);
+}
+
+.people-photo-cell {
+  flex: 1;
+  min-width: 0;
+  border-right: 0.125px solid var(--dark-brown);
+  aspect-ratio: 4 / 5;
+}
+
+.people-photo-placeholder {
+  width: 100%;
+  height: 100%;
 }
 
 /* Responsive adjustments */
@@ -116,7 +159,9 @@
 
   /* Hide edge spacers when too squeezed */
   .people-nav-spacer:first-child,
-  .people-nav-spacer:last-child {
+  .people-nav-spacer:last-child,
+  .people-photo-spacer:first-child,
+  .people-photo-spacer:last-child {
     display: none;
   }
 }
@@ -127,11 +172,13 @@
     display: none;
   }
 
-  .people-nav-separator {
+  .people-nav-separator,
+  .people-photo-separator {
     display: none;
   }
 
-  .people-nav-spacer {
+  .people-nav-spacer,
+  .people-photo-spacer {
     display: none;
   }
 
@@ -139,7 +186,18 @@
     border-right: none;
   }
 
+  .people-photo-cell {
+    border-right: none;
+  }
+
   .people-nav-button-label {
     font-size: 9px;
+  }
+}
+
+/* Hide height rows when viewport is too short */
+@media (max-height: 500px) {
+  .people-nav-row-24 {
+    display: none;
   }
 }
