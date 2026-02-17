@@ -227,6 +227,7 @@ body {
   flex-direction: column;
   border-left: 1px solid currentColor;
   border-right: 1px solid currentColor;
+  overflow: hidden;
 }
 
 .navbar-row {
@@ -243,7 +244,7 @@ body {
   transform: rotate(180deg);
   font-family: var(--font-feature-display-condensed);
   font-style: normal;
-  font-size: 38px;
+  font-size: 64px;
   font-weight: 700;
   letter-spacing: 0.02em;
   line-height: 1;
@@ -266,11 +267,11 @@ body {
 
 .navbar-act-label {
   writing-mode: horizontal-tb;
-  font-family: var(--font-feature-display-condensed);
+  font-family: "aileron", sans-serif;
   font-style: normal;
-  font-size: 8px;
+  font-size: 11px;
   font-weight: 400;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.08em;
   line-height: 1;
   text-transform: uppercase;
   text-align: center;
