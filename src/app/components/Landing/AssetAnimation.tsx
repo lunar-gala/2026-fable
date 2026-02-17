@@ -1,11 +1,9 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import Lottie from "react-lottie";
+import { useEffect, useState, useRef } from "react";
+import lottie, { AnimationItem } from "lottie-web";
 import './LandingAnimation.css';
 import { Stage } from "../Stage";
-
-// export type Stage = "landing" | "act1" | "act2" | "act3" | "act4";
 
 interface AssetAnimationProps {
   stage: Stage;
@@ -23,12 +21,11 @@ const stageForwardIndices: Record<Stage, number> = {
 
 const animationForwardFiles = [
   ["/shapes/landing-L.json", "/shapes/landing-R.json"], // 0, landing
-  ["/shapes/Act1-LSide.json", "/shapes/Act1-RSide.json"], // 1, transition to act1 & act1, the original file names from the folder are in the wrong order...
-  ["/shapes/act1to2 - L.json", "/shapes/act1to2 - R.json"], // 2, transition to act2 & act 2, the original file names from the folder are in the wrong order too...
+  ["/shapes/Act1-LSide.json", "/shapes/Act1-RSide.json"], // 1, transition to act1 & act1
+  ["/shapes/act1to2 - L.json", "/shapes/act1to2 - R.json"], // 2, transition to act2 & act 2
   ["/shapes/act2endL.json", "/shapes/act2endR.json"], // 3, 2 end
   ["/shapes/act3start-L.json", "/shapes/act3start-R.json"], // 4, act3
   ["/shapes/act3to4-Lside.json", "/shapes/act3to4-Rside.json"], // 5, transition to act 4
-  // ["/shapes/act4end-L.json", "/shapes/act4end-Rside.json"] // 6 act4
 ];
 
 // Animation file indices when scrolling backward (up)
@@ -42,13 +39,13 @@ const stageBackwardIndices: Record<Stage, number> = {
 
 const animationBackwardFiles = [
   ["/shapes/landing-L.json", "/shapes/landing-R.json"], // 0, landing
-  ["/shapes/act1to2 - L.json", "/shapes/act1to2 - R.json"], // 1, transition to act2 & act 2, the original file names from the folder are in the wrong order too...
+  ["/shapes/act1to2 - L.json", "/shapes/act1to2 - R.json"], // 1, transition to act2 & act 2
   ["/shapes/act2endL.json", "/shapes/act2endR.json"], // 2, 2 end
   ["/shapes/act3to4-Lside.json", "/shapes/act3to4-Rside.json"], // 3, transition to act 4
 ];
-  
+
 interface LottieAnimationData {
-  op?: number; // an attribute in the json file; it means out point (total frames in Lottie JSON)
+  op?: number; // out point (total frames in Lottie JSON)
   [key: string]: unknown;
 }
 
@@ -61,128 +58,170 @@ function AssetAnimation({ stage }: AssetAnimationProps) {
   const [animationPairs, setAnimationPairs] = useState<AnimationPair[]>([]); // an array of animation pairs to play sequentially
   const [currentIndex, setCurrentIndex] = useState(0); // index of the current animation in animationPairs being played
   const [prevStage, setPrevStage] = useState<Stage>(stage); // track previous stage for comparison
-  const [isReverse, setIsReverse] = useState(false); // whether to play animations in reverse
+  const [isScrollUp, setIsScrollUp] = useState(false); // whether the user is scrolling up
+  const [isLoaded, setIsLoaded] = useState(false);
 
+  // use useRef for these constants; if defined outside component, will be populated again and results in duplicates
+  // refs are good for storing information that doesn’t affect the visual output of your component
+  const animationForwardData = useRef<[LottieAnimationData | null, LottieAnimationData | null][]>([]);
+  const animationBackwardData = useRef<[LottieAnimationData | null, LottieAnimationData | null][]>([]);
+
+  // Refs for lottie-web containers and instances
+  const leftContainerRef = useRef<HTMLDivElement>(null);
+  const rightContainerRef = useRef<HTMLDivElement>(null);
+  const leftAnimRef = useRef<AnimationItem | null>(null);
+  const rightAnimRef = useRef<AnimationItem | null>(null);
+
+  // Fetch all animation data on mount
   useEffect(() => {
     const loadAnimations = async () => {
+      for (const [leftFile, rightFile] of animationForwardFiles) {
+        const [leftData, rightData] = await Promise.all([
+          leftFile ? fetch(leftFile).then((raw) => raw.json()) : null,
+          rightFile ? fetch(rightFile).then((raw) => raw.json()) : null
+        ]);
+        animationForwardData.current.push([leftData, rightData]);
+      }
+
+      for (const [leftFile, rightFile] of animationBackwardFiles) {
+        const [leftData, rightData] = await Promise.all([
+          leftFile ? fetch(leftFile).then((raw) => raw.json()) : null,
+          rightFile ? fetch(rightFile).then((raw) => raw.json()) : null
+        ]);
+        animationBackwardData.current.push([leftData, rightData]);
+      }
+
+      // Set initial animation
       const stageIndex = stageForwardIndices[stage];
-      const [leftFile, rightFile] = animationForwardFiles[stageIndex];
-
-      const [leftData, rightData] = await Promise.all([
-        leftFile ? fetch(leftFile).then((r) => r.json()) : null,
-        rightFile ? fetch(rightFile).then((r) => r.json()) : null,
-      ]);
-
+      const [leftData, rightData] = animationForwardData.current[stageIndex];
       setAnimationPairs([{ left: leftData, right: rightData }]);
       setCurrentIndex(0);
+      setIsLoaded(true);
     };
     loadAnimations();
   }, []);
 
+  // Handle stage changes
   useEffect(() => {
-    startTransition(stage);
-  }, [stage]);
+    if (isLoaded) startTransition(stage);
+  }, [stage, isLoaded]);
 
-  const startTransition = async (newStage: Stage) => {
-    console.log({prevStage, newStage});
+  // Play animation when currentIndex or animationPairs change
+  useEffect(() => {
+    if (animationPairs.length === 0 || !animationPairs[currentIndex]) return;
 
+    const currentPair = animationPairs[currentIndex];
+    const shouldReverse = isScrollUp && stage !== Stage.Landing;
+
+    // Destroy existing animations
+    leftAnimRef.current?.destroy();
+    rightAnimRef.current?.destroy();
+
+    // Load and play left animation
+    if (currentPair.left && leftContainerRef.current) {
+      leftAnimRef.current = lottie.loadAnimation({
+        container: leftContainerRef.current,
+        renderer: 'svg',
+        loop: false,
+        autoplay: false,
+        animationData: currentPair.left,
+        rendererSettings: {
+          preserveAspectRatio: "xMinYMid slice",
+        },
+      });
+
+      leftAnimRef.current.addEventListener('complete', handleComplete);
+
+      if (shouldReverse) {
+        leftAnimRef.current.setDirection(-1);
+        leftAnimRef.current.goToAndPlay(currentPair.left.op ?? 0, true);
+      } else {
+        leftAnimRef.current.setDirection(1);
+        leftAnimRef.current.play();
+      }
+    }
+
+    // Load and play right animation
+    if (currentPair.right && rightContainerRef.current) {
+      rightAnimRef.current = lottie.loadAnimation({
+        container: rightContainerRef.current,
+        renderer: 'svg',
+        loop: false,
+        autoplay: false,
+        animationData: currentPair.right,
+        rendererSettings: {
+          preserveAspectRatio: "xMaxYMid slice",
+        },
+      });
+
+      if (shouldReverse) {
+        rightAnimRef.current.setDirection(-1);
+        rightAnimRef.current.goToAndPlay(currentPair.right.op ?? 0, true);
+      } else {
+        rightAnimRef.current.setDirection(1);
+        rightAnimRef.current.play();
+      }
+    }
+
+    // Cleanup on unmount or before next effect run
+    return () => {
+      leftAnimRef.current?.destroy();
+      rightAnimRef.current?.destroy();
+    };
+  }, [animationPairs, currentIndex, isScrollUp, stage]);
+
+  const startTransition = (newStage: Stage) => {
     if (newStage > prevStage) {
       const prevStageIndex = stageForwardIndices[prevStage];
       const targetStageIndex = stageForwardIndices[newStage];
       const transitionPairs: AnimationPair[] = [];
       for (let i = prevStageIndex + 1; i <= targetStageIndex; i++) {
         // for each index between current and target, play the corresponding animation in order. wait until the prev animmation completes before moving to the next one..
-        // Need to load all animations upfront to play through them sequentially.
-        const [leftFile, rightFile] = animationForwardFiles[i];
-        const leftData = leftFile ? await fetch(leftFile).then((r) => r.json()) : null;
-        const rightData = rightFile ? await fetch(rightFile).then((r) => r.json()) : null;
-
+        const [leftData, rightData] = animationForwardData.current[i];
         transitionPairs.push({ left: leftData, right: rightData });
       }
       // console.log({transitionPairs});
       setAnimationPairs(transitionPairs);
       setCurrentIndex(0);
-      setIsReverse(false);
+      setIsScrollUp(false);
       setPrevStage(newStage);
     } else if (newStage < prevStage) {
       const prevStageIndex = stageBackwardIndices[prevStage];
       const targetStageIndex = stageBackwardIndices[newStage];
       const transitionPairs: AnimationPair[] = [];
-      for (let i = prevStageIndex - 1; i >= targetStageIndex; i--) {
-        const [leftFile, rightFile] = animationBackwardFiles[i];
-        const leftData = leftFile ? await fetch(leftFile).then((r) => r.json()) : null;
-        const rightData = rightFile ? await fetch(rightFile).then((r) => r.json()) : null;
-
+      if (newStage == Stage.Act3 && prevStage == Stage.Act4) { // act4(forward) and act3(backward) shares the same animation data
+        const [leftData, rightData] = animationBackwardData.current[targetStageIndex];
         transitionPairs.push({ left: leftData, right: rightData });
+      } else {
+        for (let i = prevStageIndex - 1; i >= targetStageIndex; i--) {
+          const [leftData, rightData] = animationBackwardData.current[i];
+          transitionPairs.push({ left: leftData, right: rightData });
+        }
       }
+      
       console.log({ transitionPairs });
       setAnimationPairs(transitionPairs);
       setCurrentIndex(0);
-      setIsReverse(true);
+      setIsScrollUp(true);
       setPrevStage(newStage);
     }
-  }
+  };
 
   const handleComplete = () => {
-    if (currentIndex < animationPairs.length - 1) {
-      setCurrentIndex(currentIndex + 1);
-    }
+    setCurrentIndex((prev) => {
+      if (prev < animationPairs.length - 1) {
+        return prev + 1;
+      }
+      return prev;
+    });
   };
-
-  if (animationPairs.length === 0 || !animationPairs[currentIndex]) {
-    return <div className="assetAnimation" />;
-  }
-
-  const currentPair = animationPairs[currentIndex];
-  console.log({currentPair});
-  console.log("current stage", stage, "current index", currentIndex);
-
-  // Get total frames (op = out point in Lottie JSON) for reverse playback segments
-  const leftTotalFrames = currentPair.left?.op ?? 0;
-  const rightTotalFrames = currentPair.right?.op ?? 0;
-
-  const leftOptions = {
-    loop: false,
-    autoplay: true,
-    animationData: currentPair.left,
-    rendererSettings: {
-      preserveAspectRatio: "xMinYMid slice",
-    },
-  };
-
-  const rightOptions = {
-    loop: false,
-    autoplay: true,
-    animationData: currentPair.right,
-    rendererSettings: {
-      preserveAspectRatio: "xMaxYMid slice",
-    },
-  };
-
-  // For reverse playback, use segments to play from last frame to first frame; no need to reverse the landing
-  const leftSegments = isReverse && stage != Stage.Landing && leftTotalFrames > 0 ? [leftTotalFrames, 0] as [number, number] : undefined;
-  const rightSegments = isReverse && stage != Stage.Landing && rightTotalFrames > 0 ? [rightTotalFrames, 0] as [number, number] : undefined;
-
-  const eventListeners = [
-    { eventName: "complete" as const, callback: handleComplete },
-  ];
 
   return (
     <div className="assetAnimation">
-      {currentPair.left && (
-        <div className="assetAnimation-left">
-          <Lottie options={leftOptions} eventListeners={eventListeners} segments={leftSegments} />
-        </div>
-      )}
-      {currentPair.right && (
-        <div className="assetAnimation-right">
-          <Lottie options={rightOptions} eventListeners={eventListeners} segments={rightSegments} />
-        </div>
-      )}
+      <div className="assetAnimation-left" ref={leftContainerRef} />
+      <div className="assetAnimation-right" ref={rightContainerRef} />
     </div>
   );
 }
 
 export default AssetAnimation;
-
-
