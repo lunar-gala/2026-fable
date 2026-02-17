@@ -1,0 +1,142 @@
+/* People Page Nav Bar */
+/* Heights based on 1080px viewport: 24px = 2.222vh, 48px = 4.444vh */
+.people-nav {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  border-bottom: 0.125px solid var(--dark-brown);
+}
+
+/* Nav rows */
+.people-nav-row {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  border-top: 0.125px solid var(--dark-brown);
+}
+
+.people-nav-row-24 {
+  height: calc(24 / 1080 * 100vh);
+}
+
+.people-nav-row-48 {
+  height: calc(48 / 1080 * 100vh);
+}
+
+/* Grid cells - 24px out of 1920px width = 1.25vw */
+.people-nav-spacer {
+  width: calc(24 / 1920 * 100vw);
+  flex-shrink: 0;
+  border-right: 0.125px solid var(--dark-brown);
+}
+
+.people-nav-spacer:first-child {
+  border-left: 0.125px solid var(--dark-brown);
+}
+
+.people-nav-separator {
+  width: calc(24 / 1920 * 100vw);
+  flex-shrink: 0;
+  border-right: 0.125px solid var(--dark-brown);
+}
+
+/* Nav button container */
+.people-nav-button {
+  flex: 1;
+  min-width: 0;
+  border-right: 0.125px solid var(--dark-brown);
+  background: transparent;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+  border-top: none;
+  border-bottom: none;
+  border-left: none;
+}
+
+.people-nav-button:hover {
+  background-color: rgba(51, 43, 43, 0.05);
+}
+
+.people-nav-button.active {
+  background-color: var(--dark-brown);
+  color: var(--off-white);
+}
+
+.people-nav-button-label {
+  font-family: var(--font-feature-display-condensed);
+  font-style: italic;
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  line-height: 1;
+  text-transform: capitalize;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Empty cell for grid alignment in 24px rows */
+.people-nav-cell {
+  flex: 1;
+  min-width: 0;
+  border-right: 0.125px solid var(--dark-brown);
+}
+
+/* People content area */
+.people-content-area {
+  width: 100%;
+  min-height: calc(100vh - 96px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .people-nav-button-label {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 768px) {
+  .people-nav-button-label {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 576px) {
+  .people-nav-button-label {
+    font-size: 10px;
+  }
+
+  /* Hide edge spacers when too squeezed */
+  .people-nav-spacer:first-child,
+  .people-nav-spacer:last-child {
+    display: none;
+  }
+}
+
+/* Hide separators and top/bottom rows when very squeezed */
+@media (max-width: 480px) {
+  .people-nav-row-24 {
+    display: none;
+  }
+
+  .people-nav-separator {
+    display: none;
+  }
+
+  .people-nav-spacer {
+    display: none;
+  }
+
+  .people-nav-button {
+    border-right: none;
+  }
+
+  .people-nav-button-label {
+    font-size: 9px;
+  }
+}

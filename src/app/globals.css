@@ -181,8 +181,13 @@ body {
 }
 
 #animationWindow{
-    left: var(--sidebar-width);
-    width:95%;
+  left: var(--sidebar-width);
+  width:95%;
+}
+
+.peopleContent{
+  left: var(--sidebar-width);
+  width:95%;
 }
 
 .fullPage{
