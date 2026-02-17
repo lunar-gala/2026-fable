@@ -4,6 +4,7 @@
   --background: #ffffff;
   --foreground: #171717;
   --sidebar-width: 5%;
+  --label-font-size: 18px;
   --color-cream: #f5f2eb;
   --color-cream-light: #faf8f4;
   --color-blue-muted: #8fa4b8;
@@ -322,7 +323,7 @@ body {
   transform: rotate(180deg);
   font-family: var(--font-feature-display-condensed);
   font-style: normal;
-  font-size: 18px;
+  font-size: var(--label-font-size);
   font-weight: 400;
   letter-spacing: 0.02em;
   line-height: 1;
@@ -1007,7 +1008,7 @@ body[data-stage="act4"] .sidebar-footer-logo {
   }
 
   .navbar-nav-label {
-    font-size: 18px;
+    font-size: var(--label-font-size);
   }
 
   .navbar-cutout-sm {

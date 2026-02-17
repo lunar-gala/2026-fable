@@ -116,8 +116,14 @@ export default function PeopleContent() {
               <div className="people-spacer" />
               {NAV_ITEMS.map((_, index) => (
                 <div key={index} style={{ display: "contents" }}>
-                  <div className="people-photo-cell">
-                    <div className="people-photo-placeholder" />
+                  <div className="people-photo-group">
+                    <div className="people-photo-cell">
+                      <div className="people-photo-placeholder" />
+                    </div>
+                    <div className="people-photo-name-group">
+                      <div className="people-photo-name">Name </div>
+                      <div className="people-photo-position">Position </div>
+                    </div>
                   </div>
                   {index < NAV_ITEMS.length - 1 && (
                     <div className="people-separator" />
