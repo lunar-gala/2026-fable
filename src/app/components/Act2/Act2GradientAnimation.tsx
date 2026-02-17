@@ -189,9 +189,7 @@ export default function Act3GradientAnimation() {
     }, []);
 
     useEffect(() => {
-        console.log('Setting up hover effects');
         if (!gridRef.current) return;
-        console.log('gridRef current:', gridRef.current);
         // Gradual animation speed change on hover for v1 elements
         const gridElements = gridRef.current.querySelectorAll('[class*="gradient-animation-v"]');
 
