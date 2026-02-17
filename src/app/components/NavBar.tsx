@@ -1,12 +1,30 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
+
 
 const ACT_ITEMS = ["ACT I", "ACT II", "ACT III", "ACT IV"];
 const NAV_ITEMS = ["Lines", "Tickets", "People", "About"];
 
 export default function NavBar() {
   const [isDark, setIsDark] = useState(false);
+  const router = useRouter();
+
+  const handleNavigation = (item) => {
+    const routes = {
+      "Lines": "/lines",
+      "Tickets": "/tickets",
+      "People": "/people",
+      "About": "/about",
+    };
+    
+    const path = routes[item];
+    if (path) {
+      router.push(path);
+    }
+  };
+  
 
   useEffect(() => {
     const initialStage = document.body.dataset.stage || "landing";
