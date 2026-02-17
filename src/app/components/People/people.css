@@ -78,7 +78,6 @@
   font-family: var(--font-feature-display-condensed);
   font-size: var(--label-font-size);
   font-weight: 400;
-  letter-spacing: 0.02em;
   line-height: 1;
   text-transform: capitalize;
   white-space: nowrap;
@@ -161,20 +160,29 @@
 
 /* Responsive adjustments */
 @media (max-width: 992px) {
-  .people-nav-button-label {
+  .people-nav-button-label, .people-photo-name {
     font-size: 14px;
+  }
+  .people-photo-position {
+    font-size: 10.5px;
   }
 }
 
 @media (max-width: 768px) {
-  .people-nav-button-label {
+  .people-nav-button-label .people-photo-name {
     font-size: 12px;
+  }
+  .people-photo-position {
+    font-size: 9px;
   }
 }
 
 @media (max-width: 576px) {
-  .people-nav-button-label {
+  .people-nav-button-label .people-photo-name {
     font-size: 10px;
+  }
+  .people-photo-position {
+    font-size: 7.5px;
   }
 
   /* Hide edge spacers when too squeezed */
@@ -206,14 +214,10 @@
     border-right: none;
   }
 
-  .people-nav-button-label {
+  .people-nav-button-label, .people-photo-name {
     font-size: 9px;
   }
-}
-
-/* Hide height rows when viewport is too short */
-@media (max-height: 500px) {
-  .people-row-24 {
-    display: none;
+  .people-photo-position {
+    font-size: 6.75px;
   }
 }

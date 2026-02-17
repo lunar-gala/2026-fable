@@ -12,8 +12,8 @@ export default function Home() {
       style={{ backgroundColor: COLORS.background }}
     >
       <NavBar />
-      {/* <div className="pageContent"><MainContent /></div> */}
-      <div className="peopleContent"><PeopleContent /></div>
+      <div className="pageContent"><MainContent /></div>
+      {/* <div className="peopleContent"><PeopleContent /></div> */}
     
     </main>
   );

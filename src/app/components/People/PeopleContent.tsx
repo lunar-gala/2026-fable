@@ -13,6 +13,21 @@ const NAV_ITEMS = [
   "PR",
 ];
 
+const COLS = NAV_ITEMS.length; // 8 slots per row
+const ITEMS_PER_SECTION = 14;
+
+// Split items into rows of COLS, padding the last row with nulls
+function chunkItems(total: number): (number | null)[][] {
+  const rows: (number | null)[][] = [];
+  for (let i = 0; i < total; i += COLS) {
+    const row = Array.from({ length: COLS }, (_, j) =>
+      i + j < total ? i + j : null
+    );
+    rows.push(row);
+  }
+  return rows;
+}
+
 export default function PeopleContent() {
   const [activeTab, setActiveTab] = useState("Exec");
 
@@ -110,29 +125,40 @@ export default function PeopleContent() {
               <div className="people-spacer" />
             </div>
 
-            {/* Photo row */}
-            <div className="people-photo-row">
-              <div className="people-spacer" />
-              <div className="people-spacer" />
-              {NAV_ITEMS.map((_, index) => (
-                <div key={index} style={{ display: "contents" }}>
-                  <div className="people-photo-group">
-                    <div className="people-photo-cell">
-                      <div className="people-photo-placeholder" />
+            {/* Photo rows */}
+            {chunkItems(ITEMS_PER_SECTION).map((row, rowIndex) => (
+              <div key={rowIndex} className="people-photo-row">
+                <div className="people-spacer" />
+                <div className="people-spacer" />
+                {row.map((item, colIndex) => (
+                  <div key={colIndex} style={{ display: "contents" }}>
+                    <div className="people-photo-group">
+                      {item !== null ? (
+                        <>
+                          <div className="people-photo-cell">
+                            <div className="people-photo-placeholder" />
+                          </div>
+                          <div className="people-photo-name-group">
+                            <div className="people-photo-name">Name</div>
+                            <div className="people-photo-position">Position</div>
+                          </div>
+                        </>
+                      ) : (
+                        <>
+                          <div className="people-photo-cell" />
+                          <div className="people-photo-name-group" />
+                        </>
+                      )}
                     </div>
-                    <div className="people-photo-name-group">
-                      <div className="people-photo-name">Name </div>
-                      <div className="people-photo-position">Position </div>
-                    </div>
+                    {colIndex < row.length - 1 && (
+                      <div className="people-separator" />
+                    )}
                   </div>
-                  {index < NAV_ITEMS.length - 1 && (
-                    <div className="people-separator" />
-                  )}
-                </div>
-              ))}
-              <div className="people-spacer" />
-              <div className="people-spacer" />
-            </div>
+                ))}
+                <div className="people-spacer" />
+                <div className="people-spacer" />
+              </div>
+            ))}
 
             {/* Bottom 24px row */}
             <div className="people-photo-row people-row-24">
