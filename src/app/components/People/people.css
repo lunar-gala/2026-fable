@@ -45,7 +45,7 @@
 }
 
 /* Nav button container */
-.people-nav-button, .people-nav-empty-button {
+.people-nav-button {
   flex: 1;
   min-width: 0;
   border-right: 0.125px solid var(--dark-brown);
@@ -106,6 +106,7 @@
 
 .people-photo-section {
   width: 100%;
+  scroll-margin-top: calc((24 + 48 + 24) / 1080 * 100vh);
 }
 
 .people-photo-row {

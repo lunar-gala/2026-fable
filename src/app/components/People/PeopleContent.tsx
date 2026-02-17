@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import "./people.css";
 
 const NAV_ITEMS = [
@@ -30,6 +30,15 @@ function chunkItems(total: number): (number | null)[][] {
 
 export default function PeopleContent() {
   const [activeTab, setActiveTab] = useState("Exec");
+  const sectionRefs = useRef<Record<string, HTMLDivElement | null>>({});
+
+  const handleNavClick = (item: string) => {
+    setActiveTab(item);
+    const el = sectionRefs.current[item];
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
 
   return (
     <div className="people-page">
@@ -58,12 +67,12 @@ export default function PeopleContent() {
           {NAV_ITEMS.map((item, index) => (
             <div key={`mid-${item}`} style={{ display: "contents" }}>
                 {(item == "") && (
-                    <div className={`people-nav-empty-button`}></div>
+                    <div className={`people-nav-cell`}></div>
                 )}
                 {(item != "") && (
                     <button
                         className={`people-nav-button ${activeTab === item ? "active" : ""}`}
-                        onClick={() => setActiveTab(item)}
+                        onClick={() => handleNavClick(item)}
                     >
                         <span className="people-nav-button-label">{item}</span>
                     </button>
@@ -108,7 +117,7 @@ export default function PeopleContent() {
               <div className="people-spacer" />
             </div>
           )}
-          <div className="people-photo-section">
+          <div className="people-photo-section" ref={(el) => { sectionRefs.current[section] = el; }}>
             {/* Top 24px row */}
             <div className="people-photo-row people-row-24">
               <div className="people-spacer" />
