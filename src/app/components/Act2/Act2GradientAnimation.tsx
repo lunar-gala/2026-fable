@@ -290,14 +290,14 @@ export default function Act3GradientAnimation() {
             {rows.map((row, rowIdx) => (
                 <motion.div 
                     className={`${row.rowClass} rowGrid`} 
-                    style={{ height: useTransform(scrollYProgress, [0.45,0.54], [sizeHeightMap[row.size], nextSizeHeightMap[row.size]])}}   
+                    style={{ height: useTransform(scrollYProgress, [0.52,0.60], [sizeHeightMap[row.size], nextSizeHeightMap[row.size]])}}   
                     key={rowIdx}
                 >
                     {row.cells.map((cell, cellIdx) => (                        
                         <motion.div
                             key={cellIdx}
                             className={`${sizeClassMap[cell.size]} landingCell a2-gradient-${cell.variant} ${cell.position}`}
-                            style={{ width: useTransform(scrollYProgress, [0.4,0.5], [sizeWidthMap[cell.size], nextSizeWidthMap[cell.size]])}}   
+                            style={{ width: useTransform(scrollYProgress, [0.52,0.60], [sizeWidthMap[cell.size], nextSizeWidthMap[cell.size]])}}   
                         > {/*  The color of the gradient needs to fade out as the scroll happens too  */}
                         </motion.div>
                     ))}

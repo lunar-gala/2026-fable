@@ -1,0 +1,61 @@
+.a4-gradient-v0 {
+  height:100%;
+}
+
+.a4-gradient-v1 {
+  background: linear-gradient(180deg, #8a7abf 25%, #b0a8d4 55%, #F2EFE5 100%);
+  background-size: 100% 1480px;
+  animation: a4-gradientmove 8s ease infinite;
+}
+
+.a4-gradient-v2 {
+  background: linear-gradient(180deg, #8a7abf 15%, #b0a8d4 62%, #d5d0e8 86%, #F2EFE5 100%);
+  background-size: 100% 1480px;
+  animation: a4-gradientmove 4s ease infinite;
+}
+
+.a4-gradient-v3 {
+  background: linear-gradient(180deg, #8a7abf 17%, #1a1a2e 100%);
+  background-size: 100% 660px;
+  animation: a4-gradientmove 4s ease infinite;
+}
+
+.a4-gradient-v4 {
+  background: linear-gradient(90deg, #1a1a2e 27%, #8a7abf 75%, #b0a8d4 90%);
+  background-size: 1200px 100%;
+  animation: a4-gradientmove-h 4s ease infinite;
+}
+
+.a4bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+  background: #0a0a1a;
+}
+
+@keyframes a4-gradientmove {
+    0% {
+        background-position: 0% 0%;
+    }
+    50% {
+        background-position: 0% 100%;
+    }
+    100% {
+        background-position: 0% 0%;
+    }
+}
+
+@keyframes a4-gradientmove-h {
+    0% {
+        background-position: 0% 0%;
+    }
+    50% {
+        background-position: 100% 0%;
+    }
+    100% {
+        background-position: 0% 0%;
+    }
+}

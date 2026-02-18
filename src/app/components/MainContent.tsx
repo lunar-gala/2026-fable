@@ -6,11 +6,11 @@ import LandingAnimation from "./Landing/LandingAnimation";
 import Act1Full from "./Act1/Act1Full";
 import Act2Full from "./Act2/Act2Full";
 import Act3Full from "./Act3/Act3Full";
+import Act4Full from "./Act4/Act4Full";
 import AssetAnimation from "./Landing/AssetAnimation";
 import { Stage } from "./Stage";
 
 import { useScroll } from "motion/react";
-import { Asset } from "next/font/google";
 
 function getStageFromProgress(progress: number): Stage { // TODO: looks like a terrible implementation
   if (progress < 0.2) return Stage.Landing;
@@ -50,6 +50,7 @@ export default function MainContent() {
           {stage === Stage.Act1 && <Act1Full />}
           {stage === Stage.Act2 && <Act2Full />}
           {stage === Stage.Act3 && <Act3Full />}
+          {stage === Stage.Act4 && <Act4Full />}
           <AssetAnimation stage={stage} />
 
         </div>
