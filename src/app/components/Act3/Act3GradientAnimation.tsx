@@ -29,39 +29,47 @@ interface RowConfig {
 const rows: RowConfig[] = [
     {
         rowClass: "xl-row",  cells: [
-            { size: "xl", variant: "v6", position: "c1"}, { size: "l", variant: "v0", position: "c2" }, { size: "m", variant: "v0", position:"c3" },
+            { size: "xl", variant: "v3", position: "c1"}, { size: "l", variant: "v0", position: "c2" }, { size: "m", variant: "v0", position:"c3" },
             { size: "s", variant: "v0", position: "c4" }, { size: "xs", variant: "v0", position: "c5" }, { size: "xs", variant: "v0", position:"c6" },
             { size: "xs", variant: "v0", position: "c6" }, { size: "xs", variant: "v0", position: "c5" }, { size: "s", variant: "v0", position:"c4" },
-            { size: "m", variant: "v0", position: "c3"}, { size: "l", variant: "v0" , position: "c2" }, { size: "xl", variant: "v0", position:"c1" },
+            { size: "m", variant: "v0", position: "c3"}, { size: "l", variant: "v0" , position: "c2" }, { size: "xl", variant: "v3", position:"c1" },
         ]
     },
     {
         rowClass: "l-row", cells: [
-            { size: "xl", variant: "v0", position: "c1"}, { size: "l", variant: "v0", position: "c2" }, { size: "m", variant: "v0", position:"c3" },
+            { size: "xl", variant: "v3", position: "c1"}, { size: "l", variant: "v0", position: "c2" }, { size: "m", variant: "v0", position:"c3" },
             { size: "s", variant: "v0", position: "c4" }, { size: "xs", variant: "v0", position: "c5" }, { size: "xs", variant: "v0", position:"c6" },
             { size: "xs", variant: "v0", position: "c6" }, { size: "xs", variant: "v0", position: "c5" }, { size: "s", variant: "v0", position:"c4" },
-            { size: "m", variant: "v0", position: "c3"}, { size: "l", variant: "v0" , position: "c2" }, { size: "xl", variant: "v0", position:"c1" },
+            { size: "m", variant: "v0", position: "c3"}, { size: "l", variant: "v6" , position: "c2" }, { size: "xl", variant: "v0", position:"c1" },
         ]
     },
     {
         rowClass: "m-row", cells: [
             { size: "xl", variant: "v0", position: "c1"}, { size: "l", variant: "v0", position: "c2" }, { size: "m", variant: "v0", position:"c3" },
-            { size: "s", variant: "v0", position: "c4" }, { size: "xs", variant: "v0", position: "c5" }, { size: "xs", variant: "v0", position:"c6" },
+            { size: "s", variant: "v1", position: "c4" }, { size: "xs", variant: "v0", position: "c5" }, { size: "xs", variant: "v0", position:"c6" },
             { size: "xs", variant: "v0", position: "c6" }, { size: "xs", variant: "v0", position: "c5" }, { size: "s", variant: "v0", position:"c4" },
-            { size: "m", variant: "v0", position: "c3"}, { size: "l", variant: "v0" , position: "c2" }, { size: "xl", variant: "v0", position:"c1" },
+            { size: "m", variant: "v5", position: "c3"}, { size: "l", variant: "v0" , position: "c2" }, { size: "xl", variant: "v0", position:"c1" },
         ]
     },
     {
         rowClass: "s-row", cells: [
-            { size: "xl", variant: "v0", position: "c1"}, { size: "l", variant: "v0", position: "c2" }, { size: "m", variant: "v0", position:"c3" },
-            { size: "s", variant: "v0", position: "c4" }, { size: "xs", variant: "v0", position: "c5" }, { size: "xs", variant: "v0", position:"c6" },
+            { size: "xl", variant: "v0", position: "c1"}, { size: "l", variant: "v0", position: "c2" }, { size: "m", variant: "v2", position:"c3" },
+            { size: "s", variant: "v1", position: "c4" }, { size: "xs", variant: "v0", position: "c5" }, { size: "xs", variant: "v0", position:"c6" },
             { size: "xs", variant: "v0", position: "c6" }, { size: "xs", variant: "v0", position: "c5" }, { size: "s", variant: "v0", position:"c4" },
-            { size: "m", variant: "v0", position: "c3"}, { size: "l", variant: "v0" , position: "c2" }, { size: "xl", variant: "v0", position:"c1" },
+            { size: "m", variant: "v4", position: "c3"}, { size: "l", variant: "v0" , position: "c2" }, { size: "xl", variant: "v0", position:"c1" },
         ]
     },
     {
         rowClass: "xs-row",  cells: [
             { size: "xl", variant: "v0", position: "c1"}, { size: "l", variant: "v0", position: "c2" }, { size: "m", variant: "v0", position:"c3" },
+            { size: "s", variant: "v0", position: "c4" }, { size: "xs", variant: "v0", position: "c5" }, { size: "xs", variant: "v0", position:"c6" },
+            { size: "xs", variant: "v0", position: "c6" }, { size: "xs", variant: "v0", position: "c5" }, { size: "s", variant: "v0", position:"c4" },
+            { size: "m", variant: "v6", position: "c3"}, { size: "l", variant: "v0" , position: "c2" }, { size: "xl", variant: "v0", position:"c1" },
+        ]
+    },
+    {
+        rowClass: "xs-row", cells: [
+            { size: "xl", variant: "v0", position: "c1"}, { size: "l", variant: "v0", position: "c2" }, { size: "m", variant: "v6", position:"c3" },
             { size: "s", variant: "v0", position: "c4" }, { size: "xs", variant: "v0", position: "c5" }, { size: "xs", variant: "v0", position:"c6" },
             { size: "xs", variant: "v0", position: "c6" }, { size: "xs", variant: "v0", position: "c5" }, { size: "s", variant: "v0", position:"c4" },
             { size: "m", variant: "v0", position: "c3"}, { size: "l", variant: "v0" , position: "c2" }, { size: "xl", variant: "v0", position:"c1" },
@@ -71,56 +79,48 @@ const rows: RowConfig[] = [
         rowClass: "xs-row", cells: [
             { size: "xl", variant: "v0", position: "c1"}, { size: "l", variant: "v0", position: "c2" }, { size: "m", variant: "v0", position:"c3" },
             { size: "s", variant: "v0", position: "c4" }, { size: "xs", variant: "v0", position: "c5" }, { size: "xs", variant: "v0", position:"c6" },
-            { size: "xs", variant: "v0", position: "c6" }, { size: "xs", variant: "v0", position: "c5" }, { size: "s", variant: "v0", position:"c4" },
-            { size: "m", variant: "v0", position: "c3"}, { size: "l", variant: "v0" , position: "c2" }, { size: "xl", variant: "v0", position:"c1" },
-        ]
-    },
-    {
-        rowClass: "xs-row", cells: [
-            { size: "xl", variant: "v0", position: "c1"}, { size: "l", variant: "v0", position: "c2" }, { size: "m", variant: "v0", position:"c3" },
-            { size: "s", variant: "v0", position: "c4" }, { size: "xs", variant: "v0", position: "c5" }, { size: "xs", variant: "v0", position:"c6" },
-            { size: "xs", variant: "v0", position: "c6" }, { size: "xs", variant: "v0", position: "c5" }, { size: "s", variant: "v0", position:"c4" },
+            { size: "xs", variant: "v0", position: "c6" }, { size: "xs", variant: "v0", position: "c5" }, { size: "s", variant: "v1", position:"c4" },
             { size: "m", variant: "v0", position: "c3"}, { size: "l", variant: "v0" , position: "c2" }, { size: "xl", variant: "v0", position:"c1" },
         ]
     },
     {
         rowClass: "xs-row",  cells: [
             { size: "xl", variant: "v0", position: "c1"}, { size: "l", variant: "v0", position: "c2" }, { size: "m", variant: "v0", position:"c3" },
-            { size: "s", variant: "v0", position: "c4" }, { size: "xs", variant: "v0", position: "c5" }, { size: "xs", variant: "v0", position:"c6" },
+            { size: "s", variant: "v0", position: "c4" }, { size: "xs", variant: "v2", position: "c5" }, { size: "xs", variant: "v2", position:"c6" },
             { size: "xs", variant: "v0", position: "c6" }, { size: "xs", variant: "v0", position: "c5" }, { size: "s", variant: "v0", position:"c4" },
             { size: "m", variant: "v0", position: "c3"}, { size: "l", variant: "v0" , position: "c2" }, { size: "xl", variant: "v0", position:"c1" },
         ]
     },
     {
         rowClass: "s-row", cells: [
-            { size: "xl", variant: "v0", position: "c1"}, { size: "l", variant: "v0", position: "c2" }, { size: "m", variant: "v0", position:"c3" },
-            { size: "s", variant: "v0", position: "c4" }, { size: "xs", variant: "v0", position: "c5" }, { size: "xs", variant: "v0", position:"c6" },
+            { size: "xl", variant: "v4", position: "c1"}, { size: "l", variant: "v0", position: "c2" }, { size: "m", variant: "v6", position:"c3" },
+            { size: "s", variant: "v0", position: "c4" }, { size: "xs", variant: "v2", position: "c5" }, { size: "xs", variant: "v2", position:"c6" },
             { size: "xs", variant: "v0", position: "c6" }, { size: "xs", variant: "v0", position: "c5" }, { size: "s", variant: "v0", position:"c4" },
             { size: "m", variant: "v0", position: "c3"}, { size: "l", variant: "v0" , position: "c2" }, { size: "xl", variant: "v0", position:"c1" },
         ]
     },
     {
         rowClass: "m-row", cells: [
-            { size: "xl", variant: "v0", position: "c1"}, { size: "l", variant: "v0", position: "c2" }, { size: "m", variant: "v0", position:"c3" },
-            { size: "s", variant: "v0", position: "c4" }, { size: "xs", variant: "v0", position: "c5" }, { size: "xs", variant: "v0", position:"c6" },
+            { size: "xl", variant: "v3", position: "c1"}, { size: "l", variant: "v0", position: "c2" }, { size: "m", variant: "v6", position:"c3" },
+            { size: "s", variant: "v0", position: "c4" }, { size: "xs", variant: "v2", position: "c5" }, { size: "xs", variant: "v2", position:"c6" },
             { size: "xs", variant: "v0", position: "c6" }, { size: "xs", variant: "v0", position: "c5" }, { size: "s", variant: "v0", position:"c4" },
-            { size: "m", variant: "v0", position: "c3"}, { size: "l", variant: "v0" , position: "c2" }, { size: "xl", variant: "v0", position:"c1" },
+            { size: "m", variant: "v2", position: "c3"}, { size: "l", variant: "v2" , position: "c2" }, { size: "xl", variant: "v0", position:"c1" },
         ]
     },
     {
         rowClass: "l-row", cells: [
-            { size: "xl", variant: "v0", position: "c1"}, { size: "l", variant: "v0", position: "c2" }, { size: "m", variant: "v0", position:"c3" },
-            { size: "s", variant: "v0", position: "c4" }, { size: "xs", variant: "v0", position: "c5" }, { size: "xs", variant: "v0", position:"c6" },
+            { size: "xl", variant: "v0", position: "c1"}, { size: "l", variant: "v5", position: "c2" }, { size: "m", variant: "v0", position:"c3" },
+            { size: "s", variant: "v0", position: "c4" }, { size: "xs", variant: "v2", position: "c5" }, { size: "xs", variant: "v2", position:"c6" },
             { size: "xs", variant: "v0", position: "c6" }, { size: "xs", variant: "v0", position: "c5" }, { size: "s", variant: "v0", position:"c4" },
             { size: "m", variant: "v0", position: "c3"}, { size: "l", variant: "v0" , position: "c2" }, { size: "xl", variant: "v0", position:"c1" },
         ]
     },
     {
         rowClass: "xl-row", cells: [
-            { size: "xl", variant: "v0", position: "c1"}, { size: "l", variant: "v0", position: "c2" }, { size: "m", variant: "v0", position:"c3" },
-            { size: "s", variant: "v0", position: "c4" }, { size: "xs", variant: "v0", position: "c5" }, { size: "xs", variant: "v0", position:"c6" },
+            { size: "xl", variant: "v1", position: "c1"}, { size: "l", variant: "v0", position: "c2" }, { size: "m", variant: "v0", position:"c3" },
+            { size: "s", variant: "v1", position: "c4" }, { size: "xs", variant: "v2", position: "c5" }, { size: "xs", variant: "v2", position:"c6" },
             { size: "xs", variant: "v0", position: "c6" }, { size: "xs", variant: "v0", position: "c5" }, { size: "s", variant: "v0", position:"c4" },
-            { size: "m", variant: "v0", position: "c3"}, { size: "l", variant: "v0" , position: "c2" }, { size: "xl", variant: "v0", position:"c1" },
+            { size: "m", variant: "v0", position: "c3"}, { size: "l", variant: "v0" , position: "c2" }, { size: "xl", variant: "v6", position:"c1" },
         ]
     },
 ];
@@ -250,7 +250,7 @@ export default function Act3GradientAnimation() {
 */
 
     return (
-        <div className="gradient-grid" ref={gridRef}>
+        <div className="a3grid gradient-grid" ref={gridRef}>
             {rows.map((row, rowIdx) => (
                 <motion.div 
                     className={`${row.rowClass} rowGrid`} 

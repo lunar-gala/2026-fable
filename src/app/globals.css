@@ -646,12 +646,10 @@ p{
 
 .rowGrid{
   width: 100%;
+  height:100%;
   display: flex;
   flex-direction: row;
   gap: 0px;
-  flex-grow:0;
-  overflow: hidden;
-  border-top: 0.25px solid #332b2b;
 }
 
 .rowGridContent{
@@ -666,15 +664,14 @@ p{
 
 .bottomgradient{
     position: absolute;
-    bottom:0;
-    left:0;
+    top:0;
     width:100%;
     height:100%;
     z-index:-1;
 }
 
 .a3grid > .rowGrid{
-    border-top: 0.25px solid white;
+    border-top: 0.25px solid #FFFFFF80;
 }
 
 .xs-cell{
@@ -710,8 +707,8 @@ p{
 }
 
 .full-row{
-  height:100vh;
-  width:100vw;
+  height:100%;
+  width:100%;
 }
 
 .vh25-row{
@@ -726,7 +723,7 @@ p{
   flex-grow: 0;
 }
 .landingCellWhite{
-  border: 0.125px solid white;
+  border-left: 0.125px solid #FFFFFF80;
   overflow: hidden;
   flex-grow: 0;
 }
