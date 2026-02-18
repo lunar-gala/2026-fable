@@ -1,4 +1,4 @@
-import LinesFull from "@/app/components/Lines/LinesFull";
+import LinesFull from "@/app/components/LinesList/LinesFull";
 import NavBar from "../components/NavBar";
 
 export default function LinesPage() {
