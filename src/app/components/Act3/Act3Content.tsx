@@ -173,7 +173,9 @@ export default function Act3Content() {
             <div className='homeCell-content s-cell c4'> </div>
             <div className='homeCell-content m-cell c3'> </div>
             <div className='homeCell-content l-cell c2'></div>
-            <div className='homeCell-content xl-cell c1'></div>
+            <div className='homeCell-content xl-cell c1'>
+                <span className="content-act-label" style={{ color: 'var(--off-white)' }}>ACT III</span>
+            </div>
         </div>
 
         {/* Row 11: l-row */}
@@ -191,7 +193,9 @@ export default function Act3Content() {
             <div className='homeCell-content s-cell c4'> </div>
             <div className='homeCell-content m-cell c3'> </div>
             <div className='homeCell-content l-cell c2'></div>
-            <div className='homeCell-content xl-cell c1'></div>
+            <div className='homeCell-content xl-cell c1'>
+                <span className="content-big-label" style={{ color: 'var(--off-white)' }}>Trace</span>
+            </div>
         </div>
 
         {/* Row 12: xl-row */}

@@ -8,6 +8,7 @@ import Act2Full from "./Act2/Act2Full";
 import Act3Full from "./Act3/Act3Full";
 import Act4Full from "./Act4/Act4Full";
 import AssetAnimation from "./Landing/AssetAnimation";
+import ActNavArrows from "./ActNavArrows";
 import { Stage } from "./Stage";
 
 import { useScroll } from "motion/react";
@@ -52,6 +53,7 @@ export default function MainContent() {
           {stage === Stage.Act3 && <Act3Full />}
           {stage === Stage.Act4 && <Act4Full />}
           <AssetAnimation stage={stage} />
+          <ActNavArrows stage={stage} />
 
         </div>
       </div>

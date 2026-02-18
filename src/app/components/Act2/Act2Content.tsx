@@ -82,7 +82,9 @@ export default function Act2Content() {
             <div className='homeCell-content xs-cell c2'></div>
             <div className='homeCell-content s-cell c3'></div>
             <div className='homeCell-content m-cell c4'></div>
-            <div className='homeCell-content l-cell c5'></div>
+            <div className='homeCell-content l-cell c5'>
+                <span className="content-act-label">ACT II</span>
+            </div>
             <div className='homeCell-content xl-cell c6'></div>
             <div className='homeCell-content xl-cell c6'>
                 <LineButton name="Whispers Before Sleep" number={6} act={2} gradientDir="vertical" align="right" />
@@ -101,7 +103,9 @@ export default function Act2Content() {
             <div className='homeCell-content s-cell c3'></div>
             <div className='homeCell-content m-cell c4'></div>
             <div className='homeCell-content l-cell c5'></div>
-            <div className='homeCell-content xl-cell c6'></div>
+            <div className='homeCell-content xl-cell c6'>
+                <span className="content-big-label">Wander</span>
+            </div>
             <div className='homeCell-content xl-cell c6'> </div>
             <div className='homeCell-content l-cell c5'></div>
             <div className='homeCell-content m-cell c4'> </div>

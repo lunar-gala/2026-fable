@@ -743,7 +743,8 @@ grid-content{
 
 
 /* Content overlay rows must not clip text/buttons, and must NOT add borders (gradient grid provides those) */
-.gridTextContent .rowGrid {
+.gridTextContent .rowGrid,
+.gridTextContent .rowGridContent {
     overflow: visible;
     border-top: none;
 }
@@ -896,19 +897,60 @@ body[data-stage="act4"] .sidebar-footer-logo {
 }
 
 .nav-arrow-icon {
-  font-size: 11px;
+  width: 18px;
+  height: auto;
+  display: block;
+}
+
+.nav-arrow-icon-left {
+  transform: scaleX(-1);
+}
+
+.nav-arrow-label {
+  font-family: "aileron", sans-serif;
+  font-size: 8px;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
   line-height: 1;
   display: block;
 }
 
-.nav-arrow-label {
-  font-family: var(--font-aileron);
-  font-size: 8px;
+/* Content page labels */
+.content-act-label {
+  font-family: "aileron", sans-serif;
+  font-size: 14px;
   font-weight: 400;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   line-height: 1;
-  display: block;
+  pointer-events: none;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.content-big-label {
+  font-family: var(--font-feature-display-condensed);
+  font-style: normal;
+  font-weight: 700;
+  font-size: 6.5vw;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  margin: 0;
+  pointer-events: none;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+/* Dark act colors for labels (acts 3,4) */
+.nav-arrow--dark .nav-arrow-icon {
+  filter: brightness(0) invert(0.95);
+}
+
+.nav-arrow--dark .nav-arrow-label {
+  color: var(--off-white);
 }
 
 .nav-arrow-left {

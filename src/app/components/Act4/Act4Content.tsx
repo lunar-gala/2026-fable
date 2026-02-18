@@ -13,7 +13,9 @@ export default function Act4Content() {
         <div className='xl-row rowGridContent'>
             <div className='homeCell-content xl-cell c1'></div>
             <div className='homeCell-content l-cell c2'></div>
-            <div className='homeCell-content m-cell c3'></div>
+            <div className='homeCell-content m-cell c3'>
+                <span className="content-act-label" style={{ color: 'var(--off-white)' }}>ACT IV</span>
+            </div>
             <div className='homeCell-content s-cell c4'></div>
             <div className='homeCell-content xs-cell c5'></div>
             <div className='homeCell-content xs-cell c6'></div>
@@ -40,7 +42,9 @@ export default function Act4Content() {
                 <LineButton name="Vestige" number={15} act={4} gradientDir="horizontal" align="left" verticalAlign="top" />
             </div>
             <div className='homeCell-content l-cell c2'></div>
-            <div className='homeCell-content xl-cell c1'></div>
+            <div className='homeCell-content xl-cell c1'>
+                <span className="content-big-label" style={{ color: 'var(--off-white)' }}>Discern</span>
+            </div>
         </div>
 
         {/* Row 3: m-row */}
