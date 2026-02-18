@@ -58,11 +58,15 @@ export default function NavBar() {
   return (
     <aside className={`navbar ${isDark ? "navbar-dark" : "navbar-light"}`}>
       <div className="navbar-inner">
-        <div className="navbar-row navbar-logo-row">
+        <button
+          type="button"
+          className="navbar-row navbar-logo-row"
+          onClick={() => router.push("/")}
+        >
           <div className="navbar-logo">
-            <img src="/wordmark.svg"></img>
+            <img src="/wordmark.svg" alt="Fable"></img>
           </div>
-        </div>
+        </button>
 
         <div className="navbar-nav">
           <img

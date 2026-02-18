@@ -183,7 +183,7 @@ body {
 
 #animationWindow{
   left: var(--sidebar-width);
-  width:95%;
+  width:calc(100% - var(--sidebar-width));
 }
 
 .peopleContent{
