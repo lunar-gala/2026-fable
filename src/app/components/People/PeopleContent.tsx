@@ -1,9 +1,10 @@
 "use client";
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
+import { useIsVisible } from "./utils/intersecting"
 import "./people.css";
+import { p } from "motion/react-client";
 
-const NAV_ITEMS = [
-  "",
+const CATEGORIES = [
   "Exec",
   "Creative",
   "Design",
@@ -12,6 +13,8 @@ const NAV_ITEMS = [
   "Hair & Makeup",
   "PR",
 ];
+
+const NAV_ITEMS = ["", ...CATEGORIES];
 
 const COLS = NAV_ITEMS.length; // 8 slots per row
 const ITEMS_PER_SECTION = 14;
@@ -31,6 +34,24 @@ function chunkItems(total: number): (number | null)[][] {
 export default function PeopleContent() {
   const [activeTab, setActiveTab] = useState("Exec");
   const sectionRefs = useRef<Record<string, HTMLDivElement | null>>({});
+
+  const refs: Record<string, React.RefObject<HTMLElement | null>> = CATEGORIES.reduce(
+    (acc, category) => {
+      acc[category] = useRef<HTMLElement | null>(null);
+      return acc;
+    },
+    {} as Record<string, React.RefObject<HTMLElement | null>>
+  );
+
+  CATEGORIES.forEach((category) => {
+    const isVisible = useIsVisible(refs[category]);
+
+    useEffect(() => {
+      if (isVisible) {
+        setActiveTab(category);
+      }
+    }, [isVisible, category]);
+  });
 
   const handleNavClick = (item: string) => {
     setActiveTab(item);
@@ -117,7 +138,7 @@ export default function PeopleContent() {
               <div className="people-spacer" />
             </div>
           )}
-          <div className="people-photo-section" ref={(el) => { sectionRefs.current[section] = el; }}>
+          <div className="people-photo-section" ref={(el) => { sectionRefs.current[section] = el; if (refs[section]) (refs[section] as React.MutableRefObject<HTMLElement | null>).current = el; }}>
             {/* Top 24px row */}
             <div className="people-photo-row people-row-24">
               <div className="people-spacer" />
