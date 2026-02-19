@@ -21,9 +21,14 @@
   width:100%;
   height:100%;
   z-index:-1;
-  background: linear-gradient(180deg, #B0D2DE 50%, #F2EFE5 100%); 
-  background-size: 100% 200%; 
-  animation: a1-gradientmove 16s ease infinite;
+  background: linear-gradient(180deg, #B0D2DE 50%, #F2EFE5 100%);
+  background-size: 100% 200%;
+  animation: a1-gradientmove 16s ease infinite, bg-fade-in 1s ease;
+}
+
+@keyframes bg-fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
 }
 
 @keyframes a1-gradientmove {

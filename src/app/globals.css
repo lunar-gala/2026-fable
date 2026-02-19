@@ -722,6 +722,7 @@ p{
   position:relative;
   pointer-events: none;
   border: none;
+  overflow: visible;
   flex-grow: 0;
   display:flex;
   justify-content: left;
@@ -731,7 +732,8 @@ p{
     position: absolute;
     top:0;
     z-index: 100;
-    width:calc(100% - var(--sidebar-width));
+    width: 100%;
+    height: 100%;
     pointer-events: none;
 }
 
@@ -745,7 +747,8 @@ p{
 
 
 /* Content overlay rows must not clip text/buttons, and must NOT add borders (gradient grid provides those) */
-.gridTextContent .rowGrid {
+.gridTextContent .rowGrid,
+.gridTextContent .rowGridContent {
     overflow: visible;
     border-top: none;
 }
@@ -885,32 +888,69 @@ body[data-stage="act4"] .sidebar-footer-logo {
   border: none;
   cursor: pointer;
   padding: 0;
-  opacity: 0.7;
-  transition: opacity 0.3s ease;
+  opacity: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 4px;
 }
 
-.nav-arrow:hover {
-  opacity: 1;
+.nav-arrow-icon {
+  width: 18px;
+  height: auto;
+  display: block;
 }
 
-.nav-arrow-icon {
-  font-size: 11px;
-  line-height: 1;
-  display: block;
+.nav-arrow-icon-left {
+  transform: scaleX(-1);
 }
 
 .nav-arrow-label {
-  font-family: var(--font-aileron);
+  font-family: "aileron", sans-serif;
   font-size: 8px;
   font-weight: 400;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   line-height: 1;
   display: block;
+}
+
+/* Content page labels */
+.content-act-label {
+  font-family: "aileron", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  line-height: 1;
+  pointer-events: none;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.content-big-label {
+  font-family: var(--font-feature-display-condensed);
+  font-style: normal;
+  font-weight: 400;
+  font-synthesis: none;
+  font-size: 5.5vw;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  margin: 0;
+  pointer-events: none;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+/* Dark act colors for labels (acts 3,4) */
+.nav-arrow--dark .nav-arrow-icon {
+  filter: brightness(0) invert(0.95);
+}
+
+.nav-arrow--dark .nav-arrow-label {
+  color: var(--off-white);
 }
 
 .nav-arrow-left {
