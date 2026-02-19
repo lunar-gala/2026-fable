@@ -1,16 +1,19 @@
-import LinesFull from "@/app/components/LinesList/LinesFull";
+import LinesFull from "@/app/components/Act 3 Line/LinesFull";
 import NavBar from "../components/NavBar";
-import TopNavBar from "../components/Act 1 Line/TopNavBar";
+import TopNavBar from "../components/Act 3 Line/TopNavBar";
+import Act3StageSetter from "./Act3StageSetter";
 
 export default function LinesPage() {
   return (
     <>
-    <div className="pageContent">
-      <NavBar />
-      {/* <TopNavBar /> */}
-      <LinesFull />
-    </div>
-
+      <Act3StageSetter />
+      <div className="pageContent">
+        <NavBar />
+        <TopNavBar />
+        <div className="linesMain">
+          <LinesFull />
+        </div>
+      </div>
     </>
 
 

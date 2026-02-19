@@ -283,6 +283,35 @@ body {
 
 .navbar-act-row {
   height: 44px;
+  position: relative;
+  transition: background 0.2s;
+}
+
+.navbar-act-row--active {
+  background: rgba(51, 43, 43, 0.14);
+}
+
+.navbar-act-arrow {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 10px;
+  opacity: 0.8;
+}
+
+.navbar-link-arrow {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 10px;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.navbar-link-row--active .navbar-link-arrow {
+  opacity: 0.8;
 }
 
 .navbar-nav {
@@ -395,8 +424,8 @@ body {
   top: 0;
   left: 0;
   right: 0;
-  height: 48px;  /* match your mockup height */
-  background: var(--navbar-bg, #fff); /* use your theme vars */
+  height: 48px;
+  background: var(--navbar-bg, #fff);
   border-bottom: 1px solid var(--border-color, #eee);
   display: flex;
   align-items: center;
@@ -404,13 +433,30 @@ body {
   padding-inline: 1rem;
 }
 
+/* Subnav: fixed to the top of each lines page */
+.navbar-top-act3 {
+  left: var(--sidebar-width);
+  top: 0;
+  width: calc(100% - var(--sidebar-width));
+  background: var(--color-cream, #faf8f4);
+  border-bottom: 0.5px solid var(--dark-brown);
+  border-left: 0.5px solid var(--dark-brown);
+  z-index: 1000;
+}
+
 .navbar-top-inner {
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  max-width: 1200px;  /* constrain width */
+  max-width: 1200px;
   margin: 0 auto;
+}
+
+.navbar-top-act3 .navbar-top-inner {
+  max-width: none;
+  justify-content: flex-start;
+  padding: 0;
 }
 
 .navbartop-logo {
@@ -421,7 +467,139 @@ body {
 
 .navbar-top-nav {
   display: flex;
-  gap: 2rem;  /* space between Viewer/Tracks/Debut */
+  gap: 2rem;
+}
+
+/* Top nav: 4 equal columns so Follow, Wander, Trace, Discern are evenly spaced */
+.navbar-top-act3 .navbar-top-nav {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  width: 100%;
+  min-width: 0;
+  gap: 0;
+  align-items: stretch;
+}
+
+.navbar-top-act3 .navbar-top-item-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  border-left: 0.5px solid var(--dark-brown);
+  min-width: 0;
+}
+
+.navbar-top-act3 .navbar-top-item-wrap:first-child {
+  border-left: none;
+}
+
+.navbar-top-act3 .navbar-top-link {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-feature-display-condensed), serif;
+  font-size: 1rem;
+  letter-spacing: 0.02em;
+  color: var(--dark-brown);
+}
+
+/* Top nav labels horizontal (not rotated like sidebar) */
+.navbar-top-act3 .navbar-top-link .navbar-nav-label {
+  writing-mode: horizontal-tb;
+  transform: none;
+  text-orientation: unset;
+}
+
+/* Expanded view: line numbers under current act only */
+.navbar-top-act3 .navbar-top-trace-sub,
+.navbar-top-act3 .navbar-top-act-sub {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 4px 0 8px;
+  border-top: 0.5px solid rgba(51, 43, 43, 0.3);
+}
+
+/* Act line number buttons — default state */
+.navbar-top-trace-num {
+  background: transparent;
+  border: 0.5px solid transparent;
+  padding: 4px 10px;
+  font-size: 0.75rem;
+  font-family: "aileron", sans-serif;
+  color: var(--dark-brown);
+  cursor: pointer;
+  opacity: 0.7;
+  transition: opacity 0.2s, background 0.2s, box-shadow 0.2s;
+  border-radius: 2px;
+}
+
+.navbar-top-trace-num:hover {
+  opacity: 1;
+}
+
+/* Pressed state: current line page */
+.navbar-top-trace-num--active {
+  opacity: 1;
+  background: rgba(51, 43, 43, 0.2);
+  border-color: rgba(51, 43, 43, 0.25);
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.12);
+}
+
+/* Lines page: no black background anywhere */
+body.lines-page {
+  background: #fff;
+}
+
+body.lines-page .pageContent {
+  background: #fff;
+}
+
+/* Main content area below Act 3 top bar */
+.linesMain {
+  position: relative;
+  padding-top: 48px;
+  height: calc(100vh);
+  background: #fff;
+  overflow: hidden;
+  width: 100%;
+}
+
+/* Lines page grid: same 11 columns as proportions but with fr so row fits 100% (no horizontal scroll) */
+.linesPageGrid {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.linesMain .linesPageGrid.grid100vh {
+  height: 100%;
+}
+
+/* Lines page: flex row so .xs-cell, .l-cell, .xl-cell, .xxl-cell widths (%, from globals) apply.
+   Row can exceed 100% so we allow shrink; .xxl-cell and .xl-cell keep their width. */
+.linesPageGrid .rowGridContent {
+  display: flex;
+  flex-wrap: nowrap;
+  width: 100%;
+  min-width: 0;
+}
+
+.linesPageGrid .rowGridContent > * {
+  flex-shrink: 1;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+/* Preserve 51.5% / 50% for these cells so they aren’t shrunk by the flex row */
+.linesPageGrid .rowGridContent > .xxl-cell {
+  flex-shrink: 0;
+  width: 51.5%;
+}
+.linesPageGrid .rowGridContent > .xl-cell {
+  flex-shrink: 0;
+  width: 50%;
 }
 
 .navbar-top-link {
@@ -737,7 +915,7 @@ p{
 }
 
 .xs-row{
-  height:3%;
+  height:3.125%;
 }
 .s-row{
   height:6.25%;
@@ -761,12 +939,80 @@ p{
   width: 100%;
   height: 100%;
   object-fit: cover;
+  display: block;
 }
 
-.lineImage.doubleHeight{
-  height:200%;
+.lineImage.doubleHeight {
+  height: 200%;
   object-fit: cover;
+  object-position: center top;
 }
+
+.lineImage-small {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+
+/* Keep images inside their grid cells on lines page */
+.linesPageGrid .homeCell-content.line-cell-image {
+  overflow: hidden;
+  min-height: 0;
+}
+
+/* Let doubleHeight image overflow into next row and sit on top of it */
+.linesPageGrid .homeCell-content.line-cell-image.line-cell-double-height {
+  overflow: visible;
+  z-index: 1;
+  position: relative;
+}
+
+.linesPageGrid .rowGridContent .homeCell-content {
+  min-height: 0;
+}
+
+/* Act 3 line page content typography */
+.line-title {
+  font-family: var(--font-feature-display-condensed), serif;
+  font-size: clamp(2.5rem, 5vw, 98px);
+  line-height: 0.96;
+  letter-spacing: -0.02em;
+  color: var(--dark-brown);
+  margin: 0 0 0.25em 0;
+}
+
+.line-tagline {
+  font-family: "aileron", sans-serif;
+  font-size: 0.75rem;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--dark-brown);
+  margin: 0;
+  line-height: 1.4;
+  opacity: 0.9;
+}
+
+.line-names {
+  font-family: "aileron", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  color: var(--dark-brown);
+  margin: 0;
+}
+
+.line-body {
+  font-family: "aileron", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--dark-brown);
+  margin: 0;
+  text-align: left;
+}
+
 
 .vh25-row{
   height:25vh;
@@ -801,6 +1047,10 @@ p{
     width: 100%;
     height: 100%;
     pointer-events: none;
+}
+
+body.lines-page .gridTextContent {
+  background: transparent;
 }
 
 

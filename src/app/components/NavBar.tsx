@@ -1,8 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { useRouter } from "next/navigation";
-
+import { useRouter, usePathname } from "next/navigation";
 
 const ACT_ITEMS = ["ACT I", "ACT II", "ACT III", "ACT IV"];
 const NAV_ITEMS = ["Lines", "Tickets", "People", "About"];
@@ -11,15 +10,16 @@ export default function NavBar() {
   const [isDark, setIsDark] = useState(false);
   const [hasOverflow, setHasOverflow] = useState(false);
   const router = useRouter();
+  const pathname = usePathname();
+  const isLinesPage = pathname === "/lines";
 
-  const handleNavigation = (item) => {
-    const routes = {
-      "Lines": "/lines",
-      "Tickets": "/tickets",
-      "People": "/people",
-      "About": "/about",
+  const handleNavigation = (item: string) => {
+    const routes: Record<string, string> = {
+      Lines: "/lines",
+      Tickets: "/tickets",
+      People: "/people",
+      About: "/about",
     };
-    
     const path = routes[item];
     if (path) {
       router.push(path);
@@ -40,11 +40,11 @@ export default function NavBar() {
 
   useEffect(() => {
     const initialStage = document.body.dataset.stage || "landing";
-    setIsDark(initialStage === "act3" || initialStage === "act4");
+    setIsDark(initialStage === "act4");
 
     const observer = new MutationObserver(() => {
       const currentStage = document.body.dataset.stage || "landing";
-      setIsDark(currentStage === "act3" || currentStage === "act4");
+      setIsDark(currentStage === "act4");
     });
 
     observer.observe(document.body, {
@@ -77,11 +77,15 @@ export default function NavBar() {
           />
         </div>
 
-        {!hasOverflow && ACT_ITEMS.map((item) => (
-          <div key={item} className="navbar-row navbar-act-row">
-            <span className="navbar-act-label">{item}</span>
-          </div>
-        ))}
+        {!hasOverflow &&
+          ACT_ITEMS.map((item) => (
+            <div
+              key={item}
+              className={`navbar-row navbar-act-row ${item === "ACT III" && isLinesPage ? "navbar-act-row--active" : ""}`}
+            >
+              <span className="navbar-act-label">{item}</span>
+            </div>
+          ))}
 
         <nav className="navbar-nav" aria-label="Primary navigation">
           {NAV_ITEMS.map((item) => (
