@@ -34,6 +34,12 @@
   height: 100%;
   z-index: -2;
   background: #0a0a1a;
+  animation: bg-fade-in 1s ease;
+}
+
+@keyframes bg-fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
 }
 
 @keyframes a4-gradientmove {

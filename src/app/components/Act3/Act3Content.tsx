@@ -174,7 +174,7 @@ export default function Act3Content() {
             <div className='homeCell-content m-cell c3'> </div>
             <div className='homeCell-content l-cell c2'></div>
             <div className='homeCell-content xl-cell c1'>
-                <span className="content-act-label" style={{ color: 'var(--off-white)' }}>ACT III</span>
+                <h3 className="content-act-label" style={{ color: 'var(--off-white)' }}>ACT III</h3>
             </div>
         </div>
 

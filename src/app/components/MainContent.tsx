@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { COLORS } from "../constants";
 import LandingAnimation from "./Landing/LandingAnimation";
 import Act1Full from "./Act1/Act1Full";
 import Act2Full from "./Act2/Act2Full";
@@ -40,10 +39,11 @@ export default function MainContent() {
     <>
       <div style={{ position: "relative", width: "100%", height: "500vh" }}>
         <div id="animationWindow"
-        style={{ 
+        style={{
           position: "fixed",
           top: 0,
           height: "100vh",
+          backgroundColor: stage >= Stage.Act3 ? "#000" : "#F2EFE5",
         }}
 
         >

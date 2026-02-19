@@ -84,7 +84,7 @@ export default function Act1Content() {
             <div className='homeCell-content m-cell c4'></div>
             <div className='homeCell-content l-cell c5'></div>
             <div className='homeCell-content xl-cell c6'>
-                <span className="content-act-label">ACT I</span>
+                <h3 className="content-act-label">ACT I</h3>
             </div>
             <div className='homeCell-content xl-cell c6'> 
                 <LineButton name="Lustre" number={2} act={1} gradientDir="vertical" align="right" />

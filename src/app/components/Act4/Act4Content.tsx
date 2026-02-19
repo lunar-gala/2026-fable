@@ -14,7 +14,7 @@ export default function Act4Content() {
             <div className='homeCell-content xl-cell c1'></div>
             <div className='homeCell-content l-cell c2'></div>
             <div className='homeCell-content m-cell c3'>
-                <span className="content-act-label" style={{ color: 'var(--off-white)' }}>ACT IV</span>
+                <h3 className="content-act-label" style={{ color: 'var(--off-white)' }}>ACT IV</h3>
             </div>
             <div className='homeCell-content s-cell c4'></div>
             <div className='homeCell-content xs-cell c5'></div>
