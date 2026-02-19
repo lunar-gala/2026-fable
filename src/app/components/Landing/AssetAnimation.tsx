@@ -24,9 +24,9 @@ const animationForwardFiles = [
   ["/shapes/landing_end_L.json", "/shapes/landing_end_R.json"], // 1, landing end
   ["/shapes/a1_start_L.json", "/shapes/a1_start_R.json"], // 2, act1
   ["/shapes/a1toa2_L.json", "/shapes/a1toa2_R.json"], // 3, transition to act2 & act 2
-  ["/shapes/act2endL.json", "/shapes/act2endR.json"], // 4, 2 end
-  ["/shapes/act3start-L.json", "/shapes/act3start-R.json"], // 5, act3
-  ["/shapes/act3to4-Lside.json", "/shapes/act3to4-Rside.json"], // 6, transition to act 4
+  ["/shapes/a2_end_L.json", "/shapes/a2_end_R.json"], // 4, 2 end
+  ["/shapes/a3_start_L.json", "/shapes/a3_start_R.json"], // 5, act3
+  ["/shapes/a3toa4_final_L.json", "/shapes/a3toa4_final_R.json"], // 6, transition to act 4
 ];
 
 // Animation file indices when scrolling backward (up)
@@ -41,8 +41,8 @@ const stageBackwardIndices: Record<Stage, number> = {
 const animationBackwardFiles = [
   ["/shapes/landing_end_L.json", "/shapes/landing_end_R.json"], // 0, landing
   ["/shapes/a1toa2_L.json", "/shapes/a1toa2_R.json"], // 1, transition to act2 & act 2
-  ["/shapes/act2endL.json", "/shapes/act2endR.json"], // 2, 2 end
-  ["/shapes/act3to4-Lside.json", "/shapes/act3to4-Rside.json"], // 3, transition to act 4
+  ["/shapes/a2_end_L.json", "/shapes/a2_end_R.json"], // 2, 2 end
+  ["/shapes/a3toa4_final_L.json", "/shapes/a3toa4_final_R.json"], // 3, transition to act 4
 ];
 
 interface LottieAnimationData {
