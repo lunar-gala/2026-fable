@@ -13,19 +13,20 @@ interface AssetAnimationProps {
 // Animation file indices when scrolling forward (down)
 const stageForwardIndices: Record<Stage, number> = {
   [Stage.Landing]: 0,
-  [Stage.Act1]: 1,
-  [Stage.Act2]: 2,
-  [Stage.Act3]: 4,
-  [Stage.Act4]: 5
+  [Stage.Act1]: 2,
+  [Stage.Act2]: 3,
+  [Stage.Act3]: 5,
+  [Stage.Act4]: 6
 };
 
 const animationForwardFiles = [
-  ["/shapes/landing-L.json", "/shapes/landing-R.json"], // 0, landing
-  ["/shapes/Act1-LSide.json", "/shapes/Act1-RSide.json"], // 1, transition to act1 & act1
-  ["/shapes/act1to2 - L.json", "/shapes/act1to2 - R.json"], // 2, transition to act2 & act 2
-  ["/shapes/act2endL.json", "/shapes/act2endR.json"], // 3, 2 end
-  ["/shapes/act3start-L.json", "/shapes/act3start-R.json"], // 4, act3
-  ["/shapes/act3to4-Lside.json", "/shapes/act3to4-Rside.json"], // 5, transition to act 4
+  ["/shapes/landing_start_L.json", "/shapes/landing_start_R.json"], // 0, landing
+  ["/shapes/landing_end_L.json", "/shapes/landing_end_R.json"], // 1, landing end
+  ["/shapes/a1_start_L.json", "/shapes/a1_start_R.json"], // 2, act1
+  ["/shapes/a1toa2_L.json", "/shapes/a1toa2_R.json"], // 3, transition to act2 & act 2
+  ["/shapes/act2endL.json", "/shapes/act2endR.json"], // 4, 2 end
+  ["/shapes/act3start-L.json", "/shapes/act3start-R.json"], // 5, act3
+  ["/shapes/act3to4-Lside.json", "/shapes/act3to4-Rside.json"], // 6, transition to act 4
 ];
 
 // Animation file indices when scrolling backward (up)
@@ -38,8 +39,8 @@ const stageBackwardIndices: Record<Stage, number> = {
 };
 
 const animationBackwardFiles = [
-  ["/shapes/landing-L.json", "/shapes/landing-R.json"], // 0, landing
-  ["/shapes/act1to2 - L.json", "/shapes/act1to2 - R.json"], // 1, transition to act2 & act 2
+  ["/shapes/landing_end_L.json", "/shapes/landing_end_R.json"], // 0, landing
+  ["/shapes/a1toa2_L.json", "/shapes/a1toa2_R.json"], // 1, transition to act2 & act 2
   ["/shapes/act2endL.json", "/shapes/act2endR.json"], // 2, 2 end
   ["/shapes/act3to4-Lside.json", "/shapes/act3to4-Rside.json"], // 3, transition to act 4
 ];
@@ -111,7 +112,7 @@ function AssetAnimation({ stage }: AssetAnimationProps) {
     if (animationPairs.length === 0 || !animationPairs[currentIndex]) return;
 
     const currentPair = animationPairs[currentIndex];
-    const shouldReverse = isScrollUp && stage !== Stage.Landing;
+    const shouldReverse = isScrollUp;
 
     // Destroy existing animations
     leftAnimRef.current?.destroy();

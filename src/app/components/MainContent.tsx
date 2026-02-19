@@ -37,7 +37,7 @@ export default function MainContent() {
 
   return (
     <>
-      <div style={{ position: "relative", width: "100%", height: "500vh" }}>
+      <div style={{ position: "relative", width: "100%", height: "800vh" }}>
         <div id="animationWindow"
         style={{
           position: "fixed",

@@ -1,0 +1,223 @@
+/* People Page Nav Bar */
+/* Heights based on 1080px viewport: 24px = 2.222vh, 48px = 4.444vh */
+.people-nav {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  border-bottom: 0.125px solid var(--dark-brown);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background-color: var(--off-white);
+}
+
+/* Nav rows */
+.people-nav-row {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  border-top: 0.125px solid var(--dark-brown);
+}
+
+.people-row-24 {
+  height: calc(24 / 1080 * 100vh);
+}
+
+.people-row-48 {
+  height: calc(48 / 1080 * 100vh);
+}
+
+/* Grid cells - 24px out of 1920px width = 1.25vw */
+.people-spacer {
+  width: calc(24 / 1920 * 100vw);
+  flex-shrink: 0;
+  border-right: 0.125px solid var(--dark-brown);
+}
+
+.people-spacer:first-child {
+  border-left: 0.125px solid var(--dark-brown);
+}
+
+.people-separator {
+  width: calc(24 / 1920 * 100vw);
+  flex-shrink: 0;
+  border-right: 0.125px solid var(--dark-brown);
+}
+
+/* Nav button container */
+.people-nav-button, .people-nav-empty-button {
+  flex: 1;
+  min-width: 0;
+  border-right: 0.125px solid var(--dark-brown);
+  background: transparent;
+  transition: background-color 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+  border-top: none;
+  border-bottom: none;
+  border-left: none;
+}
+
+.people-nav-button {
+  cursor: pointer;
+}
+
+.people-nav-button:hover {
+  background-color: rgba(51, 43, 43, 0.05);
+}
+
+.people-nav-button.active {
+  background-color: var(--dark-brown);
+  color: var(--off-white);
+}
+
+.people-nav-button-label {
+  font-family: var(--font-feature-display-condensed);
+  font-size: var(--label-font-size);
+  font-weight: 400;
+  line-height: 1;
+  text-transform: capitalize;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Empty cell for grid alignment in 24px rows */
+.people-nav-cell {
+  flex: 1;
+  min-width: 0;
+  border-right: 0.125px solid var(--dark-brown);
+}
+
+.people-gradient {
+  flex: 1;
+  min-width: 0;
+  background: linear-gradient(to right, #613B38 0%, #FF76A2 50%, #F2EFE5 75%, #B0D2DE 100%);
+}
+
+/* Photo sections */
+.people-photo-sections {
+  width: 100%;
+  background-color: #ffffff;
+}
+
+.people-photo-section {
+  width: 100%;
+}
+
+.people-photo-row {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  border-bottom: 0.125px solid var(--dark-brown);
+}
+
+.people-photo-group {
+  flex: 1;
+  min-width: 0;
+}
+
+.people-photo-cell {
+  border-right: 0.125px solid var(--dark-brown);
+  border-bottom: 0.125px solid var(--dark-brown);
+  aspect-ratio: 4 / 5;
+}
+
+.people-photo-placeholder {
+  width: 100%;
+  height: 100%;
+  background-color: #EEEEEE;
+}
+
+.people-photo-name-group {
+  width: 100%;
+  aspect-ratio: 8 / 3;
+  border-right: 0.125px solid var(--dark-brown);
+  padding: 1% 0px 0px 4%;
+}
+
+.people-photo-name {
+  width: 100%;
+  font-family: var(--font-feature-display-condensed);
+  font-size: var(--label-font-size);
+}
+
+.people-photo-position {
+  font-family: aileron, sans-serif;
+  font-size: calc(0.75 * var(--label-font-size));
+  line-height: 0.9;
+}
+
+.people-gradient {
+  flex: 1, 
+  min-width = 0;
+  background: linear-gradient(to right, #613B38 0%, #FF76A2 50%, #F2EFE5 75%, #B0D2DE 100%);
+  border-right: 0.125px solid var(--dark-brown);
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .people-nav-button-label, .people-photo-name {
+    font-size: 14px;
+  }
+  .people-photo-position {
+    font-size: 10.5px;
+  }
+}
+
+@media (max-width: 768px) {
+  .people-nav-button-label .people-photo-name {
+    font-size: 12px;
+  }
+  .people-photo-position {
+    font-size: 9px;
+  }
+}
+
+@media (max-width: 576px) {
+  .people-nav-button-label .people-photo-name {
+    font-size: 10px;
+  }
+  .people-photo-position {
+    font-size: 7.5px;
+  }
+
+  /* Hide edge spacers when too squeezed */
+  .people-spacer:first-child,
+  .people-spacer:last-child {
+    display: none;
+  }
+}
+
+/* Hide separators and top/bottom rows when very squeezed */
+@media (max-width: 480px) {
+  .people-row-24 {
+    display: none;
+  }
+
+  .people-separator {
+    display: none;
+  }
+
+  .people-spacer {
+    display: none;
+  }
+
+  .people-nav-button {
+    border-right: none;
+  }
+
+  .people-photo-cell {
+    border-right: none;
+  }
+
+  .people-nav-button-label, .people-photo-name {
+    font-size: 9px;
+  }
+  .people-photo-position {
+    font-size: 6.75px;
+  }
+}

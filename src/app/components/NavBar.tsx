@@ -9,6 +9,7 @@ const NAV_ITEMS = ["Lines", "Tickets", "People", "About"];
 
 export default function NavBar() {
   const [isDark, setIsDark] = useState(false);
+  const [hasOverflow, setHasOverflow] = useState(false);
   const router = useRouter();
 
   const handleNavigation = (item) => {
@@ -24,7 +25,18 @@ export default function NavBar() {
       router.push(path);
     }
   };
-  
+    useEffect(() => {
+    const checkOverflow = () => {
+      const navbar = document.querySelector(".navbar-inner");
+      if (navbar) {
+        setHasOverflow(navbar.scrollHeight > navbar.clientHeight);
+      }
+    };
+
+    checkOverflow();
+    window.addEventListener("resize", checkOverflow);
+    return () => window.removeEventListener("resize", checkOverflow);
+  }, []);
 
   useEffect(() => {
     const initialStage = document.body.dataset.stage || "landing";
@@ -46,20 +58,26 @@ export default function NavBar() {
   return (
     <aside className={`navbar ${isDark ? "navbar-dark" : "navbar-light"}`}>
       <div className="navbar-inner">
-        <div className="navbar-row navbar-logo-row">
-          <div className="navbar-logo">FABLE</div>
-        </div>
+        <button
+          type="button"
+          className="navbar-row navbar-logo-row"
+          onClick={() => router.push("/")}
+        >
+          <div className="navbar-logo">
+            <img src="/wordmark.svg" alt="Fable"></img>
+          </div>
+        </button>
 
-        <div className="navbar-row navbar-corner-row">
+        <div className="navbar-nav">
           <img
-            src={isDark ? "/asset cutout dark.svg" : "/asset cutout light.svg"}
+            src={isDark ? "/asset cutout dark.svg" : "/lightasset.svg"}
             alt=""
             aria-hidden="true"
             className="navbar-cutout"
           />
         </div>
 
-        {ACT_ITEMS.map((item) => (
+        {!hasOverflow && ACT_ITEMS.map((item) => (
           <div key={item} className="navbar-row navbar-act-row">
             <span className="navbar-act-label">{item}</span>
           </div>
@@ -75,7 +93,7 @@ export default function NavBar() {
             >
               {item !== "Lines" && (
                 <img
-                  src={isDark ? "/asset cutout dark.svg" : "/asset cutout light.svg"}
+                  src={isDark ? "/asset cutout dark.svg" : "/lightasset.svg"}
                   alt=""
                   aria-hidden="true"
                   className="navbar-cutout-sm"
