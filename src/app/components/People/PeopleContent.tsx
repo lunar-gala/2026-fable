@@ -3,6 +3,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { useIsVisible } from "./utils/intersecting"
 import "./people.css";
 import { p } from "motion/react-client";
+import { PEOPLE, type Person } from "./data/people";
 
 const CATEGORIES = [
   "Exec",
@@ -17,14 +18,13 @@ const CATEGORIES = [
 const NAV_ITEMS = ["", ...CATEGORIES];
 
 const COLS = NAV_ITEMS.length; // 8 slots per row
-const ITEMS_PER_SECTION = 14;
 
-// Split items into rows of COLS, padding the last row with nulls
-function chunkItems(total: number): (number | null)[][] {
-  const rows: (number | null)[][] = [];
-  for (let i = 0; i < total; i += COLS) {
+// Split people into rows of COLS, padding the last row with nulls
+function chunkPeople(people: Person[]): (Person | null)[][] {
+  const rows: (Person | null)[][] = [];
+  for (let i = 0; i < people.length; i += COLS) {
     const row = Array.from({ length: COLS }, (_, j) =>
-      i + j < total ? i + j : null
+      i + j < people.length ? people[i + j] : null
     );
     rows.push(row);
   }
@@ -156,21 +156,21 @@ export default function PeopleContent() {
             </div>
 
             {/* Photo rows */}
-            {chunkItems(ITEMS_PER_SECTION).map((row, rowIndex) => (
+            {chunkPeople(PEOPLE[section] || []).map((row, rowIndex) => (
               <div key={rowIndex} className="people-photo-row">
                 <div className="people-spacer" />
                 <div className="people-spacer" />
-                {row.map((item, colIndex) => (
+                {row.map((person, colIndex) => (
                   <div key={colIndex} style={{ display: "contents" }}>
                     <div className="people-photo-group">
-                      {item !== null ? (
+                      {person !== null ? (
                         <>
                           <div className="people-photo-cell">
                             <div className="people-photo-placeholder" />
                           </div>
                           <div className="people-photo-name-group">
-                            <div className="people-photo-name">Name</div>
-                            <div className="people-photo-position">Position</div>
+                            <div className="people-photo-name">{person.name}</div>
+                            <div className="people-photo-position">{person.position}</div>
                           </div>
                         </>
                       ) : (
