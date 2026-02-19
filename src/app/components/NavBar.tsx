@@ -6,6 +6,13 @@ import { useRouter, usePathname } from "next/navigation";
 const ACT_ITEMS = ["ACT I", "ACT II", "ACT III", "ACT IV"];
 const NAV_ITEMS = ["Lines", "Tickets", "People", "About"];
 
+const SCROLL_TARGETS: Record<string, number> = {
+  "ACT I": 0.3,
+  "ACT II": 0.5,
+  "ACT III": 0.7,
+  "ACT IV": 0.9,
+};
+
 export default function NavBar() {
   const [isDark, setIsDark] = useState(false);
   const [hasOverflow, setHasOverflow] = useState(false);
@@ -23,6 +30,17 @@ export default function NavBar() {
     const path = routes[item];
     if (path) {
       router.push(path);
+    }
+  };
+
+  const handleActNavigation = (item: string) => {
+    if (pathname !== "/") {
+      router.push("/");
+    }
+    const target = SCROLL_TARGETS[item];
+    if (target !== undefined) {
+      const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
+      window.scrollTo({ top: target * totalHeight, behavior: "smooth" });
     }
   };
     useEffect(() => {
@@ -79,12 +97,14 @@ export default function NavBar() {
 
         {!hasOverflow &&
           ACT_ITEMS.map((item) => (
-            <div
+            <button
               key={item}
+              type="button"
               className={`navbar-row navbar-act-row ${item === "ACT III" && isLinesPage ? "navbar-act-row--active" : ""}`}
+              onClick={() => handleActNavigation(item)}
             >
               <span className="navbar-act-label">{item}</span>
-            </div>
+            </button>
           ))}
 
         <nav className="navbar-nav" aria-label="Primary navigation">
