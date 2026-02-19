@@ -602,6 +602,12 @@ body.lines-page .pageContent {
   width: 50%;
 }
 
+/* Span 2 columns (two 25% columns = 50%). Use with one fewer cell in that row. */
+.linesPageGrid .rowGridContent > .line-cell-span-2-cols {
+  flex-shrink: 0;
+  width: 50%;
+}
+
 .navbar-top-link {
   background: none;
   border: none;
@@ -967,6 +973,9 @@ p{
   z-index: 1;
   position: relative;
 }
+
+/* 2 wide + 2 tall: combine line-cell-span-2-cols and line-cell-double-height on the cell,
+   use lineImage doubleHeight on the img, and remove one cell from the row (10 cells total). */
 
 .linesPageGrid .rowGridContent .homeCell-content {
   min-height: 0;

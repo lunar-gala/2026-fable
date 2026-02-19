@@ -58,11 +58,11 @@ export default function LinesContent() {
       <div className="l-row rowGridContent">
         <div className="homeCell-content xs-cell c1" />
         <div className="homeCell-content xs-cell c3" />
-        <div className="homeCell-content xl-cell c4 line-cell-image">
+        <div className="homeCell-content xl-cell c4 line-cell-image line-cell-double-height">
           <img
             src="/line_images/placeholder1.png"
             alt="line image"
-            className="lineImage"
+            className="lineImage doubleHeight"
           />
         </div>
         <div className="homeCell-content xs-cell c6" />
