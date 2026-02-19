@@ -1,7 +1,8 @@
 "use client";
 import "@/app/components/About/about.css";
+import "@/app/components/Act 3 Line/linespages.css";
 
-export default function LinesContent() {
+export default function A3LinesContent() {
   return (
     <div className="grid100vh linesPageGrid">
       <div className="xs-row rowGridContent">
@@ -35,14 +36,14 @@ export default function LinesContent() {
       <div className="l-row rowGridContent">
         <div className="homeCell-content xs-cell c1" />
         <div className="homeCell-content xs-cell c3" />
-        <div className="homeCell-content xl-cell c4">
+        <div className="homeCell-content col2cell c4">
           <h1 className="line-title">Line name</h1>
-          <p className="line-tagline">
+          <h4>
             TAGLINE FOR THE LINE. YADADYADA. TAGLINE FOR THE LINE. YADADYADA.
-          </p>
+          </h4>
         </div>
         <div className="homeCell-content xs-cell c6" />
-        <div className="homeCell-content l-cell c6 line-cell-image line-cell-double-height">
+        <div className="homeCell-content l-cell c6">
           <img
             src="/line_images/placeholder2.png"
             alt="line image"
@@ -58,15 +59,13 @@ export default function LinesContent() {
       <div className="l-row rowGridContent">
         <div className="homeCell-content xs-cell c1" />
         <div className="homeCell-content xs-cell c3" />
-        <div className="homeCell-content xl-cell c4 line-cell-image line-cell-double-height">
+        <div className="homeCell-content col2cell c4  ">
           <img
             src="/line_images/placeholder1.png"
             alt="line image"
             className="lineImage doubleHeight"
           />
         </div>
-        <div className="homeCell-content xs-cell c6" />
-        <div className="homeCell-content l-cell c6" />
         <div className="homeCell-content xs-cell c6" />
         <div className="homeCell-content l-cell c6" />
         <div className="homeCell-content xs-cell c6" />
@@ -84,7 +83,7 @@ export default function LinesContent() {
         <div className="homeCell-content xs-cell c6" />
         <div className="homeCell-content l-cell c6" />
         <div className="homeCell-content xs-cell c6" />
-        <div className="homeCell-content l-cell c6 line-cell-image line-cell-double-height">
+        <div className="homeCell-content l-cell c6  ">
           <img
               src="/line_images/placeholder2.png"
               alt="line image"

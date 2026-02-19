@@ -1,4 +1,4 @@
-import LinesFull from "@/app/components/Act 3 Line/LinesFull";
+import LinesFull from "@/app/components/Act 3 Line/A3LinesFull";
 import NavBar from "../components/NavBar";
 import TopNavBar from "../components/Act 3 Line/TopNavBar";
 import Act3StageSetter from "./Act3StageSetter";

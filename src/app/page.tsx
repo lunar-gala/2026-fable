@@ -1,5 +1,6 @@
 import AboutContent from "./components/About/AboutContent";
 import AboutFull from "./components/About/AboutFull";
+import A3LinesFull from "./components/Act 3 Line/A3LinesFull";
 import MainContent from "./components/MainContent";
 import NavBar from "./components/NavBar";
 import PeopleContent from "./components/People/PeopleContent";
@@ -12,7 +13,7 @@ export default function Home() {
       style={{ backgroundColor: COLORS.background }}
     >
       <NavBar />
-      <div className="pageContent"><MainContent /></div>
+      <div className="pageContent"><A3LinesFull /></div>
       {/* <div className="peopleContent"><PeopleContent /></div> */}
     
     </main>
