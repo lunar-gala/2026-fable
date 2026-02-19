@@ -3,14 +3,20 @@
 }
 
 .a2-gradient-v1 {
-  background: linear-gradient(180deg, #B0D2DE 39%, #F2EFE5 100%); 
+  background: linear-gradient(180deg, #F2EFE5 10%, #FF76A2 33%, #613B38 89%, #613B38 100%); 
   background-size: 100% 600px;
   animation: a2-gradientmove 8s ease infinite;
 }
 
 .a2-gradient-v2 {
-  background: linear-gradient(180deg, #B0D2DE 39%, #F2EFE5 100%); 
+  background: linear-gradient(180deg, #F2EFE5 0%, #FF76A2 32%, #613B38 83%, #613B38 100%); 
   background-size: 100% 200px;
+  animation: a2-gradientmove 4s ease infinite;
+}
+
+.a2-gradient-v3 {
+  background: linear-gradient(180deg, #FF76A2 32%, #613B38 100%); 
+  background-size: 100% 100px;
   animation: a2-gradientmove 4s ease infinite;
 }
 
