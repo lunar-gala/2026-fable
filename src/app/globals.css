@@ -3,7 +3,8 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
-  --sidebar-width: 5%;
+  --sidebar-width: 3.75%;
+  --label-font-size: 18px;
   --color-cream: #f5f2eb;
   --color-cream-light: #faf8f4;
   --color-blue-muted: #8fa4b8;
@@ -181,8 +182,13 @@ body {
 }
 
 #animationWindow{
-    left: var(--sidebar-width);
-    width:95%;
+  left: var(--sidebar-width);
+  width:calc(100% - var(--sidebar-width));
+}
+
+.peopleContent{
+  width:calc(100% - var(--sidebar-width));
+  margin-left: var(--sidebar-width);
 }
 
 .fullPage{
@@ -208,45 +214,38 @@ body {
 .navbar-light {
   background-color: var(--off-white);
   color: var(--dark-brown);
-  border-right: 1px solid var(--dark-brown);
-  border-left: 1px solid var(--dark-brown);
+  border-right: 0.5px solid var(--dark-brown);
+  border-left: 0.5px solid var(--dark-brown);
 }
 
 .navbar-dark {
   background-color: #000;
   color: var(--off-white);
-  border-right: 1px solid var(--off-white);
-  border-left: 1px solid var(--off-white);
+  border-right: 0.5px solid var(--off-white);
+  border-left: 0.5px solid var(--off-white);
 }
 
 .navbar-inner {
-  width: 48px;
+  width: 75%;
   height: 100%;
   margin: 0px auto 0px auto;
   display: flex;
   flex-direction: column;
-  border-left: 1px solid currentColor;
-  border-right: 1px solid currentColor;
+  border-left: 0.5px solid currentColor;
+  border-right: 0.5px solid currentColor;
+  overflow: hidden;
 }
+
 
 .navbar-row {
   width: 100%;
-  border-top: 1px solid currentColor;
+  border-top: 0.5px solid currentColor;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .navbar-logo {
-  writing-mode: vertical-rl;
-  text-orientation: mixed;
-  transform: rotate(180deg);
-  font-family: var(--font-feature-display-condensed);
-  font-style: italic;
-  font-size: 38px;
-  font-weight: 400;
-  letter-spacing: 0.02em;
-  line-height: 1;
   cursor: pointer;
   transition: opacity 0.3s ease;
   user-select: none;
@@ -265,17 +264,16 @@ body {
 }
 
 .navbar-act-label {
-  writing-mode: vertical-rl;
-  text-orientation: mixed;
-  transform: rotate(180deg);
-  font-family: var(--font-feature-display-condensed);
-  font-style: italic;
-  font-size: 9px;
+  writing-mode: horizontal-tb;
+  font-family: "aileron", sans-serif;
+  font-style: normal;
+  font-size: 10px;
   font-weight: 400;
-  letter-spacing: 0.02em;
+  letter-spacing: -0.01em;
   line-height: 1;
   text-transform: uppercase;
   text-align: center;
+  white-space: nowrap;
 }
 
 .navbar-corner-row {
@@ -302,8 +300,6 @@ body {
   border-bottom: none;
   color: inherit;
   cursor: pointer;
-  /* Override `.navbar-row`'s flex centering; we need two equal stacked areas
-     (ornament above, word below) like the reference. */
   display: grid;
   grid-template-rows: 1fr 1fr;
   gap: 0;
@@ -318,8 +314,8 @@ body {
   text-orientation: mixed;
   transform: rotate(180deg);
   font-family: var(--font-feature-display-condensed);
-  font-style: italic;
-  font-size: 18px;
+  font-style: normal;
+  font-size: var(--label-font-size);
   font-weight: 400;
   letter-spacing: 0.02em;
   line-height: 1;
@@ -332,27 +328,32 @@ body {
   justify-content: center;
 }
 
+.navbar-link-row--plain {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 55px;
+}
+
 .navbar-link-row:hover {
   opacity: 0.7;
 }
 
 .navbar-cutout {
-  width: 100%;
   height: 100%;
   flex-shrink: 0;
-  object-fit: cover;
-  display: block;
+  object-fit: contain;
+  display: inline-block;
 }
 
 .navbar-cutout-sm {
-  width: 100%;
   /* Top half of the nav cell: same footprint as the label area below. */
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   object-position: center;
   margin: 0;
   padding: 0;
-  display: block;
+  display: inline-block;
 }
 
 .navbar-dark .navbar-cutout,
@@ -362,9 +363,8 @@ body {
 
 .navbar-footer-wordmark {
   height: 32px;
-  width: auto;
+  width: 100%;
   object-fit: contain;
-  transform: rotate(-90deg);
 }
 
 .navbar-dark .navbar-footer-wordmark {
@@ -383,7 +383,7 @@ body {
   text-orientation: mixed;
   font-family: var(--font-feature-display-condensed);
   font-size: 34px;
-  font-style: italic;
+  font-style: normal;
   font-weight: 400;
   line-height: 1;
   display: none;
@@ -479,7 +479,7 @@ body {
 
 h1{
   font-family: var(--font-feature-display-condensed);
-  font-size:100px;
+  font-size:98px;
   line-height: 96%;
   letter-spacing: -0.02em;
 }
@@ -492,6 +492,15 @@ h1{
     margin-top:-0.3em;
     margin-left:0.2em;
 }
+
+.shiftpflushtop{
+    margin-top:-0.3em;
+    margin-left:0.2em;
+}
+
+.shifth4flushbottom{
+    margin-bottom:-0.35em;
+  }
 
 h2{
   font-family: var(--font-feature-display-condensed);
@@ -515,6 +524,7 @@ h3{
   line-height: 32px;
 }
 
+
 h4{
   font-size:24px;
 }
@@ -522,6 +532,10 @@ h4{
 p{
   font-size: 1em;
   line-height: 1em;
+}
+
+.caption{
+  font-size: 12px;
 }
 
 .allcaps{
@@ -562,7 +576,7 @@ p{
   flex-direction: column;
 }
 
-grid-content{
+.grid-content{
   position: absolute;
   top:0;
 }
@@ -582,20 +596,20 @@ grid-content{
 
 
 .landing-col-s{
-    border: 0.125px solid #332b2b;
+    border: 0.25px solid #332b2b;
     width: 12px;
     height:100%;    
     background-color: white;
 }
 .landing-col-half{
-    border: 0.125px solid #332b2b;
+    border: 0.25px solid #332b2b;
     width: 25%;
     height:100%;
     background-color: red;
 
 }
 .landing-col-full {
-  border: 0.125px solid #332b2b;
+  border: 0.25px solid #332b2b;
   width: 100%;
   height:100%;
   background-color: blue;
@@ -617,7 +631,7 @@ grid-content{
   gap: 0px;
   flex-grow:0;
   overflow: hidden;
-  border-top: 0.125px solid #332b2b;
+  border-top: 0.25px solid #332b2b;
 
 }
 
@@ -628,7 +642,7 @@ grid-content{
   flex-direction: row;
   gap: 0px;
   overflow: hidden;
-  border-top: 0.125px solid #332b2b;
+  border-top: 0.25px solid #332b2b;
 }
 
 .row-eighth {
@@ -638,7 +652,7 @@ grid-content{
   flex-direction: row;
   gap: 0px;
   overflow: hidden;
-  border-top: 0.125px solid #332b2b;
+  border-top: 0.25px solid #332b2b;
 }
 
 .row-quarter {
@@ -648,7 +662,7 @@ grid-content{
   flex-direction: row;
   gap: 0px;
   overflow: hidden;
-  border-top: 0.125px solid #332b2b;
+  border-top: 0.25px solid #332b2b;
 }
 
 .row-half {
@@ -659,7 +673,7 @@ grid-content{
   gap: 0px;
   flex-grow: 0;
   overflow: hidden;
-  border-top: 0.125px solid #332b2b;
+  border-top: 0.25px solid #332b2b;
 }
 
 .row-full {
@@ -669,20 +683,20 @@ grid-content{
   flex-direction: row;
   gap: 0px;
   overflow: hidden;
-  border-top: 0.125px solid #332b2b;
+  border-top: 0.25px solid #332b2b;
 }
 
 .rowGrid{
+  border-top: 0.125px solid #332b2b;
   width: 100%;
+  height:100%;
   display: flex;
   flex-direction: row;
   gap: 0px;
-  flex-grow:0;
-  overflow: hidden;
-  border-top: 0.125px solid #332b2b;
 }
 
 .rowGridContent{
+  border-top: 0.25px solid #332b2b;
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -693,15 +707,14 @@ grid-content{
 
 .bottomgradient{
     position: absolute;
-    bottom:0;
-    left:0;
+    top:0;
     width:100%;
     height:100%;
     z-index:-1;
 }
 
 .a3grid > .rowGrid{
-    border-top: 0.125px solid white;
+    border-top: 0.25px solid #FFFFFF80;
 }
 
 .xs-cell{
@@ -740,8 +753,8 @@ grid-content{
 }
 
 .full-row{
-  height:100vh;
-  width:100vw;
+  height:100%;
+  width:100%;
 }
 
 .lineImage {
@@ -762,49 +775,46 @@ grid-content{
   height:50vh;
 }
 .landingCell{
-  border: 0.125px solid #332b2b;
+  border-left: 0.125px solid #332b2b;
   overflow: hidden;
   flex-grow: 0;
 }
 .landingCellWhite{
-  border: 0.125px solid white;
+  border-left: 0.125px solid #FFFFFF80;
   overflow: hidden;
   flex-grow: 0;
 }
 .homeCell-content{
+  position:relative;
   pointer-events: none;
   border: none;
-  position: relative;
-  overflow: hidden;
+  overflow: visible;
   flex-grow: 0;
+  display:flex;
+  justify-content: left;
 }
 
 .gridTextContent{
     position: absolute;
     top:0;
     z-index: 100;
-    width:calc(100% - var(--sidebar-width));
+    width: 100%;
+    height: 100%;
     pointer-events: none;
 }
 
-.bottomAlignedFlex{
-  display: flex;
-  flex-direction:row;
-  align-items: flex-end;
-  justify-content: left;
-}
 
-.stretchFlex{
-  height:100%;
+
+.flex4pxCol{
   display: flex;
-  flex-direction:column;
-  align-items: stretch;
-  justify-content: space-between;
+  flex-direction: column;
+  gap:4px;
 }
 
 
 /* Content overlay rows must not clip text/buttons, and must NOT add borders (gradient grid provides those) */
-.gridTextContent .rowGrid {
+.gridTextContent .rowGrid,
+.gridTextContent .rowGridContent {
     overflow: visible;
     border-top: none;
 }
@@ -845,8 +855,8 @@ grid-content{
 
 @keyframes gradientmove1 {
   0% { background-position: 0% 0%; }
-  20% { background-position: 0% 0%; }
-  40% { background-position: 0% 16%; }
+  10% { background-position: 0% 0%; }
+  20% { background-position: 0% 16%; }
   60% { background-position: 0% 36%; }
   80% { background-position: 0% 58%; }
   100% { background-position: 0% 88%; }
@@ -860,8 +870,8 @@ grid-content{
 
 @keyframes gradientmove2 {
   0% { background-position: 0% 0%; }
-  20% { background-position: 0% 6%; }
-  40% { background-position: 0% 28%; }
+  10% { background-position: 0% 6%; }
+  20% { background-position: 0% 28%; }
   60% { background-position: 0% 48%; }
   80% { background-position: 0% 58%; }
   100% { background-position: 0% 89%; }
@@ -944,32 +954,69 @@ body[data-stage="act4"] .sidebar-footer-logo {
   border: none;
   cursor: pointer;
   padding: 0;
-  opacity: 0.7;
-  transition: opacity 0.3s ease;
+  opacity: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 4px;
 }
 
-.nav-arrow:hover {
-  opacity: 1;
+.nav-arrow-icon {
+  width: 18px;
+  height: auto;
+  display: block;
 }
 
-.nav-arrow-icon {
-  font-size: 11px;
-  line-height: 1;
-  display: block;
+.nav-arrow-icon-left {
+  transform: scaleX(-1);
 }
 
 .nav-arrow-label {
-  font-family: var(--font-aileron);
+  font-family: "aileron", sans-serif;
   font-size: 8px;
   font-weight: 400;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   line-height: 1;
   display: block;
+}
+
+/* Content page labels */
+.content-act-label {
+  font-family: "aileron", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  line-height: 1;
+  pointer-events: none;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.content-big-label {
+  font-family: var(--font-feature-display-condensed);
+  font-style: normal;
+  font-weight: 400;
+  font-synthesis: none;
+  font-size: 5.5vw;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  margin: 0;
+  pointer-events: none;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+/* Dark act colors for labels (acts 3,4) */
+.nav-arrow--dark .nav-arrow-icon {
+  filter: brightness(0) invert(0.95);
+}
+
+.nav-arrow--dark .nav-arrow-label {
+  color: var(--off-white);
 }
 
 .nav-arrow-left {
@@ -1064,7 +1111,7 @@ body[data-stage="act4"] .sidebar-footer-logo {
   }
 
   .navbar-nav-label {
-    font-size: 18px;
+    font-size: var(--label-font-size);
   }
 
   .navbar-cutout-sm {

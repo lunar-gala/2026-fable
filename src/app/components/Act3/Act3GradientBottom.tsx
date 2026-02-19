@@ -8,19 +8,19 @@ export default function Act3GradientBottom() {
 
   return (
     <>
-        <div className=' full-row rowGrid'>
-            <div className=' homeCell-content xl-cell c1'></div>          
-            <div className=' homeCell-content l-cell c2'></div>          
-            <div className='a3-gradient-v2 homeCell-content m-cell c3'></div>
-            <div className='a3-gradient-v2 homeCell-content s-cell c4'></div>
-            <div className='a3-gradient-v2 homeCell-content xs-cell c5'></div>
-            <div className='a3-gradient-v2 homeCell-content xs-cell c6'></div>            
-            <div className='a3-gradient-v2 homeCell-content xs-cell c6'> </div>             
-            <div className='a3-gradient-v2 homeCell-content xs-cell c5'></div>
-            <div className='a3-gradient-v1 homeCell-content s-cell c4'> </div>
-            <div className='a3-gradient-v1 homeCell-content m-cell c3'> </div>
-            <div className=' homeCell-content l-cell c2'></div>          
-            <div className=' homeCell-content xl-cell c1'></div>  
+        <div className='rowGrid'>
+          <div className='homeCell-content xl-cell c1'></div>
+          <div className='homeCell-content l-cell c2'></div>
+          <div className='a3-gradient-v3 homeCell-content m-cell c3'></div>
+          <div className='a3-gradient-v4 homeCell-content s-cell c4'></div>
+          <div className='a3-gradient-v3 homeCell-content xs-cell c5'></div>
+          <div className='a3-gradient-v3 homeCell-content xs-cell c6'></div>
+          <div className='a3-gradient-v3 homeCell-content xs-cell c6'></div>
+          <div className='a3-gradient-v3 homeCell-content xs-cell c5'></div>
+          <div className='a3-gradient-v1 homeCell-content s-cell c4'></div>
+          <div className='a3-gradient-v1 homeCell-content m-cell c3'></div>
+          <div className='homeCell-content l-cell c2'></div>
+          <div className='homeCell-content xl-cell c1'></div>
         </div>         
     </>
 
