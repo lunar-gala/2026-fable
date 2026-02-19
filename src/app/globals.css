@@ -719,6 +719,9 @@ grid-content{
 .xl-cell{
   width:50%;
 }
+.xxl-cell{
+  width:51.5%;
+}
 
 .xs-row{
   height:3%;
@@ -739,6 +742,17 @@ grid-content{
 .full-row{
   height:100vh;
   width:100vw;
+}
+
+.lineImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.lineImage.doubleHeight{
+  height:200%;
+  object-fit: cover;
 }
 
 .vh25-row{
