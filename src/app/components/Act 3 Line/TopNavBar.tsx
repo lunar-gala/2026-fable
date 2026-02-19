@@ -6,9 +6,9 @@ import { useRouter, usePathname } from "next/navigation";
 /** Act button container: main label + optional expanded line numbers (only for current act). */
 const ACTS: { label: string; route: string; lineNumbers?: number[] }[] = [
   { label: "Follow", route: "/viewer", lineNumbers: [1, 2, 3, 4] },
-  { label: "Wander", route: "/wander", lineNumbers: [1, 2, 3, 4, 5] },
-  { label: "Trace", route: "/lines", lineNumbers: [1, 2, 3, 4] },
-  { label: "Discern", route: "/debut" },
+  { label: "Wander", route: "/wander", lineNumbers: [5, 6, 7, 8] },
+  { label: "Trace", route: "/lines", lineNumbers: [9, 10, 11, 12] },
+  { label: "Discern", route: "/debut", lineNumbers: [13, 14, 15, 16, 17] },
 ];
 
 export default function NavBarTop() {
@@ -50,7 +50,10 @@ export default function NavBarTop() {
       <div className="navbar-top-inner">
         <nav className="navbar-top-nav" aria-label="Subnav - fixed to top of lines page">
           {ACTS.map((act) => (
-            <div key={act.label} className="navbar-top-item-wrap navbar-top-act-container">
+            <div
+              key={act.label}
+              className={`navbar-top-item-wrap navbar-top-act-container${act.label === currentActLabel && act.lineNumbers?.length ? " navbar-top-item-wrap--has-sub" : ""}`}
+            >
               <button
                 type="button"
                 className="navbar-top-link"
