@@ -158,7 +158,7 @@ export default function PeopleContent() {
               <div className="people-spacer people-spacer-top-border" />
             </div>
           )}
-          <div className="people-photo-section" ref={(el) => { sectionRefs.current[section] = el; if (refs[section]) (refs[section] as React.MutableRefObject<HTMLElement | null>).current = el; }}>
+          <div id={section} className="people-photo-section" ref={(el) => { sectionRefs.current[section] = el; if (refs[section]) (refs[section] as React.MutableRefObject<HTMLElement | null>).current = el; }}>
             {/* Top 24px row */}
             <div className="people-photo-row people-row-24">
               <div className="people-spacer" />
