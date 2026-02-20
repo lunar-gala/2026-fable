@@ -4,6 +4,7 @@
   --background: #ffffff;
   --foreground: #171717;
   --sidebar-width: 3.75%;
+  --linesnav-height: 7.5%;
   --label-font-size: 18px;
   --color-cream: #f5f2eb;
   --color-cream-light: #faf8f4;
@@ -195,7 +196,9 @@ body {
   width:100vw;
   height:100%;
 }
-
+.red{
+  background-color: red;
+}
 /* New NavBar styles following nav_button.png design */
 .navbar {
   position: fixed;
@@ -463,8 +466,6 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
-  max-width: 1200px;
   margin: 0 auto;
 }
 
@@ -480,10 +481,6 @@ body {
   color: var(--text-primary);
 }
 
-.navbar-top-nav {
-  display: flex;
-  gap: 2rem;
-}
 
 /* Top nav: 4 equal columns so Follow, Wander, Trace, Discern are evenly spaced */
 .navbar-top-act3 .navbar-top-nav {
@@ -537,28 +534,19 @@ body {
   flex: 0 0 auto;
 }
 
-.navbar-top-act3 .navbar-top-trace-sub,
-.navbar-top-act3 .navbar-top-act-sub {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  gap: 0.5rem;
-  padding: 0;
-  /* border-top: 0.5px solid rgba(51, 43, 43, 0.3); */
-}
 
 /* Act line number buttons — default state */
 .navbar-top-trace-num {
   background: transparent;
-  border: 0.5px solid transparent;
-  padding: 4px 10px;
+  border-left: 0.5px solid var(--dark-brown);
   font-size: 0.75rem;
   font-family: "aileron", sans-serif;
   color: var(--dark-brown);
   cursor: pointer;
-  opacity: 0.7;
-  transition: opacity 0.2s, background 0.2s, box-shadow 0.2s;
-  border-radius: 2px;
+  opacity: 1;
+  width:36px;
+  transition: opacity 0.2s, background 0.2s;
+  border-radius: 0;
 }
 
 .navbar-top-trace-num:hover {
@@ -568,9 +556,9 @@ body {
 /* Pressed state: current line page */
 .navbar-top-trace-num--active {
   opacity: 1;
-  background: rgba(51, 43, 43, 0.2);
+  background: var(--dark-brown);
+  color: var(--off-white);
   border-color: rgba(51, 43, 43, 0.25);
-  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.12);
 }
 
 /* Lines page: no black background anywhere */
@@ -585,7 +573,6 @@ body.lines-page .pageContent {
 /* Main content area below Act 3 top bar */
 .linesMain {
   position: relative;
-  padding-top: 48px;
   height: calc(100vh);
   background: #fff;
   overflow: hidden;
@@ -737,6 +724,7 @@ h3{
 
 h4{
   font-size:24px;
+  line-height:26px;
 }
 
 p{
@@ -1395,9 +1383,6 @@ body[data-stage="act4"] .sidebar-footer-logo {
   }
 
   /*grid displaying/hiding*/
-  .c3{
-    display: none;
-  }
   /* type size */
   h2{
     font-size:24px;
@@ -1406,12 +1391,6 @@ body[data-stage="act4"] .sidebar-footer-logo {
 
 @media (max-width: 992px) { 
   /*grid displaying/hiding*/
-  .c1{
-    display: none;
-  }
-  .c2{
-    display: none;
-  }
   /* type size */
   h2{
     font-size:32px;

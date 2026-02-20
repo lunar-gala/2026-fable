@@ -1,7 +1,7 @@
 "use client";
 import "@/app/components/About/about.css";
 
-export default function A3LinesGrid() {
+export default function LinePageGrid() {
   return (
     <div className="grid100vh whitebg linesPageGrid">
       <div className="xs-row rowGridContent">
