@@ -1,6 +1,4 @@
-
 "use client";
-import "@/app/components/Line page templates/linespages.css";
 
 import { useEffect, useState } from "react";
 import { useRouter, usePathname } from "next/navigation";
@@ -8,13 +6,12 @@ import { useRouter, usePathname } from "next/navigation";
 /** Act button container: main label + optional expanded line numbers (only for current act). */
 const ACTS: { label: string; route: string; lineNumbers?: number[] }[] = [
   { label: "Follow", route: "/viewer", lineNumbers: [1, 2, 3, 4] },
-  { label: "Wander", route: "/wander", lineNumbers: [5, 6, 7, 8] },
-  { label: "Trace", route: "/lines", lineNumbers: [9, 10, 11, 12] },
-  { label: "Discern", route: "/debut", lineNumbers: [13, 14, 15, 16, 17] },
+  { label: "Wander", route: "/wander", lineNumbers: [1, 2, 3, 4, 5] },
+  { label: "Trace", route: "/lines", lineNumbers: [1, 2, 3, 4] },
+  { label: "Discern", route: "/debut" },
 ];
 
 export default function NavBarTop() {
-
   const [isDark, setIsDark] = useState(false);
   const [currentLine, setCurrentLine] = useState(1);
   const router = useRouter();
@@ -49,9 +46,9 @@ export default function NavBarTop() {
   }, []);
 
   return (
-  <header className="navbar-top navbar-top-act3 navbar-light" role="banner">
+   <header className="navbar-top navbar-top-act3 navbar-light" role="banner">
       <div className="landingCell xs-cell" />
-      <div className="navbar-top-inner">
+      <div className="landingCell">
         <nav className="navbar-top-nav" aria-label="Subnav - fixed to top of lines page">
           {ACTS.map((act) => (
             <div key={act.label} className="">
@@ -84,6 +81,7 @@ export default function NavBarTop() {
       </div>
       <div className="landingCell xs-cell" />
     </header>
+  
+
   );
 }
-

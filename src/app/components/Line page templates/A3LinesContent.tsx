@@ -1,6 +1,6 @@
 "use client";
 import "@/app/components/About/about.css";
-import "@/app/components/Act 3 Line/linespages.css";
+import "@/app/components/Line page templates/linespages.css";
 
 export default function A3LinesContent() {
   return (
@@ -37,74 +37,68 @@ export default function A3LinesContent() {
         <div className="homeCell-content xs-cell c1" />
         <div className="homeCell-content xs-cell c3" />
         <div className="homeCell-content col2cell c4">
-          <h1 className="line-title">Line name</h1>
-          <h4>
-            TAGLINE FOR THE LINE. YADADYADA. TAGLINE FOR THE LINE. YADADYADA.
-          </h4>
+            <div className=" a1LineHeading">
+              <h1>Line Name</h1>
+             <h4 className="allcaps raligntext">tagline for the line. yadadyada. tagline for the line.</h4>
+            </div>
         </div>
         <div className="homeCell-content xs-cell c6" />
-        <div className="homeCell-content l-cell c6">
-          <img
-            src="/line_images/placeholder2.png"
-            alt="line image"
-            className="lineImage doubleHeight"
-          />
-        </div>
-        <div className="homeCell-content xs-cell c6" />
-        <div className="homeCell-content l-cell c6 " />
-        <div className="homeCell-content xs-cell c3" />
-        <div className="homeCell-content xs-cell c1" />
-      </div>
-
-      <div className="l-row rowGridContent">
-        <div className="homeCell-content xs-cell c1" />
-        <div className="homeCell-content xs-cell c3" />
-        <div className="homeCell-content col2cell c4  ">
-          <img
-            src="/line_images/placeholder1.png"
-            alt="line image"
-            className="lineImage doubleHeight"
-          />
-        </div>
-        <div className="homeCell-content xs-cell c6" />
-        <div className="homeCell-content l-cell c6" />
-        <div className="homeCell-content xs-cell c6" />
-        <div className="homeCell-content l-cell c6" />
-        <div className="homeCell-content xs-cell c3" />
-        <div className="homeCell-content xs-cell c1" />
-      </div>
-
-      <div className="l-row rowGridContent">
-        <div className="homeCell-content xs-cell c1" />
-        <div className="homeCell-content xs-cell c3" />
-        <div className="homeCell-content l-cell c4" />
-        <div className="homeCell-content xs-cell c5" />
-        <div className="homeCell-content l-cell c6" />
-        <div className="homeCell-content xs-cell c6" />
-        <div className="homeCell-content l-cell c6" />
-        <div className="homeCell-content xs-cell c6" />
-        <div className="homeCell-content l-cell c6  ">
-          <img
-              src="/line_images/placeholder2.png"
+        <div className="red homeCell-content l-cell c6">
+          <div className="lineImgContainer">
+            <img
+              src="/line_images/placeholder1.png"
               alt="line image"
               className="lineImage doubleHeight"
+            />            
+          </div>
+        </div>
+        <div className="homeCell-content xs-cell c6" />
+        <div className="homeCell-content l-cell c6" />
+        <div className="homeCell-content xs-cell c3" />
+        <div className="homeCell-content xs-cell c1" />
+      </div>
+
+      <div className="xl-row rowGridContent">
+        <div className="homeCell-content xs-cell c1" />
+        <div className="homeCell-content xs-cell c3" />
+        <div className="homeCell-content col2cell c4">
+          <div className="lineImgContainer">
+            <img
+              src="/line_images/placeholder1.png"
+              alt="line image"
+              className="lineImage"
             />
+          </div>
+        </div>
+        <div className="homeCell-content xs-cell c6" />
+        <div className="homeCell-content l-cell c6" />
+        <div className="homeCell-content xs-cell c6" />
+        <div className="red homeCell-content l-cell c6">
+          <div className="spacer50"/>
+          <div className="lineImgContainer">
+            <img
+              src="/line_images/placeholder1.png"
+              alt="line image"
+              className="lineImage"
+            />            
+          </div>
         </div>
         <div className="homeCell-content xs-cell c3" />
         <div className="homeCell-content xs-cell c1" />
       </div>
+
 
       <div className="l-row rowGridContent">
         <div className="homeCell-content xs-cell c1" />
         <div className="homeCell-content xs-cell c3" />
         <div className="homeCell-content l-cell c4">
-          <p className="line-names">
+          <h5>
             FirstName LastName1, Firstname Lastname2
-          </p>
+          </h5>
         </div>
         <div className="homeCell-content xs-cell c5" />
         <div className="homeCell-content l-cell c6">
-          <p className="line-body">
+          <p>
             Nostalgia is a longing for the past, often idealized. The word was
             coined in the late 17th century from Greek nóstos (return home) and
             álgos (pain). It began as a medical term for a kind of homesickness.
