@@ -9,15 +9,17 @@ interface LineButtonProps {
   gradientDir: "horizontal" | "vertical";
   align: "left" | "right";
   verticalAlign?: "top" | "bottom";
+  fillCell?: boolean;
 }
 
-export default function LineButton({ name, number, act, gradientDir, align, verticalAlign = "bottom" }: LineButtonProps) {
+export default function LineButton({ name, number, act, gradientDir, align, verticalAlign = "bottom", fillCell = false }: LineButtonProps) {
   const dirClass = gradientDir === "horizontal" ? "hgrad" : "vgrad";
   const className = [
     "line-button",
     `line-button--a${act}-${dirClass}`,
     align === "left" ? "line-button--left" : "line-button--right",
     verticalAlign === "top" ? "line-button--top" : "line-button--bottom",
+    fillCell ? "line-button--fill" : "",
   ].join(" ");
 
   return (
