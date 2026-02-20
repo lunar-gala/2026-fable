@@ -38,13 +38,13 @@
   border-left: 0.125px solid var(--dark-brown);
 }
 
-.people-spacer-top-border, .people-photo-row:first-child .people-spacer, .people-photo-row:nth-child(2) .people-spacer {
+.people-spacer-top-border, .people-photo-rows .people-photo-row:first-child .people-spacer{
   border-top: 0.125px solid var(--dark-brown);
 }
 
-/* .people-spacer:first-child {
-  border-left: 0.125px solid var(--dark-brown);
-} */
+.people-no-photo-row .people-separator, .people-no-photo-row .people-photo-name-group{
+  border-top: none
+}
 
 .people-separator {
   width: calc(24 / 1920 * 100vw);
@@ -165,11 +165,8 @@
   display: none;
 }
 
-.people-no-photo-row {
-  flex: 1;
-  min-width: 0;
-  display: flex;
-  flex-wrap: wrap;
+.people-photo-rows .people-photo-row:last-child .people-photo-name-group{
+  margin-bottom: calc(24 / 1080 * 100vh + 4%);
 }
 
 .people-photo-name-group {
@@ -199,11 +196,14 @@
   margin-top: 5px;
 }
 
-.people-photo-row:first-child .people-photo-cell, .people-photo-row:first-child .people-separator, .people-photo-section:first-child .people-photo-row:first-child .people-spacer {
+.people-row-24:first-child .people-photo-cell,
+.people-row-24:first-child .people-separator,
+.people-photo-section:first-child .people-row-24:first-child .people-spacer,
+.people-no-photo-row .people-spacer {
   border-top: none;
 }
 
-.people-photo-row:last-child .people-spacer{
+.people-row-24 .people-spacer{
   border-top: 0.125px solid var(--dark-brown);
 }
 
