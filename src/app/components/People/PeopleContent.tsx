@@ -1,5 +1,6 @@
 "use client";
 import React, { useEffect, useRef, useState } from "react";
+import Image from "next/image";
 import { useIsVisible } from "./utils/intersecting"
 import "./people.css";
 import { p } from "motion/react-client";
@@ -184,11 +185,13 @@ export default function PeopleContent() {
                     <div className="people-photo-group">
                       {person !== null ? (
                         <>
-                          <div className="people-photo-cell">
-                            <img
+                          <div className="people-photo-cell" style={{ position: "relative" }}>
+                            <Image
                               className="people-photo"
                               src={getPhotoPath(section, person)}
                               alt={person.name}
+                              fill
+                              sizes="(max-width: 768px) 25vw, 12.5vw"
                               onError={(e) => {
                                 e.currentTarget.style.display = "none";
                                 e.currentTarget.nextElementSibling?.classList.remove("hidden");
