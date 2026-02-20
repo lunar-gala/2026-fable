@@ -109,13 +109,13 @@ export default function LandingContent() {
             <div className='homeCell-content rectangle-small c4'></div>
             <div className='homeCell-content rectangle-small c5'></div>
             <div className='homeCell-content rectangle-full c6'>
-                <div className='buyticketsbutton'>
+                 <a href="https://cglink.me/2c1/r1935471" className='buyticketsbutton'>
                     <div className='ticketbuttoncontent'>
                         <div className='ticketbuttonheading'>Buy Tickets Now</div>
                         <p>Sunday, March 15 @ 7PM <br/> Wiegand Gym </p>
                     </div>
                     <img className="assetshape" src="/asset cutout light.svg"></img>
-                </div>
+                </a>               
             </div>            
             <div className='homeCell-content rectangle-full c6'> </div>             
             <div className='homeCell-content rectangle-small c5'></div>

@@ -115,6 +115,21 @@ how it feels to learn and grow.</p>
             <div className='homeCell-content xs-cell c1'></div>          
             <div className='homeCell-content xs-cell c2'></div>          
             <div className='homeCell-content l-cell c3'></div>
+            <div className='homeCell-content xs-cell c4'></div>
+            <div className='homeCell-content xs-cell c5'></div>
+            <div className='homeCell-content xl-cell c6'></div>            
+            <div className='homeCell-content xl-cell c6'> </div>             
+            <div className='homeCell-content xs-cell c5'></div>
+            <div className='homeCell-content xs-cell c4'> </div>
+            <div className='homeCell-content l-cell c3'> </div>
+            <div className='homeCell-content xs-cell c2'></div>          
+            <div className='homeCell-content xs-cell c1'></div>           
+        </div>     
+
+        <div className='vh25-row rowGridContent'>
+            <div className='homeCell-content xs-cell c1'></div>          
+            <div className='homeCell-content xs-cell c2'></div>          
+            <div className='homeCell-content l-cell c3'></div>
             <div className='bottomAlignedFlex homeCell-content xs-cell c4'>
                 <h4 className='shifth4flushbottom'>2</h4>
             </div>
@@ -162,21 +177,6 @@ worlds.</h2>
             <div className='homeCell-content xs-cell c1'></div>           
         </div>
 
-         <div className='vh25-row rowGridContent'>
-            <div className='homeCell-content xs-cell c1'></div>          
-            <div className='homeCell-content xs-cell c2'></div>          
-            <div className='homeCell-content l-cell c3'></div>
-            <div className='homeCell-content xs-cell c4'></div>
-            <div className='homeCell-content xs-cell c5'></div>
-            <div className='homeCell-content xl-cell c6'></div>            
-            <div className='homeCell-content xl-cell c6'> </div>             
-            <div className='homeCell-content xs-cell c5'></div>
-            <div className='homeCell-content xs-cell c4'> </div>
-            <div className='homeCell-content l-cell c3'> </div>
-            <div className='homeCell-content xs-cell c2'></div>          
-            <div className='homeCell-content xs-cell c1'></div>           
-        </div>
-
         <div className='vh25-row rowGridContent'>
             <div className='homeCell-content xs-cell c1'></div>          
             <div className='homeCell-content xs-cell c2'></div>          
@@ -196,24 +196,7 @@ worlds.</h2>
             <div className='homeCell-content xs-cell c1'></div>
         </div>
 
-        <div className='vh25-row rowGridContent'>
-            <div className='homeCell-content xs-cell c1'></div>          
-            <div className='homeCell-content xs-cell c2'></div>          
-            <div className='homeCell-content l-cell c3'></div>
-            <div className='bottomAlignedFlex homeCell-content xs-cell c4'>
-                <h4 className='shifth4flushbottom'>3</h4>
-            </div>
-            <div className='homeCell-content xs-cell c5'></div>
-            <div className='bottomAlignedFlex homeCell-content xl-cell c6'>
-                <h4 className='shifth4flushbottom allcaps'>Process</h4>
-            </div>            
-            <div className='homeCell-content xl-cell c6'> </div>             
-            <div className='homeCell-content xs-cell c5'></div>
-            <div className='homeCell-content xs-cell c4'> </div>
-            <div className='homeCell-content l-cell c3'> </div>
-            <div className='homeCell-content xs-cell c2'></div>          
-            <div className='homeCell-content xs-cell c1'></div>           
-        </div>
+
 
          <div className='vh25-row rowGridContent'>
             <div className='homeCell-content xs-cell c1'></div>          
@@ -229,81 +212,7 @@ worlds.</h2>
             <div className='homeCell-content xs-cell c2'></div>          
             <div className='homeCell-content xs-cell c1'></div>           
         </div>
-
-         <div className='vh25-row rowGridContent'>
-            <div className='homeCell-content xs-cell c1'></div>          
-            <div className='homeCell-content xs-cell c2'></div>          
-            <div className='homeCell-content l-cell c3'></div>
-            <div className='homeCell-content xs-cell c4'></div>
-            <div className='homeCell-content xs-cell c5'></div>
-            <div className='homeCell-content xl-cell c6'></div>            
-            <div className='homeCell-content xl-cell c6'> </div>             
-            <div className='homeCell-content xs-cell c5'></div>
-            <div className='homeCell-content xs-cell c4'> </div>
-            <div className='homeCell-content l-cell c3'> </div>
-            <div className='homeCell-content xs-cell c2'></div>          
-            <div className='homeCell-content xs-cell c1'></div>           
-        </div>
-
-         <div className='vh25-row rowGridContent'>
-            <div className='homeCell-content xs-cell c1'></div>          
-            <div className='homeCell-content xs-cell c2'></div>          
-            <div className='homeCell-content l-cell c3'></div>
-            <div className='homeCell-content xs-cell c4'></div>
-            <div className='homeCell-content xs-cell c5'></div>
-            <div className='homeCell-content xl-cell c6'></div>            
-            <div className='homeCell-content xl-cell c6'> </div>             
-            <div className='homeCell-content xs-cell c5'></div>
-            <div className='homeCell-content xs-cell c4'> </div>
-            <div className='homeCell-content l-cell c3'> </div>
-            <div className='homeCell-content xs-cell c2'></div>          
-            <div className='homeCell-content xs-cell c1'></div>           
-        </div>
-
-         <div className='vh25-row rowGridContent'>
-            <div className='homeCell-content xs-cell c1'></div>          
-            <div className='homeCell-content xs-cell c2'></div>          
-            <div className='homeCell-content l-cell c3'></div>
-            <div className='homeCell-content xs-cell c4'></div>
-            <div className='homeCell-content xs-cell c5'></div>
-            <div className='homeCell-content xl-cell c6'></div>            
-            <div className='homeCell-content xl-cell c6'> </div>             
-            <div className='homeCell-content xs-cell c5'></div>
-            <div className='homeCell-content xs-cell c4'> </div>
-            <div className='homeCell-content l-cell c3'> </div>
-            <div className='homeCell-content xs-cell c2'></div>          
-            <div className='homeCell-content xs-cell c1'></div>           
-        </div>
-
-         <div className='vh25-row rowGridContent'>
-            <div className='homeCell-content xs-cell c1'></div>          
-            <div className='homeCell-content xs-cell c2'></div>          
-            <div className='homeCell-content l-cell c3'></div>
-            <div className='homeCell-content xs-cell c4'></div>
-            <div className='homeCell-content xs-cell c5'></div>
-            <div className='homeCell-content xl-cell c6'></div>            
-            <div className='homeCell-content xl-cell c6'> </div>             
-            <div className='homeCell-content xs-cell c5'></div>
-            <div className='homeCell-content xs-cell c4'> </div>
-            <div className='homeCell-content l-cell c3'> </div>
-            <div className='homeCell-content xs-cell c2'></div>          
-            <div className='homeCell-content xs-cell c1'></div>           
-        </div>
-
-        <div className='vh25-row rowGridContent'>
-            <div className='homeCell-content xs-cell c1'></div>          
-            <div className='homeCell-content xs-cell c2'></div>          
-            <div className='homeCell-content l-cell c3'></div>
-            <div className='homeCell-content xs-cell c4'></div>
-            <div className='homeCell-content xs-cell c5'></div>
-            <div className='homeCell-content xl-cell c6'></div>            
-            <div className='homeCell-content xl-cell c6'> </div>             
-            <div className='homeCell-content xs-cell c5'></div>
-            <div className='homeCell-content xs-cell c4'> </div>
-            <div className='homeCell-content l-cell c3'> </div>
-            <div className='homeCell-content xs-cell c2'></div>          
-            <div className='homeCell-content xs-cell c1'></div>           
-        </div>                                                        
+                                                   
 
     </div> 
     </>

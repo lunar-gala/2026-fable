@@ -68,6 +68,13 @@ body {
   --font-feature-display-condensed: 'FeatureDisplayCondensed', serif;
 }
 
+a:link, a:visited, a:hover, a:active {
+  text-decoration: none; /* Removes the underline */
+  color: inherit;        /* Inherits the color from the parent element */
+  cursor: pointer;       /* Keeps the pointer cursor on hover */
+  outline: none;         /* Removes the outline that appears on focus in some browsers */
+}
+
 .sidebar {
   position: fixed;
   left: 0;

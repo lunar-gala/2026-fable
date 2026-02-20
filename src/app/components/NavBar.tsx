@@ -22,7 +22,7 @@ export default function NavBar() {
   const handleNavigation = (item: string) => {
     const routes: Record<string, string> = {
       Lines: "/lines",
-      Tickets: "/tickets",
+      Tickets: "https://cglink.me/2c1/r1935471",
       People: "/people",
       About: "/about",
     };
