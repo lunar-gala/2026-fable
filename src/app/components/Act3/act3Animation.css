@@ -6,6 +6,10 @@
     overflow: visible;
 }
 
+.rowGridContent{
+    overflow: visible;
+}
+
 .a3-gradient-v0 {
   height:100%;
 }

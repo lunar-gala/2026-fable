@@ -1109,8 +1109,8 @@ body.lines-page .gridTextContent {
 
 @keyframes gradientmove1 {
   0% { background-position: 0% 0%; }
-  8% { background-position: 0% 0%; }
-  20% { background-position: 0% 16%; }
+  4% { background-position: 0% 0%; }
+  15% { background-position: 0% 16%; }
   60% { background-position: 0% 36%; }
   80% { background-position: 0% 58%; }
   100% { background-position: 0% 88%; }
@@ -1124,8 +1124,8 @@ body.lines-page .gridTextContent {
 
 @keyframes gradientmove2 {
   0% { background-position: 0% 0%; }
-  8% { background-position: 0% 6%; }
-  20% { background-position: 0% 28%; }
+  4% { background-position: 0% 6%; }
+  15% { background-position: 0% 28%; }
   60% { background-position: 0% 48%; }
   80% { background-position: 0% 58%; }
   100% { background-position: 0% 89%; }
@@ -1139,8 +1139,8 @@ body.lines-page .gridTextContent {
 
 @keyframes gradientmove3 {
   0% { background-position: 0% 0%; }
-  8% { background-position: 0% 36%; }
-  20% { background-position: 0% 16%; }
+  4% { background-position: 0% 36%; }
+  15% { background-position: 0% 16%; }
   40% { background-position: 0% 32%; }
   60% { background-position: 0% 62%; }
   80% { background-position: 0% 70%; }
@@ -1156,8 +1156,8 @@ body.lines-page .gridTextContent {
 
 @keyframes gradientmove4 {
   0% { background-position: 0% 0%; }
-  8% { background-position: 0% 60%; }
-  20% { background-position: 0% 20%; }
+  4% { background-position: 0% 60%; }
+  15% { background-position: 0% 20%; }
   40% { background-position: 0% 36%; }
   60% { background-position: 0% 56%; }
   80% { background-position: 0% 75%; }

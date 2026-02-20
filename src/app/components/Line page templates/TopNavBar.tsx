@@ -1,9 +1,10 @@
-"use client";
+/**
+ * commetnign ts out bc not using it 
+ * "use client";
 
 import { useEffect, useState } from "react";
 import { useRouter, usePathname } from "next/navigation";
 
-/** Act button container: main label + optional expanded line numbers (only for current act). */
 const ACTS: { label: string; route: string; lineNumbers?: number[] }[] = [
   { label: "Follow", route: "/viewer", lineNumbers: [1, 2, 3, 4] },
   { label: "Wander", route: "/wander", lineNumbers: [1, 2, 3, 4, 5] },
@@ -59,7 +60,6 @@ export default function NavBarTop() {
               >
                 <span className="navbar-nav-label">{act.label}</span>
               </button>
-              {/* Only the current act gets the expanded view with line numbers */}
               {act.label === currentActLabel && act.lineNumbers && act.lineNumbers.length > 0 && (
                 <div className="navbar-top-trace-sub navbar-top-act-sub">
                   {act.lineNumbers.map((num) => (
@@ -85,3 +85,4 @@ export default function NavBarTop() {
 
   );
 }
+ */
