@@ -102,10 +102,3 @@ const ACTS: { label: string; route: string; lineNumbers?: number[] }[] = [
   );
 }
 
-
-
-<<<<<<< Updated upstream
- */
-=======
- */}
->>>>>>> Stashed changes
