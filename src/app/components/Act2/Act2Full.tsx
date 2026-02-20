@@ -13,7 +13,7 @@ export default function Act2Full() {
 
   return (
     <>
-      <motion.div className="gridTextContent" style={{ opacity: contentOpacity }}>
+      <motion.div className="actTextContent" style={{ opacity: contentOpacity }}>
         <Act2Content/>
       </motion.div>
       <Act2GradientAnimation/>

@@ -67,7 +67,9 @@ export default function Act1Content() {
             <div className='homeCell-content l-cell c5'></div>
             <div className='homeCell-content xl-cell c6'></div>
             <div className='homeCell-content xl-cell c6'>
-            <LineButton name="Frame 36" number={1} act={1} gradientDir="horizontal" align="left" />
+            <a href="/lines/act1?line=1">
+                <LineButton name="Frame 36" number={1} act={1} gradientDir="horizontal" align="left" />
+            </a>
             </div>
             <div className='homeCell-content l-cell c5'></div>
             <div className='homeCell-content m-cell c4'> </div>
@@ -87,7 +89,9 @@ export default function Act1Content() {
                 <h3 className="content-act-label">ACT I</h3>
             </div>
             <div className='homeCell-content xl-cell c6'> 
+             <a href="/lines/act1?line=2">
                 <LineButton name="Lustre" number={2} act={1} gradientDir="vertical" align="right" />
+            </a>               
             </div>
             <div className='homeCell-content l-cell c5'></div>
             <div className='homeCell-content m-cell c4'> </div>
@@ -103,8 +107,10 @@ export default function Act1Content() {
             <div className='homeCell-content s-cell c3'></div>
             <div className='homeCell-content m-cell c4'></div>
             <div className='homeCell-content l-cell c5'></div>
-            <div className='homeCell-content xl-cell c6'>
+             <a href="/lines/act1?line=3">
                 <LineButton name="Nurture in Layers" number={3} act={1} gradientDir="horizontal" align="left" />
+            </a>   
+            <div className='homeCell-content xl-cell c6'>
             </div>
             <div className='homeCell-content xl-cell c6'> </div>
             <div className='homeCell-content l-cell c5'></div>
@@ -140,7 +146,9 @@ export default function Act1Content() {
             <div className='homeCell-content m-cell c4'></div>
             <div className='homeCell-content l-cell c5'></div>
             <div className='homeCell-content xl-cell c6'>
+             <a href="/lines/act1?line=4">
                 <LineButton name="Becoming" number={4} act={1} gradientDir="horizontal" align="right" />
+            </a> 
             </div>
             <div className='homeCell-content xl-cell c6'> </div>
             <div className='homeCell-content l-cell c5'></div>

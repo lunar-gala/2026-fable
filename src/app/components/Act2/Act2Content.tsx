@@ -67,7 +67,9 @@ export default function Act2Content() {
             <div className='homeCell-content l-cell c5'></div>
             <div className='homeCell-content xl-cell c6'></div>
             <div className='homeCell-content xl-cell c6'>
+              <a href="/lines/act2?line=5">
                 <LineButton name="Joie de Vivre" number={5} act={2} gradientDir="horizontal" align="left" />
+             </a>                
             </div>
             <div className='homeCell-content l-cell c5'></div>
             <div className='homeCell-content m-cell c4'> </div>
@@ -86,8 +88,11 @@ export default function Act2Content() {
                 <h3 className="content-act-label">ACT II</h3>
             </div>
             <div className='homeCell-content xl-cell c6'></div>
+            
             <div className='homeCell-content xl-cell c6'>
+               <a href="/lines/act2?line=6">
                 <LineButton name="Whispers Before Sleep" number={6} act={2} gradientDir="vertical" align="right" />
+             </a>  
             </div>
             <div className='homeCell-content l-cell c5'></div>
             <div className='homeCell-content m-cell c4'></div>
@@ -122,7 +127,9 @@ export default function Act2Content() {
             <div className='homeCell-content m-cell c4'></div>
             <div className='homeCell-content l-cell c5'></div>
             <div className='homeCell-content xl-cell c6'>
-                <LineButton name="Read Me a Story" number={7} act={2} gradientDir="vertical" align="right" />
+                <a href="/lines/act2?line=7">
+                    <LineButton name="Read Me a Story" number={7} act={2} gradientDir="vertical" align="right" />
+                </a>                 
             </div>
             <div className='homeCell-content xl-cell c6'> </div>
             <div className='homeCell-content l-cell c5'></div>
@@ -141,7 +148,9 @@ export default function Act2Content() {
             <div className='homeCell-content l-cell c5'></div>
             <div className='homeCell-content xl-cell c6'></div>
             <div className='homeCell-content xl-cell c6'>
-                <LineButton name="Re(veliar)" number={8} act={2} gradientDir="horizontal" align="left" />
+                 <a href="/lines/act2?line=8">
+                    <LineButton name="Re(veliar)" number={8} act={2} gradientDir="horizontal" align="left" />
+                </a>                 
             </div>
             <div className='homeCell-content l-cell c5'></div>
             <div className='homeCell-content m-cell c4'> </div>

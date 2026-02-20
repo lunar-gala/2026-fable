@@ -13,7 +13,9 @@ export default function Act3Content() {
         {/* Row 1: xl-row — Eden in right xl-cell (c2) */}
         <div className='xl-row rowGridContent'>
             <div className='homeCell-content xl-cell c1'>
-            <LineButton name="Eden" number={9} act={3} gradientDir="horizontal" align="right" />
+                  <a href="/lines/act3?line=9">
+                     <LineButton name="Eden" number={9} act={3} gradientDir="horizontal" align="right" />
+                 </a>                 
             </div>
             <div className='homeCell-content l-cell c2'></div>
             <div className='homeCell-content m-cell c3'></div>
@@ -32,7 +34,9 @@ export default function Act3Content() {
         <div className='l-row rowGridContent'>
             <div className='homeCell-content xl-cell c1'></div>
             <div className='homeCell-content l-cell c2'>
-                <LineButton name="Omoide" number={10} act={3} gradientDir="horizontal" align="left" />
+                  <a href="/lines/act3?line=10">
+                    <LineButton name="Omoide" number={10} act={3} gradientDir="horizontal" align="left" />
+                 </a>   
             </div>
             <div className='homeCell-content m-cell c3'></div>
             <div className='homeCell-content s-cell c4'></div>
@@ -156,7 +160,9 @@ export default function Act3Content() {
             <div className='homeCell-content m-cell c3'> </div>
             <div className='homeCell-content l-cell c2'></div>
             <div className='homeCell-content xl-cell c1'>
+                   <a href="/lines/act3?line=11">
                 <LineButton name="Jangal" number={11} act={3} gradientDir="horizontal" align="left" />
+                 </a>                 
             </div>
         </div>
 
@@ -181,7 +187,9 @@ export default function Act3Content() {
         {/* Row 11: l-row */}
         <div className='l-row rowGridContent'>
             <div className='homeCell-content xl-cell c1'>
-                <LineButton name="Faint Blossom" number={12} act={3} gradientDir="horizontal" align="right" />
+                <a href="/lines/act3?line=12">
+                    <LineButton name="Faint Blossom" number={12} act={3} gradientDir="horizontal" align="right" />
+                 </a>                  
             </div>
             <div className='homeCell-content l-cell c2'></div>
             <div className='homeCell-content m-cell c3'></div>
