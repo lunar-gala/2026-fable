@@ -25,6 +25,10 @@ export default function MainContent() {
   const [stage, setStage] = useState<Stage>(Stage.Landing);
 
   useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  useEffect(() => {
     // subscribes to a Framer Motion MotionValue; The callback fires continuously as the user scrolls, receiving the current progress (0 to 1) as value:
     // the on() function returns a function that removes THIS specific callback
     const unsubscribe = scrollYProgress.on("change", (value) => {
