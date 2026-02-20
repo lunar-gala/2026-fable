@@ -175,8 +175,8 @@ export default function PeopleContent() {
               <div className="people-spacer" />
             </div>
 
-            {/* Photo rows */}
-            {chunkPeople(PEOPLE[section] || []).map((row, rowIndex) => (
+            {/* Photo rows (people with photos) */}
+            {chunkPeople((PEOPLE[section] || []).filter((p) => p.hasPhoto !== false)).map((row, rowIndex) => (
               <div key={rowIndex} className="people-photo-row">
                 <div className="people-spacer" />
                 <div className="people-spacer" />
@@ -216,6 +216,35 @@ export default function PeopleContent() {
                     )}
                   </div>
                 ))}
+                <div className="people-spacer people-spacer-left-border" />
+                <div className="people-spacer" />
+              </div>
+            ))}
+
+            {/* Text-only rows (people without photos) */}
+            {chunkPeople((PEOPLE[section] || []).filter((p) => p.hasPhoto === false)).map((row, rowIndex) => (
+              <div key={`no-photo-${rowIndex}`} className="people-photo-row">
+                <div className="people-spacer" />
+                <div className="people-spacer" />
+                <div className="people-no-photo-row">
+                  {row.map((person, colIndex) => (
+                    <div key={colIndex} style={{ display: "contents" }}>
+                      <div className="people-photo-group">
+                        {person !== null ? (
+                          <div className="people-photo-name-group">
+                            <div className="people-photo-name">{person.name}</div>
+                            <div className="people-photo-position">{person.position}</div>
+                          </div>
+                        ) : (
+                          <div className="people-photo-name-group people-photo-name-group-empty" />
+                        )}
+                      </div>
+                      {colIndex < row.length - 1 && (
+                        <div className="people-separator" />
+                      )}
+                    </div>
+                  ))}
+                </div>
                 <div className="people-spacer people-spacer-left-border" />
                 <div className="people-spacer" />
               </div>

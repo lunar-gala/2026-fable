@@ -165,6 +165,13 @@
   display: none;
 }
 
+.people-no-photo-row {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .people-photo-name-group {
   width: 100%;
   aspect-ratio: 8 / 3;
