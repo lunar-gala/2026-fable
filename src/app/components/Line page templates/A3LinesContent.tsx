@@ -2,7 +2,14 @@
 import "@/app/components/About/about.css";
 import "@/app/components/Line page templates/linespages.css";
 
-export default function A3LinesContent() {
+interface A3LinesContentProps {
+lineName: string;
+lineTagline: string;
+lineDescription: string;
+lineDesigners: string;
+}
+
+export default function A3LinesContent({ lineName, lineTagline, lineDescription, lineDesigners }: A3LinesContentProps) {
   return (
     <div className="grid100vh linesPageGrid">
       <div className="xs-row rowGridContent">
@@ -38,15 +45,15 @@ export default function A3LinesContent() {
         <div className="homeCell-content xs-cell c3" />
         <div className="homeCell-content col2cell c4">
             <div className=" a1LineHeading">
-              <h1>Line Name</h1>
-             <h4 className="allcaps raligntext">tagline for the line. yadadyada. tagline for the line.</h4>
+              <h1>{lineName}</h1>
+             <h4 className=" allcaps">{lineTagline}</h4>
             </div>
         </div>
         <div className="homeCell-content xs-cell c6" />
-        <div className="red homeCell-content l-cell c6">
+        <div className="  homeCell-content l-cell c6">
           <div className="lineImgContainer">
             <img
-              src="/line_images/placeholder1.png"
+              src={`/line_images/${lineName}-1.png`}
               alt="line image"
               className="lineImage doubleHeight"
             />            
@@ -64,7 +71,7 @@ export default function A3LinesContent() {
         <div className="homeCell-content col2cell c4">
           <div className="lineImgContainer">
             <img
-              src="/line_images/placeholder1.png"
+              src={`/line_images/${lineName}-2.png`}
               alt="line image"
               className="lineImage"
             />
@@ -73,11 +80,11 @@ export default function A3LinesContent() {
         <div className="homeCell-content xs-cell c6" />
         <div className="homeCell-content l-cell c6" />
         <div className="homeCell-content xs-cell c6" />
-        <div className="red homeCell-content l-cell c6">
+        <div className="  homeCell-content l-cell c6">
           <div className="spacer50"/>
           <div className="lineImgContainer">
             <img
-              src="/line_images/placeholder1.png"
+              src={`/line_images/${lineName}-3.png`}
               alt="line image"
               className="lineImage"
             />            
@@ -92,23 +99,15 @@ export default function A3LinesContent() {
         <div className="homeCell-content xs-cell c1" />
         <div className="homeCell-content xs-cell c3" />
         <div className="homeCell-content l-cell c4">
-          <h5>
-            FirstName LastName1, Firstname Lastname2
-          </h5>
+          <h5>{lineDesigners}</h5>          
+
         </div>
         <div className="homeCell-content xs-cell c5" />
-        <div className="homeCell-content l-cell c6">
-          <p>
-            Nostalgia is a longing for the past, often idealized. The word was
-            coined in the late 17th century from Greek nóstos (return home) and
-            álgos (pain). It began as a medical term for a kind of homesickness.
-            Over time its meaning shifted from a spatial longing (for a place)
-            to a temporal one (for a time), and now often describes a
-            bittersweet affection for how things used to be.
-          </p>
-        </div>
-        <div className="homeCell-content xs-cell c6" />
-        <div className="homeCell-content l-cell c6" />
+
+         <div className="homeCell-content col2cell c4">
+          <p className="linedescription">{lineDescription}</p>
+
+        </div>       
         <div className="homeCell-content xs-cell c6" />
         <div className="homeCell-content l-cell c6" />
         <div className="homeCell-content xs-cell c3" />

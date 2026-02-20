@@ -720,8 +720,8 @@ h3{
 
 
 h4{
-  font-size:24px;
-  line-height:26px;
+  font-size:20px;
+  line-height:22px;
 }
 
 p{
@@ -953,21 +953,7 @@ p{
 }
 
 
-/* Keep images inside their grid cells on lines page */
-.linesPageGrid .homeCell-content.line-cell-image {
-  overflow: hidden;
-  min-height: 0;
-}
 
-/* Let doubleHeight image overflow into next row and sit on top of it */
-.linesPageGrid .homeCell-content.line-cell-image.line-cell-double-height {
-  overflow: visible;
-  z-index: 1;
-  position: relative;
-}
-
-/* 2 wide + 2 tall: combine line-cell-span-2-cols and line-cell-double-height on the cell,
-   use lineImage doubleHeight on the img, and remove one cell from the row (10 cells total). */
 
 .linesPageGrid .rowGridContent .homeCell-content {
   min-height: 0;
@@ -1044,11 +1030,20 @@ p{
 .gridTextContent{
     position: absolute;
     top:0;
-    left: 0;
+    left: var(--sidebar-width);
+    z-index: 100;
+    width: calc(100% - var(--sidebar-width));
+    height: 100%;
+    pointer-events: none;
+}
+.actTextContent{
+    position: absolute;
+    top:0;
+    left:0;
     z-index: 100;
     width: 100%;
     height: 100%;
-    pointer-events: none;
+    pointer-events: none; 
 }
 
 body.lines-page .gridTextContent {

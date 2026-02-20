@@ -10,7 +10,7 @@ export default function Act3Full() {
 
   return (
     <>
-      <div className="gridTextContent"><Act3Content/></div>
+      <div className="actTextContent"><Act3Content/></div>
       <Act3GradientAnimation/>
       <div className='bottomgradient'><Act3GradientBottom/></div>
       <div className="a3bg"></div>

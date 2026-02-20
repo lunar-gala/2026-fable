@@ -8,7 +8,7 @@ export default function Act4Full() {
 
   return (
     <>
-      <div className="gridTextContent"><Act4Content/></div>
+      <div className="actTextContent"><Act4Content/></div>
       <Act4GradientAnimation/>
       <div className='bottomgradient'><Act4GradientBottom/></div>
       <div className="a4bg"></div>

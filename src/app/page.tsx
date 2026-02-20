@@ -1,6 +1,5 @@
 import AboutContent from "./components/About/AboutContent";
 import AboutFull from "./components/About/AboutFull";
-import A3LinesFull from "./components/Act 3 Line/A3LinesFull";
 import MainContent from "./components/MainContent";
 import NavBar from "./components/NavBar";
 import PeopleContent from "./components/People/PeopleContent";

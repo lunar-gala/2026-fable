@@ -15,17 +15,9 @@
     left: 1.4em;
 }
 
-.blue{
-    background-color: blue;
+.homeCell-content{
+  pointer-events: none;
 }
-.red{
-    background-color: red;
-}
-
-.green{
-    background-color: green;
-}
-
 .spacer50{
     height:50%;
 }
@@ -71,89 +63,90 @@
 
 .a1linegradientV{
   background: linear-gradient(180deg,white 0%, white 50%, white 54%, #F2EFE5 65%, #B0D2DE 100%); 
-  background-size: 100% 350%;   
-  background-position: 0% 0%;  
-  transition: background-position 0.5s ease;
+  background-size: 100% 400%;   
+  animation: gradientmove 6s ease infinite;
+
 }
 
-.a1linegradientV:hover{
-  background-position: 0% 100%;  
-}
 
 .a1linegradientH{
   background: linear-gradient(270deg, #B0D2DE 0%,  #F2EFE5 45%, white 50%, white 60%, white 100%); 
-  background-size: 350% 100%;   
-  background-position: 0% 0%;  
-  transition: background-position 0.5s ease;
-}
+  background-size: 400% 100%;   
+  animation: gradientmoveH 7s ease infinite;
 
-.a1linegradientH:hover{
-  background-position: 100% 0%;  
+
 }
 
 
 .a2linegradientV{
   background: linear-gradient(180deg,white 0%, white 50%, #F2EFE5 54%, #FF76A2 90%, #613B38 100%); 
-  background-size: 100% 350%;   
-  background-position: 0% 0%;  
-  transition: background-position 0.5s ease;
+  background-size: 100% 400%;   
+  animation: gradientmove 8s ease infinite;
+
 }
 
-.a2linegradientV:hover{
-  background-position: 0% 100%;  
-}
 
 .a2linegradientH{
   background: linear-gradient(90deg,white 0%, white 50%, #F2EFE5 54%, #FF76A2 90%, #613B38 100%);   
-  background-size: 350% 100%;   
-  background-position: 0% 0%;  
-  transition: background-position 0.5s ease;
+  background-size: 400% 100%;   
+  animation: gradientmoveH 10s ease infinite;
 }
 
-.a2linegradientH:hover{
-  background-position: 100% 0%;  
-}
+
 
 .a3linegradientV{
   background: linear-gradient(180deg,white 0%, white 50%, #DFCDFE 60%, #E7303A 90%, #613B38 100%); 
-  background-size: 100% 350%;   
-  background-position: 0% 0%;  
-  transition: background-position 0.5s ease;
+  background-size: 100% 400%;   
+  animation: gradientmove 10s ease infinite;
+
 }
 
-.a3linegradientV:hover{
-  background-position: 0% 100%;  
-}
+
 
 .a3linegradientH{
   background: linear-gradient(90deg,white 0%, white 50%, #DFCDFE 60%, #E7303A 90%, #613B38 100%);   
-  background-size: 350% 100%;   
-  background-position: 0% 0%;  
-  transition: background-position 0.5s ease;
+  background-size: 400% 100%;   
+  animation: gradientmoveH 7s ease infinite;
 }
 
-.a3linegradientH:hover{
-  background-position: 100% 0%;  
-}
 
 .a4linegradientV{
   background: linear-gradient(180deg,white 0%, white 50%,  #F2EFE5 70%, #DFCDFE 100%);   
-  background-size: 100% 350%;   
-  background-position: 0% 0%;  
-  transition: background-position 0.5s ease;
+  background-size: 100% 400%;   
+  animation: gradientmove 9s ease infinite;
+
 }
 
-.a4linegradientV:hover{
-  background-position: 0% 100%;  
-}
 
 .a4linegradientH{
   background: linear-gradient(90deg,white 0%, white 50%, #F2EFE5 70%, #DFCDFE 100%);   
-  background-size: 350% 100%;   
-  background-position: 0% 0%;  
-  transition: background-position 0.5s ease;
+  background-size: 400% 100%;   
+  animation: gradientmoveH 8s ease infinite;
+
 }
 
-.a4linegradientH:hover{
-  background-position: 100% 0%;  
+
+
+@keyframes gradientmove {
+    0% {
+        background-position: 0% 0%; 
+    }
+    50% {
+        background-position: 0% 100%; 
+    }
+    100% {
+        background-position: 0% 0%; 
+    }
+}
+
+@keyframes gradientmoveH {
+    0% {
+        background-position: 0% 0%; 
+    }
+    50% {
+        background-position: 100% 0%; 
+    }
+    100% {
+        background-position: 0% 0%; 
+    }
 }

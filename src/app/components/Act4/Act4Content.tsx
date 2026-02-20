@@ -39,7 +39,9 @@ export default function Act4Content() {
             <div className='homeCell-content xs-cell c5'></div>
             <div className='homeCell-content s-cell c4'> </div>
             <div className='homeCell-content m-cell c3'>
-                <LineButton name="Vestige" number={15} act={4} gradientDir="horizontal" align="left" verticalAlign="top" />
+                <a href="/lines/act4?line=15">
+                    <LineButton name="Vestige" number={15} act={4} gradientDir="horizontal" align="left" verticalAlign="top" />
+                 </a>                 
             </div>
             <div className='homeCell-content l-cell c2'></div>
             <div className='homeCell-content xl-cell c1'>
@@ -67,7 +69,9 @@ export default function Act4Content() {
         <div className='s-row rowGridContent'>
             <div className='homeCell-content xl-cell c1'></div>
             <div className='homeCell-content l-cell c2'>
+                 <a href="/lines/act4?line=14">
                 <LineButton name="Lethe" number={14} act={4} gradientDir="horizontal" align="left" />
+                 </a>                  
             </div>
             <div className='homeCell-content m-cell c3'></div>
             <div className='homeCell-content s-cell c4'></div>
@@ -166,7 +170,9 @@ export default function Act4Content() {
             <div className='homeCell-content xl-cell c1'></div>
             <div className='homeCell-content l-cell c2'></div>
             <div className='homeCell-content m-cell c3'>
-                <LineButton name="Persistence" number={16} act={4} gradientDir="horizontal" align="right" fillCell />
+                <a href="/lines/act4?line=16">
+                <LineButton name="Persistence" number={16} act={4} gradientDir="horizontal" align="right" />
+                 </a>                  
             </div>
             <div className='homeCell-content s-cell c4'></div>
             <div className='homeCell-content xs-cell c5'></div>
@@ -193,8 +199,10 @@ export default function Act4Content() {
             <div className='homeCell-content m-cell c3'> </div>
             <div className='homeCell-content l-cell c2'></div>
             <div className='homeCell-content xl-cell c1'>
+                <a href="/lines/act4?line=13">
                 <LineButton name="Echo" number={13} act={4} gradientDir="horizontal" align="left" />
-            </div>
+                 </a>                  
+                           </div>
         </div>
 
         {/* Row 12: xl-row */}
@@ -210,7 +218,9 @@ export default function Act4Content() {
             <div className='homeCell-content s-cell c4'> </div>
             <div className='homeCell-content m-cell c3'> </div>
             <div className='homeCell-content l-cell c2'>
+                <a href="/lines/act4?line=17">
                 <LineButton name="Zamaan" number={17} act={4} gradientDir="vertical" align="right" />
+                 </a>  
             </div>
             <div className='homeCell-content xl-cell c1'></div>
         </div>

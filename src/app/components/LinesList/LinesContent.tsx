@@ -60,7 +60,7 @@ export default function LinesGrid() {
             </div>
             <div className='homeCell-content xs-cell c4'></div>
             <div className='homeCell-content m-cell c5'>
-                <div className='cellContent'>
+                <a href="/lines/act1?line=1" className='cellContent' style={{ pointerEvents: 'auto', display: 'block' }}>
                     <div className='lineContent'>
                         <p className='shiftpdown'>1</p>
                         <div className='lineInfo w300px'>
@@ -68,11 +68,11 @@ export default function LinesGrid() {
                             <p className='caption'>Mikayla Gee, Nataniella Essang</p>
                         </div>
                     </div>
-                </div>                
+                </a>                
             </div>   
             <div className='homeCell-content xs-cell c6'></div>  
             <div className='homeCell-content m-cell c7'>
-                <div className="cellContent">
+                <a href="/lines/act1?line=2" className='cellContent' style={{ pointerEvents: 'auto', display: 'block' }}>
                     <div className='spacer75'></div>
                     <div className='lineContent'>
                         <p className='shiftpdown'>2</p>
@@ -81,13 +81,13 @@ export default function LinesGrid() {
                             <p className='caption'>Annissa Gao, Milada Kweon</p>
                         </div>
                     </div>  
-                </div>                
+                </a>                
             </div>   
             <div className='homeCell-content xs-cell c8'></div>  
             <div className='homeCell-content m-cell c9'></div>   
             <div className='homeCell-content xs-cell c8'></div>  
             <div className='homeCell-content m-cell c7'>
-                <div className="cellContent">
+                <a href="/lines/act1?line=3" className='cellContent' style={{ pointerEvents: 'auto', display: 'block' }}>
                     <div className='spacer50'></div>
                     <div className='lineContent'>
                         <p className='shiftpdown'>3</p>
@@ -96,18 +96,20 @@ export default function LinesGrid() {
                             <p className='caption'>Jules Kwon</p>
                         </div>
                     </div>  
-                </div>                 
+                </a>                 
             </div>   
             <div className='homeCell-content xs-cell c6'></div>  
             <div className='homeCell-content m-cell c5'>
                 <div className='cellContent'>
-                    <div className='lineContent'>
-                        <p className='shiftpdown'>4</p>
-                        <div className='lineInfo w300px'>
-                            <h3 className='FeatureDisplayCondensed'>Becoming </h3>
-                            <p className='caption'>Allen Chen, Catherine Li</p>
-                        </div>
-                    </div> 
+                    <a href="/lines/act1?line=4" className='cellContent' style={{ pointerEvents: 'auto', display: 'block' }}>
+                        <div className='lineContent'>
+                            <p className='shiftpdown'>4</p>
+                            <div className='lineInfo w300px'>
+                                <h3 className='FeatureDisplayCondensed'>Becoming </h3>
+                                <p className='caption'>Allen Chen, Catherine Li</p>
+                            </div>
+                        </div>                      
+                    </a> 
                 </div>                  
             </div>   
             <div className='homeCell-content xs-cell c4'></div>  
@@ -148,19 +150,20 @@ export default function LinesGrid() {
             </div>
             <div className='homeCell-content xs-cell c4'></div>
             <div className='homeCell-content m-cell c5'>
-                <div className='cellContent'>
-                    <div className='lineContent'>
-                        <p className='shiftpdown'>5</p>
-                        <div className='lineInfo w300px'>
-                            <h3 className='FeatureDisplayCondensed'>Joie de Vivre</h3>
-                            <p className='caption'>Ashley Dai, Annie Marcelino </p>
+                 <a href="/lines/act2?line=5" className='cellContent' style={{ pointerEvents: 'auto', display: 'block' }}>
+                        <div className='lineContent'>
+                                <p className='shiftpdown'>5</p>
+                                <div className='lineInfo w300px'>
+                                    <h3 className='FeatureDisplayCondensed'>Joie de Vivre</h3>
+                                    <p className='caption'>Ashley Dai, Annie Marcelino </p>
+                                </div>
                         </div>
-                    </div>
-                </div>                
+                </a>              
+             
             </div>   
             <div className='homeCell-content xs-cell c6'></div>  
             <div className='homeCell-content m-cell c7'>
-                <div className="cellContent">
+                 <a href="/lines/act2?line=6" className='cellContent' style={{ pointerEvents: 'auto', display: 'block' }}>
                     <div className='spacer50'></div>
                     <div className='lineContent'>
                         <p className='shiftpdown'>6</p>
@@ -169,25 +172,25 @@ export default function LinesGrid() {
                             <p className='caption'>Tian Zhou, Cara Moe</p>
                         </div>
                     </div>  
-                </div>                
+                </a>                
             </div>   
             <div className='homeCell-content xs-cell c8'></div>  
             <div className='homeCell-content m-cell c9'></div>   
             <div className='homeCell-content xs-cell c8'></div>  
             <div className='homeCell-content m-cell c7'>
-                <div className="cellContent">
+                 <a href="/lines/act2?line=7" className='cellContent' style={{ pointerEvents: 'auto', display: 'block' }}>
                     <div className='lineContent'>
                         <p className='shiftpdown'>7</p>
                         <div className='lineInfo w300px'>
-                            <h3 className='FeatureDisplayCondensed'>Read Me A Story</h3>
+                            <h3 className='FeatureDisplayCondensed'>Read Me a Story </h3>
                             <p className='caption'>Zachary Yoshida</p>
                         </div>
-                    </div>  
-                </div>                 
+                    </div> 
+                </a>                  
             </div>   
             <div className='homeCell-content xs-cell c6'></div>  
             <div className='homeCell-content m-cell c5'>
-                <div className='cellContent'>
+                 <a href="/lines/act2?line=8" className='cellContent' style={{ pointerEvents: 'auto', display: 'block' }}>
                     <div className='spacer50'></div>
                     <div className='lineContent'>
                         <p className='shiftpdown'>8</p>
@@ -196,7 +199,7 @@ export default function LinesGrid() {
                             <p className='caption'>Farah Daveau, Jason Asiedu</p>
                         </div>
                     </div> 
-                </div>                  
+                </a>                  
             </div>   
             <div className='homeCell-content xs-cell c4'></div>  
             <div className='homeCell-content m-cell c3'></div>   
@@ -236,7 +239,7 @@ export default function LinesGrid() {
             <div className='homeCell-content xs-cell c4'></div>
             <div className='homeCell-content m-cell c5'>
             <div className='homeCell-content m-cell c7'>
-                <div className="cellContent">
+                 <a href="/lines/act3?line=9" className='cellContent' style={{ pointerEvents: 'auto', display: 'block' }}>
                     <div className='lineContent'>
                         <p className='shiftpdown'>9</p>
                         <div className='lineInfo w300px'>
@@ -244,12 +247,12 @@ export default function LinesGrid() {
                             <p className='caption'>Esther Lin</p>
                         </div>
                     </div>  
-                </div>                
+                </a>                
             </div>                  
             </div> 
             <div className='homeCell-content xs-cell c6'></div>
             <div className='homeCell-content m-cell c7'>
-                <div className="cellContent">
+                 <a href="/lines/act3?line=10" className='cellContent' style={{ pointerEvents: 'auto', display: 'block' }}>
                     <div className='spacer50'></div>
                     <div className='lineContent'>
                         <p className='shiftpdown'>10</p>
@@ -258,11 +261,11 @@ export default function LinesGrid() {
                             <p className='caption'>Sulli Yatabe</p>
                         </div>
                     </div>  
-                </div>                  
+                </a>                  
             </div>   
             <div className='homeCell-content xs-cell c8'></div>  
             <div className='homeCell-content m-cell c9'>  
-               <div className="cellContent">
+                 <a href="/lines/act3?line=11" className='cellContent' style={{ pointerEvents: 'auto', display: 'block' }}>
                     <div className='lineContent'>
                         <p className='shiftpdown'>11</p>
                         <div className='lineInfo w300px'>
@@ -270,13 +273,13 @@ export default function LinesGrid() {
                             <p className='caption'>Raj Methi</p>
                         </div>
                     </div>  
-                </div>                               
+                </a>                               
             </div> 
             <div className='homeCell-content xs-cell c8'></div>
             <div className='homeCell-content m-cell c7'></div>             
             <div className='homeCell-content xs-cell c6'></div>
             <div className='homeCell-content m-cell c5'>
-                <div className="cellContent">
+                <a href="/lines/act3?line=12" className='cellContent' style={{ pointerEvents: 'auto', display: 'block' }}>
                     <div className='spacer75'></div>
                     <div className='lineContent'>
                         <p className='shiftpdown'>12</p>
@@ -285,7 +288,7 @@ export default function LinesGrid() {
                             <p className='caption'>Sadie Han, Ashley Park</p>
                         </div>
                     </div>  
-                </div>    
+                </a>    
             </div>   
             <div className='homeCell-content xs-cell c4'></div>  
             <div className='homeCell-content m-cell c3'></div>     
@@ -325,7 +328,7 @@ export default function LinesGrid() {
             </div>
             <div className='homeCell-content xs-cell c4'></div>
             <div className='homeCell-content m-cell c5'>
-                <div className="cellContent">
+                <a href="/lines/act4?line=13" className='cellContent' style={{ pointerEvents: 'auto', display: 'block' }}>
                     <div className='spacer75'></div>
                     <div className='lineContent'>
                         <p className='shiftpdown'>13</p>
@@ -334,11 +337,11 @@ export default function LinesGrid() {
                             <p className='caption'>Jada Cho, Sydney Lee</p>
                         </div>
                     </div>  
-                </div>                   
+                </a>                   
             </div> 
             <div className='homeCell-content xs-cell c6'></div>
             <div className='homeCell-content m-cell c7'>
-                <div className="cellContent">
+                <a href="/lines/act4?line=14" className='cellContent' style={{ pointerEvents: 'auto', display: 'block' }}>
                     <div className='spacer50'></div>
                     <div className='lineContent'>
                         <p className='shiftpdown'>14</p>
@@ -347,13 +350,13 @@ export default function LinesGrid() {
                             <p className='caption'>Yubo Zhang</p>
                         </div>
                     </div>  
-                </div>                   
+                </a>                   
             </div>   
             <div className='homeCell-content xs-cell c8'></div>  
             <div className='homeCell-content m-cell c9'></div> 
             <div className='homeCell-content xs-cell c8'></div>
             <div className='homeCell-content m-cell c7'>
-                 <div className="cellContent">
+                <a href="/lines/act4?line=15" className='cellContent' style={{ pointerEvents: 'auto', display: 'block' }}>
                     <div className='spacer50'></div>
                     <div className='lineContent'>
                         <p className='shiftpdown'>15</p>
@@ -362,11 +365,11 @@ export default function LinesGrid() {
                             <p className='caption'>Amy Cha</p>
                         </div>
                     </div>  
-                </div>                  
+                </a>                  
             </div>  
             <div className='homeCell-content xs-cell c6'></div>
             <div className='homeCell-content m-cell c5'>
-                <div className="cellContent">
+                <a href="/lines/act4?line=16" className='cellContent' style={{ pointerEvents: 'auto', display: 'block' }}>
                     <div className='lineContent'>
                         <p className='shiftpdown'>16</p>
                         <div className='lineInfo w300px'>
@@ -374,11 +377,11 @@ export default function LinesGrid() {
                             <p className='caption'>Frank Liu, Nate Neira</p>
                         </div>
                     </div>  
-                </div>              
+                </a>              
             </div>   
             <div className='homeCell-content xs-cell c4'></div>  
             <div className='homeCell-content m-cell c3'>
-                 <div className="cellContent">
+                <a href="/lines/act4?line=17" className='cellContent' style={{ pointerEvents: 'auto', display: 'block' }}>
                     <div className='spacer50'></div>
                     <div className='lineContent'>
                         <p className='shiftpdown'>17</p>
@@ -387,7 +390,7 @@ export default function LinesGrid() {
                             <p className='caption'>Aziza Norkulova</p>
                         </div>
                     </div>  
-                </div>                 
+                </a>                 
             </div>     
             <div className='homeCell-content xs-cell c2'></div>  
             <div className='homeCell-content xs-cell c1'></div>  

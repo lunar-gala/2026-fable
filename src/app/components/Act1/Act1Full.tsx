@@ -9,7 +9,7 @@ export default function Act1Full() {
 
   return (
     <>
-      <div className="gridTextContent"><Act1Content/></div>
+      <div className="actTextContent"><Act1Content/></div>
       <Act1GradientAnimation/>
       <div className="a1-gradient-bg"></div>
     </>
