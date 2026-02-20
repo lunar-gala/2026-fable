@@ -1,23 +1,39 @@
+/*
 "use client";
 
 import { useEffect, useState } from "react";
-import { useRouter, usePathname } from "next/navigation";
+import { useRouter, usePathname, useSearchParams } from "next/navigation";
 
-/** Act button container: main label + optional expanded line numbers (only for current act). */
+ Act button container: main label + optional expanded line numbers (only for current act). 
 const ACTS: { label: string; route: string; lineNumbers?: number[] }[] = [
-  { label: "Follow", route: "/viewer", lineNumbers: [1, 2, 3, 4] },
-  { label: "Wander", route: "/wander", lineNumbers: [1, 2, 3, 4, 5] },
-  { label: "Trace", route: "/lines", lineNumbers: [1, 2, 3, 4] },
-  { label: "Discern", route: "/debut" },
+  { label: "Follow", route: "/lines/act1", lineNumbers: [1, 2, 3, 4] },
+  { label: "Wander", route: "/lines/act2", lineNumbers: [1, 2, 3, 4] },
+  { label: "Trace", route: "/lines/act3", lineNumbers: [1, 2, 3, 4] },
+  { label: "Discern", route: "/lines/act4",lineNumbers: [1, 2, 3, 4,5]  },
 ];
 
-export default function NavBarTop() {
   const [isDark, setIsDark] = useState(false);
-  const [currentLine, setCurrentLine] = useState(1);
+  const searchParams = useSearchParams();
   const router = useRouter();
   const pathname = usePathname();
+  const lineParam = searchParams?.get("line");
+  const [currentLine, setCurrentLine] = useState(lineParam ? parseInt(lineParam, 10) : 1);
 
-  const currentActLabel = pathname === "/lines" ? "Trace" : null;
+  // Sync currentLine with URL/query changes
+  useEffect(() => {
+    setCurrentLine(lineParam ? parseInt(lineParam, 10) : 1);
+  }, [lineParam, pathname]);
+
+  let currentActLabel: string | null = null;
+  if (pathname === "/lines" || pathname === "/lines/act3") {
+    currentActLabel = "Trace";
+  } else if (pathname === "/lines/act1") {
+    currentActLabel = "Follow";
+  } else if (pathname === "/lines/act2") {
+    currentActLabel = "Wander";
+  } else if (pathname === "/lines/act4") {
+    currentActLabel = "Discern";
+  }
 
   const handleActClick = (label: string, route: string) => {
     router.push(route);
@@ -59,7 +75,7 @@ export default function NavBarTop() {
               >
                 <span className="navbar-nav-label">{act.label}</span>
               </button>
-              {/* Only the current act gets the expanded view with line numbers */}
+              Only the current act gets the expanded view with line numbers 
               {act.label === currentActLabel && act.lineNumbers && act.lineNumbers.length > 0 && (
                 <div className="navbar-top-trace-sub navbar-top-act-sub">
                   {act.lineNumbers.map((num) => (
@@ -85,3 +101,7 @@ export default function NavBarTop() {
 
   );
 }
+
+
+
+ */

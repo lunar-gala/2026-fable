@@ -9,7 +9,7 @@ export default function LinesGrid() {
   return (
     <>
     <div className='grid100vh whitebg'>
-        <div className='xs-row rowGridContent'>
+        <div className='xs-row rowGrid'>
             <div className='landingCell xs-cell c1'></div> 
             <div className='landingCell xs-cell c2'></div>         
             <div className='landingCell l-cell c3'></div>
@@ -29,7 +29,7 @@ export default function LinesGrid() {
             <div className='landingCell xs-cell c1'></div>
         </div>   
 
-        <div className='xs-row rowGridContent'>
+        <div className='xs-row rowGrid'>
             <div className='landingCell xs-cell c1'></div> 
             <div className='landingCell xs-cell c2'></div>         
             <div className='landingCell l-cell c3'></div>
@@ -49,7 +49,7 @@ export default function LinesGrid() {
             <div className='landingCell xs-cell c1'></div>
         </div>   
 
-        <div className='m-row rowGridContent'>
+        <div className='m-row rowGrid'>
             <div className='landingCell xs-cell c1'></div> 
             <div className='landingCell xs-cell c2'></div>         
             <div className='a1linegradientV landingCell l-cell c3'></div>
@@ -69,7 +69,7 @@ export default function LinesGrid() {
             <div className='landingCell xs-cell c1'></div>
         </div>   
 
-        <div className='m-row rowGridContent'>
+        <div className='m-row rowGrid'>
             <div className='landingCell xs-cell c1'></div> 
             <div className='landingCell xs-cell c2'></div>         
             <div className='landingCell l-cell c3'></div>
@@ -89,7 +89,7 @@ export default function LinesGrid() {
             <div className='landingCell xs-cell c1'></div>
         </div>
 
-        <div className='xs-row rowGridContent'>
+        <div className='xs-row rowGrid'>
             <div className='landingCell xs-cell c1'></div> 
             <div className='landingCell xs-cell c2'></div>         
             <div className='landingCell l-cell c3'></div>
@@ -109,7 +109,7 @@ export default function LinesGrid() {
             <div className='landingCell xs-cell c1'></div>
         </div>   
 
-        <div className='m-row rowGridContent'>
+        <div className='m-row rowGrid'>
             <div className='landingCell xs-cell c1'></div> 
             <div className='landingCell xs-cell c2'></div>         
             <div className='landingCell l-cell c3'></div>
@@ -129,7 +129,7 @@ export default function LinesGrid() {
             <div className='landingCell xs-cell c1'></div>
         </div>   
 
-        <div className='m-row rowGridContent'>
+        <div className='m-row rowGrid'>
             <div className='landingCell xs-cell c1'></div> 
             <div className='landingCell xs-cell c2'></div>         
             <div className='a2linegradientV landingCell l-cell c3'></div>
@@ -149,7 +149,7 @@ export default function LinesGrid() {
             <div className='landingCell xs-cell c1'></div>
         </div>
 
-        <div className='xs-row rowGridContent'>
+        <div className='xs-row rowGrid'>
             <div className='landingCell xs-cell c1'></div> 
             <div className='landingCell xs-cell c2'></div>         
             <div className='landingCell l-cell c3'></div>
@@ -168,7 +168,7 @@ export default function LinesGrid() {
             <div className='landingCell xs-cell c2'></div>                                   
             <div className='landingCell xs-cell c1'></div>
         </div> 
-        <div className='m-row rowGridContent'>
+        <div className='m-row rowGrid'>
             <div className='landingCell xs-cell c1'></div> 
             <div className='landingCell xs-cell c2'></div>         
             <div className='a3linegradientH landingCell l-cell c3'></div>
@@ -188,7 +188,7 @@ export default function LinesGrid() {
             <div className='landingCell xs-cell c1'></div>
         </div>   
 
-        <div className='m-row rowGridContent'>
+        <div className='m-row rowGrid'>
             <div className='landingCell xs-cell c1'></div> 
             <div className='landingCell xs-cell c2'></div>         
             <div className='landingCell l-cell c3'></div>
@@ -208,7 +208,7 @@ export default function LinesGrid() {
             <div className='landingCell xs-cell c1'></div>
         </div>
 
-        <div className='xs-row rowGridContent'>
+        <div className='xs-row rowGrid'>
             <div className='landingCell xs-cell c1'></div> 
             <div className='landingCell xs-cell c2'></div>         
             <div className='landingCell l-cell c3'></div>
@@ -227,7 +227,7 @@ export default function LinesGrid() {
             <div className='landingCell xs-cell c2'></div>                                   
             <div className='landingCell xs-cell c1'></div>
         </div> 
-         <div className='m-row rowGridContent'>
+         <div className='m-row rowGrid'>
             <div className='landingCell xs-cell c1'></div> 
             <div className='landingCell xs-cell c2'></div>         
             <div className='a4linegradientV landingCell l-cell c3'></div>
@@ -247,7 +247,7 @@ export default function LinesGrid() {
             <div className='landingCell xs-cell c1'></div>
         </div>   
 
-        <div className='m-row rowGridContent'>
+        <div className='m-row rowGrid'>
             <div className='landingCell xs-cell c1'></div> 
             <div className='landingCell xs-cell c2'></div>         
             <div className='a4linegradientH landingCell l-cell c3'></div>
@@ -267,7 +267,7 @@ export default function LinesGrid() {
             <div className='landingCell xs-cell c1'></div>
         </div>           
 
-        <div className='xs-row rowGridContent'>
+        <div className='xs-row rowGrid'>
             <div className='landingCell xs-cell c1'></div> 
             <div className='landingCell xs-cell c2'></div>         
             <div className='landingCell l-cell c3'></div>
@@ -287,7 +287,7 @@ export default function LinesGrid() {
             <div className='landingCell xs-cell c1'></div>
         </div>   
 
-        <div className='xs-row rowGridContent'>
+        <div className='xs-row rowGrid'>
             <div className='landingCell xs-cell c1'></div> 
             <div className='landingCell xs-cell c2'></div>         
             <div className='landingCell l-cell c3'></div>

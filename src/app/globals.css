@@ -682,6 +682,7 @@ h1{
     margin-bottom:-0.1em;
 }
 
+
 .shifth4flushtop{
     margin-top:-0.3em;
     margin-left:0.2em;
@@ -891,7 +892,6 @@ p{
 }
 
 .rowGridContent{
-  border-top: 0.25px solid #332b2b;
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -909,7 +909,7 @@ p{
 }
 
 .a3grid > .rowGrid{
-    border-top: 0.25px solid #FFFFFF80;
+    border-top: 0.25px solid #FFFFFF;
 }
 
 .xs-cell{
@@ -1231,9 +1231,8 @@ body[data-stage="act4"] .sidebar-footer-logo {
 /* Content page labels */
 .content-act-label {
   font-family: "aileron", sans-serif;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 400;
-  letter-spacing: 0.08em;
   text-transform: uppercase;
   line-height: 1;
   pointer-events: none;
@@ -1247,13 +1246,13 @@ body[data-stage="act4"] .sidebar-footer-logo {
   font-style: normal;
   font-weight: 400;
   font-synthesis: none;
-  font-size: 5.5vw;
+  font-size: 7vw;
   line-height: 1;
   letter-spacing: -0.02em;
   margin: 0;
   pointer-events: none;
   position: absolute;
-  bottom: 0;
+  bottom: -0.1em;
   left: 0;
 }
 

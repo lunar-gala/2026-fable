@@ -67,7 +67,7 @@ export default function LinesNav() {
 
   return (
     <div className=" linesnav">
-      <div className="rowempty rowGridContent">
+      <div className="rowempty rowGrid">
         <div className="landingCell xs-cell c1" />
         <div className="landingCell xs-cell c3" />
         <div className="landingCell l-cell c4" />
@@ -80,7 +80,7 @@ export default function LinesNav() {
         <div className="landingCell xs-cell c3" />
         <div className="landingCell xs-cell c1" />
       </div>
-      <div className=" rowcontent rowGridContent">
+      <div className=" rowcontent rowGrid">
             <div className="landingCell xs-cell-navcontent" />
             <div className="landingCell xs-cell-navcontent" />
             <div className="rowcontent w100">

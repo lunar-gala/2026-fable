@@ -9,7 +9,7 @@ export default function AboutGrid() {
   return (
     <>
     <div className='gradient-grid whitebg'>
-        <div className='vh25-row rowGridContent'>
+        <div className='vh25-row rowGrid'>
             <div className=' landingCell xs-cell c1'></div>          
             <div className='landingCell xs-cell c2'></div>          
             <div className='landingCell l-cell c3'></div>
@@ -23,7 +23,7 @@ export default function AboutGrid() {
             <div className='landingCell xs-cell c2'></div>          
             <div className='landingCell xs-cell c1'></div>           
         </div>
-        <div className='vh25-row rowGridContent'>
+        <div className='vh25-row rowGrid'>
             <div className='landingCell xs-cell c1'></div>          
             <div className='a4gradient1 landingCell xs-cell c2'></div>          
             <div className='landingCell l-cell c3'></div>
@@ -38,7 +38,7 @@ export default function AboutGrid() {
             <div className='landingCell xs-cell c1'></div>           
         </div>
 
-        <div className='vh25-row rowGridContent'>
+        <div className='vh25-row rowGrid'>
             <div className='landingCell xs-cell c1'></div>          
             <div className='landingCell xs-cell c2'></div>          
             <div className='landingCell l-cell c3'></div>
@@ -53,7 +53,7 @@ export default function AboutGrid() {
             <div className='landingCell xs-cell c1'></div>           
         </div>
 
-        <div className='vh25-row rowGridContent'>
+        <div className='vh25-row rowGrid'>
             <div className='landingCell xs-cell c1'></div>          
             <div className='landingCell xs-cell c2'></div>          
             <div className='landingCell l-cell c3'></div>
@@ -68,7 +68,7 @@ export default function AboutGrid() {
             <div className='landingCell xs-cell c1'></div>           
         </div>
 
-        <div className='vh25-row rowGridContent'>
+        <div className='vh25-row rowGrid'>
             <div className='landingCell xs-cell c1'></div>          
             <div className='landingCell xs-cell c2'></div>          
             <div className=' landingCell l-cell c3'></div>
@@ -83,7 +83,7 @@ export default function AboutGrid() {
             <div className='landingCell xs-cell c1'></div>           
         </div>
 
-        <div className='vh25-row rowGridContent'>
+        <div className='vh25-row rowGrid'>
             <div className='landingCell xs-cell c1'></div>          
             <div className='landingCell xs-cell c2'></div>          
             <div className='landingCell l-cell c3'></div>
@@ -98,7 +98,7 @@ export default function AboutGrid() {
             <div className='landingCell xs-cell c1'></div>           
         </div>
 
-        <div className='vh25-row rowGridContent'>
+        <div className='vh25-row rowGrid'>
             <div className='landingCell xs-cell c1'></div>          
             <div className='landingCell xs-cell c2'></div>          
             <div className='landingCell l-cell c3'></div>
@@ -113,7 +113,7 @@ export default function AboutGrid() {
             <div className='landingCell xs-cell c1'></div>           
         </div>
 
-        <div className='vh25-row rowGridContent'>
+        <div className='vh25-row rowGrid'>
             <div className='landingCell xs-cell c1'></div>          
             <div className='landingCell xs-cell c2'></div>          
             <div className='landingCell l-cell c3'></div>
@@ -128,7 +128,7 @@ export default function AboutGrid() {
             <div className='landingCell xs-cell c1'></div>           
         </div>
 
-        <div className='vh25-row rowGridContent'>
+        <div className='vh25-row rowGrid'>
             <div className='landingCell xs-cell c1'></div>          
             <div className='landingCell xs-cell c2'></div>          
             <div className='landingCell l-cell c3'></div>
@@ -143,7 +143,7 @@ export default function AboutGrid() {
             <div className='landingCell xs-cell c1'></div>           
         </div>
 
-        <div className='vh25-row rowGridContent'>
+        <div className='vh25-row rowGrid'>
             <div className='landingCell xs-cell c1'></div>          
             <div className='landingCell xs-cell c2'></div>          
             <div className='landingCell l-cell c3'></div>
@@ -158,7 +158,7 @@ export default function AboutGrid() {
             <div className='landingCell xs-cell c1'></div>           
         </div>
 
-        <div className='vh25-row rowGridContent'>
+        <div className='vh25-row rowGrid'>
             <div className='landingCell xs-cell c1'></div>          
             <div className='landingCell xs-cell c2'></div>          
             <div className='landingCell l-cell c3'></div>
@@ -173,7 +173,7 @@ export default function AboutGrid() {
             <div className='landingCell xs-cell c1'></div>           
         </div>
         
-        <div className='vh25-row rowGridContent'>
+        <div className='vh25-row rowGrid'>
             <div className='landingCell xs-cell c1'></div>          
             <div className='landingCell xs-cell c2'></div>          
             <div className='landingCell l-cell c3'></div>
@@ -187,7 +187,7 @@ export default function AboutGrid() {
             <div className='landingCell xs-cell c2'></div>          
             <div className='landingCell xs-cell c1'></div>           
         </div> 
-         <div className='vh25-row rowGridContent'>
+         <div className='vh25-row rowGrid'>
             <div className='landingCell xs-cell c1'></div>          
             <div className='landingCell xs-cell c2'></div>          
             <div className='landingCell l-cell c3'></div>
@@ -202,7 +202,7 @@ export default function AboutGrid() {
             <div className='landingCell xs-cell c1'></div>           
         </div>
 
-        <div className='vh25-row rowGridContent'>
+        <div className='vh25-row rowGrid'>
             <div className='landingCell xs-cell c1'></div>          
             <div className='landingCell xs-cell c2'></div>          
             <div className='landingCell l-cell c3'></div>
@@ -217,7 +217,7 @@ export default function AboutGrid() {
             <div className='landingCell xs-cell c1'></div>           
         </div> 
 
-         <div className='vh25-row rowGridContent'>
+         <div className='vh25-row rowGrid'>
             <div className='landingCell xs-cell c1'></div>          
             <div className='landingCell xs-cell c2'></div>          
             <div className='landingCell l-cell c3'></div>
@@ -232,7 +232,7 @@ export default function AboutGrid() {
             <div className='landingCell xs-cell c1'></div>           
         </div>
 
-         <div className='vh25-row rowGridContent'>
+         <div className='vh25-row rowGrid'>
             <div className='landingCell xs-cell c1'></div>          
             <div className='landingCell xs-cell c2'></div>          
             <div className='landingCell l-cell c3'></div>
@@ -247,7 +247,7 @@ export default function AboutGrid() {
             <div className='landingCell xs-cell c1'></div>           
         </div>
 
-         <div className='vh25-row rowGridContent'>
+         <div className='vh25-row rowGrid'>
             <div className='landingCell xs-cell c1'></div>          
             <div className='landingCell xs-cell c2'></div>          
             <div className='landingCell l-cell c3'></div>
@@ -262,7 +262,7 @@ export default function AboutGrid() {
             <div className='landingCell xs-cell c1'></div>           
         </div>
 
-         <div className='vh25-row rowGridContent'>
+         <div className='vh25-row rowGrid'>
             <div className='landingCell xs-cell c1'></div>          
             <div className='landingCell xs-cell c2'></div>          
             <div className='landingCell l-cell c3'></div>
@@ -277,7 +277,7 @@ export default function AboutGrid() {
             <div className='landingCell xs-cell c1'></div>           
         </div>
 
-         <div className='vh25-row rowGridContent'>
+         <div className='vh25-row rowGrid'>
             <div className='landingCell xs-cell c1'></div>          
             <div className='landingCell xs-cell c2'></div>          
             <div className='landingCell l-cell c3'></div>
@@ -292,7 +292,7 @@ export default function AboutGrid() {
             <div className='landingCell xs-cell c1'></div>           
         </div>
 
-         <div className='vh25-row rowGridContent'>
+         <div className='vh25-row rowGrid'>
             <div className='landingCell xs-cell c1'></div>          
             <div className='landingCell xs-cell c2'></div>          
             <div className='landingCell l-cell c3'></div>
@@ -307,7 +307,7 @@ export default function AboutGrid() {
             <div className='landingCell xs-cell c1'></div>           
         </div>
 
-        <div className='vh25-row rowGridContent'>
+        <div className='vh25-row rowGrid'>
             <div className='landingCell xs-cell c1'></div>          
             <div className='landingCell xs-cell c2'></div>          
             <div className='landingCell l-cell c3'></div>
