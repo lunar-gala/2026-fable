@@ -174,7 +174,7 @@ export const PEOPLE: Record<string, Person[]> = {
     { name: "Advika Vuppala", position: "Head" },
     { name: "Vahini Walia", position: "Head" },
     { name: "Alyssa Kwon", position: "Artist" },
-    { name: "Annika Kuhl", position: "Artist" },
+    { name: "Annika Kuhl", position: "Artist", hasPhoto: false },
     { name: "Ashanti Ramirez", position: "Artist" },
     { name: "Emma Zhao", position: "Artist" },
     { name: "Harshini Kotaru", position: "Artist" },

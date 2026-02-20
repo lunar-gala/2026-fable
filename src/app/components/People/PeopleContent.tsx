@@ -176,6 +176,7 @@ export default function PeopleContent() {
             </div>
 
             {/* Photo rows (people with photos) */}
+            <div className="people-photo-rows">
             {chunkPeople((PEOPLE[section] || []).filter((p) => p.hasPhoto !== false)).map((row, rowIndex) => (
               <div key={rowIndex} className="people-photo-row">
                 <div className="people-spacer" />
@@ -220,13 +221,14 @@ export default function PeopleContent() {
                 <div className="people-spacer" />
               </div>
             ))}
+            </div>
 
             {/* Text-only rows (people without photos) */}
-            {chunkPeople((PEOPLE[section] || []).filter((p) => p.hasPhoto === false)).map((row, rowIndex) => (
-              <div key={`no-photo-${rowIndex}`} className="people-photo-row">
-                <div className="people-spacer" />
-                <div className="people-spacer" />
-                <div className="people-no-photo-row">
+            <div className="people-no-photo-rows">
+              {chunkPeople((PEOPLE[section] || []).filter((p) => p.hasPhoto === false)).map((row, rowIndex) => (
+                <div key={`no-photo-${rowIndex}`} className="people-photo-row people-no-photo-row">
+                  <div className="people-spacer" />
+                  <div className="people-spacer" />
                   {row.map((person, colIndex) => (
                     <div key={colIndex} style={{ display: "contents" }}>
                       <div className="people-photo-group">
@@ -244,11 +246,11 @@ export default function PeopleContent() {
                       )}
                     </div>
                   ))}
+                  <div className="people-spacer people-spacer-left-border" />
+                  <div className="people-spacer" />
                 </div>
-                <div className="people-spacer people-spacer-left-border" />
-                <div className="people-spacer" />
-              </div>
-            ))}
+              ))}
+            </div>
 
             {/* Bottom 24px row */}
             <div className="people-photo-row people-row-24">
