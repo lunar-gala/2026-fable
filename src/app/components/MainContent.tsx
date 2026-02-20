@@ -25,7 +25,20 @@ export default function MainContent() {
   const [stage, setStage] = useState<Stage>(Stage.Landing);
 
   useEffect(() => {
-    window.scrollTo(0, 0);
+    const scrollTarget = sessionStorage.getItem("scrollToAct");
+    if (scrollTarget) {
+      sessionStorage.removeItem("scrollToAct");
+      // Set stage immediately so the correct act content renders from the first frame
+      const targetStage = getStageFromProgress(parseFloat(scrollTarget));
+      setStage(targetStage);
+      // Scroll to the matching position after layout is computed
+      requestAnimationFrame(() => {
+        const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
+        window.scrollTo({ top: parseFloat(scrollTarget) * totalHeight, behavior: "instant" });
+      });
+    } else {
+      window.scrollTo(0, 0);
+    }
   }, []);
 
   useEffect(() => {
@@ -38,6 +51,15 @@ export default function MainContent() {
 
     return () => unsubscribe();
   }, [scrollYProgress]);
+
+  // Sync stage to body dataset so NavBar can detect dark mode
+  useEffect(() => {
+    const stageNames = ["landing", "act1", "act2", "act3", "act4"];
+    document.body.dataset.stage = stageNames[stage];
+    return () => {
+      delete document.body.dataset.stage;
+    };
+  }, [stage]);
 
   return (
     <>

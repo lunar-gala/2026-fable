@@ -222,7 +222,7 @@ body {
 }
 
 .navbar-dark {
-  background-color: #000;
+  background-color: #332b2b;
   color: var(--off-white);
   border-right: 0.5px solid var(--off-white);
   border-left: 0.5px solid var(--off-white);
@@ -403,10 +403,7 @@ body {
   display: inline-block;
 }
 
-.navbar-dark .navbar-cutout,
-.navbar-dark .navbar-cutout-sm {
-  filter: brightness(0) invert(0.95);
-}
+/* Dark ornament SVGs are used directly via src swap, no filter needed */
 
 .navbar-footer-wordmark {
   height: 32px;

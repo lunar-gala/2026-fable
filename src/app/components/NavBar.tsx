@@ -18,7 +18,6 @@ export default function NavBar() {
   const [hasOverflow, setHasOverflow] = useState(false);
   const router = useRouter();
   const pathname = usePathname();
-  const isLinesPage = pathname === "/lines";
 
   const handleNavigation = (item: string) => {
     const routes: Record<string, string> = {
@@ -34,11 +33,14 @@ export default function NavBar() {
   };
 
   const handleActNavigation = (item: string) => {
-    if (pathname !== "/") {
-      router.push("/");
-    }
     const target = SCROLL_TARGETS[item];
-    if (target !== undefined) {
+    if (pathname !== "/") {
+      // Store scroll target for after navigation completes
+      if (target !== undefined) {
+        sessionStorage.setItem("scrollToAct", String(target));
+      }
+      router.push("/");
+    } else if (target !== undefined) {
       const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
       window.scrollTo({ top: target * totalHeight, behavior: "smooth" });
     }
@@ -58,11 +60,11 @@ export default function NavBar() {
 
   useEffect(() => {
     const initialStage = document.body.dataset.stage || "landing";
-    setIsDark(initialStage === "act4");
+    setIsDark(initialStage === "act3" || initialStage === "act4");
 
     const observer = new MutationObserver(() => {
       const currentStage = document.body.dataset.stage || "landing";
-      setIsDark(currentStage === "act4");
+      setIsDark(currentStage === "act3" || currentStage === "act4");
     });
 
     observer.observe(document.body, {
@@ -82,13 +84,13 @@ export default function NavBar() {
           onClick={() => router.push("/")}
         >
           <div className="navbar-logo">
-            <img src="/wordmark.svg" alt="Fable"></img>
+            <img src={isDark ? "/wordmark white.svg" : "/wordmark.svg"} alt="Fable"></img>
           </div>
         </button>
 
         <div className="navbar-nav">
           <img
-            src={isDark ? "/asset cutout dark.svg" : "/lightasset.svg"}
+            src={isDark ? "/darkasset.svg" : "/lightasset.svg"}
             alt=""
             aria-hidden="true"
             className="navbar-cutout"
@@ -100,7 +102,7 @@ export default function NavBar() {
             <button
               key={item}
               type="button"
-              className={`navbar-row navbar-act-row ${item === "ACT III" && isLinesPage ? "navbar-act-row--active" : ""}`}
+              className="navbar-row navbar-act-row"
               onClick={() => handleActNavigation(item)}
             >
               <span className="navbar-act-label">{item}</span>
@@ -117,7 +119,7 @@ export default function NavBar() {
             >
               {item !== "Lines" && (
                 <img
-                  src={isDark ? "/asset cutout dark.svg" : "/lightasset.svg"}
+                  src={isDark ? "/darkasset.svg" : "/lightasset.svg"}
                   alt=""
                   aria-hidden="true"
                   className="navbar-cutout-sm"
