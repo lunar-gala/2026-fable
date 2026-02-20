@@ -148,11 +148,21 @@
   border-bottom: none;
 }
 
+.people-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 .people-photo-placeholder {
   width: 100%;
   height: 100%;
   background-color: #EEEEEE;
   /* border-top: 0.125px solid var(--dark-brown); */
+}
+
+.people-photo-placeholder.hidden {
+  display: none;
 }
 
 .people-photo-name-group {

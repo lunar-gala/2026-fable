@@ -15,6 +15,25 @@ const CATEGORIES = [
   "PR",
 ];
 
+const CATEGORY_FOLDER: Record<string, string> = {
+  "Exec": "exec",
+  "Creative": "creative",
+  "Design": "design",
+  "Production": "production",
+  "Model": "model",
+  "Hair & Makeup": "hairmakeup",
+  "PR": "pr",
+};
+
+function getPhotoPath(category: string, person: Person): string {
+  const catFolder = CATEGORY_FOLDER[category] || category.toLowerCase();
+  const posFolder = person.position
+    .toLowerCase()
+    .replace(/ & /g, "-")
+    .replace(/ /g, "-");
+  return `/photos/${catFolder}/${posFolder}/${person.name}.jpg`;
+}
+
 const NAV_ITEMS = ["", ...CATEGORIES];
 
 const COLS = NAV_ITEMS.length; // 8 slots per row
@@ -166,7 +185,16 @@ export default function PeopleContent() {
                       {person !== null ? (
                         <>
                           <div className="people-photo-cell">
-                            <div className="people-photo-placeholder" />
+                            <img
+                              className="people-photo"
+                              src={getPhotoPath(section, person)}
+                              alt={person.name}
+                              onError={(e) => {
+                                e.currentTarget.style.display = "none";
+                                e.currentTarget.nextElementSibling?.classList.remove("hidden");
+                              }}
+                            />
+                            <div className="people-photo-placeholder hidden" />
                           </div>
                           <div className="people-photo-name-group">
                             <div className="people-photo-name">{person.name}</div>
