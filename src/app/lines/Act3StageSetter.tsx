@@ -1,4 +1,5 @@
-"use client";
+/**
+ "use client";
 
 import { useEffect } from "react";
 
@@ -13,3 +14,5 @@ export default function Act3StageSetter() {
   }, []);
   return null;
 }
+
+ */
