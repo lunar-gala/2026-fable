@@ -493,3 +493,13 @@ grid-content{
   }
 
  }
+
+ .homeCell-content{
+  position:relative;
+  pointer-events: none;
+  border: none;
+  overflow: visible;
+  flex-grow: 0;
+  display:flex;
+  justify-content: left;
+}

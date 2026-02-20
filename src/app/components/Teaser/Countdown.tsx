@@ -17,13 +17,13 @@ export default function Countdown() {
       const now = new Date();
       const currentYear = now.getFullYear();
       
-      // Set target to February 20, 12AM Eastern Standard Time (EST, UTC-5)
-      // Midnight EST corresponds to 05:00 UTC, so construct the UTC instant accordingly
-      let target = new Date(Date.UTC(currentYear, 1, 20, 5, 0, 0)); // Month is 0-indexed, so 1 = February
+      // Set target to February 20, 11:59PM Eastern Standard Time (EST, UTC-5)
+      // 23:59 EST corresponds to 04:59 UTC on the next calendar day, so construct the UTC instant accordingly
+      let target = new Date(Date.UTC(currentYear, 1, 21, 4, 59, 0)); // Month is 0-indexed, so 1 = February
 
       // If the target date has already passed, set it to next year (keep EST)
       if (now > target) {
-        target = new Date(Date.UTC(currentYear + 1, 1, 20, 5, 0, 0));
+        target = new Date(Date.UTC(currentYear + 1, 1, 21, 4, 59, 0));
       }
 
       const difference = target.getTime() - now.getTime();
