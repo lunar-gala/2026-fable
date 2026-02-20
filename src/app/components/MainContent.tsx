@@ -6,6 +6,7 @@ import Act1Full from "./Act1/Act1Full";
 import Act2Full from "./Act2/Act2Full";
 import Act3Full from "./Act3/Act3Full";
 import Act4Full from "./Act4/Act4Full";
+import LandingFull from "./Landing/LandingFull";
 import AssetAnimation from "./Landing/AssetAnimation";
 import ActNavArrows from "./ActNavArrows";
 import { Stage } from "./Stage";
@@ -73,7 +74,7 @@ export default function MainContent() {
         }}
 
         >
-          {stage === Stage.Landing && <LandingAnimation />}
+          {stage === Stage.Landing && <LandingFull />}
           {stage === Stage.Act1 && <Act1Full />}
           {stage === Stage.Act2 && <Act2Full />}
           {stage === Stage.Act3 && <Act3Full />}

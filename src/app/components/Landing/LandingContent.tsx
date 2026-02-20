@@ -8,8 +8,9 @@ import WordmarkAnimation from './WordmarkAnimation';
 export default function LandingContent() {
 
   return (
-    <>
-        <div className='row24px'>
+    <div className='gradient-grid'>
+    
+        <div className='xs-row rowGridContent'>
             <div className='homeCell-content rectangle-small c1'></div>          
             <div className='homeCell-content rectangle-small c2'></div>          
             <div className='homeCell-content rectangle-half c3'></div>
@@ -24,7 +25,7 @@ export default function LandingContent() {
             <div className='homeCell-content rectangle-small c1'></div>           
         </div>
 
-        <div className='row24px'>
+        <div className='xs-row rowGridContent'>
             <div className='homeCell-content rectangle-small c1'></div>          
             <div className='homeCell-content rectangle-small c2'></div>          
             <div className='homeCell-content rectangle-half c3'></div>
@@ -39,7 +40,7 @@ export default function LandingContent() {
             <div className='homeCell-content rectangle-small c1'></div>     
         </div> 
 
-        <div className='row-eighth'>
+        <div className='s-row rowGridContent'>
             <div className='homeCell-content rectangle-small c1'></div>          
             <div className='homeCell-content rectangle-small c2'></div>          
             <div className='homeCell-content rectangle-half c3'></div>
@@ -54,7 +55,7 @@ export default function LandingContent() {
             <div className='homeCell-content rectangle-small c1'></div>             
         </div> 
 
-        <div className='row-quarter'>
+        <div className='m-row rowGridContent'>
             <div className='homeCell-content rectangle-small c1'></div>          
             <div className='homeCell-content rectangle-small c2'></div>          
             <div className='homeCell-content rectangle-half c3'></div>
@@ -69,7 +70,7 @@ export default function LandingContent() {
             <div className='homeCell-content rectangle-small c1'></div>                     
         </div> 
 
-        <div className='row-half'>
+        <div className='l-row rowGridContent'>
             <div className='homeCell-content rectangle-small c1'></div>          
             <div className='homeCell-content rectangle-small c2'></div>          
             <div className='homeCell-content rectangle-half c3'></div>
@@ -85,14 +86,14 @@ export default function LandingContent() {
         </div>  
 
 
-        <div className='row-full'>
+        <div className='row-center rowGridContent'>
             <div className='homeCell-content rectangle-small c1'></div>          
             <div className='homeCell-content rectangle-small c2'></div>          
             <div className='homeCell-content rectangle-half c3'></div>
             <div className='homeCell-content rectangle-small c4'></div>
             <div className='homeCell-content rectangle-small c5'></div>
-            <div className='homeCell-content rectangle-200 fulltext-gridcell'>
-                <WordmarkAnimation/>
+            <div className='homeCell-content rectangle-200  fulltext-gridcell'>
+                <div className='wordmarkContainer'><WordmarkAnimation/></div>
             </div>            
             <div className='homeCell-content rectangle-small c5'></div>
             <div className='homeCell-content rectangle-small c4'> </div>
@@ -101,13 +102,21 @@ export default function LandingContent() {
             <div className='homeCell-content rectangle-small c1'></div>         
         </div>  
 
-        <div className='row-half'>
+        <div className='l-row rowGridContent'>
             <div className='homeCell-content rectangle-small c1'></div>          
             <div className='homeCell-content rectangle-small c2'></div>          
             <div className='homeCell-content rectangle-half c3'></div>
             <div className='homeCell-content rectangle-small c4'></div>
             <div className='homeCell-content rectangle-small c5'></div>
-            <div className='homeCell-content rectangle-full c6'></div>            
+            <div className='homeCell-content rectangle-full c6'>
+                <div className='buyticketsbutton'>
+                    <div className='ticketbuttoncontent'>
+                        <div className='ticketbuttonheading'>Buy Tickets Now</div>
+                        <p>Sunday, March 15 @ 7PM <br/> Wiegand Gym </p>
+                    </div>
+                    <img className="assetshape" src="/asset cutout light.svg"></img>
+                </div>
+            </div>            
             <div className='homeCell-content rectangle-full c6'> </div>             
             <div className='homeCell-content rectangle-small c5'></div>
             <div className='homeCell-content rectangle-small c4'> </div>
@@ -116,7 +125,7 @@ export default function LandingContent() {
             <div className='homeCell-content rectangle-small c1'></div>    
         </div>   
 
-        <div className='row-quarter'>
+        <div className='m-row rowGridContent'>
             <div className='homeCell-content rectangle-small c1'></div>          
             <div className='homeCell-content rectangle-small c2'></div>          
             <div className='homeCell-content rectangle-half c3'></div>
@@ -131,7 +140,7 @@ export default function LandingContent() {
             <div className='homeCell-content rectangle-small c1'></div>              
         </div>  
 
-        <div className='row-eighth'>
+        <div className='s-row rowGridContent'>
             <div className='homeCell-content rectangle-small c1'></div>          
             <div className='homeCell-content rectangle-small c2'></div>          
             <div className='homeCell-content rectangle-half c3'></div>
@@ -146,7 +155,7 @@ export default function LandingContent() {
             <div className='homeCell-content rectangle-small c1'></div>           
         </div> 
 
-        <div className='row24px'>
+        <div className='xs-row rowGridContent'>
             <div className='homeCell-content rectangle-small c1'></div>          
             <div className='homeCell-content rectangle-small c2'></div>          
             <div className='homeCell-content rectangle-half c3'></div>
@@ -161,7 +170,7 @@ export default function LandingContent() {
             <div className='homeCell-content rectangle-small c1'></div>         
         </div>    
         
-        <div className='row24px'>
+        <div className='xs-row rowGridContent'>
             <div className='homeCell-content rectangle-small c1'></div>          
             <div className='homeCell-content rectangle-small c2'></div>          
             <div className='homeCell-content rectangle-half c3'></div>
@@ -175,7 +184,7 @@ export default function LandingContent() {
             <div className='homeCell-content rectangle-small c2'></div>          
             <div className='homeCell-content rectangle-small c1'></div>          
         </div>    
-    </>
+    </div>
 
                                         
 
