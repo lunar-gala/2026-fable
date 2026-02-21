@@ -107,7 +107,9 @@
 .people-gradient {
   flex: 1;
   min-width: 0;
-  background: linear-gradient(to right, #613B38 0%, #FF76A2 50%, #F2EFE5 75%, #B0D2DE 100%);
+  background: linear-gradient(to right, #B0D2DE 0%, #F2EFE5 15%, #FF76A2 26%, #613B38 40%, #613B38 44%, #E7303A 55%, #DFCDFF 68%, #B0D2DE 78%, #F2EFE5 90%, #B0D2DE 100%);
+  background-size: 200% 100%;
+  background-position: 0% 0%;
   border-top: 0.125px solid var(--dark-brown);
   border-bottom: 0.125px solid var(--dark-brown);
 }
