@@ -74,7 +74,7 @@ export default function NavBar() {
             <div className=" mobilenav-xs-cell landingCell"></div>
         </div>
 
-        <div className=" off-white-bg navbar-constant rowGridNav" id="pointereventon">
+        <div className=" off-white-bg navbar-constant rowGridNav" id="pointereventson">
             <div className=" mobilenav-xs-cell landingCell"></div>
             <div className="landingCell flex-constant ">
               <a href="/" id="pointereventson">

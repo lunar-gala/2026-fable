@@ -1466,11 +1466,11 @@ body[data-stage="act4"] .sidebar-footer-logo {
   display: none;
 }
 
-#pointereventon{
+#pointereventson{
   pointer-events: auto;
 }
 
-#pointereventoff{
+#pointereventsoff{
   pointer-events: none;
 }
 
