@@ -120,7 +120,7 @@ export default function LandingContent() {
                     <div className='ticketbuttoncontent'>
                         <div className='desktop-only ticketbuttonheading'>Buy Tickets Now</div>
                         <p className="desktop-only">Sunday, March 15 @ 7PM <br/> Wiegand Gym </p>
-                        <h4 className=' mobile-only ticketbuttonheading' >Buy Tickets Now </h4>
+                        <h4 className=' mobile-only ticketbuttonheading' >Buy Tickets </h4>
                     </div>
                     <img className=" desktop-only assetshape" src="/asset cutout light.svg"></img>
                 </a>  

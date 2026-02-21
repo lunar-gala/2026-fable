@@ -100,11 +100,18 @@
   .mobile-only{
     display: block;
   }
+  .homeCell-content{
+    overflow:visible;
+  }
   
   .ticketbuttonheading{
+    position:absolute;
+    width:200%;
     font-size: 36px;
+    top:16px;
   }
   .buyticketsbutton{
+    overflow:visible;
   }
   .assetshape{
   }

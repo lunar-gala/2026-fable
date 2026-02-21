@@ -86,8 +86,7 @@ export default function AboutContent() {
                 <h2>LG: Fable is a story in four parts: Follow, Wander, Trace, and Discern.</h2>
             </div>            
             <div className='homeCell-content xl-cell c6'> 
-                <p>The show guides us through the conflict between our roots and our futures. Each line provides a perspective on what it means and
-how it feels to learn and grow.</p>
+                <p>The show guides us through the conflict between our roots and our futures. Each line provides a perspective on what it means and how it feels to learn and grow.</p>
             </div>             
             <div className='homeCell-content xs-cell c5'></div>
             <div className='homeCell-content xs-cell c4'> </div>

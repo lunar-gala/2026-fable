@@ -161,6 +161,9 @@
 
 .homeCell-content{
 }
+.headingAbout{
+  font-size:20px;
+}
 @media (max-width: 576px) {
   /*grid displaying/hiding*/
   /* type size */
