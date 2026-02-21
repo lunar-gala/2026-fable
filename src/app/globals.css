@@ -1389,7 +1389,9 @@ body[data-stage="act4"] .sidebar-footer-logo {
   margin-top: 0;
   height:100vh;
 }
-
+.navwordmark-mobile{
+  height:100%;
+}
 .navbar-constant{
   width:100%;
   height: var(--mobilenav-height);

@@ -77,15 +77,16 @@ export default function NavBar() {
         <div className=" off-white-bg navbar-constant rowGridNav">
             <div className=" mobilenav-xs-cell landingCell"></div>
             <div className="landingCell flex-constant ">
-              <a href="/">
-                <img src="/wordmarkstraight.svg" alt="Fable"></img>
+              <a href="/" id="pointereventson">
+                <img src="/wordmarkstraight.svg" alt="Fable" className="navwordmark-mobile"></img>
               </a>
-                <button type="button" onClick={handleClick}>
+                <button type="button" onClick={handleClick} id="pointereventson">
                     <img
                         src="/lightasset.svg"
                         alt=""
                         aria-hidden="true"
                         className="rotate90 navbar-cutout"
+                        id="pointereventson"
                     />   
                 </button>
             </div>
@@ -99,7 +100,7 @@ export default function NavBar() {
 
             {isVisible && (
                 <div className=" off-white-bg navbar-nav-bg">
-                    <nav className=" off-white-bg navbar-nav-bg" aria-label="Primary navigation">
+                    <nav className=" off-white-bg navbar-nav-bg" aria-label="Primary navigation" id="pointereventson">
                     {NAV_ITEMS.map((item) => (
                         <button
                         key={item}
