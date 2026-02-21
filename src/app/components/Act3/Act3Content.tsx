@@ -207,7 +207,7 @@ export default function Act3Content() {
                     <a href="/lines/act3?line=9" className='mobile-only' id="pointereventoff">
                         <LineButton name="EDEN" number={9} act={3} gradientDir="vertical" align="right" />
                     </a> 
-                    <a href="/lines/act3?line=10" className='mobile-only' id="pointereventoff">
+                    <a href="/lines/act3?line=10" className='mobile-only'id="pointereventoff">
                         <LineButton name="Omoide" number={10} act={3} gradientDir="horizontal" align="left" />
                     </a> 
                     <a href="/lines/act3?line=11" className='mobile-only' id="pointereventoff">

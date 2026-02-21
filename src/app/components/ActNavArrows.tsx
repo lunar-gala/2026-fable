@@ -31,8 +31,6 @@ interface ActNavArrowsProps {
 }
 
 export default function ActNavArrows({ stage }: ActNavArrowsProps) {
-  if (stage === Stage.Landing) return null;
-
   const isDark = stage === Stage.Act3 || stage === Stage.Act4;
   const darkClass = isDark ? " nav-arrow--dark" : "";
 

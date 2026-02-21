@@ -45,6 +45,24 @@ const animationBackwardFiles = [
   ["/shapes/a3toa4_final_L.json", "/shapes/a3toa4_final_R.json"], // 3, transition to act 4
 ];
 
+// When jumping directly to an act (e.g. from /people → Act II via sidebar), the
+// normal forward-index animation's last frame often has shapes that are invisible
+// or the wrong colour because of how the opacity layers are structured:
+//   a1toa2 last frame  → light-blue top layer animated out, dark-brown bottom visible
+//   a3_start last frame → black shapes fully cover white shapes on black bg
+//   a3toa4 last frame   → same issue
+//
+// This config selects a different animation file + frame for each act's "resting
+// state" that shows the shapes with correct colours/visibility.
+// frame: -1 means "last valid frame" (op − 1), any other number is a literal frame.
+const stageRestingConfig: Record<Stage, { index: number; frame: number }> = {
+  [Stage.Landing]: { index: 0, frame: -1 },
+  [Stage.Act1]:    { index: 2, frame: -1 },    // a1_start: both layers at opacity 100 by frame 90
+  [Stage.Act2]:    { index: 4, frame: 1 },     // a2_end: pink shapes at full opacity
+  [Stage.Act3]:    { index: 5, frame: -1 },    // a3_start: last frame — black filled shapes + white outlines fully visible on gradient bg
+  [Stage.Act4]:    { index: 6, frame: -1 },    // a3toa4_final: last frame — shapes in Act 4 final resting position
+};
+
 interface LottieAnimationData {
   op?: number; // out point (total frames in Lottie JSON)
   [key: string]: unknown;
@@ -64,8 +82,14 @@ function AssetAnimation({ stage }: AssetAnimationProps) {
   const [isLoaded, setIsLoaded] = useState(false);
   const isJumpRef = useRef(false); // true when jumping multiple stages (skip animation, show final frame)
 
+  // When navigating from another page, this ref stores the exact frame number
+  // to show.  null means "not an initial jump — use normal jump logic".
+  // This is set once during load and consumed (set back to null) after the
+  // first playback effect renders it.
+  const initialJumpFrameRef = useRef<number | null>(null);
+
   // use useRef for these constants; if defined outside component, will be populated again and results in duplicates
-  // refs are good for storing information that doesn’t affect the visual output of your component
+  // refs are good for storing information that doesn't affect the visual output of your component
   const animationForwardData = useRef<[LottieAnimationData | null, LottieAnimationData | null][]>([]);
   const animationBackwardData = useRef<[LottieAnimationData | null, LottieAnimationData | null][]>([]);
 
@@ -115,16 +139,27 @@ function AssetAnimation({ stage }: AssetAnimationProps) {
 
       // Set initial animation using the CURRENT stage (ref), not the stale closure value
       const currentStage = stageRef.current;
-      const stageIndex = stageForwardIndices[currentStage];
-      const [leftData, rightData] = forwardData[stageIndex];
 
-      // If we jumped to a non-landing stage (e.g. from another page), show the final frame
       if (currentStage !== Stage.Landing) {
+        // Jumping to a non-landing stage from another page.
+        // Use the resting-state config so shapes appear with the right colours.
+        const cfg = stageRestingConfig[currentStage];
+        const pair = forwardData[cfg.index];
+        const targetFrame = cfg.frame === -1
+          ? Math.max(0, (pair[0]?.op ?? 1) - 1)
+          : cfg.frame;
+
         isJumpRef.current = true;
+        initialJumpFrameRef.current = targetFrame;
+        prevStageRef.current = currentStage;
+        setAnimationPairs([{ left: pair[0], right: pair[1] }]);
+      } else {
+        const stageIndex = stageForwardIndices[currentStage];
+        const [leftData, rightData] = forwardData[stageIndex];
+        prevStageRef.current = currentStage;
+        setAnimationPairs([{ left: leftData, right: rightData }]);
       }
 
-      prevStageRef.current = currentStage;
-      setAnimationPairs([{ left: leftData, right: rightData }]);
       setCurrentIndex(0);
       setIsLoaded(true);
     };
@@ -150,6 +185,7 @@ function AssetAnimation({ stage }: AssetAnimationProps) {
     rightAnimRef.current?.destroy();
 
     const isJump = isJumpRef.current;
+    const initialFrame = initialJumpFrameRef.current; // snapshot before clearing
 
     // Deep-clone animation data before passing to Lottie, because lottie-web
     // mutates animationData in-place. Without cloning, reusing the same object
@@ -173,12 +209,15 @@ function AssetAnimation({ stage }: AssetAnimationProps) {
       leftAnimRef.current.addEventListener('complete', handleComplete);
 
       if (isJump) {
-        // Jump: show final frame immediately (last frame for forward, first frame for backward)
-        const targetFrame = shouldReverse ? 0 : leftOp;
+        // For initial-load jumps, use the pre-computed frame from initialJumpFrameRef.
+        // For scroll-based multi-stage jumps, use the original logic.
+        const targetFrame = initialFrame !== null
+          ? initialFrame
+          : (shouldReverse ? 0 : Math.max(0, leftOp - 1));
         leftAnimRef.current.goToAndStop(targetFrame, true);
       } else if (shouldReverse) {
         leftAnimRef.current.setDirection(-1);
-        leftAnimRef.current.goToAndPlay(leftOp, true);
+        leftAnimRef.current.goToAndPlay(Math.max(0, leftOp - 1), true);
       } else {
         leftAnimRef.current.setDirection(1);
         leftAnimRef.current.play();
@@ -199,15 +238,22 @@ function AssetAnimation({ stage }: AssetAnimationProps) {
       });
 
       if (isJump) {
-        const targetFrame = shouldReverse ? 0 : rightOp;
+        const targetFrame = initialFrame !== null
+          ? initialFrame
+          : (shouldReverse ? 0 : Math.max(0, rightOp - 1));
         rightAnimRef.current.goToAndStop(targetFrame, true);
       } else if (shouldReverse) {
         rightAnimRef.current.setDirection(-1);
-        rightAnimRef.current.goToAndPlay(rightOp, true);
+        rightAnimRef.current.goToAndPlay(Math.max(0, rightOp - 1), true);
       } else {
         rightAnimRef.current.setDirection(1);
         rightAnimRef.current.play();
       }
+    }
+
+    // Consume the initial jump frame so subsequent transitions use normal logic
+    if (initialFrame !== null) {
+      initialJumpFrameRef.current = null;
     }
 
     // Cleanup on unmount or before next effect run

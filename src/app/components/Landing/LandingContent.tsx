@@ -115,7 +115,7 @@ export default function LandingContent() {
             <div className='homeCell-content rectangle-half c3'></div>
             <div className='homeCell-content rectangle-small c4'></div>
             <div className='homeCell-content rectangle-small c5'></div>
-            <div className='homeCell-content-pointer rectangle-full c6' >
+            <div className='homeCell-content rectangle-full c6' id="pointereventon">
                  <a href="https://cglink.me/2c1/r1935471" className='buyticketsbutton' id="pointereventon">
                     <div className='ticketbuttoncontent'>
                         <div className='desktop-only ticketbuttonheading'>Buy Tickets Now</div>
@@ -125,7 +125,7 @@ export default function LandingContent() {
                     <img className=" desktop-only assetshape" src="/asset cutout light.svg"></img>
                 </a>  
             </div>            
-            <div className='homeCell-content-pointer rectangle-full c6' >
+            <div className='homeCell-content rectangle-full c6' id="pointereventon">
                  <a href="https://cglink.me/2c1/r1935471" className='mobile-only assetonlybutton' id="pointereventon">
                     <div className='w100h100 off-white-bg'></div>
                     <img className="assetshape" src="/asset cutout light.svg"></img>
