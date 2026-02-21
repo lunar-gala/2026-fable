@@ -192,17 +192,17 @@ export default function Act1Content() {
             <div className='homeCell-content m-cell c4'></div>
             <div className='homeCell-content l-cell c5'></div>
             <div className='homeCell-content xl-cell c6'>
-                 <div className='rectangle200percent flex0gapcol'>
-                    <a href="/lines/act1?line=1" className='mobile-only'>
+                 <div className='rectangle200percent flex0gapcol' id="pointereventoff">
+                    <a href="/lines/act1?line=1" className='mobile-only' id="pointereventoff">
                         <LineButton name="Frame 36" number={1} act={1} gradientDir="horizontal" align="left" />
                     </a>               
-                    <a href="/lines/act1?line=2" className='mobile-only'>
+                    <a href="/lines/act1?line=2" className='mobile-only' id="pointereventoff">
                         <LineButton name="Lustre" number={2} act={1} gradientDir="vertical" align="right" />
                     </a>                          
-                    <a href="/lines/act1?line=3" className='mobile-only'>
+                    <a href="/lines/act1?line=3" className='mobile-only' id="pointereventoff">
                         <LineButton name="Nurture in Layers" number={3} act={1} gradientDir="horizontal" align="left" />
                     </a>   
-                    <a href="/lines/act1?line=4" className='mobile-only'>
+                    <a href="/lines/act1?line=4" className='mobile-only' id="pointereventoff">
                         <LineButton name="Becoming" number={4} act={1} gradientDir="horizontal" align="right" />
                     </a>                                                                                                      
                  </div>                  

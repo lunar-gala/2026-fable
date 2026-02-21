@@ -203,17 +203,17 @@ export default function Act3Content() {
             <div className='homeCell-content s-cell c4'></div>
             <div className='homeCell-content xs-cell c5'></div>
             <div className='homeCell-content xs-cell c6'>
-                  <div className='rectangle200percent flex0gapcol'>
-                    <a href="/lines/act3?line=9" className='mobile-only'>
+                  <div className='rectangle200percent flex0gapcol' id="pointereventoff">
+                    <a href="/lines/act3?line=9" className='mobile-only' id="pointereventoff">
                         <LineButton name="EDEN" number={9} act={3} gradientDir="vertical" align="right" />
                     </a> 
-                    <a href="/lines/act3?line=10" className='mobile-only'>
+                    <a href="/lines/act3?line=10" className='mobile-only'id="pointereventoff">
                         <LineButton name="Omoide" number={10} act={3} gradientDir="horizontal" align="left" />
                     </a> 
-                    <a href="/lines/act3?line=11" className='mobile-only'>
+                    <a href="/lines/act3?line=11" className='mobile-only' id="pointereventoff">
                         <LineButton name="Jangal (Jun-gul)" number={11} act={3} gradientDir="horizontal" align="left" />
                     </a>  
-                    <a href="/lines/act3?line=12" className='mobile-only'>
+                    <a href="/lines/act3?line=12" className='mobile-only' id="pointereventoff">
                         <LineButton name="Faint Blossom" number={12} act={3} gradientDir="vertical" align="right" />
                     </a>                                                     
                 </div>                 

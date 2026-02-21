@@ -1449,7 +1449,13 @@ body[data-stage="act4"] .sidebar-footer-logo {
   display: none;
 }
 
+#pointereventon{
+  pointer-events: auto;
+}
 
+#pointereventoff{
+  pointer-events: none;
+}
 
 @media (max-width: 992px) { 
   /*grid displaying/hiding*/
