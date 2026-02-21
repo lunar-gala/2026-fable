@@ -26,7 +26,7 @@ const animationForwardFiles = [
   ["/shapes/a1toa2_L.json", "/shapes/a1toa2_R.json"], // 3, transition to act2 & act 2
   ["/shapes/a2_end_L.json", "/shapes/a2_end_R.json"], // 4, 2 end
   ["/shapes/a3_start_L.json", "/shapes/a3_start_R.json"], // 5, act3
-  ["/shapes/a3toa4_final_L.json", "/shapes/a3toa4_final_R.json"], // 6, transition to act 4
+  ["/shapes/a3toa4_L.json", "/shapes/a3toa4_R.json"], // 6, transition to act 4
 ];
 
 // Animation file indices when scrolling backward (up)
@@ -38,11 +38,12 @@ const stageBackwardIndices: Record<Stage, number> = {
   [Stage.Act4]: 3
 };
 
+// missing: a1toa2R, landing end
 const animationBackwardFiles = [
   ["/shapes/landing_end_L.json", "/shapes/landing_end_R.json"], // 0, landing
   ["/shapes/a1toa2_L.json", "/shapes/a1toa2_R.json"], // 1, transition to act2 & act 2
   ["/shapes/a2_end_L.json", "/shapes/a2_end_R.json"], // 2, 2 end
-  ["/shapes/a3toa4_final_L.json", "/shapes/a3toa4_final_R.json"], // 3, transition to act 4
+  ["/shapes/a3toa4_L.json", "/shapes/a3toa4_R.json"], // 3, transition to act 4
 ];
 
 // When jumping directly to an act (e.g. from /people → Act II via sidebar), the
