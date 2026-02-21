@@ -116,7 +116,7 @@ export default function LandingContent() {
             <div className='homeCell-content rectangle-small c4'></div>
             <div className='homeCell-content rectangle-small c5'></div>
             <div className='homeCell-content rectangle-full c6'>
-                 <a href="https://cglink.me/2c1/r1935471" className='buyticketsbutton'>
+                 <a href="https://cglink.me/2c1/r1935471" className='buyticketsbutton' style={{pointerEvents: 'auto'}}>
                     <div className='ticketbuttoncontent'>
                         <div className='desktop-only ticketbuttonheading'>Buy Tickets Now</div>
                         <p className="desktop-only">Sunday, March 15 @ 7PM <br/> Wiegand Gym </p>
@@ -126,7 +126,7 @@ export default function LandingContent() {
                 </a>  
             </div>            
             <div className='homeCell-content rectangle-full c6'>
-                 <a href="https://cglink.me/2c1/r1935471" className='mobile-only assetonlybutton'>
+                 <a href="https://cglink.me/2c1/r1935471" className='mobile-only assetonlybutton' style={{pointerEvents: 'auto'}}>
                     <div className='w100h100 off-white-bg'></div>
                     <img className="assetshape" src="/asset cutout light.svg"></img>
                 </a>                  
@@ -144,8 +144,13 @@ export default function LandingContent() {
             <div className='homeCell-content rectangle-half c3'></div>
             <div className='homeCell-content rectangle-small c4'></div>
             <div className='homeCell-content rectangle-small c5'></div>
-            <div className='homeCell-content rectangle-full c6'></div>            
-            <div className='homeCell-content rectangle-full c6'> </div>             
+            <div className='homeCell-content rectangle-full c6'>
+                 <div className='bottomAlignFlex mobile-only'>
+                    <p className="caption">Best viewed on desktop.</p>
+                </div>   
+            </div>            
+            <div className='homeCell-content rectangle-full c6'> 
+            </div>             
             <div className='homeCell-content rectangle-small c5'></div>
             <div className='homeCell-content rectangle-small c4'> </div>
             <div className='homeCell-content rectangle-half c3'> </div>
