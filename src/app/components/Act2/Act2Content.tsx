@@ -85,9 +85,10 @@ export default function Act2Content() {
             <div className='homeCell-content s-cell c3'></div>
             <div className='homeCell-content m-cell c4'></div>
             <div className='homeCell-content l-cell c5'>
-                <h3 className="content-act-label">ACT II</h3>
+                <h3 className="desktop-only content-act-label">ACT II</h3>
             </div>
             <div className='homeCell-content xl-cell c6'>
+                <h3 className="mobile-only content-act-label">ACT II</h3>
                 
             </div>
             

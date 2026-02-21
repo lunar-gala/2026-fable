@@ -14,42 +14,42 @@ export default function A3LinesContent({ lineName, lineTagline, lineDescription,
     <div className="grid100vh linesPageGrid">
       <div className="xs-row rowGridContent">
         <div className="homeCell-content xs-cell c1" />
-        <div className="homeCell-content xs-cell c3" />
-        <div className="homeCell-content l-cell c4" />
-        <div className="homeCell-content xs-cell c5" />
-        <div className="homeCell-content l-cell c6" />
+        <div className="homeCell-content xs-cell c2" />
+        <div className="homeCell-content l-cell c3" />
+        <div className="homeCell-content xs-cell c4" />
+        <div className="homeCell-content l-cell c5" />
         <div className="homeCell-content xs-cell c6" />
-        <div className="homeCell-content l-cell c6" />
-        <div className="homeCell-content xs-cell c6" />
-        <div className="homeCell-content l-cell c6" />
-        <div className="homeCell-content xs-cell c3" />
+        <div className="homeCell-content l-cell c5" />
+        <div className="homeCell-content xs-cell c4" />
+        <div className="homeCell-content l-cell c3" />
+        <div className="homeCell-content xs-cell c2" />
         <div className="homeCell-content xs-cell c1" />
       </div>
 
       <div className="xs-row rowGridContent">
         <div className="homeCell-content xs-cell c1" />
-        <div className="homeCell-content xs-cell c3" />
-        <div className="homeCell-content l-cell c4" />
-        <div className="homeCell-content xs-cell c5" />
-        <div className="homeCell-content l-cell c6" />
+        <div className="homeCell-content xs-cell c2" />
+        <div className="homeCell-content l-cell c3" />
+        <div className="homeCell-content xs-cell c4" />
+        <div className="homeCell-content l-cell c5" />
         <div className="homeCell-content xs-cell c6" />
-        <div className="homeCell-content l-cell c6" />
-        <div className="homeCell-content xs-cell c6" />
-        <div className="homeCell-content l-cell c6" />
-        <div className="homeCell-content xs-cell c3" />
+        <div className="homeCell-content l-cell c5" />
+        <div className="homeCell-content xs-cell c4" />
+        <div className="homeCell-content l-cell c3" />
+        <div className="homeCell-content xs-cell c2" />
         <div className="homeCell-content xs-cell c1" />
       </div>
 
       <div className="l-row rowGridContent">
         <div className="homeCell-content xs-cell c1" />
-        <div className="homeCell-content xs-cell c3" />
-        <div className="homeCell-content col2cell c4">
+        <div className="homeCell-content xs-cell c2" />
+        <div className="homeCell-content col2cell c3">
             <div className=" a1LineHeading">
               <h1>{lineName}</h1>
              <h4 className=" allcaps">{lineTagline}</h4>
             </div>
         </div>
-        <div className="homeCell-content xs-cell c6" />
+        <div className="homeCell-content xs-cell c4" />
         <div className="  homeCell-content l-cell c6">
           <div className="lineImgContainer">
             <img
@@ -59,16 +59,16 @@ export default function A3LinesContent({ lineName, lineTagline, lineDescription,
             />            
           </div>
         </div>
-        <div className="homeCell-content xs-cell c6" />
-        <div className="homeCell-content l-cell c6" />
-        <div className="homeCell-content xs-cell c3" />
+        <div className="homeCell-content xs-cell c4" />
+        <div className="homeCell-content l-cell c3" />
+        <div className="homeCell-content xs-cell c2" />
         <div className="homeCell-content xs-cell c1" />
       </div>
 
       <div className="xl-row rowGridContent">
         <div className="homeCell-content xs-cell c1" />
-        <div className="homeCell-content xs-cell c3" />
-        <div className="homeCell-content col2cell c4">
+        <div className="homeCell-content xs-cell c2" />
+        <div className="homeCell-content col2cell c3">
           <div className="lineImgContainer">
             <img
               src={`/line_images/${lineName}-2.png`}
@@ -77,8 +77,8 @@ export default function A3LinesContent({ lineName, lineTagline, lineDescription,
             />
           </div>
         </div>
-        <div className="homeCell-content xs-cell c6" />
-        <div className="homeCell-content l-cell c6" />
+        <div className="homeCell-content xs-cell c4" />
+        <div className="homeCell-content l-cell c5" />
         <div className="homeCell-content xs-cell c6" />
         <div className="  homeCell-content l-cell c6">
           <div className="spacer50"/>

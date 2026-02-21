@@ -151,6 +151,16 @@
     }
 }
 
+
+.gradient-grid>.xs-row.rowGrid{
+  height:1em;
+}
+.red{
+  background-color: red;
+}
+
+.homeCell-content{
+}
 @media (max-width: 576px) {
   /*grid displaying/hiding*/
   /* type size */
@@ -159,28 +169,8 @@
 @media (max-width: 768px) {
   /*grid displaying/hiding*/
   /* type size */
-
-.c3{
-    display: none;
-  }
-.c4{
-    display: none;
-  }
-.c5{
-    display: none;
-  }
-.c6{
-    display: none;
-  } 
-.c7{
-    display: none;
-  }  
-  .xs-cell.c8{
+  .xs-cell{
     width:5%;
-    background-color: red;
-  }
-  .m-cell.c9{
-    width:90%;
   }
 
 }
@@ -189,10 +179,4 @@
   /*grid displaying/hiding*/
   /* type size */
 
-.c1{
-    display: none;
-  }
-.c2{
-    display: none;
-  }
  }

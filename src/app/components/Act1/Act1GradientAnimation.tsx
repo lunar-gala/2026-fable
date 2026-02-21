@@ -239,7 +239,7 @@ export default function LandingAnimation() {
 */
 
     return (
-        <div className="gradient-grid" ref={gridRef}>
+        <div className="a1grid gradient-grid" ref={gridRef}>
             {rows.map((row, rowIdx) => (
                 <div className={`rowGrid ${row.rowClass}`} key={rowIdx}>
                     {row.cells.map((cell, cellIdx) => (                        

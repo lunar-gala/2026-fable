@@ -167,7 +167,7 @@ const mobileNextSizeWidthMap = {
     s2m:"12.5%",
     m2s:"6.25%",
     l2xs:"5%",
-    xl2xs:"5%",
+    xl2xs:"50%",
 };
 const sizeHeightMap = {
     xs2xl:"3%",

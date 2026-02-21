@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { useRouter, usePathname } from "next/navigation";
 
 const ACT_ITEMS = ["ACT I", "ACT II", "ACT III", "ACT IV"];
-const NAV_ITEMS = ["Lines", "Tickets", "People", "About"];
+const NAV_ITEMS = ["Tickets", "People", "About"];
 
 
 const SCROLL_TARGETS: Record<string, number> = {
@@ -27,7 +27,7 @@ export default function NavBar() {
 
   const handleNavigation = (item: string) => {
     const routes: Record<string, string> = {
-      Lines: "/lines",
+      /** Lines: "/lines", */
       Tickets: "https://cglink.me/2c1/r1935471",
       People: "/people",
       About: "/about",
@@ -68,7 +68,7 @@ export default function NavBar() {
   return (
     <div className={`navbar-nav-mobile`}>
 
-        <div className=" off-white-bg xs-row rowGridNav">
+        <div className=" off-white-bg xxs-row rowGridNav">
             <div className=" mobilenav-xs-cell landingCell"></div>
             <div className=" rectangle-200 landingCell"></div>
             <div className=" mobilenav-xs-cell landingCell"></div>
@@ -89,6 +89,11 @@ export default function NavBar() {
                     />   
                 </button>
             </div>
+            <div className=" mobilenav-xs-cell landingCell"></div>
+        </div>
+        <div className=" off-white-bg xxs-row rowGridNav">
+            <div className=" mobilenav-xs-cell landingCell"></div>
+            <div className=" rectangle-200 landingCell"></div>
             <div className=" mobilenav-xs-cell landingCell"></div>
         </div>
 

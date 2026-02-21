@@ -33,8 +33,11 @@ export default function Act4Content() {
             <div className='homeCell-content l-cell c2'></div>
             <div className='homeCell-content m-cell c3'></div>
             <div className='homeCell-content s-cell c4'></div>
-            <div className='homeCell-content xs-cell c5'></div>
-            <div className='homeCell-content xs-cell c6'></div>
+            <div className='homeCell-content xs-cell c5'>
+            </div>
+            <div className='homeCell-content xs-cell c6'>
+                <h3 className="mobile-only content-act-label" style={{ color: 'var(--off-white)' }}>ACT IV</h3>
+            </div>
             <div className='homeCell-content xs-cell c6'> </div>
             <div className='homeCell-content xs-cell c5'></div>
             <div className='homeCell-content s-cell c4'> </div>
@@ -56,7 +59,9 @@ export default function Act4Content() {
             <div className='homeCell-content m-cell c3'></div>
             <div className='homeCell-content s-cell c4'></div>
             <div className='homeCell-content xs-cell c5'></div>
-            <div className='homeCell-content xs-cell c6'></div>
+            <div className='homeCell-content xs-cell c6'>
+                <span className="mobile-only content-big-label" style={{ color: 'var(--off-white)' }}>Discern</span>
+            </div>
             <div className='homeCell-content xs-cell c6'> </div>
             <div className='homeCell-content xs-cell c5'></div>
             <div className='homeCell-content s-cell c4'> </div>

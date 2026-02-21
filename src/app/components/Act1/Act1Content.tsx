@@ -10,7 +10,7 @@ export default function Act1Content() {
 
   return (
     <>
-    <div className='gradient-grid'>
+    <div className='a1grid gradient-grid'>
         {/* Row 1: xs-row */}
         <div className='xs-row rowGridContent'>
             <div className='homeCell-content xs-cell c1'></div>
@@ -52,7 +52,9 @@ export default function Act1Content() {
             <div className='homeCell-content l-cell c5'></div>
             <div className='homeCell-content xl-cell c6'></div>
             <div className='homeCell-content xl-cell c6'></div>
-            <div className='homeCell-content l-cell c5'></div>
+            <div className='homeCell-content l-cell c5'>
+            
+            </div>
             <div className='homeCell-content m-cell c4'> </div>
             <div className='homeCell-content s-cell c3'> </div>
             <div className='homeCell-content xs-cell c2'></div>
@@ -68,9 +70,9 @@ export default function Act1Content() {
             <div className='homeCell-content l-cell c5'></div>
             <div className='homeCell-content xl-cell c6'></div>
             <div className='homeCell-content xl-cell c6'>
-            <a href="/lines/act1?line=1" className='desktop-only'>
-                <LineButton name="Frame 36" number={1} act={1} gradientDir="horizontal" align="left" />
-            </a>
+                <a href="/lines/act1?line=2" className='desktop-only'>
+                    <LineButton name="Lustre" number={2} act={1} gradientDir="vertical" align="right" />
+                </a>            
             </div>
             <div className='homeCell-content l-cell c5'></div>
             <div className='homeCell-content m-cell c4'> </div>
@@ -89,13 +91,14 @@ export default function Act1Content() {
             <div className='homeCell-content xl-cell c6'>
                 <h3 className="content-act-label">ACT I</h3>
             </div>
-            <div className='homeCell-content flex0gapcol xl-cell c6'> 
-              
-                <a href="/lines/act1?line=2" className='desktop-only'>
-                    <LineButton name="Lustre" number={2} act={1} gradientDir="vertical" align="right" />
-                </a>               
+            <div className='homeCell-content xl-cell c6'> 
+                         
             </div>
-            <div className='homeCell-content l-cell c5'></div>
+            <div className='homeCell-content l-cell c5'>
+                 <a href="/lines/act1?line=1" className='desktop-only'>
+                    <LineButton name="Frame 36" number={1} act={1} gradientDir="horizontal" align="left" />
+                </a>                  
+            </div>
             <div className='homeCell-content m-cell c4'> </div>
             <div className='homeCell-content s-cell c3'> </div>
             <div className='homeCell-content xs-cell c2'></div>
@@ -113,7 +116,9 @@ export default function Act1Content() {
             <div className='homeCell-content xl-cell c6'>
              <a href="/lines/act1?line=3" className='desktop-only'>
                 <LineButton name="Nurture in Layers" number={3} act={1} gradientDir="horizontal" align="left" />
-            </a>                
+            </a>  
+                     <span className="mobile-only content-big-label">Follow</span>
+                     
             </div>
             <div className='homeCell-content xl-cell c6'>
          
@@ -133,7 +138,7 @@ export default function Act1Content() {
             <div className='homeCell-content m-cell c4'></div>
             <div className='homeCell-content l-cell c5'></div>
             <div className='homeCell-content xl-cell c6'>
-                <span className="content-big-label">Follow</span>
+                <span className="desktop-only content-big-label">Follow</span>
             </div>
             <div className='homeCell-content xl-cell c6'> </div>
             <div className='homeCell-content l-cell c5'></div>
