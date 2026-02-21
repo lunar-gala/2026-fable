@@ -1,0 +1,148 @@
+.blue{
+    background-color: blue;
+}
+
+.flex0gapcol{
+    position:absolute;
+    bottom:0;
+    display: flex;
+    flex-direction: column;
+    gap:0px;
+}
+.homeCell-content{
+    overflow: visible;
+}
+
+.rowGridContent{
+    overflow: visible;
+}
+
+.a3-gradient-v0 {
+  height:100%;
+}
+
+.a3-gradient-v1 {
+    background: linear-gradient(180deg, #DFCDFE 25%, #E7303A 70%, #613B38 80%, #000 100%);
+    background-size: 100% 350%;
+    animation: a3-gradientmove 14s ease infinite;
+}
+
+.a3-gradient-v2 {
+    background: linear-gradient(180deg, #DFCDFE 10%, #E7303A 62.5%, #613B38 100%);
+    background-size: 100% 500%;
+    animation: a3-gradientmove 12s ease infinite;
+}
+
+.a3-gradient-v3 {
+    background: linear-gradient(180deg, #E7303A 20%, #000 80%);
+    background-size: 100% 200%;
+    animation: a3-gradientmove 11s ease infinite;
+}
+
+.a3-gradient-v4 {
+    background: linear-gradient(180deg, #DFCDFE 15%, #E7303A 40.5%,  #613B38 100%);
+    background-size: 100% 400%;
+    animation: a3-gradientmove 12s ease infinite;
+}
+
+.a3-gradient-v5 {
+    background: linear-gradient(90deg, #613B38 20%, #E7303A 40%, #DFCDFE 90%);
+    background-size: 400% 100%;
+    animation: a3-gradientmove-h 20s ease infinite;
+}
+
+.a3-gradient-v6 {
+    background: linear-gradient(90deg, #000 9.13%, #613B38 27%, #E7303A 75%, #DFCDFE 90%);
+    background-size: 400% 100%;
+    animation: a3-gradientmove-h 20s ease infinite;
+}
+
+.a3bg{
+  position: absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  z-index:-2;
+  background: black;
+  animation: bg-fade-in 1s ease;
+}
+
+@keyframes bg-fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes a3-gradientmove {
+    0% {
+        background-position: 0% 0%; 
+    }
+    50% {
+        background-position: 0% 100%; 
+    }
+    100% {
+        background-position: 0% 0%; 
+    }
+}
+
+@keyframes a3-gradientmove-h {
+    0% {
+        background-position: 0% 0%; 
+    }
+    50% {
+        background-position: 100% 0%; 
+    }
+    100% {
+        background-position: 0% 0%; 
+    }
+}
+
+.red{
+    background-color: red;
+}
+
+
+@media (max-width: 576px) {
+  /*grid displaying/hiding*/
+
+  /* type size */
+}
+
+@media (max-width: 768px) {
+   .line-button{
+    border:0.25px solid var(--off-white);
+   }
+   
+  /*grid displaying/hiding*/
+
+  .c3{
+    display: none;
+  }
+  .c4{
+    display: none;
+  }
+  .c5{
+    width: 5%;
+  }
+  .c6{
+    width: 50%;
+  }
+
+    .a3grid > .xl-row.rowGridContent{
+        height:3.125%;
+    }
+  /* type size */
+}
+
+@media (max-width: 992px) { 
+  /*grid displaying/hiding*/
+  .c1{
+    display: none;
+  }
+  .c2{
+    display: none;
+  }
+
+  /* type size */
+
+ }

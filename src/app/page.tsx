@@ -1,19 +1,36 @@
+"use client";
+
+import AboutContent from "./components/About/AboutContent";
+import AboutFull from "./components/About/AboutFull";
 import MainContent from "./components/MainContent";
 import NavBar from "./components/NavBar";
+import MobileNavBar from "./components/MobileNavBar";
+import PeopleContent from "./components/People/PeopleContent";
 import { COLORS } from "./constants";
+import React, { useState } from 'react';
+
 
 export default function Home() {
+  const [isMobile, setIsMobile] = React.useState(false);
+  React.useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
     <main
-      className="relative w-full"
       style={{ backgroundColor: COLORS.background }}
     >
-      {/*  <NavBar />  */}
-      <MainContent />
-      {/* First section - animation visible */}
-      <section className="h-screen" />
-      {/* Content below - animation fades out as you scroll here */}
-      <section className="h-screen" />
+      {isMobile ? <MobileNavBar /> : <NavBar />}
+      <div className="pageContent">
+        <MainContent />
+      </div>
+      {/* <div className="peopleContent"><PeopleContent /></div> */}
+    
     </main>
   );
 }

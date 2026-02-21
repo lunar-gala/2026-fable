@@ -1,0 +1,102 @@
+.a1gradient1{
+    background: linear-gradient(180deg, #B0D2DE 5%, #FFF 78%);
+    background-size: 100% 800px;
+    animation: gradientmove 8s ease infinite;
+}
+
+.a2gradient1{
+  background-clip: padding-box;
+  background: linear-gradient(180deg, #FFF 25%, #FF76A2 64.9%, #613B38 89.42%);  
+  background-size: 100% 1200px; 
+  animation: gradientmove 16s ease infinite;
+}
+
+.a3gradient1{
+    background: linear-gradient(180deg, #613B38 0%, #E7303A 39.9%, #DFCDFF 100%);
+    background-size: 100% 1000px;
+    animation: gradientmove 10s ease infinite;
+}
+
+.a3gradient2{
+    background: linear-gradient(180deg, #DFCDFE 14.9%, #E7303A 62.5%, #613B38 86.54%, #613B38 100%);
+    background-size: 100% 1480px;
+    animation: gradientmove 10s ease infinite;
+}
+
+.a4gradient1{
+    background: linear-gradient(180deg, #DFCDFF 0%, #FFF 89.9%, #B0D2DE 100%);
+    background-size: 100% 600px;
+        animation: gradientmove 10s ease infinite;
+
+}
+
+
+.allactgradient {
+  background: linear-gradient(
+    180deg,
+    #b0d2de 0%,
+    #FFF 10.58%,
+    #ff76a2 22.6%,
+    #613b38 30.29%,
+    #613b38 36.06%,
+    #e7303a 42.79%,
+    #dfcdff 57.69%,
+    #FFF 67.79%,
+    #b0d2de 88.15%,
+    #FFF 100%
+  );
+  background-size: 100% 2300px; /* needs to be after background declaration so that it doesn't get reset */
+    animation: gradientmove 30s ease infinite;
+
+}
+
+@keyframes gradientmove {
+    0% {
+        background-position: 0% 0%; 
+    }
+    50% {
+        background-position: 0% 100%; 
+    }
+    100% {
+        background-position: 0% 0%; 
+    }
+}
+
+.homeCell-content{
+}
+
+.rectangle-200{
+    width:100%;
+}
+
+
+@media (max-width: 992px) { 
+  /*grid displaying/hiding*/
+        .c1{
+            display: none;
+        }
+        .c2{
+            display: none;
+        } 
+  /* type size */
+
+ }
+
+ @media (max-width: 768px) {
+  /*grid displaying/hiding*/
+  /* type size */
+.c5{
+    width:5%;
+}
+.c3{
+    display: none;
+}
+.c4{
+    display: none;
+}
+}
+
+@media (max-width: 576px) {
+  /*grid displaying/hiding*/
+  /* type size */
+}

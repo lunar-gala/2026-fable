@@ -3,7 +3,10 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
-  --sidebar-width: 72px;
+  --sidebar-width: 3.75%;
+  --linesnav-height: 7.5%;
+  --mobilenav-height: 0.25px;
+  --label-font-size: 18px;
   --color-cream: #f5f2eb;
   --color-cream-light: #faf8f4;
   --color-blue-muted: #8fa4b8;
@@ -14,6 +17,14 @@
   --gradientAniHoverSpeed: 1s;
   --off-white: #f2efe5;
   --dark-brown: #332b2b;
+}
+
+
+.noto-serif-tc-300 {
+  font-family: "Noto Serif TC", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
 }
 
 @font-face {
@@ -33,7 +44,7 @@
   font-style: italic;
 }
 
-@theme inline {
+@theme inline{
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
@@ -58,6 +69,13 @@ body {
   --font-feature-display-condensed: 'FeatureDisplayCondensed', serif;
 }
 
+a:link, a:visited, a:hover, a:active {
+  text-decoration: none; /* Removes the underline */
+  color: inherit;        /* Inherits the color from the parent element */
+  cursor: pointer;       /* Keeps the pointer cursor on hover */
+  outline: none;         /* Removes the outline that appears on focus in some browsers */
+}
+
 .sidebar {
   position: fixed;
   left: 0;
@@ -65,132 +83,578 @@ body {
   bottom: 0;
   width: var(--sidebar-width);
   background: var(--color-cream-light);
-  border-right: 1px solid rgba(42, 36, 36, 0.08);
+  border-right: 1px solid rgba(42, 36, 36, 0.12);
   display: flex;
   flex-direction: column;
-  align-items: center;
-  padding: 24px 0;
+  align-items: stretch;
   z-index: 100;
 }
 
+/* FABLE wordmark — large italic, fills top portion of sidebar */
 .sidebar-logo {
   writing-mode: vertical-rl;
   text-orientation: mixed;
-  font-family: var(--font-display);
-  font-size: 28px;
+  font-family: var(--font-feature-display-condensed);
+  font-style: italic;
+  font-size: 32px;
   font-weight: 400;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.15em;
   color: var(--color-text);
-  margin-bottom: 40px;
-  cursor: pointer;
-  transition: opacity 0.3s ease;
-  background: transparent;
-  border: none;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid rgba(42, 36, 36, 0.12);
+  padding: 20px 0;
 }
 
-.sidebar-logo:hover {
-  opacity: 0.7;
+/* Act indicators — tiny labels grouped between FABLE and nav links */
+.sidebar-acts {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 8px 0;
+  gap: 2px;
+  border-bottom: 1px solid rgba(42, 36, 36, 0.12);
+}
+
+.sidebar-act-label {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  font-family: var(--font-aileron);
+  font-size: 7px;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-text);
+  opacity: 0.5;
+  padding: 2px 0;
 }
 
 .sidebar-nav {
   display: flex;
   flex-direction: column;
-  gap: 4px;
-  flex: 1;
+  align-items: stretch;
 }
 
-.nav-item {
-  position: relative;
+.sidebar-nav-item {
   writing-mode: vertical-rl;
   text-orientation: mixed;
-  font-family: var(--font-body);
-  font-size: 10px;
-  font-weight: 500;
-  letter-spacing: 0.08em;
+  font-family: var(--font-aileron);
+  font-size: 9px;
+  font-weight: 400;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--color-text-light);
-  padding: 16px 8px;
+  color: var(--color-text);
+  padding: 14px 0;
   cursor: pointer;
-  transition: all 0.3s ease;
-  display: flex;
-  align-items: center;
-  gap: 6px;
   background: transparent;
   border: none;
-}
-
-.nav-item:hover {
-  color: var(--color-text);
-}
-
-.nav-item.active {
-  color: var(--color-text);
-}
-
-.nav-bracket {
-  width: 12px;
-  height: 12px;
-  border: 1px solid currentColor;
-  border-radius: 0 0 0 4px;
-  border-top: none;
-  border-right: none;
-  opacity: 0.6;
+  border-bottom: 1px solid rgba(42, 36, 36, 0.12);
   transition: opacity 0.3s ease;
-}
-
-.nav-label {
-  transition: opacity 0.3s ease;
-}
-
-.nav-coming-soon {
-  position: absolute;
-  inset: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  writing-mode: vertical-rl;
-  text-orientation: mixed;
-  font-family: var(--font-body);
-  font-size: 10px;
-  font-weight: 500;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--color-text);
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  pointer-events: none;
 }
 
-.nav-item:hover .nav-label {
-  opacity: 0;
-}
-
-.nav-item:hover .nav-bracket,
-.nav-item.active:hover .nav-bracket {
-  opacity: 0;
-}
-
-.nav-item:hover .nav-coming-soon {
-  opacity: 1;
-}
-
-.nav-item.active .nav-bracket {
-  opacity: 1;
+.sidebar-nav-item:hover {
+  opacity: 0.6;
 }
 
 .sidebar-footer {
-  margin-top: auto;
+  padding: 12px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .sidebar-footer-logo {
-  font-family: var(--font-display);
-  font-size: 14px;
-  font-style: italic;
-  color: var(--color-text-light);
+  font-family: var(--font-aileron);
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-text);
   writing-mode: vertical-rl;
   text-orientation: mixed;
 }
 
+.pageContent{
+  display:block;
+  width:calc(100vw - var(--sidebar-width));
+  margin-left: var(--sidebar-width);
+  margin-top:  var(--mobilenav-height);
+  height:calc(100% - var(--mobilenav-height));
+  overflow:hidden;
+}
+
+.pageContentFixed{
+  left: var(--sidebar-width);
+}
+
+
+.animation-window{
+  left: var(--sidebar-width);
+  width:calc(100% - var(--sidebar-width));
+}
+.peopleContent{
+  width:calc(100% - var(--sidebar-width));
+  margin-left: var(--sidebar-width);
+}
+
+.fullPage{
+  width:100vw;
+  height:100%;
+}
+.red{
+  background-color: red;
+}
+/* New NavBar styles following nav_button.png design */
+.navbar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: var(--sidebar-width);
+  /* Create the double-vertical-border look (outer border on `.navbar`,
+     inner border on `.navbar-inner`) like the reference. */
+  padding: 0 4px;
+  z-index: 1000;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  overflow: hidden;
+}
+
+.navbar-light {
+  background-color: var(--off-white);
+  color: var(--dark-brown);
+  border-right: 0.5px solid var(--dark-brown);
+  border-left: 0.5px solid var(--dark-brown);
+}
+
+.navbar-dark {
+  background-color: #332b2b;
+  color: var(--off-white);
+  border-right: 0.5px solid var(--off-white);
+  border-left: 0.5px solid var(--off-white);
+}
+
+.navbar-inner {
+  width: 75%;
+  height: 100%;
+  margin: 0px auto 0px auto;
+  display: flex;
+  flex-direction: column;
+  border-left: 0.5px solid currentColor;
+  border-right: 0.5px solid currentColor;
+  overflow: hidden;
+}
+
+
+.navbar-row {
+  width: 100%;
+  border-top: 0.5px solid currentColor;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbar-logo {
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+  user-select: none;
+}
+
+.navbar-logo:hover {
+  opacity: 0.7;
+}
+
+.navbar-logo-row {
+  height: 120px;
+  border-top: none;
+  /* Any extra vertical space goes into the FABLE wordmark area (like the reference),
+     so we don't get a giant empty gap between About and the footer. */
+  flex: 1 1 auto;
+}
+
+.navbar-act-label {
+  writing-mode: horizontal-tb;
+  font-family: "aileron", sans-serif;
+  font-style: normal;
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  line-height: 1;
+  text-transform: uppercase;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.navbar-corner-row {
+  height: 48px;
+  padding: 0;
+}
+
+.navbar-act-row {
+  height: 44px;
+  position: relative;
+  transition: background 0.2s, opacity 0.2s;
+  background: transparent;
+  border-right: none;
+  border-left: none;
+  border-bottom: none;
+  color: inherit;
+  cursor: pointer;
+  padding: 0;
+}
+
+.navbar-act-row:hover {
+  opacity: 0.7;
+}
+
+.navbar-act-row--active {
+  background: rgba(51, 43, 43, 0.14);
+}
+
+.navbar-act-arrow {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 10px;
+  opacity: 0.8;
+}
+
+.navbar-link-arrow {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 10px;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.navbar-link-row--active .navbar-link-arrow {
+  opacity: 0.8;
+}
+
+.navbar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin-top: 0;
+}
+
+
+.navbar-link-row {
+  cursor: pointer;
+}
+
+.navbar-link-row {
+  height: 110px;
+  background: transparent;
+  border-right: none;
+  border-left: none;
+  border-bottom: none;
+  color: inherit;
+  cursor: pointer;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  gap: 0;
+  padding: 0;
+  align-items: stretch;
+  justify-items: stretch;
+  position: relative;
+}
+
+.navbar-nav-label {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  transform: rotate(180deg);
+  font-family: var(--font-feature-display-condensed);
+  font-style: normal;
+  font-size: var(--label-font-size);
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  line-height: 1;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbar-link-row--plain {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 55px;
+}
+
+.navbar-link-row:hover {
+  opacity: 0.7;
+}
+
+.navbar-cutout {
+  height: 100%;
+  flex-shrink: 0;
+  object-fit: contain;
+  display: inline-block;
+}
+
+.navbar-cutout-sm {
+  /* Top half of the nav cell: same footprint as the label area below. */
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+}
+
+/* Dark ornament SVGs are used directly via src swap, no filter needed */
+
+.navbar-footer-wordmark {
+  height: 32px;
+  width: 100%;
+  object-fit: contain;
+}
+
+.navbar-dark .navbar-footer-wordmark {
+  filter: brightness(0) invert(0.95);
+}
+
+.navbar-footer {
+  margin-top: 0;
+  height: 42px;
+  border-bottom: 1px solid currentColor;
+  flex-shrink: 0;
+}
+
+.navbar-footer-logo {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  font-family: var(--font-feature-display-condensed);
+  font-size: 34px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1;
+  display: none;
+}
+
+/* top navbar for lines pages */
+.navbar-top {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 48px;
+  background: var(--navbar-bg, #fff);
+  border-bottom: 1px solid var(--border-color, #eee);
+  display: flex;
+  align-items: center;
+  z-index: 1000;
+  padding-inline: 1rem;
+}
+
+/* Subnav: fixed to the top of each lines page */
+.navbar-top-act3 {
+  left: var(--sidebar-width);
+  top: 0;
+  width: calc(100% - var(--sidebar-width));
+  background: var(--color-cream, #faf8f4);
+  border-bottom: 0.5px solid var(--dark-brown);
+  border-left: 0.5px solid var(--dark-brown);
+  z-index: 1000;
+}
+
+.navbar-top-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.navbar-top-act3 .navbar-top-inner {
+  max-width: none;
+  justify-content: flex-start;
+  padding: 0;
+}
+
+.navbartop-logo {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+
+/* Top nav: 4 equal columns so Follow, Wander, Trace, Discern are evenly spaced */
+.navbar-top-act3 .navbar-top-nav {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  width: 100%;
+  min-width: 0;
+  gap: 0;
+  align-items: stretch;
+}
+
+.navbar-top-act3 .navbar-top-item-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  border-left: 0.5px solid var(--dark-brown);
+  min-width: 0;
+}
+
+.navbar-top-act3 .navbar-top-item-wrap:first-child {
+  border-left: none;
+}
+
+.navbar-top-act3 .navbar-top-link {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-feature-display-condensed), serif;
+  font-size: 1rem;
+  letter-spacing: 0.02em;
+  color: var(--dark-brown);
+}
+
+/* Top nav labels horizontal (not rotated like sidebar) */
+.navbar-top-act3 .navbar-top-link .navbar-nav-label {
+  writing-mode: horizontal-tb;
+  transform: none;
+  text-orientation: unset;
+}
+
+/* Expanded view: line numbers under current act only */
+/* Line numbers next to act title (not below) when current act */
+.navbar-top-act3 .navbar-top-item-wrap--has-sub {
+  flex-direction: row;
+  align-items: flex-end;
+  gap: 0.75rem;
+}
+
+.navbar-top-act3 .navbar-top-item-wrap--has-sub .navbar-top-link {
+  flex: 0 0 auto;
+}
+
+
+/* Act line number buttons — default state */
+.navbar-top-trace-num {
+  background: transparent;
+  border-left: 0.5px solid var(--dark-brown);
+  font-size: 0.75rem;
+  font-family: "aileron", sans-serif;
+  color: var(--dark-brown);
+  cursor: pointer;
+  opacity: 1;
+  width:36px;
+  transition: opacity 0.2s, background 0.2s;
+  border-radius: 0;
+}
+
+.navbar-top-trace-num:hover {
+  opacity: 1;
+}
+
+/* Pressed state: current line page */
+.navbar-top-trace-num--active {
+  opacity: 1;
+  background: var(--dark-brown);
+  color: var(--off-white);
+  border-color: rgba(51, 43, 43, 0.25);
+}
+
+/* Lines page: no black background anywhere */
+body.lines-page {
+  background: #fff;
+}
+
+body.lines-page .pageContent {
+  background: #fff;
+}
+
+/* Main content area below Act 3 top bar */
+.linesMain {
+  position: relative;
+  height: calc(100vh);
+  background: #fff;
+  overflow: hidden;
+  width: 100%;
+}
+
+/* Lines page grid: same 11 columns as proportions but with fr so row fits 100% (no horizontal scroll) */
+.linesPageGrid {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.linesMain .linesPageGrid.grid100vh {
+  height: 100%;
+}
+
+/* Lines page: flex row so .xs-cell, .l-cell, .xl-cell, .xxl-cell widths (%, from globals) apply.
+   Row can exceed 100% so we allow shrink; .xxl-cell and .xl-cell keep their width. */
+.linesPageGrid .rowGridContent {
+  display: flex;
+  flex-wrap: nowrap;
+  width: 100%;
+  min-width: 0;
+}
+
+.linesPageGrid .rowGridContent > * {
+  flex-shrink: 1;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+/* Preserve 51.5% / 50% for these cells so they aren’t shrunk by the flex row */
+.linesPageGrid .rowGridContent > .xxl-cell {
+  flex-shrink: 0;
+  width: 51.5%;
+}
+.linesPageGrid .rowGridContent > .xl-cell {
+  flex-shrink: 0;
+  width: 50%;
+}
+
+/* Span 2 columns (two 25% columns = 50%). Use with one fewer cell in that row. */
+.linesPageGrid .rowGridContent > .line-cell-span-2-cols {
+  flex-shrink: 0;
+  width: 50%;
+}
+
+.navbar-top-link {
+  background: none;
+  border: none;
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all 0.2s;
+}
+
+.navbar-top-link:hover {
+  background: var(--hover-bg, rgba(0,0,0,0.05));
+  color: var(--text-primary);
+}
+
+/* Animation window positioning to account for navbar */
+.animation-window {
+  position: fixed;
+  top: 0;
+  left: var(--sidebar-width);
+  width: calc(100% - var(--sidebar-width));
+  height: 100vh;
+  transition: opacity 0.1s ease-out;
+}
 
 .aileron {
   font-family: var(--font-aileron);
@@ -218,6 +682,32 @@ body {
   font-style: italic;
 }
 
+h1{
+  font-family: var(--font-feature-display-condensed);
+  font-size:98px;
+  line-height: 96%;
+  letter-spacing: -0.02em;
+}
+
+.shifth1flush{
+    margin-bottom:-0.1em;
+}
+
+
+.shifth4flushtop{
+    margin-top:-0.3em;
+    margin-left:0.2em;
+}
+
+.shiftpflushtop{
+    margin-top:-0.3em;
+    margin-left:0.2em;
+}
+
+.shifth4flushbottom{
+    margin-bottom:-0.35em;
+  }
+
 h2{
   font-family: var(--font-feature-display-condensed);
   font-size:40px;
@@ -225,11 +715,44 @@ h2{
   letter-spacing: -0.02em;
 }
 
+#chinesetypeh2{
+  font-family: "Noto Serif TC", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 96%;
+}
+
+
+h3{
+  font-size:32px;
+  line-height: 32px;
+}
+
+
+h4{
+  font-size:20px;
+  line-height:22px;
+}
+
 p{
   font-size: 1em;
   line-height: 1em;
 }
 
+.caption{
+  font-size: 12px;
+}
+
+.allcaps{
+  text-transform: uppercase;
+}
+
+.img16by9{
+  height:fit-content;
+  margin-left: auto;
+  margin-right: auto;
+}
 .center-container{
   display: flex;
   justify-content: center;
@@ -240,6 +763,13 @@ p{
   background-color: var(--off-white);
   color: var(--dark-brown);
 }
+.w100h100{
+  width: 100%;
+  height:100%;
+}
+
+.whitebg{
+  background-color: white;}
 
 /* Landing gradient animation */
 .gradient-grid {
@@ -247,28 +777,32 @@ p{
   height: 100%;
   display: flex;
   flex-direction: column;
+  overflow-x: hidden;
 }
 
-grid-content{
+.grid100vh{
+  width:100%;
+  height:100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.grid-content{
   position: absolute;
   top:0;
 }
 
 .rectangle-small {
   position:relative;
-  width: 12px;
-  flex-shrink: 0;
-
+  width:1.5%;
 }
 
 .rectangle-half {
-  position:relative;
-  width: 25%;
+  width:25%;
 }
 
 .rectangle-full {
-  position:relative;
-  width: 100%;
+  width:50%;
 }
 
 
@@ -295,74 +829,271 @@ grid-content{
 
 .rectangle-200 {
   position:relative;
-  width:200%;
-  flex-grow: 4;
+  width:100%;
   overflow: hidden;
+
 }
 
 .row24px {
-  height: 12px;
+  height: 1.5%;
   width: 100%;
   display: flex;
   flex-direction: row;
   gap: 0px;
-  flex-shrink: 0;
+  flex-grow:0;
   overflow: hidden;
+  border-top: 0.25px solid #332b2b;
 
 }
 
 .row48px {
-  height: 24px;
+  height: 3%;
   width: 100%;
   display: flex;
   flex-direction: row;
   gap: 0px;
-  flex-shrink: 0;
   overflow: hidden;
+  border-top: 0.25px solid #332b2b;
 }
 
 .row-eighth {
+  height: 6.25%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 0px;
+  overflow: hidden;
+  border-top: 0.25px solid #332b2b;
+}
+
+.row-quarter {
   height: 12.5%;
   width: 100%;
   display: flex;
   flex-direction: row;
   gap: 0px;
   overflow: hidden;
-
+  border-top: 0.25px solid #332b2b;
 }
 
-.row-quarter {
+.row-half {
   height: 25%;
   width: 100%;
   display: flex;
   flex-direction: row;
   gap: 0px;
+  flex-grow: 0;
   overflow: hidden;
+  border-top: 0.25px solid #332b2b;
 }
 
-.row-half {
+.row-full {
   height: 50%;
   width: 100%;
   display: flex;
   flex-direction: row;
   gap: 0px;
-  flex-grow: 0;
   overflow: hidden;
+  border-top: 0.25px solid #332b2b;
 }
 
-.row-full {
-  height: 100%;
+.rowGrid{
+  border-top: 0.125px solid #332b2b;
+  width: 100%;
+  height:100%;
+  display: flex;
+  flex-direction: row;
+  gap: 0px;
+}
+
+.rowGridContent{
   width: 100%;
   display: flex;
   flex-direction: row;
   gap: 0px;
+  flex-grow:0;
   overflow: hidden;
 }
 
-.landingCell{
-  border: 0.25px solid #332b2b;
+.bottomgradient{
+    position: absolute;
+    top:0;
+    width:100%;
+    height:100%;
+    z-index:-1;
+}
 
+.a3grid > .rowGrid{
+    border-top: 0.25px solid #FFFFFF;
+}
+
+.xs-cell{
+  width:1.5%;
+}
+.s-cell{
+  width:6.25%;
+}
+.m-cell{
+  width:12.5%;
+}
+.l-cell{
+  width:25%;
+}
+.xl-cell{
+  width:50%;
+}
+.xxl-cell{
+  width:51.5%;
+}
+
+.xxs-row{
+  height:1.5%;
+}
+
+.xs-row{
+  height:3.125%;
+}
+.s-row{
+  height:6.25%;
+}
+.m-row{
+  height:12.5%;
+}
+.l-row{
+  height:25%;
+}
+.xl-row{
+  height:50%;
+}
+
+.full-row{
+  height:100%;
+  width:100%;
+}
+
+
+
+.linesPageGrid .rowGridContent .homeCell-content {
+  min-height: 0;
+}
+
+/* Act 3 line page content typography */
+.line-title {
+  font-family: var(--font-feature-display-condensed), serif;
+  font-size: clamp(2.5rem, 5vw, 98px);
+  line-height: 0.96;
+  letter-spacing: -0.02em;
+  color: var(--dark-brown);
+  margin: 0 0 0.25em 0;
+}
+
+.line-tagline {
+  font-family: "aileron", sans-serif;
+  font-size: 0.75rem;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--dark-brown);
+  margin: 0;
+  line-height: 1.4;
+  opacity: 0.9;
+}
+
+.line-names {
+  font-family: "aileron", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  color: var(--dark-brown);
+  margin: 0;
+}
+
+.line-body {
+  font-family: "aileron", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--dark-brown);
+  margin: 0;
+  text-align: left;
+}
+
+
+.vh25-row{
+  height:25vh;
+}
+.vh50-row{
+  height:50vh;
+}
+.landingCell{
+  border-left: 0.125px solid #332b2b;
+  overflow: hidden;
   flex-grow: 0;
+}
+.landingCellWhite{
+  border-left: 0.125px solid #FFFFFF80;
+  overflow: hidden;
+  flex-grow: 0;
+}
+.homeCell-content{
+  position:relative;
+  pointer-events: none;
+  border: none;
+  overflow: visible;
+  flex-grow: 0;
+  display:flex;
+  justify-content: left;
+}
+
+.gridTextContent{
+    position: absolute;
+    top:var(--mobilenav-height);
+    z-index: 1000;
+    width: calc(100% - var(--sidebar-width));
+    left: var(--sidebar-width);
+    height: calc(100% - var(--mobilenav-height));
+    
+    pointer-events: none;
+}
+.actTextContent{
+    position: absolute;
+    top:0;
+    left:0;
+    z-index: 100;
+    width: 100%;
+    height:100%;
+    pointer-events: none; 
+}
+
+body.lines-page .gridTextContent {
+  background: transparent;
+}
+
+
+
+.flex4pxCol{
+  display: flex;
+  flex-direction: column;
+  gap:4px;
+}
+
+
+/* Content overlay rows must not clip text/buttons, and must NOT add borders (gradient grid provides those) */
+.gridTextContent .rowGrid,
+.gridTextContent .rowGridContent {
+    overflow: visible;
+    border-top: none;
+}
+
+.act-word {
+    font-family: var(--font-feature-display-condensed);
+    font-style: italic;
+    font-size: 12vw;
+    line-height: 1;
+    letter-spacing: -0.02em;
+    margin: 0;
+    overflow: visible;
+    white-space: nowrap;
 }
 
 .gradient-vertical {
@@ -390,8 +1121,8 @@ grid-content{
 
 @keyframes gradientmove1 {
   0% { background-position: 0% 0%; }
-  20% { background-position: 0% 0%; }
-  40% { background-position: 0% 16%; }
+  4% { background-position: 0% 0%; }
+  15% { background-position: 0% 16%; }
   60% { background-position: 0% 36%; }
   80% { background-position: 0% 58%; }
   100% { background-position: 0% 88%; }
@@ -405,8 +1136,8 @@ grid-content{
 
 @keyframes gradientmove2 {
   0% { background-position: 0% 0%; }
-  20% { background-position: 0% 6%; }
-  40% { background-position: 0% 28%; }
+  4% { background-position: 0% 6%; }
+  15% { background-position: 0% 28%; }
   60% { background-position: 0% 48%; }
   80% { background-position: 0% 58%; }
   100% { background-position: 0% 89%; }
@@ -420,8 +1151,8 @@ grid-content{
 
 @keyframes gradientmove3 {
   0% { background-position: 0% 0%; }
-  10% { background-position: 0% 36%; }
-  20% { background-position: 0% 16%; }
+  4% { background-position: 0% 36%; }
+  15% { background-position: 0% 16%; }
   40% { background-position: 0% 32%; }
   60% { background-position: 0% 62%; }
   80% { background-position: 0% 70%; }
@@ -437,69 +1168,392 @@ grid-content{
 
 @keyframes gradientmove4 {
   0% { background-position: 0% 0%; }
-  10% { background-position: 0% 60%; }
-  20% { background-position: 0% 20%; }
+  4% { background-position: 0% 60%; }
+  15% { background-position: 0% 20%; }
   40% { background-position: 0% 36%; }
   60% { background-position: 0% 56%; }
   80% { background-position: 0% 75%; }
   100% { background-position: 0% 89%; }
 }
 
-@media (max-width: 576px) {
-  /* type size */
-  h2{
-    font-size:14px;
-  }
-  p{
-    font-size: 12px;
-    line-height: 12px;
-  }
+
+/* Dark-theme sidebar for act3/act4 */
+body[data-stage="act3"] .sidebar,
+body[data-stage="act4"] .sidebar {
+  background: #0a0a0a;
+  border-right-color: rgba(255, 255, 255, 0.12);
 }
 
-@media (max-width: 768px) {
-  :root {
-    --sidebar-width: 56px;
-  }
-  /*nav*/
-  .sidebar-logo {
-    font-size: 20px;
-  }
-
-  .nav-item {
-    font-size: 9px;
-    padding: 12px 6px;
-  }
-  /*grid displaying/hiding*/
-  .c3{
-    display: none;
-  }
-  /* type size */
-  h2{
-    font-size:20px;
-  }
+body[data-stage="act3"] .sidebar-logo,
+body[data-stage="act4"] .sidebar-logo {
+  color: var(--off-white);
+  border-bottom-color: rgba(255, 255, 255, 0.12);
 }
+
+body[data-stage="act3"] .sidebar-acts,
+body[data-stage="act4"] .sidebar-acts {
+  border-bottom-color: rgba(255, 255, 255, 0.12);
+}
+
+body[data-stage="act3"] .sidebar-act-label,
+body[data-stage="act4"] .sidebar-act-label {
+  color: var(--off-white);
+}
+
+body[data-stage="act3"] .sidebar-nav-item,
+body[data-stage="act4"] .sidebar-nav-item {
+  color: var(--off-white);
+  border-bottom-color: rgba(255, 255, 255, 0.12);
+}
+
+body[data-stage="act3"] .sidebar-footer-logo,
+body[data-stage="act4"] .sidebar-footer-logo {
+  color: var(--off-white);
+}
+
+/* Nav arrows */
+.nav-arrow {
+  position: fixed;
+  top: 50%;
+  z-index: 101;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  opacity: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.nav-arrow-icon {
+  width: 18px;
+  height: auto;
+  display: block;
+}
+
+.nav-arrow-icon-left {
+  transform: scaleX(-1);
+}
+
+.nav-arrow-label {
+  font-family: "aileron", sans-serif;
+  font-size: 8px;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  line-height: 1;
+  display: block;
+}
+
+/* Content page labels */
+.content-act-label {
+  font-family: "aileron", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  text-transform: uppercase;
+  line-height: 1;
+  pointer-events: none;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.content-big-label {
+  font-family: var(--font-feature-display-condensed);
+  font-style: normal;
+  font-weight: 400;
+  font-synthesis: none;
+  font-size: 7vw;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  margin: 0;
+  pointer-events: none;
+  position: absolute;
+  bottom: -0.1em;
+  left: 0;
+}
+
+/* Dark act colors for labels (acts 3,4) */
+.nav-arrow--dark .nav-arrow-icon {
+  filter: brightness(0) invert(0.95);
+}
+
+.nav-arrow--dark .nav-arrow-label {
+  color: var(--off-white);
+}
+
+.nav-arrow-left {
+  left: calc(var(--sidebar-width) + 12px);
+  transform: translateY(-50%);
+}
+
+.nav-arrow-right {
+  right: 12px;
+  transform: translateY(-50%);
+}
+
+/* Inline nav arrows — embedded inside grid cells */
+.nav-arrow-inline {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+  white-space: nowrap;
+}
+
+.nav-arrow-inline:hover {
+  opacity: 1;
+}
+
+.nav-arrow-inline-icon {
+  font-size: 8px;
+  line-height: 1;
+  display: block;
+  letter-spacing: -0.05em;
+}
+
+.nav-arrow-inline-label {
+  font-family: "aileron", sans-serif;
+  font-size: 6px;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  line-height: 1;
+  display: block;
+}
+
+/*mobile nav bar classes*/
+.navbar-mobile {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  z-index: 5000;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  overflow: hidden;
+} 
+.flex0gapcol{
+  display: flex;
+  flex-direction: column;
+  gap:0px;
+}
+.rectangle200percent{
+  width:200%;
+}
+.red{
+  background-color: red;
+}
+.rotate90{
+  rotate:90deg;
+}
+
+.mobile-nav-row{
+  height:10vh;
+  display: flex;
+  text-align: left;
+  justify-content:flex-start;
+}
+
+.navbar-nav-bg{
+  height:100%;
+}
+
+.navbar-top-mobile{
+  display: flex;
+  flex-direction: column;
+  gap: 0;  
+  height:100%;
+}
+
+.navbar-nav-mobile {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 100vw;
+  z-index: 3000;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin-top: 0;
+  height:100vh;
+}
+
+.navbar-constant{
+  width:100%;
+  height: var(--mobilenav-height);
+  position:relative;
+}
+
+.mobilenav-xs-cell{
+  width:5%;
+}
+
+.flex-constant{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width:100%;
+  height:100%;
+}
+
+.rowGridNav{
+  border-top: 0.125px solid #332b2b;
+  border-bottom: 0.125px solid #332b2b;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 0px;
+}
+
+.navbar-nav-label-mobile {
+  font-family: var(--font-feature-display-condensed);
+  font-style: normal;
+  font-size: var(--label-font-size);
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  line-height: 1;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.red{
+  background-color: red;
+}
+.green{
+  background-color: green;
+}
+.blue{
+  background-color: blue;
+}
+
+.mobile-only{
+  display: none;
+}
+
+
 
 @media (max-width: 992px) { 
   /*grid displaying/hiding*/
-  .c1{
-    display: none;
-  }
-  .c2{
-    display: none;
-  }
   /* type size */
+  h1{
+    font-size:64px;
+  }
   h2{
     font-size:32px;
   }
 
+  
  }
 
- .homeCell-content{
-  position:relative;
-  pointer-events: none;
-  border: none;
-  overflow: visible;
-  flex-grow: 0;
-  display:flex;
-  justify-content: left;
+ 
+@media (max-width: 768px) {
+  :root {
+    --sidebar-width: 1px;
+    --mobilenav-height: 7.5%;
+  }
+  .gridTextContent{
+    top:0;
+  
+  }
+
+  .pageContent{
+    position:relative;
+    display:block;
+    margin-top: calc(var(--mobilenav-height)*2 );
+    height: calc(100vh - var(--mobilenav-height)*2 );   
+  }
+   
+  /*nav*/
+  .navbar{
+    display: none;
+  } 
+  .desktop-only{
+    display: none;
+  }
+  .mobile-only{
+    display: block;
+  }
+ /* 
+  .sidebar-logo {
+    font-size: 20px;
+  }
+
+  .sidebar-nav-item {
+    font-size: 8px;
+    padding: 10px 0;
+  }
+
+  /* navbar responsive 
+  .navbar-logo {
+    font-size: 34px;
+  }
+
+  .navbar-logo-row {
+    height: 110px;
+  }
+
+  .navbar-corner-row {
+    height: 40px;
+  }
+
+  .navbar-act-row {
+    height: 30px;
+  }
+
+  .navbar-act-label {
+    font-size: 6px;
+  }
+
+  .navbar-link-row {
+    height: 110px;
+    gap: 0;
+  }
+
+  .navbar-nav-label {
+    font-size: var(--label-font-size);
+  }
+
+  .navbar-cutout-sm {
+    width: 100%;
+    height: 100%;
+  }
+
+  .navbar-footer {
+    height: 40px;
+  }
+
+  .navbar-footer-wordmark {
+    height: 28px;
+  }
+  */
+
+  /*grid displaying/hiding*/
+  /* type size */
+  h1{
+    font-size:36px;
+  }  
+  h2{
+    font-size:24px;
+  }
+}
+
+@media (max-width: 576px) {
+  :root {
+    --sidebar-width: 1px;
+  }
+  /*grid displaying/hiding*/
+
 }
