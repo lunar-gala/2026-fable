@@ -1,5 +1,7 @@
 import LinepgFull from "@/app/components/Line page templates/A1LinesFull";
 import NavBar from "@/app/components/NavBar";
+import { Suspense } from 'react'
+
 /**import Act3StageSetter from "./Act3StageSetter"; 
  */
 export default function A1LinePage() {
@@ -7,9 +9,11 @@ export default function A1LinePage() {
     <>
       <div className="pageContent">
         <NavBar />
-        <div className="linesMain">
-          <LinepgFull />
-        </div>
+        <Suspense>
+          <div className="linesMain">
+            <LinepgFull />
+          </div>         
+        </Suspense>
       </div>
     </>
 

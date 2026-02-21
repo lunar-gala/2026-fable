@@ -14,7 +14,7 @@ export default function Act4Content() {
             <div className='homeCell-content xl-cell c1'></div>
             <div className='homeCell-content l-cell c2'></div>
             <div className='homeCell-content m-cell c3'>
-                <h3 className="content-act-label" style={{ color: 'var(--off-white)' }}>ACT IV</h3>
+                <h3 className="desktop-only content-act-label" style={{ color: 'var(--off-white)' }}>ACT IV</h3>
             </div>
             <div className='homeCell-content s-cell c4'></div>
             <div className='homeCell-content xs-cell c5'></div>
@@ -39,13 +39,13 @@ export default function Act4Content() {
             <div className='homeCell-content xs-cell c5'></div>
             <div className='homeCell-content s-cell c4'> </div>
             <div className='homeCell-content m-cell c3'>
-                <a href="/lines/act4?line=15">
+                <a href="/lines/act4?line=15" className="desktop-only">
                     <LineButton name="Vestige" number={15} act={4} gradientDir="horizontal" align="left" verticalAlign="top" />
                  </a>                 
             </div>
             <div className='homeCell-content l-cell c2'></div>
             <div className='homeCell-content xl-cell c1'>
-                <span className="content-big-label" style={{ color: 'var(--off-white)' }}>Discern</span>
+                <span className="desktop-only content-big-label" style={{ color: 'var(--off-white)' }}>Discern</span>
             </div>
         </div>
 
@@ -69,7 +69,7 @@ export default function Act4Content() {
         <div className='s-row rowGridContent'>
             <div className='homeCell-content xl-cell c1'></div>
             <div className='homeCell-content l-cell c2'>
-                 <a href="/lines/act4?line=14">
+                 <a href="/lines/act4?line=14" className="desktop-only">
                 <LineButton name="Lethe" number={14} act={4} gradientDir="horizontal" align="left" />
                  </a>                  
             </div>
@@ -170,7 +170,7 @@ export default function Act4Content() {
             <div className='homeCell-content xl-cell c1'></div>
             <div className='homeCell-content l-cell c2'></div>
             <div className='homeCell-content m-cell c3'>
-                <a href="/lines/act4?line=16">
+                <a href="/lines/act4?line=16" className="desktop-only">
                 <LineButton name="Persistence" number={16} act={4} gradientDir="horizontal" align="right" />
                  </a>                  
             </div>
@@ -192,17 +192,35 @@ export default function Act4Content() {
             <div className='homeCell-content m-cell c3'></div>
             <div className='homeCell-content s-cell c4'></div>
             <div className='homeCell-content xs-cell c5'></div>
-            <div className='homeCell-content xs-cell c6'></div>
+            <div className='homeCell-content xs-cell c6'>
+                      <div className='rectangle200percent flex0gapcol'>
+                        <a href="/lines/act4?line=13" className="mobile-only">
+                            <LineButton name="Echo" number={13} act={4} gradientDir="horizontal" align="left" />
+                        </a>  
+                        <a href="/lines/act4?line=14" className="mobile-only">
+                            <LineButton name="Lethe" number={14} act={4} gradientDir="vertical" align="left" />
+                        </a>   
+                        <a href="/lines/act4?line=15" className="mobile-only">
+                            <LineButton name="Vestige" number={15} act={4} gradientDir="horizontal" align="left" verticalAlign="top" />
+                        </a>                                                    
+                        <a href="/lines/act4?line=16" className="mobile-only">
+                            <LineButton name="Persistence" number={16} act={4} gradientDir="horizontal" align="right" />
+                        </a>                         
+                        <a href="/lines/act4?line=17" className="mobile-only">
+                            <LineButton name="Zamaan" number={17} act={4} gradientDir="vertical" align="right" />
+                        </a>                                                   
+                    </div>                  
+            </div>
             <div className='homeCell-content xs-cell c6'> </div>
             <div className='homeCell-content xs-cell c5'></div>
             <div className='homeCell-content s-cell c4'> </div>
             <div className='homeCell-content m-cell c3'> </div>
             <div className='homeCell-content l-cell c2'></div>
             <div className='homeCell-content xl-cell c1'>
-                <a href="/lines/act4?line=13">
+                <a href="/lines/act4?line=13" className="desktop-only">
                 <LineButton name="Echo" number={13} act={4} gradientDir="horizontal" align="left" />
                  </a>                  
-                           </div>
+            </div>
         </div>
 
         {/* Row 12: xl-row */}
@@ -212,13 +230,14 @@ export default function Act4Content() {
             <div className='homeCell-content m-cell c3'></div>
             <div className='homeCell-content s-cell c4'></div>
             <div className='homeCell-content xs-cell c5'></div>
-            <div className='homeCell-content xs-cell c6'></div>
+            <div className='homeCell-content xs-cell c6'>            
+            </div>
             <div className='homeCell-content xs-cell c6'> </div>
             <div className='homeCell-content xs-cell c5'></div>
             <div className='homeCell-content s-cell c4'> </div>
             <div className='homeCell-content m-cell c3'> </div>
             <div className='homeCell-content l-cell c2'>
-                <a href="/lines/act4?line=17">
+                <a href="/lines/act4?line=17" className="desktop-only">
                 <LineButton name="Zamaan" number={17} act={4} gradientDir="vertical" align="right" />
                  </a>  
             </div>

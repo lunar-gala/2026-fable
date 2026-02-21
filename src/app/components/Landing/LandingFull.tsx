@@ -10,9 +10,23 @@ export default function LandingFull() {
   const contentOpacity = useTransform(scrollYProgress, [0.10, 0.12], [1, 0]);
 
   return (
-    <>
-      <motion.div className="actTextContent" style={{ opacity: contentOpacity }} ><LandingContent/></motion.div>
-      <LandingAnimation/>
-    </>
+    <div style={{ position: "relative", width: "100%", height: "100%" }}>
+      <motion.div
+        className="actTextContent"
+      >
+        <LandingContent />
+      </motion.div>
+      <div
+        style={{
+          position: "absolute",
+          top: 0,
+          left: 0,
+          width: "100%",
+          height: "100%",
+        }}
+      >
+        <LandingAnimation />
+      </div>
+    </div>
   );
 }

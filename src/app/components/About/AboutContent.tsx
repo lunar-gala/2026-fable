@@ -105,6 +105,7 @@ how it feels to learn and grow.</p>
             <div className='homeCell-content rectangle-200 c6'>
                 <img src="/about-2.gif" alt="placeholder" className='img16by9'/>
             </div>
+            <div className='homeCell-content xs-cell c5'></div>
             <div className='homeCell-content xs-cell c4'> </div>
             <div className='homeCell-content l-cell c3'> </div>
             <div className='homeCell-content xs-cell c2'></div>          
@@ -171,6 +172,7 @@ worlds.</h2>
             <div className='homeCell-content rectangle-200 c6'>
                 <img src="/about-1.gif" alt="placeholder" className='img16by9'/>
             </div>
+            <div className='homeCell-content xs-cell c5'></div>    
             <div className='homeCell-content xs-cell c4'> </div>
             <div className='homeCell-content l-cell c3'> </div>
             <div className='homeCell-content xs-cell c2'></div>          

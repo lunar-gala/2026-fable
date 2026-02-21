@@ -4,7 +4,6 @@ import A4LinesContent from "@/app/components/Line page templates/A4LinesContent"
 import LinePageGrid from "@/app/components/Line page templates/LinePageGrid";
 import LinesNav from "@/app/components/Line page templates/LinesNav";
 import "@/app/components/Line page templates/linespages.css";
-import TopNavBar from "@/app/components/Act 3 Line/TopNavBar";
 
 
 
@@ -48,7 +47,7 @@ export default function A4LinesFull() {
       lineDesigners: "Aziza Norkulova",
     },   
   ];
-  const content = lineContent[(lineNumber - 3) % lineContent.length];
+  const content = lineContent[(lineNumber +2) % lineContent.length];
 /**
   lineName: string;
   lineTagline: string;

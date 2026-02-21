@@ -48,3 +48,38 @@
         background-position: 0% 0%; 
     }
 }
+
+
+@media (max-width: 576px) {
+  /*grid displaying/hiding*/
+  /* type size */
+}
+
+@media (max-width: 768px) {
+  /*grid displaying/hiding*/
+  .xl-row.rowGridContent{
+    height:50%;
+  }
+  .l-row.rowGridContent{
+    height:25%;
+  }
+  .c3{
+
+    display: none;
+  }
+  .c4{
+    display: none;
+  }  
+  /* type size */
+}
+
+@media (max-width: 992px) { 
+  /*grid displaying/hiding*/
+  /* type size */
+  .c1{
+    display: none;
+  }
+  .c2{
+    display: none;
+  }
+ }

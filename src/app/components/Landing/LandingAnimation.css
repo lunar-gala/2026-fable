@@ -9,6 +9,7 @@
   pointer-events: none;
 }
 
+
 .assetAnimation-left {
   position: absolute;
   left: 0;
@@ -47,8 +48,10 @@
   justify-content: space-between;
   pointer-events: auto;
 }
+
 .ticketbuttoncontent{
   padding-left:1em;
+  padding-top:4px;
   width:100%;
   height:calc(100% - 1px);
   display: flex;
@@ -65,6 +68,20 @@
 }
 
 
+.homeCell-content.rectangle-full{
+  overflow: hidden;
+}
+
+
+.mobile-only{
+  display: none;
+}
+
+.desktop-only{  
+}
+
+
+
 @media (max-width: 576px) {
   /*grid displaying/hiding*/
 
@@ -72,18 +89,73 @@
 
 @media (max-width: 768px) {
   :root {
-    --sidebar-width: 40px;
+    --sidebar-width: 1px;
   }
   .assetAnimation{
     display: none;
   }
+  .wordmarkContainer{
+    display:none;
+  }
+  .mobile-only{
+    display: block;
+  }
+  
+  .ticketbuttonheading{
+    font-size: 36px;
+  }
+  .buyticketsbutton{
+  }
+  .assetshape{
+  }
+  .bottomAlignFlex{
+    width:100%;
+    height:100%;
+    display: flex;
+    align-items: flex-end;
+  }
+  .topAlignFlex{
+    width:100%;
+    height:100%;
+    display: flex;
+    align-items: flex-start;
 
-
+  }
+  .assetonlybutton{
+    width:100%;
+    display: flex;
+    gap:0px;
+    flex-direction: row;
+    justify-content: end;
+  }
+  .desktop-only{
+    display: none;
+  }
+  .content-big-label{
+    font-size: 5em;
+  }
+  .landing >.xl-row.rowGrid{
+    height:50%;
+  }
   /*grid displaying/hiding*/
+ .c3{
+    display: none;
+  }
+  .c4{
+    display: none;
+  } 
+
 }
 
 @media (max-width: 992px) { 
   /*grid displaying/hiding*/
   /* type size */
-
+ .c1{
+    display: none;
+  }
+  .c2{
+    display: none;
+  }
  }
+
+ 

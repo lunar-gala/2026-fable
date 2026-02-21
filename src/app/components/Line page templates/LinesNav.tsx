@@ -85,8 +85,8 @@ export default function LinesNav() {
             <div className="landingCell xs-cell-navcontent" />
             <div className="rowcontent w100">
                 {ACTS.map((act) => (
-                    <>
-                        <div key={act.label} className="navlinebutton rowcontent">
+                    <div key={act.label} className="navlinebutton rowcontent">
+                        <div  className="navlinebutton">
                             <button
                             type="button"
                             className="landingCell "
@@ -111,9 +111,8 @@ export default function LinesNav() {
                             </div>
                             )}
                         </div> 
-                         <div className="landingCell xs-cell-nav" />
-                 
-                    </>
+                        <div className="landingCell xs-cell-nav" />           
+                    </div>
                 ))}
             </div>
             <div className="landingCell xs-cell-navcontent" />

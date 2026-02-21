@@ -1,5 +1,6 @@
 "use client";
 import './act1Animation.css';
+import '../Landing/LandingAnimation.css';
 import LineButton from '../LineButton';
 
 // for the actual content on the pg (countdown, info, etc),
@@ -67,7 +68,7 @@ export default function Act1Content() {
             <div className='homeCell-content l-cell c5'></div>
             <div className='homeCell-content xl-cell c6'></div>
             <div className='homeCell-content xl-cell c6'>
-            <a href="/lines/act1?line=1">
+            <a href="/lines/act1?line=1" className='desktop-only'>
                 <LineButton name="Frame 36" number={1} act={1} gradientDir="horizontal" align="left" />
             </a>
             </div>
@@ -88,10 +89,11 @@ export default function Act1Content() {
             <div className='homeCell-content xl-cell c6'>
                 <h3 className="content-act-label">ACT I</h3>
             </div>
-            <div className='homeCell-content xl-cell c6'> 
-             <a href="/lines/act1?line=2">
-                <LineButton name="Lustre" number={2} act={1} gradientDir="vertical" align="right" />
-            </a>               
+            <div className='homeCell-content flex0gapcol xl-cell c6'> 
+              
+                <a href="/lines/act1?line=2" className='desktop-only'>
+                    <LineButton name="Lustre" number={2} act={1} gradientDir="vertical" align="right" />
+                </a>               
             </div>
             <div className='homeCell-content l-cell c5'></div>
             <div className='homeCell-content m-cell c4'> </div>
@@ -109,11 +111,13 @@ export default function Act1Content() {
             <div className='homeCell-content l-cell c5'></div>
    
             <div className='homeCell-content xl-cell c6'>
-             <a href="/lines/act1?line=3">
+             <a href="/lines/act1?line=3" className='desktop-only'>
                 <LineButton name="Nurture in Layers" number={3} act={1} gradientDir="horizontal" align="left" />
             </a>                
             </div>
-            <div className='homeCell-content xl-cell c6'> </div>
+            <div className='homeCell-content xl-cell c6'>
+         
+            </div>
             <div className='homeCell-content l-cell c5'></div>
             <div className='homeCell-content m-cell c4'> </div>
             <div className='homeCell-content s-cell c3'> </div>
@@ -147,7 +151,7 @@ export default function Act1Content() {
             <div className='homeCell-content m-cell c4'></div>
             <div className='homeCell-content l-cell c5'></div>
             <div className='homeCell-content xl-cell c6'>
-             <a href="/lines/act1?line=4">
+             <a href="/lines/act1?line=4" className='desktop-only'>
                 <LineButton name="Becoming" number={4} act={1} gradientDir="horizontal" align="right" />
             </a> 
             </div>
@@ -182,7 +186,22 @@ export default function Act1Content() {
             <div className='homeCell-content s-cell c3'></div>
             <div className='homeCell-content m-cell c4'></div>
             <div className='homeCell-content l-cell c5'></div>
-            <div className='homeCell-content xl-cell c6'></div>
+            <div className='homeCell-content xl-cell c6'>
+                 <div className='rectangle200percent flex0gapcol'>
+                    <a href="/lines/act1?line=1" className='mobile-only'>
+                        <LineButton name="Frame 36" number={1} act={1} gradientDir="horizontal" align="left" />
+                    </a>               
+                    <a href="/lines/act1?line=2" className='mobile-only'>
+                        <LineButton name="Lustre" number={2} act={1} gradientDir="vertical" align="right" />
+                    </a>                          
+                    <a href="/lines/act1?line=3" className='mobile-only'>
+                        <LineButton name="Nurture in Layers" number={3} act={1} gradientDir="horizontal" align="left" />
+                    </a>   
+                    <a href="/lines/act1?line=4" className='mobile-only'>
+                        <LineButton name="Becoming" number={4} act={1} gradientDir="horizontal" align="right" />
+                    </a>                                                                                                      
+                 </div>                  
+            </div>
             <div className='homeCell-content xl-cell c6'> </div>
             <div className='homeCell-content l-cell c5'></div>
             <div className='homeCell-content m-cell c4'> </div>

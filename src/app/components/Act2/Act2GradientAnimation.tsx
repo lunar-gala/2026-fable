@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import { motion, useScroll, useTransform } from "motion/react";
 import '../Landing/LandingAnimation.css';
 import './act2Animation.css';
@@ -153,7 +153,22 @@ const nextSizeWidthMap = {
     l2xs:"1.5%",
     xl2xs:"1.5%",
 };
-
+const mobileSizeWidthMap = {
+    xs2xl: "5%",
+    xs2l: "5%",
+    s2m: "6.25%",
+    m2s: "12.5%",
+    l2xs: "5%",
+    xl2xs: "50%",
+};
+const mobileNextSizeWidthMap = {
+    xs2xl:"50%",
+    xs2l:"25%",
+    s2m:"12.5%",
+    m2s:"6.25%",
+    l2xs:"5%",
+    xl2xs:"5%",
+};
 const sizeHeightMap = {
     xs2xl:"3%",
     xs2l:"3%",
@@ -172,10 +187,35 @@ const nextSizeHeightMap = {
     xl2xs:"3%",
 };
 
+// Define mobile height maps for rows
+const mobileSizeHeightMap = {
+    xs2xl:"3%",
+    xs2l:"3%",
+    s2m:"6.25%",
+    m2s:"12.5%",
+    l2xs:"25%",
+    xl2xs:"50%",
+};
+const mobileNextSizeHeightMap = {
+    xs2xl:"50%",
+    xs2l:"25%",
+    s2m:"12.5%",
+    m2s:"6.25%",
+    l2xs:"3%",
+    xl2xs:"3%",
+};
+
 
 export default function Act3GradientAnimation() {
     const { scrollYProgress } = useScroll();
-    
+    // Breakpoint detection for mobile
+    const [isMobile, setIsMobile] = React.useState(false);
+    React.useEffect(() => {
+        const handleResize = () => setIsMobile(window.innerWidth <= 768);
+        handleResize();
+        window.addEventListener("resize", handleResize);
+        return () => window.removeEventListener("resize", handleResize);
+    }, []);
     const gridRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
@@ -290,14 +330,30 @@ export default function Act3GradientAnimation() {
             {rows.map((row, rowIdx) => (
                 <motion.div 
                     className={`${row.rowClass} rowGrid`} 
-                    style={{ height: useTransform(scrollYProgress, [0.52,0.60], [sizeHeightMap[row.size], nextSizeHeightMap[row.size]])}}   
+                    style={{
+                        height: useTransform(
+                            scrollYProgress,
+                            [0.52, 0.60],
+                            isMobile
+                                ? [mobileSizeHeightMap[row.size], mobileNextSizeHeightMap[row.size]]
+                                : [sizeHeightMap[row.size], nextSizeHeightMap[row.size]]
+                        )
+                    }}   
                     key={rowIdx}
                 >
-                    {row.cells.map((cell, cellIdx) => (                        
+                    {row.cells.map((cell, cellIdx) => (
                         <motion.div
                             key={cellIdx}
                             className={`${sizeClassMap[cell.size]} landingCell a2-gradient-${cell.variant} ${cell.position}`}
-                            style={{ width: useTransform(scrollYProgress, [0.52,0.60], [sizeWidthMap[cell.size], nextSizeWidthMap[cell.size]])}}   
+                            style={{
+                                width: useTransform(
+                                    scrollYProgress,
+                                    [0.52, 0.60],
+                                    isMobile
+                                        ? [mobileSizeWidthMap[cell.size], mobileNextSizeWidthMap[cell.size]]
+                                        : [sizeWidthMap[cell.size], nextSizeWidthMap[cell.size]]
+                                )
+                            }}   
                         > {/*  The color of the gradient needs to fade out as the scroll happens too  */}
                         </motion.div>
                     ))}

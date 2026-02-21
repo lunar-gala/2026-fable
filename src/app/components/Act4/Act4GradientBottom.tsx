@@ -14,7 +14,7 @@ export default function Act4GradientBottom() {
           <div className='homeCell-content m-cell c3'></div>
           <div className='a4-gradient-v1 homeCell-content s-cell c4'></div>
           <div className='a4-gradient-v1 homeCell-content xs-cell c5'></div>
-          <div className='a4-gradient-v2 homeCell-content xs-cell c6'></div>
+          <div className='a4-gradient-v1 homeCell-content xs-cell c6'></div>
           <div className='a4-gradient-v2 homeCell-content xs-cell c6'></div>
           <div className='a4-gradient-v1 homeCell-content xs-cell c5'></div>
           <div className='a4-gradient-v1 homeCell-content s-cell c4'></div>

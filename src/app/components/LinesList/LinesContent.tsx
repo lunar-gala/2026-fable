@@ -18,9 +18,9 @@ export default function LinesGrid() {
             <div className='homeCell-content xs-cell c6'></div>  
             <div className='homeCell-content m-cell c7'></div>   
             <div className='homeCell-content xs-cell c8'></div>  
-            <div className='homeCell-content m-cell c8'></div>   
-            <div className='homeCell-content xs-cell c7'></div>  
-            <div className='homeCell-content m-cell c6'></div>   
+            <div className='homeCell-content m-cell c9'></div>   
+            <div className='homeCell-content xs-cell c8'></div>  
+            <div className='homeCell-content m-cell c7'></div>   
             <div className='homeCell-content xs-cell c6'></div>  
             <div className='homeCell-content m-cell c5'></div>   
             <div className='homeCell-content xs-cell c4'></div>  
@@ -38,9 +38,9 @@ export default function LinesGrid() {
             <div className='homeCell-content xs-cell c6'></div>  
             <div className='homeCell-content m-cell c7'></div>   
             <div className='homeCell-content xs-cell c8'></div>  
-            <div className='homeCell-content m-cell c8'></div>   
-            <div className='homeCell-content xs-cell c7'></div>  
-            <div className='homeCell-content m-cell c6'></div>   
+            <div className='homeCell-content m-cell c9'></div>   
+            <div className='homeCell-content xs-cell c8'></div>  
+            <div className='homeCell-content m-cell c7'></div>   
             <div className='homeCell-content xs-cell c6'></div>  
             <div className='homeCell-content m-cell c5'></div>   
             <div className='homeCell-content xs-cell c4'></div>  

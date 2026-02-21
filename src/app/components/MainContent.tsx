@@ -65,7 +65,7 @@ export default function MainContent() {
   return (
     <>
       <div style={{ position: "relative", width: "100%", height: "800vh" }}>
-        <div id="animationWindow"
+        <div className="animation-window" id="animationWindow"
         style={{
           position: "fixed",
           top: 0,
