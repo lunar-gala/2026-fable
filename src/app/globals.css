@@ -20,6 +20,7 @@
 }
 
 
+
 .noto-serif-tc-300 {
   font-family: "Noto Serif TC", serif;
   font-optical-sizing: auto;
@@ -740,6 +741,9 @@ p{
   line-height: 1em;
 }
 
+.ralign{
+  text-align: right;
+}
 .caption{
   font-size: 12px;
 }
