@@ -137,23 +137,24 @@
   background-position: 0% 0%;
 }
 
-@media (max-width: 576px) {
-  /*grid displaying/hiding*/
-  /* type size */
-}
-
-@media (max-width: 768px) {
-  /*grid displaying/hiding*/
-  .line-button{
-    position:relative;
-    height:50px;
-    width:100%;
-  }  
-  /* type size */
-}
-
 @media (max-width: 992px) { 
   /*grid displaying/hiding*/
   /* type size */
 
  }
+
+ @media (max-width: 768px) {
+  /*grid displaying/hiding*/
+  .line-button{
+    position:relative;
+    height:50px;
+    width:100%;
+    pointer-events: none;
+  }  
+  /* type size */
+}
+
+@media (max-width: 576px) {
+  /*grid displaying/hiding*/
+  /* type size */
+}

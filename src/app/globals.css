@@ -1048,7 +1048,22 @@ p{
   display:flex;
   justify-content: left;
 }
+.homeCell-content-pointer{
+  position:relative;
+  pointer-events: auto;
+  border: none;
+  overflow: visible;
+  flex-grow: 0;
+  display:flex;
+  justify-content: left;
+}
 
+#pointereventon{
+  pointer-events: auto;
+}
+#pointereventoff{
+  pointer-events: none;
+}
 .gridTextContent{
     position: absolute;
     top:var(--mobilenav-height);
@@ -1388,6 +1403,7 @@ body[data-stage="act4"] .sidebar-footer-logo {
   gap: 0;
   margin-top: 0;
   height:100vh;
+  pointer-events: none;
 }
 
 .navbar-constant{

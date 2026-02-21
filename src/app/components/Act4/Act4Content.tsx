@@ -198,20 +198,20 @@ export default function Act4Content() {
             <div className='homeCell-content s-cell c4'></div>
             <div className='homeCell-content xs-cell c5'></div>
             <div className='homeCell-content xs-cell c6'>
-                      <div className='rectangle200percent flex0gapcol'>
-                        <a href="/lines/act4?line=13" className="mobile-only">
+                      <div className='rectangle200percent flex0gapcol' id="pointereventoff">
+                        <a href="/lines/act4?line=13" className="mobile-only" id="pointereventoff">
                             <LineButton name="Echo" number={13} act={4} gradientDir="horizontal" align="left" />
                         </a>  
-                        <a href="/lines/act4?line=14" className="mobile-only">
+                        <a href="/lines/act4?line=14" className="mobile-only" id="pointereventoff">
                             <LineButton name="Lethe" number={14} act={4} gradientDir="vertical" align="left" />
                         </a>   
-                        <a href="/lines/act4?line=15" className="mobile-only">
+                        <a href="/lines/act4?line=15" className="mobile-only" id="pointereventoff">
                             <LineButton name="Vestige" number={15} act={4} gradientDir="horizontal" align="left" verticalAlign="top" />
                         </a>                                                    
-                        <a href="/lines/act4?line=16" className="mobile-only">
+                        <a href="/lines/act4?line=16" className="mobile-only" id="pointereventoff">
                             <LineButton name="Persistence" number={16} act={4} gradientDir="horizontal" align="right" />
                         </a>                         
-                        <a href="/lines/act4?line=17" className="mobile-only">
+                        <a href="/lines/act4?line=17" className="mobile-only" id="pointereventoff">
                             <LineButton name="Zamaan" number={17} act={4} gradientDir="vertical" align="right" />
                         </a>                                                   
                     </div>                  
