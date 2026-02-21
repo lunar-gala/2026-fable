@@ -3,7 +3,7 @@ import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { useIsVisible } from "./utils/intersecting"
 import "./people.css";
-import { p } from "motion/react-client";
+import { motion } from "motion/react";
 import { PEOPLE, type Person } from "./data/people";
 
 const CATEGORIES = [
@@ -153,7 +153,12 @@ export default function PeopleContent() {
             <div className="people-photo-row people-row-24">
               <div className="people-spacer people-spacer-top-border" />
               <div className="people-spacer people-spacer-top-border" />
-              <div className="people-gradient" />
+              <motion.div
+                className="people-gradient"
+                initial={{ backgroundPosition: "100% 0%" }}
+                whileHover={{ backgroundPosition: "0% 0%" }}
+                transition={{ duration: 0.5, ease: "easeInOut" }}
+              />
               <div className="people-spacer people-spacer-left-border people-spacer-top-border" />
               <div className="people-spacer people-spacer-top-border" />
             </div>
