@@ -407,7 +407,8 @@ a:link, a:visited, a:hover, a:active {
 
 .navbar-cutout-sm {
   /* Top half of the nav cell: same footprint as the label area below. */
-  height: 100%;
+  min-height: 0;
+  align-self: stretch;
   object-fit: contain;
   object-position: center;
   margin: 0;
