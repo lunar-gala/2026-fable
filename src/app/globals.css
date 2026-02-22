@@ -6,6 +6,7 @@
   --sidebar-width: 3.75%;
   --linesnav-height: 7.5%;
   --mobilenav-height: 0.25px;
+  --xxs-row-height: 1.5vh;
   --label-font-size: 18px;
   --color-cream: #f5f2eb;
   --color-cream-light: #faf8f4;
@@ -184,8 +185,6 @@ a:link, a:visited, a:hover, a:active {
   display:block;
   width:calc(100vw - var(--sidebar-width));
   margin-left: var(--sidebar-width);
-  margin-top:  var(--mobilenav-height);
-  height:calc(100% - var(--mobilenav-height));
   overflow:hidden;
 }
 
@@ -952,7 +951,7 @@ p{
 }
 
 .xxs-row{
-  height:1.5%;
+  height: var(--xxs-row-height);
 }
 
 .xs-row{
@@ -1491,18 +1490,15 @@ body[data-stage="act4"] .sidebar-footer-logo {
 @media (max-width: 768px) {
   :root {
     --sidebar-width: 1px;
-    --mobilenav-height: 7.5%;
+    --mobilenav-height: 7.5vh;
   }
   .gridTextContent{
     top:0;
-  
   }
 
-  .pageContent{
-    position:relative;
-    display:block;
-    margin-top: calc(var(--mobilenav-height)*2 );
-    height: calc(100vh - var(--mobilenav-height)*2 );   
+  .pageContent {
+    margin-top: calc(var(--mobilenav-height) + 2 * var(--xxs-row-height));
+    height: calc(100% - var(--mobilenav-height) - 2 * var(--xxs-row-height));
   }
    
   /*nav*/

@@ -29,8 +29,6 @@ export default function Home() {
       <div className="pageContent">
         <MainContent />
       </div>
-      {/* <div className="peopleContent"><PeopleContent /></div> */}
-    
     </main>
   );
 }

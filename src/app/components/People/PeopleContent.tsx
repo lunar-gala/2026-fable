@@ -87,8 +87,8 @@ export default function PeopleContent() {
       <nav className="people-nav">
         {/* Top 24px row */}
         <div className="people-nav-row people-row-24">
-          <div className="people-spacer people-spacer-top-border" />
-          <div className="people-spacer people-spacer-top-border" />
+          <div className="people-spacer" />
+          <div className="people-spacer" />
           {NAV_ITEMS.map((item, index) => (
             <div key={`top-${item}`} style={{ display: "contents" }}>
               <div className="people-nav-cell" />
@@ -97,8 +97,8 @@ export default function PeopleContent() {
               )}
             </div>
           ))}
-          <div className="people-spacer people-spacer-left-border people-spacer-top-border" />
-          <div className="people-spacer people-spacer-top-border" />
+          <div className="people-spacer people-spacer-left-border" />
+          <div className="people-spacer" />
         </div>
 
         {/* Middle 48px row with nav buttons */}
@@ -150,7 +150,7 @@ export default function PeopleContent() {
           <React.Fragment key={section}>
           {/* Divider */}
           {sectionIndex > 0 && (
-            <div className="people-photo-row people-row-24">
+            <div className="people-photo-row people-row-24 people-divider-group">
               <div className="people-spacer people-spacer-top-border" />
               <div className="people-spacer people-spacer-top-border" />
               <motion.div
