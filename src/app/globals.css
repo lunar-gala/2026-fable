@@ -1238,7 +1238,7 @@ body[data-stage="act4"] .sidebar-footer-logo {
 .nav-arrow {
   position: fixed;
   top: 50%;
-  z-index: 300;
+  z-index: 5000;
   background: transparent;
   border: none;
   cursor: pointer;
@@ -1248,7 +1248,7 @@ body[data-stage="act4"] .sidebar-footer-logo {
   flex-direction: column;
   align-items: center;
   gap: 4px;
-  width: 36px;
+  width: 48px;
 }
 
 .nav-arrow-icon {

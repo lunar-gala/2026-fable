@@ -96,6 +96,10 @@
 }
 }
 
+.img16by9{
+    max-height: 100%;
+}
+
 @media (max-width: 576px) {
   /*grid displaying/hiding*/
   /* type size */

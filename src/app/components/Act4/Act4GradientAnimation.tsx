@@ -135,7 +135,7 @@ export default function Act4GradientAnimation() {
     }, []);
 
     return (
-        <div className="gradient-grid" ref={gridRef}>
+        <div className="gradient-grid a3grid" ref={gridRef}>
             {rows.map((row, rowIdx) => (
                 <motion.div
                     className={`${row.rowClass} rowGrid`}

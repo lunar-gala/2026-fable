@@ -73,13 +73,14 @@ export default function Act4Content() {
         {/* Row 4: s-row — Persistence in left m-cell (c3) */}
         <div className='s-row rowGridContent'>
             <div className='homeCell-content xl-cell c1'></div>
-            <div className='homeCell-content l-cell c2'>
-                 <a href="/lines/act4?line=14" className="desktop-only">
-                <LineButton name="Lethe" number={14} act={4} gradientDir="horizontal" align="left" />
-                 </a>                  
+            <div className='homeCell-content l-cell c2'>               
             </div>
             <div className='homeCell-content m-cell c3'></div>
-            <div className='homeCell-content s-cell c4'></div>
+            <div className='homeCell-content s-cell c4'>
+                 <a href="/lines/act4?line=14" className="desktop-only">
+                <LineButton name="Lethe" number={14} act={4} gradientDir="horizontal" align="left" />
+                 </a>                   
+            </div>
             <div className='homeCell-content xs-cell c5'></div>
             <div className='homeCell-content xs-cell c6'></div>
             <div className='homeCell-content xs-cell c6'> </div>
@@ -173,11 +174,12 @@ export default function Act4Content() {
         {/* Row 10: m-row — Zamaan in left m-cell (c3) */}
         <div className='m-row rowGridContent'>
             <div className='homeCell-content xl-cell c1'></div>
-            <div className='homeCell-content l-cell c2'></div>
-            <div className='homeCell-content m-cell c3'>
+            <div className='homeCell-content l-cell c2'>
                 <a href="/lines/act4?line=16" className="desktop-only">
-                <LineButton name="Persistence" number={16} act={4} gradientDir="horizontal" align="right" />
-                 </a>
+                <LineButton name="Persistence" number={16} act={4} gradientDir="horizontal" align="left" />
+                 </a>                
+            </div>
+            <div className='homeCell-content m-cell c3'>
             </div>
             <div className='homeCell-content s-cell c4'></div>
             <div className='homeCell-content xs-cell c5'></div>
