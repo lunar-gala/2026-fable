@@ -1,12 +1,13 @@
 /* People Page Nav Bar */
 /* Heights based on 1080px viewport: 24px = 2.222vh, 48px = 4.444vh */
 .people-nav {
-  width: 100%;
+  width: calc(100vw - var(--sidebar-width));
   display: flex;
   flex-direction: column;
   border-bottom: 0.125px solid var(--dark-brown);
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: var(--sidebar-width);
   z-index: 10;
   background-color: var(--off-white);
 }
@@ -117,6 +118,7 @@
 .people-photo-sections {
   width: 100%;
   background-color: #ffffff;
+  margin-top: calc((24 + 48 + 24) / 1080 * 100vh);
 }
 
 .people-photo-section {
@@ -222,9 +224,9 @@
 
 @media (max-width: 768px) {
   .people-nav {
-    position: fixed;
+    width: 100%;
+    left: 0;
     top: calc(var(--mobilenav-height) + 3vh); /* 2 * var(--xxs-row-height) = 3vh */
-    z-index: 10;
   }
   .people-photo-sections {
     margin-top: calc((24 + 48 + 24) / 1080 * 100vh);
