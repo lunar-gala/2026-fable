@@ -21,18 +21,22 @@
 }
 
 .line-button--left {
-  left: 0.5px;
+  margin:0.25px;
+  left: 0.25px;
 }
 
 .line-button--right {
+  margin:0.25px;
   right: 0.25px;
 }
 
 .line-button--bottom {
+  margin:0.25px;
   bottom: 0.25px;
 }
 
 .line-button--top {
+   margin:0.25px; 
   top: 0.25px;
 }
 

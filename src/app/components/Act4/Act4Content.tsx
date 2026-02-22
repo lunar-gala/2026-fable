@@ -73,7 +73,7 @@ export default function Act4Content() {
         {/* Row 4: s-row — Persistence in left m-cell (c3) */}
         <div className='s-row rowGridContent'>
             <div className='homeCell-content xl-cell c1'></div>
-            <div className='homeCell-content l-cell c2'>               
+            <div className='homeCell-content l-cell c2'>                 
             </div>
             <div className='homeCell-content m-cell c3'></div>
             <div className='homeCell-content s-cell c4'>

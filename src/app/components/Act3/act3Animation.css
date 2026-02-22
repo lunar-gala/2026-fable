@@ -23,7 +23,7 @@
 
 .a3-gradient-v1 {
     background: linear-gradient(180deg, #DFCDFE 25%, #E7303A 70%, #613B38 80%, #000 100%);
-    background-size: 100% 350%;
+    background-size: 100% 800px;
     animation: a3-gradientmove 14s ease infinite;
 }
 
@@ -35,7 +35,7 @@
 
 .a3-gradient-v3 {
     background: linear-gradient(180deg, #E7303A 20%, #000 80%);
-    background-size: 100% 200%;
+    background-size: 100% 1000px;
     animation: a3-gradientmove 11s ease infinite;
 }
 
