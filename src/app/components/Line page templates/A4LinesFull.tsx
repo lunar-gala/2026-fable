@@ -47,7 +47,7 @@ export default function A4LinesFull() {
       lineDesigners: "Aziza Norkulova",
     },   
   ];
-  const content = lineContent[(lineNumber +2) % lineContent.length];
+  const content = lineContent[(lineNumber - 1) % lineContent.length];
 /**
   lineName: string;
   lineTagline: string;
