@@ -269,7 +269,7 @@
   }
 
   .people-photo-section {
-    scroll-margin-top: calc(var(--mobilenav-height) + 3vh + 48 / 1080 * 100vh);
+    scroll-margin-top: calc(var(--mobilenav-height) + 3vh + (48 + 24) / 1080 * 100vh);
   }
 
   .people-row-24:not(.people-divider-group) {
