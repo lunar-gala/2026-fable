@@ -22,7 +22,7 @@ export default function AboutPage() {
         style={{ backgroundColor: COLORS.background }}
       >
         {isMobile ? <MobileNavBar /> : <NavBar />}
-        <div className="pageContent">
+        <div className="pageContent peoplePageContent">
           <PeopleContent />
         </div>
       

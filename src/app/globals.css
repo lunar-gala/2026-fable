@@ -197,10 +197,6 @@ a:link, a:visited, a:hover, a:active {
   left: var(--sidebar-width);
   width:calc(100% - var(--sidebar-width));
 }
-.peopleContent{
-  width:calc(100% - var(--sidebar-width));
-  margin-left: var(--sidebar-width);
-}
 
 .fullPage{
   width:100vw;
@@ -1505,7 +1501,7 @@ body[data-stage="act4"] .sidebar-footer-logo {
     top:0;
   }
 
-  .pageContent {
+  .pageContent:not(.peoplePageContent) {
     margin-top: calc(var(--mobilenav-height) + 2 * var(--xxs-row-height));
     height: calc(100% - var(--mobilenav-height) - 2 * var(--xxs-row-height));
   }

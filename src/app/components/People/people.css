@@ -229,7 +229,7 @@
     top: calc(var(--mobilenav-height) + 3vh); /* 2 * var(--xxs-row-height) = 3vh */
   }
   .people-photo-sections {
-    margin-top: calc((24 + 48 + 24) / 1080 * 100vh);
+    margin-top: calc(var(--mobilenav-height) + 3vh + (24 + 48 + 24) / 1080 * 100vh);
   }
 
   .people-photo-section {
@@ -267,7 +267,7 @@
 /* Hide separators and top/bottom rows when very squeezed */
 @media (max-width: 480px) {
   .people-photo-sections {
-    margin-top: calc(48 / 1080 * 100vh);
+    margin-top: calc(var(--mobilenav-height) + 3vh + 48 / 1080 * 100vh);
   }
 
   .people-photo-section {
