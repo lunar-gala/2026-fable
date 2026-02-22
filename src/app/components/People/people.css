@@ -229,6 +229,11 @@
   .people-photo-sections {
     margin-top: calc((24 + 48 + 24) / 1080 * 100vh);
   }
+
+  .people-photo-section {
+    scroll-margin-top: calc(var(--mobilenav-height) + 3vh + (24 + 48 + 24) / 1080 * 100vh);
+  }
+
   .people-nav-button-label .people-photo-name {
     font-size: 12px;
   }
@@ -261,6 +266,10 @@
 @media (max-width: 480px) {
   .people-photo-sections {
     margin-top: calc(48 / 1080 * 100vh);
+  }
+
+  .people-photo-section {
+    scroll-margin-top: calc(var(--mobilenav-height) + 3vh + 48 / 1080 * 100vh);
   }
 
   .people-row-24:not(.people-divider-group) {
