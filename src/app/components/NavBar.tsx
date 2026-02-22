@@ -81,7 +81,13 @@ export default function NavBar() {
         <button
           type="button"
           className="navbar-row navbar-logo-row"
-          onClick={() => router.push("/")}
+          onClick={() => {
+            if (pathname === "/") {
+              window.scrollTo({ top: 0, behavior: "instant" });
+            } else {
+              router.push("/");
+            }
+          }}
         >
           <div className="navbar-logo">
             <img src={isDark ? "/wordmark white.svg" : "/wordmark.svg"} alt="Fable"></img>
