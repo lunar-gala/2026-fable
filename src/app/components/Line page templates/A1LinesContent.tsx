@@ -51,7 +51,7 @@ export default function A1LinesContent({ lineName, lineTagline, lineDescription,
         </div>
         <div className="homeCell-content xs-cell c6" />
         <div className=" homeCell-content l-cell c6">
-          <div className="red lineImgContainer">
+          <div className="lineImgContainer">
             <img
               src={`/line_images/${lineName}-1.png`}
               alt="line image"
