@@ -1,4 +1,10 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Lunar Gala 2026: Fable
+
+**Live at [2026.lunargala.org](https://www.2026.lunargala.org/)** | Best viewed on desktop
+
+Lunar Gala is Carnegie Mellon University's annual fashion show. For its 30th anniversary, **LG: Fable** is an anthology of the fantastical worlds that color our identities, stepping through imaginations, memories, and stories across people, times, and spaces.
+
+Built with [Next.js](https://nextjs.org).
 
 ## Getting Started
 
