@@ -19,11 +19,13 @@ export default function A4LinePage() {
   return (
     <>
       {isMobile ? <MobileNavBar /> : <NavBar />}
-      <Suspense>
       <div className="pageContent">
+        <Suspense>
+          <div className="linesMain">
             <LinepgFull />
+          </div>         
+        </Suspense>
       </div>
-      </Suspense>
 
     </>
   );

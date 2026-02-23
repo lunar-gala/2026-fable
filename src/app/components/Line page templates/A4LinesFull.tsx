@@ -18,7 +18,8 @@ import NavBar from "../MobileNavBar";
 export default function A4LinesFull() {
   const searchParams = useSearchParams();
   const lineParam = searchParams?.get("line");
-  const lineNumber = lineParam ? parseInt(lineParam, 10) : 1;
+  // default to 13 so the base route for this act shows the first line (Echo)
+  const lineNumber = lineParam ? parseInt(lineParam, 10) : 13;
 
   const [isMobile, setIsMobile] = React.useState(false);
   React.useEffect(() => {
@@ -63,7 +64,8 @@ export default function A4LinesFull() {
       lineDesigners: "Aziza Norkulova",
     },   
   ];
-  const content = lineContent[(lineNumber - 13) % lineContent.length];
+  const idx = ((lineNumber - 13) % lineContent.length + lineContent.length) % lineContent.length;
+  const content = lineContent[idx];
 /**
   lineName: string;
   lineTagline: string;

@@ -4,8 +4,6 @@ import React, { useState } from 'react';
 
 import MobileLinesContent from "@/app/components/Line page templates/MobileLinesContent";
 import A2LinesContent from "@/app/components/Line page templates/A2LinesContent";
-import A3LinesContent from "@/app/components/Line page templates/A3LinesContent";
-import A4LinesContent from "@/app/components/Line page templates/A4LinesContent";
 import LinePageGrid from "@/app/components/Line page templates/LinePageGrid";
 import LinesNav from "@/app/components/Line page templates/LinesNav";
 import "@/app/components/Line page templates/linespages.css";
