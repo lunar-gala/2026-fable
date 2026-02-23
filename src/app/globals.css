@@ -1613,6 +1613,9 @@ body[data-stage="act4"] .sidebar-footer-logo {
   h2{
     font-size:24px;
   }
+  .nav-arrow-label{
+    font-size:10px;
+  }
 }
 
 @media (max-width: 576px) {

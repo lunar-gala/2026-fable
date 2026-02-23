@@ -114,10 +114,10 @@ export default function Act1Content() {
             <div className='homeCell-content l-cell c5'></div>
    
             <div className='homeCell-content xl-cell c6'>
-             <a href="/lines/act1?line=3" className='desktop-only'>
-                <LineButton name="Nurture in Layers" number={3} act={1} gradientDir="horizontal" align="left" />
-            </a>  
-                     <span className="mobile-only content-big-label">Follow</span>
+                <a href="/lines/act1?line=3" className='desktop-only'>
+                    <LineButton name="Nurture in Layers" number={3} act={1} gradientDir="horizontal" align="left" />
+                </a>  
+                <span className="mobile-only content-big-label fix2top">Follow</span>
                      
             </div>
             <div className='homeCell-content xl-cell c6'>

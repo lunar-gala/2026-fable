@@ -80,7 +80,7 @@ export default function MainContent() {
           {stage === Stage.Act3 && <Act3Full />}
           {stage === Stage.Act4 && <Act4Full />}
           <AssetAnimation stage={stage} />
-          <div className="desktop-only"><ActNavArrows stage={stage} /></div>
+          <div className=""><ActNavArrows stage={stage} /></div>
           
 
         </div>

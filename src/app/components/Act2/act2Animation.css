@@ -50,6 +50,7 @@
 }
 
 
+
 @media (max-width: 576px) {
   /*grid displaying/hiding*/
   /* type size */
@@ -69,6 +70,10 @@
   }
   .c4{
     display: none;
+  }
+  .fix2top{
+  position: relative;
+  margin-top: 0;
   }  
   /* type size */
 }

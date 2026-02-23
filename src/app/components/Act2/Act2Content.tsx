@@ -114,7 +114,7 @@ export default function Act2Content() {
 
             </div>
             <div className='homeCell-content xl-cell c6'>
-                <span className="content-big-label">Wander</span>
+                <span className="content-big-label fix2top">Wander</span>
             </div>
             <div className='homeCell-content xl-cell c6'> </div>
             <div className='homeCell-content l-cell c5'></div>
