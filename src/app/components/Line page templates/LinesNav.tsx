@@ -89,7 +89,7 @@ export default function LinesNav() {
                         <div  className="navlinebutton">
                             <button
                             type="button"
-                            className="landingCell "
+                            className="landingCell w100h100"
                             onClick={() => handleActClick(act.label, act.route)}
                             >
                                 <span className="actNavName">{act.label}</span>
