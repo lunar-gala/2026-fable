@@ -69,6 +69,11 @@
     width:100%;
 }
 
+.img16by9{
+    max-height: 100%;
+    border: 0.25px solid var(--dark-brown);
+    object-fit: cover;
+}
 
 @media (max-width: 992px) { 
   /*grid displaying/hiding*/
@@ -96,9 +101,7 @@
 }
 }
 
-.img16by9{
-    max-height: 100%;
-}
+
 
 @media (max-width: 576px) {
   /*grid displaying/hiding*/

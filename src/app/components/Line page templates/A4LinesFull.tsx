@@ -1,9 +1,15 @@
 "use client";
+
 import { useSearchParams } from "next/navigation";
 import A4LinesContent from "@/app/components/Line page templates/A4LinesContent";
+import MobileLinesContent from "@/app/components/Line page templates/MobileLinesContent";
 import LinePageGrid from "@/app/components/Line page templates/LinePageGrid";
 import LinesNav from "@/app/components/Line page templates/LinesNav";
 import "@/app/components/Line page templates/linespages.css";
+
+import React, { useState } from 'react';
+import NavBar from "../MobileNavBar";
+
 
 
 
@@ -13,6 +19,16 @@ export default function A4LinesFull() {
   const searchParams = useSearchParams();
   const lineParam = searchParams?.get("line");
   const lineNumber = lineParam ? parseInt(lineParam, 10) : 1;
+
+  const [isMobile, setIsMobile] = React.useState(false);
+  React.useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);  
 
   //  content for each line number
   const lineContent = [
@@ -56,6 +72,13 @@ export default function A4LinesFull() {
  */
   return (
     <>
+    {isMobile ? <MobileLinesContent 
+              lineName={content.lineName}
+              lineTagline={content.lineTagline}
+              lineDescription={content.lineDescription}
+              lineDesigners={content.lineDesigners}    
+      /> 
+    :   
       <div className="w100h100">
         <LinesNav />
         <div className="linesPageContent">
@@ -70,6 +93,8 @@ export default function A4LinesFull() {
           <LinePageGrid/>
         </div>
       </div>
+    }
+
 
     </>
 

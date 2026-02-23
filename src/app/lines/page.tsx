@@ -2,6 +2,7 @@
 
 import NavBar from "@/app/components/NavBar";
 import LinesFull from "@/app/components/LinesList/LinesFull"
+import MobileLinesContent from "@/app/components/LinesList/MobileLinesContent"
 import MobileNavBar from "../components/MobileNavBar";
 import React, { useState } from 'react';
 
@@ -20,7 +21,7 @@ export default function LinesPage() {
     <>
       {isMobile ? <MobileNavBar /> : <NavBar />}       
       <div className="pageContent">
-        <LinesFull />
+        {isMobile ? <MobileLinesContent /> : <LinesFull />}
       </div>   
     </>
 

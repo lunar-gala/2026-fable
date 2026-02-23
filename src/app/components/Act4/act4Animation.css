@@ -79,7 +79,6 @@
 
 @media (max-width: 768px) {
    .line-button{
-    border:0.25px solid var(--off-white);
    }
    
   /*grid displaying/hiding*/

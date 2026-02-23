@@ -183,3 +183,18 @@
 .linesPageGrid > .rowGridContent{
   overflow: visible;
 }
+
+@media (max-width: 768px) {
+  /*grid displaying/hiding*/
+  .linespgGrid > .rowGrid > .xs-cell{
+    width:5%;
+  }
+  /* type size */
+  .cellContent > .h1{
+    font-size: 36px;
+  }
+  .lineImage{
+    position: relative;
+  }
+}
+

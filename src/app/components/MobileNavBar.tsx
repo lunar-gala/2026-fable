@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { useRouter, usePathname } from "next/navigation";
 
 const ACT_ITEMS = ["ACT I", "ACT II", "ACT III", "ACT IV"];
-const NAV_ITEMS = ["Tickets", "People", "About"];
+const NAV_ITEMS = ["Lines", "Tickets", "People", "About"];
 
 
 const SCROLL_TARGETS: Record<string, number> = {
@@ -27,7 +27,7 @@ export default function NavBar() {
 
   const handleNavigation = (item: string) => {
     const routes: Record<string, string> = {
-      /** Lines: "/lines", */
+       Lines: "/lines", 
       Tickets: "https://cglink.me/2c1/r1935471",
       People: "/people",
       About: "/about",
@@ -67,7 +67,6 @@ export default function NavBar() {
 
   return (
     <div className={`navbar-nav-mobile`}>
-
         <div className=" off-white-bg xxs-row rowGridNav">
             <div className=" mobilenav-xs-cell landingCell"></div>
             <div className=" rectangle-200 landingCell"></div>
@@ -92,15 +91,16 @@ export default function NavBar() {
             </div>
             <div className=" mobilenav-xs-cell landingCell"></div>
         </div>
+
         <div className=" off-white-bg xxs-row rowGridNav">
             <div className=" mobilenav-xs-cell landingCell"></div>
             <div className=" rectangle-200 landingCell"></div>
             <div className=" mobilenav-xs-cell landingCell"></div>
         </div>
 
+          <div className="navlinks-mobile">
             {isVisible && (
-                <div className=" off-white-bg navbar-nav-bg">
-                    <nav className=" off-white-bg navbar-nav-bg" aria-label="Primary navigation" id="pointereventson">
+                    <nav className="off-white-bg navbar-nav-bg" aria-label="Primary navigation" id="pointereventson">
                     {NAV_ITEMS.map((item) => (
                         <button
                         key={item}
@@ -108,14 +108,21 @@ export default function NavBar() {
                         className={`mobile-nav-row rowGrid`}
                         onClick={() => handleNavigation(item)}
                         >
-                        <span className=" navbar-nav-label-mobile">{item}</span>
+                        <div className=" mobilenav-xs-cell landingCell"></div>
+                        <span className=" landingCell navbar-nav-label-mobile">{item}</span>
+                        <div className=" mobilenav-xs-cell landingCell"></div>
                         </button>
                     ))}
-                    
+                      <div className=" off-white-bg xxs-row rowGridNav">
+                          <div className=" mobilenav-xs-cell landingCell"></div>
+                          <div className=" rectangle-200 landingCell"></div>
+                          <div className=" mobilenav-xs-cell landingCell"></div>
+                      </div>                     
                     </nav>
-                </div>
-
-            )}   
+            )} 
+           
+          </div>
+  
     </div>
   );
 }

@@ -9,8 +9,10 @@ export default function AboutFull() {
 
   return (
     <>
-      <div className="gridTextContent"><AboutContent/></div>
-      <AboutGrid/>
+      <div style={{ position: "relative"}}>
+        <div className="gridTextContent"><AboutContent/></div>
+        <AboutGrid/>
+      </div>
     </>
 
 

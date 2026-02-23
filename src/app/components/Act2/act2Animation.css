@@ -10,8 +10,8 @@
 
 .a2-gradient-v2 {
   background: linear-gradient(180deg, #F2EFE5 0%, #FF76A2 32%, #613B38 83%, #613B38 100%); 
-  background-size: 100% 200px;
-  animation: a2-gradientmove 4s ease infinite;
+  background-size: 100% 400px;
+  animation: a2-gradientmove 8s ease infinite;
 }
 
 .a2-gradient-v3 {

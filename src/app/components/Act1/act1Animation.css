@@ -70,6 +70,9 @@
   .c5{
     width:5%;
   }
+  .line-button{
+    border:0.25px solid var(--dark-brown);
+  }
   /* type size */
 }
 

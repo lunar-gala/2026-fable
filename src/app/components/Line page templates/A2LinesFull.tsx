@@ -1,5 +1,8 @@
 "use client";
 import { useSearchParams } from "next/navigation";
+import React, { useState } from 'react';
+
+import MobileLinesContent from "@/app/components/Line page templates/MobileLinesContent";
 import A2LinesContent from "@/app/components/Line page templates/A2LinesContent";
 import A3LinesContent from "@/app/components/Line page templates/A3LinesContent";
 import A4LinesContent from "@/app/components/Line page templates/A4LinesContent";
@@ -15,6 +18,17 @@ export default function A2LinesFull() {
   const searchParams = useSearchParams();
   const lineParam = searchParams?.get("line");
   const lineNumber = lineParam ? parseInt(lineParam, 10) : 1;
+
+
+  const [isMobile, setIsMobile] = React.useState(false);
+  React.useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);   
 
   // Example content for each line number
   const lineContent = [
@@ -52,22 +66,29 @@ export default function A2LinesFull() {
  */
   return (
     <>
-      <div className="w100h100">
-        <LinesNav />
-        <div className="linesPageContent">
-          <div className="linepgTextContent">
-            <A2LinesContent 
-              lineName={content.lineName}
-              lineTagline={content.lineTagline}
-              lineDescription={content.lineDescription}
-              lineDesigners={content.lineDesigners}
-            />
+        {isMobile ? <MobileLinesContent 
+                  lineName={content.lineName}
+                  lineTagline={content.lineTagline}
+                  lineDescription={content.lineDescription}
+                  lineDesigners={content.lineDesigners}    
+          /> 
+        :   
+          <div className="w100h100">
+            <LinesNav />
+            <div className="linesPageContent">
+              <div className="linepgTextContent">
+                <A2LinesContent 
+                  lineName={content.lineName}
+                  lineTagline={content.lineTagline}
+                  lineDescription={content.lineDescription}
+                  lineDesigners={content.lineDesigners}
+                />
+                </div>
+              <LinePageGrid/>
             </div>
-          <LinePageGrid/>
-        </div>
-      </div>
-
-    </>
+          </div>
+        }
+        </>
 
 
   );

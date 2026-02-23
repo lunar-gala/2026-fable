@@ -1,11 +1,8 @@
 "use client";
 
-import AboutContent from "./components/About/AboutContent";
-import AboutFull from "./components/About/AboutFull";
 import MainContent from "./components/MainContent";
 import NavBar from "./components/NavBar";
 import MobileNavBar from "./components/MobileNavBar";
-import PeopleContent from "./components/People/PeopleContent";
 import { COLORS } from "./constants";
 import React, { useState } from 'react';
 
