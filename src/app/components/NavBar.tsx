@@ -39,7 +39,7 @@ export default function NavBar() {
       if (target !== undefined) {
         sessionStorage.setItem("scrollToAct", String(target));
       }
-      router.push("/");
+      window.location.href = "/";
     } else if (target !== undefined) {
       const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
       window.scrollTo({ top: target * totalHeight, behavior: "smooth" });
@@ -85,7 +85,7 @@ export default function NavBar() {
             if (pathname === "/") {
               window.scrollTo({ top: 0, behavior: "instant" });
             } else {
-              router.push("/");
+              window.location.href = "/";
             }
           }}
         >

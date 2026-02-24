@@ -39,6 +39,11 @@ export default function MainContent() {
       });
     } else {
       window.scrollTo(0, 0);
+      // Force Framer Motion to re-read scroll position in case the scroll event
+      // from scrollTo was missed during initial listener setup
+      requestAnimationFrame(() => {
+        window.dispatchEvent(new Event('scroll'));
+      });
     }
   }, []);
 
@@ -61,6 +66,7 @@ export default function MainContent() {
       delete document.body.dataset.stage;
     };
   }, [stage]);
+
 
   return (
     <>
