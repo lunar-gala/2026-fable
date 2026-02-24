@@ -31,9 +31,9 @@ export default function A3LinesFull() {
   // Example content for each line number
   const lineContent = [
     {
-      lineName: "EDEN",
+      lineName: "Eden",
       lineTagline: "The Garden of Good and Evil",
-      lineDescription: "EDEN draws inspiration from Midnight in the Garden of Good and Evil, John Berendt’s iconic 1994 bestseller that captivated the world and transformed Savannah, Georgia into a symbol of mystery, elegance, and Southern allure. EDEN channels this spirit through echoes of Southern belles, languid summer evenings, and the bittersweet emotions of growing up. Each piece embodies Savannah’s distinctive blend of sophistication, romanticism, and ethereal beauty, reimagined with a modern twist. This collection reflects on the timeless the eternal interplay of good and evil within a garden, woven through the lens of childhood nostalgia, and ultimately brought together under the concept of EDEN.",
+      lineDescription: "Eden draws inspiration from Midnight in the Garden of Good and Evil, John Berendt’s iconic 1994 bestseller that captivated the world and transformed Savannah, Georgia into a symbol of mystery, elegance, and Southern allure. Eden channels this spirit through echoes of Southern belles, languid summer evenings, and the bittersweet emotions of growing up. Each piece embodies Savannah’s distinctive blend of sophistication, romanticism, and ethereal beauty, reimagined with a modern twist. This collection reflects on the timeless the eternal interplay of good and evil within a garden, woven through the lens of childhood nostalgia, and ultimately brought together under the concept of Eden.",
       lineDesigners: "Esther Lin",
     },
     {
