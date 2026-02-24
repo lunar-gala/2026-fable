@@ -45,7 +45,7 @@ export default function NavBar() {
       if (target !== undefined) {
         sessionStorage.setItem("scrollToAct", String(target));
       }
-      router.push("/");
+      window.location.href = "/";
     } else if (target !== undefined) {
       const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
       window.scrollTo({ top: target * totalHeight, behavior: "smooth" });

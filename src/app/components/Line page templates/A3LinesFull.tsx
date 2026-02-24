@@ -43,7 +43,7 @@ export default function A3LinesFull() {
       lineDesigners: "Sulli Yatabe",
     },
     {
-      lineName: "Jangal (Jun-gul)",
+      lineName: "Jangal",
       lineTagline: "95,000 Hours On A Punchcard.",
       lineDescription: "Our clothes are maximally honest depictions of work, aggregating shifts into a lifetime. Frayed cuffs, blown-out knees, and layered sweat stains quietly tally each workday. Countries as different as India and the United States illustrate the universality of this principle, observed by identical patterns of persistence. Incremental progress is marked by endless weathering and perpetual repairs, and this discipline blends work into identity. To reflect the beautiful variation between paths, we hybridize cultures to explore an environment’s interaction with the wearer and their clothes. The sun’s transforming spice and color, oxidizing metals of heavy industry, and constellated indigo nights. A patchworked garment is reincarnated, stronger. Eternal reconstruction brings a final point. Work defines self.",
       lineDesigners: "Raj Methi",

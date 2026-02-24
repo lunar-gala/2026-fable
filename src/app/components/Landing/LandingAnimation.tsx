@@ -1,10 +1,7 @@
 "use client";
 import './LandingAnimation.css';
-import React, { useEffect, useRef } from "react";
-import { motion, useScroll, useTransform } from "motion/react";
-
-
-
+import React, { useEffect, useRef, useCallback } from "react";
+import { useScroll } from "motion/react";
 
 
 interface CellConfig {
@@ -126,53 +123,89 @@ const sizeClassMap = {
 };
 
 
-const sizeWidthMap = {
-    smallhalf: "1.5%",
-    smallquarter: "1.5%",
-    smallsmall: "1.5%",
-    halfeighth: "25%",
-    fullfull: "50%",
+const sizeWidthMap: Record<CellConfig["size"], number> = {
+    smallhalf: 1.5,
+    smallquarter: 1.5,
+    smallsmall: 1.5,
+    halfeighth: 25,
+    fullfull: 50,
 };
 
-const nextSizeWidthMap = {
-    smallhalf: "25%",
-    smallquarter: "12.5%",
-    smallsmall: "1.5%",
-    halfeighth: "6.25%",
-    fullfull: "50%",
+const nextSizeWidthMap: Record<CellConfig["size"], number> = {
+    smallhalf: 25,
+    smallquarter: 12.5,
+    smallsmall: 1.5,
+    halfeighth: 6.25,
+    fullfull: 50,
 };
 
 // Define mobile width maps here
-const mobileSizeWidthMap = {
-    smallhalf: "5%", // example value
-    smallquarter: "5%", // example value
-    smallsmall: "5%", // example value
-    halfeighth: "25%", // example value
-    fullfull: "50%", // example value
+const mobileSizeWidthMap: Record<CellConfig["size"], number> = {
+    smallhalf: 5,
+    smallquarter: 5,
+    smallsmall: 5,
+    halfeighth: 25,
+    fullfull: 50,
 };
 
-const mobileNextSizeWidthMap = {
-    smallhalf: "5%", // example value
-    smallquarter: "5%", // example value
-    smallsmall: "5%", // example value
-    halfeighth: "25%", // example value
-    fullfull: "50%", // example value
+const mobileNextSizeWidthMap: Record<CellConfig["size"], number> = {
+    smallhalf: 5,
+    smallquarter: 5,
+    smallsmall: 5,
+    halfeighth: 25,
+    fullfull: 50,
 };
 
+// Linear interpolation helper
+function lerp(a: number, b: number, t: number): number {
+    return a + (b - a) * t;
+}
+
+// Compute width for a given size at a given scroll progress
+function getWidth(size: CellConfig["size"], progress: number, mobile: boolean): string {
+    const startMap = mobile ? mobileSizeWidthMap : sizeWidthMap;
+    const endMap = mobile ? mobileNextSizeWidthMap : nextSizeWidthMap;
+    // Clamp progress to [0, 0.14] range, then normalize to [0, 1]
+    const t = Math.min(Math.max(progress / 0.14, 0), 1);
+    return lerp(startMap[size], endMap[size], t) + "%";
+}
 
 export default function LandingAnimation() {
     const { scrollYProgress } = useScroll();
+    const gridRef = useRef<HTMLDivElement>(null);
+    const isMobileRef = useRef(false);
 
     // Breakpoint detection for mobile
-    const [isMobile, setIsMobile] = React.useState(false);
-    React.useEffect(() => {
-        const handleResize = () => setIsMobile(window.innerWidth <= 768);
+    useEffect(() => {
+        const handleResize = () => { isMobileRef.current = window.innerWidth <= 768; };
         handleResize();
         window.addEventListener("resize", handleResize);
         return () => window.removeEventListener("resize", handleResize);
     }, []);
 
-    const gridRef = useRef<HTMLDivElement>(null);
+    // Imperatively update all cell widths based on scroll progress
+    const updateWidths = useCallback((progress: number) => {
+        if (!gridRef.current) return;
+        const mobile = isMobileRef.current;
+        const cells = gridRef.current.querySelectorAll<HTMLElement>("[data-size]");
+        cells.forEach((cell) => {
+            const size = cell.dataset.size as CellConfig["size"];
+            cell.style.width = getWidth(size, progress, mobile);
+        });
+    }, []);
+
+    // Subscribe to scrollYProgress and update widths imperatively.
+    // Always set widths to progress=0 on mount to guarantee correct initial state.
+    useEffect(() => {
+        // Set initial widths immediately (progress = 0 on landing)
+        updateWidths(0);
+
+        const unsubscribe = scrollYProgress.on("change", (value) => {
+            updateWidths(value);
+        });
+
+        return () => unsubscribe();
+    }, [scrollYProgress, updateWidths]);
 
     useEffect(() => {
         if (!gridRef.current) return;
@@ -233,7 +266,7 @@ export default function LandingAnimation() {
                 if (progress < 1) {
                     animationFrameId = requestAnimationFrame(animateDuration);
                 } else {
-   
+
                     animationFrameId = null;
                     startTime = null;
                     startDuration = null;
@@ -241,7 +274,6 @@ export default function LandingAnimation() {
             }
 
             const handleMouseEnter = () => {
-                // console.log('Mouse entered animationFrameId:', animationFrameId);
                 targetDuration = hoverDuration;
                 if (animationFrameId) {
                     cancelAnimationFrame(animationFrameId);
@@ -252,7 +284,6 @@ export default function LandingAnimation() {
             };
 
             const handleMouseLeave = () => {
-                // console.log('Mouse left animationFrameId:', animationFrameId);
                 targetDuration = defaultDuration;
                 if (animationFrameId) {
                     cancelAnimationFrame(animationFrameId);
@@ -286,20 +317,15 @@ export default function LandingAnimation() {
             {rows.map((row, rowIdx) => (
                 <div className={`rowGrid ${row.rowClass}`} key={rowIdx}>
                     {row.cells.map((cell, cellIdx) => (
-                        <motion.div
+                        <div
                             key={cellIdx}
+                            data-size={cell.size}
                             className={`${sizeClassMap[cell.size]} landingCell gradient-vertical gradient-animation-${cell.variant} ${cell.position}`}
                             style={{
-                                width: useTransform(
-                                    scrollYProgress,
-                                    [0, 0.14],
-                                    isMobile
-                                        ? [mobileSizeWidthMap[cell.size], mobileNextSizeWidthMap[cell.size]]
-                                        : [sizeWidthMap[cell.size], nextSizeWidthMap[cell.size]]
-                                )
+                                width: sizeWidthMap[cell.size] + "%"
                             }}
                         > {/*  The color of the gradient needs to fade out as the scroll happens too  */}
-                        </motion.div>
+                        </div>
                     ))}
                 </div>
             ))}

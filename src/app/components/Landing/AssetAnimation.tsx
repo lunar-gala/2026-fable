@@ -282,7 +282,13 @@ function AssetAnimation({ stage }: AssetAnimationProps) {
         transitionPairs.push({ left: leftData, right: rightData });
       } else {
         isJumpRef.current = false;
-        for (let i = prevStageIndex + 1; i <= targetStageIndex; i++) {
+        // When going from Landing to Act1, skip landing_end (index 1) and play
+        // a1_start (index 2) directly. Playing both sequentially causes a visible
+        // "double clutch" — shapes exit, disappear, then re-enter.
+        const startIndex = (prevStage === Stage.Landing && newStage === Stage.Act1)
+          ? targetStageIndex
+          : prevStageIndex + 1;
+        for (let i = startIndex; i <= targetStageIndex; i++) {
           const [leftData, rightData] = animationForwardData.current[i];
           transitionPairs.push({ left: leftData, right: rightData });
         }
@@ -297,8 +303,15 @@ function AssetAnimation({ stage }: AssetAnimationProps) {
       const targetStageIndex = stageBackwardIndices[newStage];
       const transitionPairs: AnimationPair[] = [];
 
-      // If jumping more than 1 stage, skip intermediate animations and show the target's first frame
-      if (prevStage - newStage > 1) {
+      if (newStage === Stage.Landing) {
+        // Going backward to Landing: play landing_start forward so the draw-in
+        // animation is visible (same as on fresh page load).
+        isJumpRef.current = false;
+        const cfg = stageRestingConfig[Stage.Landing];
+        const [leftData, rightData] = animationForwardData.current[cfg.index];
+        transitionPairs.push({ left: leftData, right: rightData });
+      } else if (prevStage - newStage > 1) {
+        // If jumping more than 1 stage, skip intermediate animations and show the target's first frame
         isJumpRef.current = true;
         const [leftData, rightData] = animationBackwardData.current[targetStageIndex];
         transitionPairs.push({ left: leftData, right: rightData });
@@ -316,7 +329,8 @@ function AssetAnimation({ stage }: AssetAnimationProps) {
 
       setAnimationPairs(transitionPairs);
       setCurrentIndex(0);
-      setIsScrollUp(true);
+      // When returning to Landing, play landing_start forward (draw-in), not reversed
+      setIsScrollUp(newStage !== Stage.Landing);
       prevStageRef.current = newStage;
     }
   };

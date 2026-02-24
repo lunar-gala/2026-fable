@@ -168,7 +168,7 @@ export default function Act3Content() {
             <div className='homeCell-content l-cell c2'></div>
             <div className='homeCell-content xl-cell c1'>
                 <a href="/lines/act3?line=11" className='desktop-only'>
-                    <LineButton name="Jangal (Jun-gul)" number={11} act={3} gradientDir="horizontal" align="left" />
+                    <LineButton name="Jangal" number={11} act={3} gradientDir="horizontal" align="left" />
                  </a>                 
             </div>
         </div>
@@ -211,7 +211,7 @@ export default function Act3Content() {
                         <LineButton name="Omoide" number={10} act={3} gradientDir="horizontal" align="left" />
                     </a> 
                     <a href="/lines/act3?line=11" className='mobile-only' id="pointereventoff">
-                        <LineButton name="Jangal (Jun-gul)" number={11} act={3} gradientDir="horizontal" align="left" />
+                        <LineButton name="Jangal" number={11} act={3} gradientDir="horizontal" align="left" />
                     </a>  
                     <a href="/lines/act3?line=12" className='mobile-only' id="pointereventoff">
                         <LineButton name="Faint Blossom" number={12} act={3} gradientDir="vertical" align="right" />
