@@ -11,7 +11,7 @@ interface MobileLinesContentProps {
 }
 export default function MobileLinesContent({ lineName, lineTagline, lineDescription, lineDesigners }: MobileLinesContentProps) {
   return (
-    <div className="grid200vh whitebg linespgGrid">
+    <div className="grid350vh whitebg linespgGrid">
       <div className="em1row rowGrid">
         <div className="landingCell xs-cell" />
         <div className="landingCell percent90-cell" />
@@ -40,12 +40,12 @@ export default function MobileLinesContent({ lineName, lineTagline, lineDescript
       <div className="l-row rowGrid">
         <div className="landingCell xs-cell" />
         <div className="landingCell percent90-cell">
-            <div className=" flex0gapcol">
-              <div className="flex8gapcol">
+            <div className=" flex32gapcol">
+              <div className="flex0gapcol">
                 <h1>{lineName}</h1>
-                <h4 className="allcaps">{lineTagline}</h4>
+                <h5>{lineDesigners}</h5>          
               </div>
-              <h5>{lineDesigners}</h5>          
+              <h4 className="allcaps">{lineTagline}</h4>
               <p>{lineDescription}</p>          
             </div>             
         </div> 

@@ -49,6 +49,8 @@
 .linedescription{
   font-size:14px;
   line-height: 16px;
+  padding-left: 4px;
+  padding-top: 4px;
   position:absolute;
 }
 
@@ -159,7 +161,7 @@
 }
 
 .xs-cell-nav{
-  width:5.8%;
+  width:6.1%;
 }
 
 .xs-cell-navcontent{

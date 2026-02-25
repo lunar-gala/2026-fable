@@ -42,9 +42,10 @@ export default function Act4Content() {
             <div className='homeCell-content xs-cell c5'></div>
             <div className='homeCell-content s-cell c4'> </div>
             <div className='homeCell-content m-cell c3'>
-                <a href="/lines/act4?line=15" className="desktop-only">
-                    <LineButton name="Vestige" number={15} act={4} gradientDir="horizontal" align="left" verticalAlign="top" />
-                 </a>                 
+                <a href="/lines/act4?line=13" className="desktop-only">
+                    <LineButton name="Echo" number={13} act={4} gradientDir="horizontal" align="left" verticalAlign="top" />
+                 </a>  
+                                  
             </div>
             <div className='homeCell-content l-cell c2'></div>
             <div className='homeCell-content xl-cell c1'>
@@ -175,8 +176,8 @@ export default function Act4Content() {
         <div className='m-row rowGridContent'>
             <div className='homeCell-content xl-cell c1'></div>
             <div className='homeCell-content l-cell c2'>
-                <a href="/lines/act4?line=16" className="desktop-only">
-                <LineButton name="Persistence" number={16} act={4} gradientDir="horizontal" align="left" />
+                <a href="/lines/act4?line=15" className="desktop-only">
+                <LineButton name="Vestige" number={15} act={4} gradientDir="horizontal" align="left" />
                  </a>                
             </div>
             <div className='homeCell-content m-cell c3'>
@@ -189,7 +190,11 @@ export default function Act4Content() {
             <div className='homeCell-content s-cell c4'> </div>
             <div className='homeCell-content m-cell c3'> </div>
             <div className='homeCell-content l-cell c2'></div>
-            <div className='homeCell-content xl-cell c1'></div>
+            <div className='homeCell-content xl-cell c1'>
+                <a href="/lines/act4?line=16" className="desktop-only">
+                <LineButton name="Persistence" number={16} act={4} gradientDir="horizontal" align="left" />
+                 </a>                  
+            </div>
         </div>
 
         {/* Row 11: l-row */}
@@ -200,7 +205,7 @@ export default function Act4Content() {
             <div className='homeCell-content s-cell c4'></div>
             <div className='homeCell-content xs-cell c5'></div>
             <div className='homeCell-content xs-cell c6'>
-                      <div className='rectangle200percent flex0gapcol' id="pointereventoff">
+                      <div className='mobile-act-buttons-light rectangle200percent flex0gapcol' id="pointereventoff">
                         <a href="/lines/act4?line=13" className="mobile-only" id="pointereventoff">
                             <LineButton name="Echo" number={13} act={4} gradientDir="horizontal" align="left" />
                         </a>  
@@ -222,11 +227,13 @@ export default function Act4Content() {
             <div className='homeCell-content xs-cell c5'></div>
             <div className='homeCell-content s-cell c4'> </div>
             <div className='homeCell-content m-cell c3'> </div>
-            <div className='homeCell-content l-cell c2'></div>
-            <div className='homeCell-content xl-cell c1'>
-                <a href="/lines/act4?line=13" className="desktop-only">
-                <LineButton name="Echo" number={13} act={4} gradientDir="horizontal" align="left" />
+            <div className='homeCell-content l-cell c2'>
+                <a href="/lines/act4?line=17" className="desktop-only">
+                <LineButton name="Zamaan" number={17} act={4} gradientDir="vertical" align="right" />
                  </a>                  
+            </div>
+            <div className='homeCell-content xl-cell c1'>
+                
             </div>
         </div>
 
@@ -244,9 +251,7 @@ export default function Act4Content() {
             <div className='homeCell-content s-cell c4'> </div>
             <div className='homeCell-content m-cell c3'> </div>
             <div className='homeCell-content l-cell c2'>
-                <a href="/lines/act4?line=17" className="desktop-only">
-                <LineButton name="Zamaan" number={17} act={4} gradientDir="vertical" align="right" />
-                 </a>  
+
             </div>
             <div className='homeCell-content xl-cell c1'></div>
         </div>

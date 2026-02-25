@@ -196,6 +196,7 @@ a:link, a:visited, a:hover, a:active {
 .animation-window{
   left: var(--sidebar-width);
   width:calc(100% - var(--sidebar-width));
+  overflow:hidden;
 }
 
 .fullPage{
@@ -753,6 +754,7 @@ p{
   margin-left: auto;
   margin-right: auto;
   max-height: 100%;
+  width:auto;
 }
 .center-container{
   display: flex;
@@ -798,6 +800,20 @@ p{
 .grid200vh{
   width:100%;
   height:200vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.grid250vh{
+  width:100%;
+  height:250vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.grid350vh{
+  width:100%;
+  height:350vh;
   display: flex;
   flex-direction: column;
 }
@@ -996,6 +1012,17 @@ p{
   min-height: 0;
 }
 
+.mobile-act-buttons{
+  overflow-x: hidden;
+  border-left: 0.25px solid var(--dark-brown);
+  border-right: 0.25px solid var(--dark-brown);
+}
+
+.mobile-act-buttons-light{
+  overflow-x: hidden;
+  border-left: 0.25px solid white;
+  border-right: 0.25px solid white;
+}
 /* Act 3 line page content typography */
 .line-title {
   font-family: var(--font-feature-display-condensed), serif;
@@ -1051,6 +1078,9 @@ p{
 .vh50-row{
   height:50vh;
 }
+.vh100-row{
+  height:100vh;
+}
 .landingCell{
   border-left: 0.125px solid #332b2b;
   overflow: hidden;
@@ -1098,8 +1128,8 @@ button.landingCell:hover {
     position: absolute;
     top:var(--mobilenav-height);
     z-index: 1000;
-    width: calc(100% - var(--sidebar-width));
-    left: var(--sidebar-width);
+    width: 100%;
+    left: 0;
     height: calc(100% - var(--mobilenav-height));
     pointer-events: none;
 }
@@ -1113,6 +1143,10 @@ button.landingCell:hover {
     pointer-events: none; 
 }
 
+.topleftpadding8px{
+  padding-top:8px;
+  padding-left:8px;
+}
 body.lines-page .gridTextContent {
   background: transparent;
 }
@@ -1129,7 +1163,7 @@ body.lines-page .gridTextContent {
 /* Content overlay rows must not clip text/buttons, and must NOT add borders (gradient grid provides those) */
 .gridTextContent .rowGrid,
 .gridTextContent .rowGridContent {
-    overflow: visible;
+    overflow-y: visible;
     border-top: none;
 }
 
@@ -1401,6 +1435,12 @@ body[data-stage="act4"] .sidebar-footer-logo {
   gap:8px;
 }
 
+.flex32gapcol{
+  display: flex;
+  flex-direction: column;
+  gap:32px;
+}
+
 .rectangle200percent{
   width:200%;
 }
@@ -1538,6 +1578,7 @@ body[data-stage="act4"] .sidebar-footer-logo {
   .gridTextContent{
     position:absolute;
     top:0;
+    overflow-x: hidden;
   }
 
   .pageContent:not(.peoplePageContent) {

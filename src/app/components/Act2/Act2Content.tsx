@@ -188,7 +188,7 @@ export default function Act2Content() {
             <div className='homeCell-content m-cell c4'></div>
             <div className='homeCell-content l-cell c5'></div>
             <div className=' homeCell-content xl-cell c6'>
-                <div className='rectangle200percent flex0gapcol' id="pointereventoff">
+                <div className='mobile-act-buttons rectangle200percent flex0gapcol' id="pointereventoff">
                     <a href="/lines/act2?line=5" className=" mobile-only" id="pointereventoff">
                         <LineButton name="Joie de Vivre" number={5} act={2} gradientDir="horizontal" align="left" verticalAlign='top'/>
                     </a>  
