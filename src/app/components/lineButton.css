@@ -156,28 +156,18 @@
     width:100%;
     pointer-events: auto;
     border-top:0.25px solid var(--dark-brown);
-    border-left:0.25px solid var(--dark-brown);
-    border-right:0.25px solid var(--dark-brown);
   } 
   .line-button.line-button--a3-hgrad{
     border-top:0.25px solid white;
-    border-left:0.25px solid white;
-    border-right:0.25px solid white;
   }  
   .line-button.line-button--a3-vgrad{
     border-top:0.25px solid white;
-    border-left:0.25px solid white;
-    border-right:0.25px solid white;
   }  
   .line-button.line-button--a4-hgrad{
     border-top:0.25px solid white;
-    border-left:0.25px solid white;
-    border-right:0.25px solid white;
   }  
   .line-button.line-button--a4-vgrad{
     border-top:0.25px solid white;
-    border-left:0.25px solid white;
-    border-right:0.25px solid white;
   }      
   /* type size */
 }

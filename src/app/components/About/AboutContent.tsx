@@ -30,7 +30,7 @@ export default function AboutContent() {
             <div className='homeCell-content xs-cell c4'></div>
             <div className='homeCell-content xs-cell c5'></div>
             <div className='homeCell-content rectangle-200 c6'>
-                <h1>Fables are the stories and lessons that we carry, pass down, retell, and reimagine. </h1>
+                <h1 className="aboutHeading">Fables are the stories and lessons that we carry, pass down, retell, and reimagine. </h1>
             </div>            
             <div className='homeCell-content xs-cell c5'></div>
             <div className='homeCell-content xs-cell c4'> </div>
@@ -48,7 +48,7 @@ export default function AboutContent() {
             <div className='homeCell-content xs-cell c5'></div>
             <div className='homeCell-content xl-cell c6'></div>            
             <div className='homeCell-content xl-cell c6'> 
-                <p>LG: Fable is an anthology of the fantastical worlds that color our identities, stepping through imaginations, and memories across people, times, and spaces. </p>
+                <p className='topleftpadding8px'>LG: Fable is an anthology of the fantastical worlds that color our identities, stepping through imaginations, and memories across people, times, and spaces. </p>
             </div>             
             <div className='homeCell-content xs-cell c5'></div>
             <div className='homeCell-content xs-cell c4'> </div>
@@ -86,7 +86,7 @@ export default function AboutContent() {
                 <h2>LG: Fable is a story in four parts: Follow, Wander, Trace, and Discern.</h2>
             </div>            
             <div className='homeCell-content xl-cell c6'> 
-                <p>The show guides us through the conflict between our roots and our futures. Each line provides a perspective on what it means and how it feels to learn and grow.</p>
+                <p className='topleftpadding8px'>The show guides us through the conflict between our roots and our futures. Each line provides a perspective on what it means and how it feels to learn and grow.</p>
             </div>             
             <div className='homeCell-content xs-cell c5'></div>
             <div className='homeCell-content xs-cell c4'> </div>
@@ -188,7 +188,7 @@ worlds.</h2>
                 <h2>The complex window patterns frame the gaze and create visual balance across the space.</h2>
             </div>            
             <div className='homeCell-content xl-cell c6'> 
-                <p>For the 30th anniversary of Lunar Gala, originally a Taiwanese Student Association event, we invite you to peer through the Fable window and witness the stories, memories, and lessons that define us.</p>
+                <p className='topleftpadding8px'>For the 30th anniversary of Lunar Gala, originally a Taiwanese Student Association event, we invite you to peer through the Fable window and witness the stories, memories, and lessons that define us.</p>
             </div>             
             <div className='homeCell-content xs-cell c5'></div>
             <div className='homeCell-content xs-cell c4'> </div>

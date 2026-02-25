@@ -74,7 +74,7 @@ export default function A2LinesContent({ lineName, lineTagline, lineDescription,
         <div className="homeCell-content l-cell c4" />
         <div className="homeCell-content xs-cell c5" />
         <div className="homeCell-content col2cell c4">
-            <div className=" a1LineHeading">
+            <div className=" flex32gapcol a1LineHeading">
               <h1>{lineName}</h1>
              <h4 className="spacer50w allcaps">{lineTagline}</h4>
             </div>

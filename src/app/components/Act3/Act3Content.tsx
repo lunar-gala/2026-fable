@@ -14,7 +14,8 @@ export default function Act3Content() {
         <div className='xl-row rowGridContent'>
             <div className='homeCell-content xl-cell c1'>
                   <a href="/lines/act3?line=9" className='desktop-only'>
-                     <LineButton name="EDEN" number={9} act={3} gradientDir="horizontal" align="right" />
+                     <LineButton name="Eden
+                     " number={9} act={3} gradientDir="horizontal" align="right" />
                  </a>                  
             </div>
             <div className='homeCell-content l-cell c2'></div>
@@ -203,7 +204,7 @@ export default function Act3Content() {
             <div className='homeCell-content s-cell c4'></div>
             <div className='homeCell-content xs-cell c5'></div>
             <div className='homeCell-content xs-cell c6'>
-                  <div className='rectangle200percent flex0gapcol' id="pointereventoff">
+                  <div className='mobile-act-buttons-light rectangle200percent flex0gapcol' id="pointereventoff">
                     <a href="/lines/act3?line=9" className='mobile-only' id="pointereventoff">
                         <LineButton name="EDEN" number={9} act={3} gradientDir="vertical" align="right" />
                     </a> 

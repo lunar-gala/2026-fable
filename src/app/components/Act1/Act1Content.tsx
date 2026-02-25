@@ -70,9 +70,9 @@ export default function Act1Content() {
             <div className='homeCell-content l-cell c5'></div>
             <div className='homeCell-content xl-cell c6'></div>
             <div className='homeCell-content xl-cell c6'>
-                <a href="/lines/act1?line=2" className='desktop-only'>
-                    <LineButton name="Lustre" number={2} act={1} gradientDir="vertical" align="right" />
-                </a>            
+                 <a href="/lines/act1?line=1" className='desktop-only'>
+                    <LineButton name="Frame 36" number={1} act={1} gradientDir="horizontal" align="left" />
+                </a>           
             </div>
             <div className='homeCell-content l-cell c5'></div>
             <div className='homeCell-content m-cell c4'> </div>
@@ -95,9 +95,9 @@ export default function Act1Content() {
                          
             </div>
             <div className='homeCell-content l-cell c5'>
-                 <a href="/lines/act1?line=1" className='desktop-only'>
-                    <LineButton name="Frame 36" number={1} act={1} gradientDir="horizontal" align="left" />
-                </a>                  
+                <a href="/lines/act1?line=2" className='desktop-only'>
+                    <LineButton name="Lustre" number={2} act={1} gradientDir="vertical" align="right" />
+                </a>                                  
             </div>
             <div className='homeCell-content m-cell c4'> </div>
             <div className='homeCell-content s-cell c3'> </div>
@@ -192,7 +192,7 @@ export default function Act1Content() {
             <div className='homeCell-content m-cell c4'></div>
             <div className='homeCell-content l-cell c5'></div>
             <div className='homeCell-content xl-cell c6'>
-                 <div className='rectangle200percent flex0gapcol' id="  ">
+                 <div className='mobile-act-buttons rectangle200percent flex0gapcol' id="  ">
                     <a href="/lines/act1?line=1" className='mobile-only' id="  ">
                         <LineButton name="Frame 36" number={1} act={1} gradientDir="horizontal" align="left" />
                     </a>               
